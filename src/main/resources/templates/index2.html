@@ -8,6 +8,10 @@
     <link href="http://xnxw.cncnimg.cn/css/front/base.css" rel="stylesheet" type="text/css" />
     <link href="http://xnxw.cncnimg.cn/css/front/templet2/home1.css?v=0317" rel="stylesheet" type="text/css" />
     <link href="http://xnxw.cncnimg.cn/css/front/templet2/home1_color1.css?v=0317" rel="stylesheet" type="text/css" />
+
+    <script src="/js/jquery-2.1.4.js"></script>
+    <script src="/js/bootstrap.js"></script>
+    <link  rel="stylesheet" href="/css/bootstrap.css">
 </head>
 <!--[if lt IE 8]>
 <script>var auto;</script>
@@ -55,16 +59,14 @@
             <div class="nav_layer_con">
                 <ul>
                     <li class="all_pro"><span>全部旅游产品分类</span></li>
-                    <li  class="on"><a href="/"><span>首页<i class=""></i></span></a></li>
-                   <!--<li ><a href="/hotel"><span>度假酒店<i class="hot"></i></span></a></li>
-                    <li ><a href="/qianzheng"><span>签证<i ></i></span></a></li>-->
-                    <li ><a href="/ticket"><span>门票<i ></i></span></a></li>
-                    <li ><a href="/line/zhoubianyou"><span>景点<i ></i></span></a></li>
-                    <li ><a href="/chujing"><span>旅游<i ></i></span></a></li>
-                    <li ><a href="/guonei"><span>目的地<i ></i></span></a></li>
-                    <li ><a href="/line/yunnantour"><span>攻略<i ></i></span></a></li>
-                    <li ><a href="/zt"><span>旅游专题<i ></i></span></a></li>
-                    <li ><a href="/diy"><span>个人社区<i class="hot1"></i></span></a></li>
+                    <li  class="on"><a href="#"><span>首页<i class=""></i></span></a></li>
+                    <li ><a href="#"><span>门票<i ></i></span></a></li>
+                    <li ><a href="/line/lvyou"><span>旅游<i ></i></span></a></li>
+                    <li ><a href="#"><span>景点<i ></i></span></a></li>
+                    <li ><a href="#"><span>目的地<i ></i></span></a></li>
+                    <li ><a href="#"><span>攻略<i ></i></span></a></li>
+                    <li ><a href="#"><span>旅游专题<i ></i></span></a></li>
+                    <li ><a href="#"><span>个人社区<i class="hot1"></i></span></a></li>
                 </ul>
             </div>
         </div>
@@ -117,7 +119,7 @@
         }
         .gg1000 i{
             position:absolute;
-            background:url(/static/images/front/home30/close.gif) no-repeat;
+            background:url(/static/front/home30/close.gif) no-repeat;
             right: 0px;
             top: 0px;
             cursor: pointer;
@@ -138,7 +140,16 @@
             display: block;
         }
         .tab_cont .showed {
-            background: url(/static/images/front/zoomloader.gif) no-repeat center center;
+            background: url(/static/front/zoomloader.gif) no-repeat center center;
+        }
+        .trig{
+            display: none;
+            position: absolute;
+            bottom: 0px;
+            left: 45px;
+            border-bottom: 6px solid lightsalmon;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
         }
     </style>
     <div class="main_hd">
@@ -1237,6 +1248,8 @@
         }
 
     })
+
+
 </script>
 
 
