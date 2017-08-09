@@ -1,134 +1,46 @@
 package com.fourth.bean;
 
+import lombok.Data;
+
+@Data
 public class Scenery {
  
-    private Integer sceneryId;
+    private Integer scenery_Id;
 
     
-    private String sceneryTitle;
+    private String scenery_Title;
 
   
-    private String sceneryIntroduce;
+    private String scenery_Introduce;
 
    
-    private String sceneryImg;
+    private String scenery_Img;
 
   
-    private String sceneryPrice;
+    private String scenery_Price;
 
     private String sceneryPlan;
 
    
-    private String sceneryFees;
+    private String scenery_Fees;
 
-    private String sceneryAddress;
+    private String scenery_Address;
 
   
-    private String sceneryRode;
+    private String scenery_Rode;
 
    
-    private String sceneryDay;
+    private String scenery_Day;
 
     
-    private String sceneryDaytime;
+    private String scenery_Daytime;
 
-  
-    public Integer getSceneryId() {
-        return sceneryId;
-    }
+    private String scenery_Type;
+    private int address_Aid;
+    private String scenery_Num;
+    private int detailed_Did;
 
-    
-    public void setSceneryId(Integer sceneryId) {
-        this.sceneryId = sceneryId;
-    }
+    private String Aname;
 
 
-    public String getSceneryTitle() {
-        return sceneryTitle;
-    }
-
-   
-    public void setSceneryTitle(String sceneryTitle) {
-        this.sceneryTitle = sceneryTitle;
-    }
-
-  
-    public String getSceneryIntroduce() {
-        return sceneryIntroduce;
-    }
-
-    
-    public void setSceneryIntroduce(String sceneryIntroduce) {
-        this.sceneryIntroduce = sceneryIntroduce;
-    }
-
-   
-    public String getSceneryImg() {
-        return sceneryImg;
-    }
-
-  
-    public void setSceneryImg(String sceneryImg) {
-        this.sceneryImg = sceneryImg;
-    }
-
-  
-    public String getSceneryPrice() {
-        return sceneryPrice;
-    }
-
-    public void setSceneryPrice(String sceneryPrice) {
-        this.sceneryPrice = sceneryPrice;
-    }
-
-    public String getSceneryPlan() {
-        return sceneryPlan;
-    }
-
-
-    public void setSceneryPlan(String sceneryPlan) {
-        this.sceneryPlan = sceneryPlan;
-    }
-
-    public String getSceneryFees() {
-        return sceneryFees;
-    }
-
-    public void setSceneryFees(String sceneryFees) {
-        this.sceneryFees = sceneryFees;
-    }
-
-
-    public String getSceneryAddress() {
-        return sceneryAddress;
-    }
-
-    public void setSceneryAddress(String sceneryAddress) {
-        this.sceneryAddress = sceneryAddress;
-    }
-
-    public String getSceneryRode() {
-        return sceneryRode;
-    }
-
-    public void setSceneryRode(String sceneryRode) {
-        this.sceneryRode = sceneryRode;
-    }
-
- 
-    public String getSceneryDay() {
-        return sceneryDay;
-    }
-
-    public void setSceneryDay(String sceneryDay) {
-        this.sceneryDay = sceneryDay;
-    }
-
-    public String getSceneryDaytime() {
-        return sceneryDaytime;
-    }
-
-    public void setSceneryDaytime(String sceneryDaytime) {
-        this.sceneryDaytime = sceneryDaytime;
-    }
 }

@@ -1,12 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper SYSTEM "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.fourth.dao.RouteMapper">
-    <select id="getRoute" resultType="com.fourth.bean.Route">
-        select * from route
-        <!--<where>-->
-            <!--<if test="routename != null and routename !=''" >-->
-                <!--routename = #{routename}-->
-            <!--</if>-->
-        <!--</where>-->
+
+  <select id="getRoute" resultType="com.fourth.bean.Route" parameterType="String">
+      SELECT  * FROM route
+      <where>
+       route_number = #{routeNumber};
+      </where>
+  </select>
+
+    <select id="getScenery" resultType="com.fourth.bean.Scenery" parameterType="com.fourth.bean.Scenery">
+       select * from route,address,scenery,detailed
+       <where>
+        route.route_id=address.address_route_id
+        and scenery.address_aid=address.address_id
+        and scenery.detailed_did =detailed.detailed_id
+           <if test="Aname!=null">
+               and address.address_name like '%${Aname}%';
+           </if>
+       </where>
     </select>
+
+    <select id="getAddress" resultType="com.fourth.bean.Address" parameterType="String">
+        select * from address WHERE  address_name=#{addressname};
+    </select>
+
 </mapper>

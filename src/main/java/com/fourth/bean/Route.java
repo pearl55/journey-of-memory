@@ -1,29 +1,14 @@
 package com.fourth.bean;
 
+import lombok.Data;
+
+@Data
 public class Route {
    
-    private Integer routeId;
+    private Integer route_Id;
 
   
-    private String routeName;
+    private String route_Name;
+    private String route_Number;
 
-   
-    public Integer getRouteId() {
-        return routeId;
-    }
-
-    
-    public void setRouteId(Integer routeId) {
-        this.routeId = routeId;
-    }
-
-    
-    public String getRouteName() {
-        return routeName;
-    }
-
-    
-    public void setRouteName(String routeName) {
-        this.routeName = routeName;
-    }
 }

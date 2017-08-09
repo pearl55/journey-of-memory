@@ -1,6 +1,8 @@
 package com.fourth.service.serviceimpl;
 
+import com.fourth.bean.Address;
 import com.fourth.bean.Route;
+import com.fourth.bean.Scenery;
 import com.fourth.dao.RouteMapper;
 import com.fourth.service.RouteService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,9 +19,21 @@ public class RouteServiceImpl implements RouteService {
     @Autowired
     private RouteMapper routeMapper;
 
-    public List<Route> getRoute() {
+    public List<Route> getRoute(String routeNumber) {
 
         System.out.println("service");
-        return routeMapper.getRoute();
+        return routeMapper.getRoute(routeNumber);
     }
+
+
+    public List<Scenery> getScenery(Scenery scenery) {
+        return routeMapper.getScenery(scenery);
+    }
+
+    @Override
+    public Address getAddress(String addressname) {
+        return routeMapper.getAddress(addressname);
+    }
+
+
 }
