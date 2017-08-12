@@ -1,6 +1,6 @@
 
 <!DOCTYPE HTML>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8">
     <title>昆明_云游旅行网</title>
@@ -37,7 +37,7 @@
                 <p><a href="/"><img src="http://x1.cncnimg.cn/p10068/374/4157.jpg" title="云游旅行网" /></a></p>
             </div>
             <div class="search">
-                <div class="search_con"><form action="/search" target="_self" method="get"><input type="text" name="key" id="seach_input" class="search_txt" value="" /><input type="submit" value="搜索" class="search_sub" /></form></div>
+                <div class="search_con"><form action="/search" target="_self" method="get"><input type="text" name="key"  class="search_txt" value="" /><input type="submit" value="搜索" class="search_sub" /></form></div>
                 <p>
                     <em>热门搜索：</em>
                     <a href="/search/%C0%F6%BD%AD">丽江</a>
@@ -54,14 +54,15 @@
         <div class="nav_layer">
             <div class="nav_layer_con">
                 <ul>
-                    <li ><a href="/HomePage/"><span>首页<i ></i></span></a></li>
+                    <li class="all_pro"><span>全部旅游产品分类</span></li>
+                    <li  class="#"><a href="/HomePage/"><span>首页<i class=""></i></span></a></li>
                     <li ><a href="#"><span>门票<i ></i></span></a></li>
                     <li ><a href="/lvyou"><span>旅游<i ></i></span></a></li>
                     <li ><a href="#"><span>景点<i ></i></span></a></li>
                     <li ><a href="#"><span>目的地<i ></i></span></a></li>
                     <li ><a href="#"><span>攻略<i ></i></span></a></li>
                     <li ><a href="#"><span>旅游专题<i ></i></span></a></li>
-                    <li ><a href="#"><span>个人社区<i ></i></span></a></li>
+                    <li ><a href="#"><span>个人社区<i class="hot1"></i></span></a></li>
                 </ul>
             </div>
         </div>
@@ -139,883 +140,65 @@
                 <h3>推荐</h3>
                 <div class="txt">
                     <ul>
-                        <li>
-                            <div class="pic">                                    <a href="/line/196537.htm" target="_blank" title="寻甸石板河、风龙湾、北大营两天游"><img src="http://x1.cncnimg.cn/p10068/249/ea8b.jpg!m" width="240" height="160" alt="寻甸石板河、风龙湾、北大营两天游"></a>
+
+
+                        <li th:each="tuijian:${tuijian}">
+                            <div class="pic"><a th:href="@{/tiaozhuan(id=${tuijian.scenery_Id})}"><img src="" th:attr="src=${tuijian.scenery_Img},title=${tuijian.scenery_Title}" title=""width="240" height="160" ></a>
                             </div>
-                            <p><a target="_blank" href="/line/196537.htm">[独立包团]寻甸石板河、风龙湾、北大营两天游</a></p>
-                            <span><em>￥<b>680</b></em>起</span>
-                            <div class="btn"><a href="/line/196537.htm" target="_blank"></a></div>
+                            <p><a th:href="@{/tiaozhuan(id=${tuijian.scenery_Id})}">[<em th:text="${tuijian.scenery_Type}"></em>]<span th:text="${tuijian.scenery_Title}"></span></a></p>
+                            <span><em>￥<b th:text="${tuijian.scenery_Price}"></b></em>起</span>
+                            <div class="btn"><a th:href="@{/tiaozhuan(id=${tuijian.scenery_Id})}"target="_blank"></a></div>
                         </li>
-                        <li>
-                            <div class="pic">                                    <a href="/line/281712.htm" target="_blank" title="昆明-丽江-大理火车双卧4晚5天"><img src="http://x1.cncnimg.cn/p10068/389/49e8.jpg!m" width="240" height="160" alt="昆明-丽江-大理火车双卧4晚5天"></a>
+
+                        <li th:each="tuijian1:${tuijian1}">
+                            <div class="pic"><a th:href="@{/tiaozhuan(id=${tuijian1.scenery_Id})}"><img src="" th:attr="src=${tuijian1.scenery_Img},title=${tuijian1.scenery_Title}" title=""width="240" height="160" ></a>
                             </div>
-                            <p><a target="_blank" href="/line/281712.htm">[跟团游]昆明-丽江-大理火车双卧4晚5天</a></p>
-                            <span><em>￥<b>950</b></em>起</span>
-                            <div class="btn"><a href="/line/281712.htm" target="_blank"></a></div>
+                            <p><a th:href="@{/tiaozhuan(id=${tuijian1.scenery_Id})}">[<em th:text="${tuijian1.scenery_Type}"></em>]<span th:text="${tuijian1.scenery_Title}"></span></a></p>
+                            <span><em>￥<b th:text="${tuijian1.scenery_Price}"></b></em>起</span>
+                            <div class="btn"><a th:href="@{/tiaozhuan(id=${tuijian1.scenery_Id})}"target="_blank"></a></div>
                         </li>
+
+
+
+
+
                     </ul>
                 </div>
             </div>
             <div class="list790" htmlfor="1460" id="1460">
-                <h3><span class="more"><a href="/line/yunnantour">更多>></a></span>云南参团游</h3>
-                <div class="tag_top">
-                    <div class="js_tab_fn" htmlfor="1460">
-                        <span class="on"><a href="###">所有线路</a></span>
-                        <span><a href="###" data-lineid="1465">昆明参团</a></span>
-                        <span><a href="###" data-lineid="1466">丽江参团</a></span>
-                        <span><a href="###" data-lineid="1469">VIP小包团</a></span>
-                    </div>
-                </div>
+                <h3><span class="more"><a href="/line/yunnantour">更多>></a></span>更多</h3>
                 <div class="tag_con js_tab_cont">
                     <div class="showed list">
 
                         <div class="tu_wen">
                             <ul>
-                                <li >
-                                    <div class="pic"><a href="/line/281712.htm" target="_blank" title="昆明-丽江-大理火车双卧4晚5天"><img src="http://x1.cncnimg.cn/p10068/389/49e8.jpg!s" border="0" alt="昆明-丽江-大理火车双卧4晚5天" width="75" height="50"></a></div>
+                                <!--遍历-->
+                                <li class="noborder" th:each="scenery:${scenery}" >
+
+                                    <div  class="pic">
+                                        <img src="" th:attr="src=${scenery.scenery_Img}" border="0" alt="北京" width="75" height="50" >
+                                    </div>
                                     <div class="type">
-                                        [跟团游]<a href="/line/281712.htm" target="_blank">昆明-丽江-大理火车双卧4晚5天<em>纯玩无购物点</em></a><i class="i1">推荐</i>                <p>
-                                        <span>出发城市：昆明</span>
-                                        <span>行程天数：5天</span>
-                                        <span>交通方式：火车去火车回</span>
-                                        <span>出发日期：天天发团</span>
-                                    </p>
+                                        <em th:text="${scenery.scenery_Type}" style="color: red"></em> <a  target="_blank" th:href="@{/tiaozhuan(id=${scenery.scenery_Id})}" th:text="${scenery.scenery_Title}"></a>
+                                        <p>
+                                            <span>出发城市：<span th:text="${scenery.scenery_Address}"></span></span>
+                                            <span>行程天数：<span th:text="${scenery.scenery_Day}"></span>天</span>
+                                            <span>交通方式:<span th:text="${scenery.scenery_Rode}"></span></span>
+                                            <span>出发日期:<span th:text="${scenery.scenery_Daytime}"></span></span>
+                                        </p>
                                     </div>
                                     <div class="price">
-                                        <em><b>￥</b>950</em>起
+                                        <em ><b>￥</b><span th:text="${scenery.scenery_Price}"></span></em>起
                                     </div>
-                                </li>
-                                <li >
-                                    <div class="pic"><a href="/line/282271.htm" target="_blank" title="北海涠洲岛桂林动车6日游"><img src="http://x1.cncnimg.cn/p10068/390/f99a.jpg!s" border="0" alt="北海涠洲岛桂林动车6日游" width="75" height="50"></a></div>
-                                    <div class="type">
-                                        [跟团游]<a href="/line/282271.htm" target="_blank">北海涠洲岛桂林动车6日游<em>桂林不进店，北海只进珍珠店！</em></a>                <p>
-                                        <span>出发城市：昆明</span>
-                                        <span>行程天数：6天</span>
-                                        <span>交通方式：动车去动车回</span>
-                                        <span>出发日期：天天发团</span>
-                                    </p>
-                                    </div>
-                                    <div class="price">
-                                        <em><b>￥</b>2800</em>起
-                                    </div>
-                                </li>
-                                <li >
-                                    <div class="pic"><a href="/line/281740.htm" target="_blank" title="丽江-香格里拉-泸沽湖-大理9日游"><img src="http://x1.cncnimg.cn/p10068/389/30b5.jpg!s" border="0" alt="丽江-香格里拉-泸沽湖-大理9日游" width="75" height="50"></a></div>
-                                    <div class="type">
-                                        [跟团游]<a href="/line/281740.htm" target="_blank">丽江-香格里拉-泸沽湖-大理9日游<em>纯玩无购物点</em></a>                <p>
-                                        <span>出发城市：丽江</span>
-                                        <span>行程天数：9天</span>
-                                        <span>交通方式：汽车去汽车回</span>
-                                        <span>出发日期：天天发团</span>
-                                    </p>
-                                    </div>
-                                    <div class="price">
-                                        <em><b>￥</b>1780</em>起
-                                    </div>
-                                </li>
-                                <li >
-                                    <div class="pic"><a href="/line/281892.htm" target="_blank" title="西双版纳一地4日游"><img src="http://x1.cncnimg.cn/p10068/389/c61b.jpg!s" border="0" alt="西双版纳一地4日游" width="75" height="50"></a></div>
-                                    <div class="type">
-                                        [跟团游]<a href="/line/281892.htm" target="_blank">西双版纳一地4日游<em>纯玩无购物店</em></a>                <p>
-                                        <span>出发城市：西双版纳</span>
-                                        <span>行程天数：4天</span>
-                                        <span>交通方式：汽车去汽车回</span>
-                                        <span>出发日期：天天发团</span>
-                                    </p>
-                                    </div>
-                                    <div class="price">
-                                        <em><b>￥</b>850</em>起
-                                    </div>
-                                </li>
-                                <li >
-                                    <div class="pic"><a href="/line/291027.htm" target="_blank" title="内蒙古定制游"><img src="http://x1.cncnimg.cn/p10068/406/be5c.jpg!s" border="0" alt="内蒙古定制游" width="75" height="50"></a></div>
-                                    <div class="type">
-                                        [跟团游]<a href="/line/291027.htm" target="_blank">内蒙古定制游<em>定制纯玩</em></a>                <p>
-                                        <span>出发城市：昆明</span>
-                                        <span>行程天数：5天</span>
-                                        <span>交通方式：飞机去飞机回</span>
-                                        <span>出发日期：天天发团</span>
-                                    </p>
-                                    </div>
-                                    <div class="price">
-                                        <em><b>￥</b>1880</em>起
-                                    </div>
-                                </li>
-                                <li >
-                                    <div class="pic"><a href="/line/282023.htm" target="_blank" title="&amp;lt;丽江当地参团&amp;gt;丽江玉龙雪山一日游"><img src="http://x1.cncnimg.cn/p10068/390/e973.jpg!s" border="0" alt="&amp;lt;丽江当地参团&amp;gt;丽江玉龙雪山一日游" width="75" height="50"></a></div>
-                                    <div class="type">
-                                        [跟团游]<a href="/line/282023.htm" target="_blank">&lt;丽江当地参团&gt;丽江玉龙雪山一日游<em>纯玩一日游</em></a>                <p>
-                                        <span>出发城市：丽江</span>
-                                        <span>行程天数：1天</span>
-                                        <span>交通方式：汽车去汽车回</span>
-                                        <span>出发日期：天天发团</span>
-                                    </p>
-                                    </div>
-                                    <div class="price">
-                                        <em><b>￥</b>580</em>起
-                                    </div>
-                                </li>
-                                <li >
-                                    <div class="pic"><a href="/line/281748.htm" target="_blank" title="丽江-香格里拉2日游"><img src="http://x1.cncnimg.cn/p10068/389/96fa.jpg!s" border="0" alt="丽江-香格里拉2日游" width="75" height="50"></a></div>
-                                    <div class="type">
-                                        [跟团游]<a href="/line/281748.htm" target="_blank">丽江-香格里拉2日游<em>纯玩无购物点</em></a>                <p>
-                                        <span>出发城市：昆明</span>
-                                        <span>行程天数：2天</span>
-                                        <span>交通方式：汽车去汽车回</span>
-                                        <span>出发日期：天天发团</span>
-                                    </p>
-                                    </div>
-                                    <div class="price">
-                                        <em><b>￥</b>680</em>起
-                                    </div>
-                                </li>
-                                <li class="noborder">
-                                    <div class="pic"><a href="/line/281720.htm" target="_blank" title="昆明-丽江-泸沽湖-大理火车双卧纯玩7日游"><img src="http://x1.cncnimg.cn/p10068/389/f54d.jpg!s" border="0" alt="昆明-丽江-泸沽湖-大理火车双卧纯玩7日游" width="75" height="50"></a></div>
-                                    <div class="type">
-                                        [跟团游]<a href="/line/281720.htm" target="_blank">昆明-丽江-泸沽湖-大理火车双卧纯玩7日游<em>纯玩无购物</em></a>                <p>
-                                        <span>出发城市：昆明</span>
-                                        <span>行程天数：7天</span>
-                                        <span>交通方式：火车去火车回</span>
-                                        <span>出发日期：天天发团</span>
-                                    </p>
-                                    </div>
-                                    <div class="price">
-                                        <em><b>￥</b>1280</em>起
-                                    </div>
+
                                 </li>
                             </ul>
                         </div>
-
-
-
-                    </div>
-                    <div class="list">
-
-                    </div>
-                    <div class="list">
-
-                    </div>
-                    <div class="list">
-
-                    </div>
-                    <div class="list">
-
-                    </div>
-                    <div class="list">
-
-                    </div>
-                    <div class="list">
-
-                    </div>
-                    <div class="list">
-
-                    </div>
-                    <div class="list">
-
-                    </div>
-                    <div class="list">
-
                     </div>
                 </div>
 
             </div>
-            <div class="list790" htmlfor="10942" id="10942">
-                <h3><span class="more"><a href="/line/yunnanlvyou">更多>></a></span>热门目的地</h3>
-                <div class="tag_top">
-                    <div class="js_tab_fn" htmlfor="10942">
-                        <span class="on"><a href="###">所有线路</a></span>
-                        <span><a href="###" data-lineid="15593">昆明</a></span>
-                        <span><a href="###" data-lineid="10943">丽江</a></span>
-                        <span><a href="###" data-lineid="10944">大理</a></span>
-                        <span><a href="###" data-lineid="10945">香格里拉</a></span>
-                        <span><a href="###" data-lineid="10946">西双版纳</a></span>
-                        <span><a href="###" data-lineid="10947">腾冲</a></span>
-                        <span><a href="###" data-lineid="10948">石林</a></span>
-                        <span><a href="###" data-lineid="10949">泸沽湖</a></span>
-                        <span><a href="###" data-lineid="10950">梅里雪山</a></span>
-                        <span><a href="###" data-lineid="15764">稻城亚丁</a></span>
-                    </div>
-                </div>
-                <div class="tag_con js_tab_cont">
-                    <div class="showed list">
 
-                        <div class="tu_wen">
-                            <ul>
-                                <li >
-                                    <div class="pic"><a href="/line/281712.htm" target="_blank" title="昆明-丽江-大理火车双卧4晚5天"><img src="http://x1.cncnimg.cn/p10068/389/49e8.jpg!s" border="0" alt="昆明-丽江-大理火车双卧4晚5天" width="75" height="50"></a></div>
-                                    <div class="type">
-                                        [跟团游]<a href="/line/281712.htm" target="_blank">昆明-丽江-大理火车双卧4晚5天<em>纯玩无购物点</em></a><i class="i1">推荐</i>                <p>
-                                        <span>出发城市：昆明</span>
-                                        <span>行程天数：5天</span>
-                                        <span>交通方式：火车去火车回</span>
-                                        <span>出发日期：天天发团</span>
-                                    </p>
-                                    </div>
-                                    <div class="price">
-                                        <em><b>￥</b>950</em>起
-                                    </div>
-                                </li>
-                                <li >
-                                    <div class="pic"><a href="/line/294477.htm" target="_blank" title="昆明始发-丽江-梅里雪山-泸沽湖9日游"><img src="http://xnxw.cncnimg.cn/images/front/nopic_s.jpg" border="0" alt="昆明始发-丽江-梅里雪山-泸沽湖9日游" width="75" height="50"></a></div>
-                                    <div class="type">
-                                        [跟团游]<a href="/line/294477.htm" target="_blank">昆明始发-丽江-梅里雪山-泸沽湖9日游<em>纯玩无购物</em></a>                <p>
-                                        <span>出发城市：昆明</span>
-                                        <span>行程天数：9天</span>
-                                        <span>交通方式：火车去火车回</span>
-                                        <span>出发日期：天天发团</span>
-                                    </p>
-                                    </div>
-                                    <div class="price">
-                                        <em><b>￥</b>2450</em>起
-                                    </div>
-                                </li>
-                                <li >
-                                    <div class="pic"><a href="/line/294472.htm" target="_blank" title="丽江起止，香格里拉-梅里雪山4日游"><img src="http://xnxw.cncnimg.cn/images/front/nopic_s.jpg" border="0" alt="丽江起止，香格里拉-梅里雪山4日游" width="75" height="50"></a></div>
-                                    <div class="type">
-                                        [跟团游]<a href="/line/294472.htm" target="_blank">丽江起止，香格里拉-梅里雪山4日游<em>纯玩无购物</em></a>                <p>
-                                        <span>出发城市：昆明</span>
-                                        <span>行程天数：4天</span>
-                                        <span>交通方式：汽车去汽车回</span>
-                                        <span>出发日期：天天发团</span>
-                                    </p>
-                                    </div>
-                                    <div class="price">
-                                        <em><b>￥</b>1680</em>起
-                                    </div>
-                                </li>
-                                <li >
-                                    <div class="pic"><a href="/line/281740.htm" target="_blank" title="丽江-香格里拉-泸沽湖-大理9日游"><img src="http://x1.cncnimg.cn/p10068/389/30b5.jpg!s" border="0" alt="丽江-香格里拉-泸沽湖-大理9日游" width="75" height="50"></a></div>
-                                    <div class="type">
-                                        [跟团游]<a href="/line/281740.htm" target="_blank">丽江-香格里拉-泸沽湖-大理9日游<em>纯玩无购物点</em></a>                <p>
-                                        <span>出发城市：丽江</span>
-                                        <span>行程天数：9天</span>
-                                        <span>交通方式：汽车去汽车回</span>
-                                        <span>出发日期：天天发团</span>
-                                    </p>
-                                    </div>
-                                    <div class="price">
-                                        <em><b>￥</b>1780</em>起
-                                    </div>
-                                </li>
-                                <li >
-                                    <div class="pic"><a href="/line/281889.htm" target="_blank" title="西双版纳一地纯玩5日游"><img src="http://x1.cncnimg.cn/p10068/389/5c40.jpg!s" border="0" alt="西双版纳一地纯玩5日游" width="75" height="50"></a></div>
-                                    <div class="type">
-                                        [跟团游]<a href="/line/281889.htm" target="_blank">西双版纳一地纯玩5日游<em>纯玩无购物店</em></a>                <p>
-                                        <span>出发城市：西双版纳</span>
-                                        <span>行程天数：5天</span>
-                                        <span>交通方式：汽车去汽车回</span>
-                                        <span>出发日期：天天发团</span>
-                                    </p>
-                                    </div>
-                                    <div class="price">
-                                        <em><b>￥</b>950</em>起
-                                    </div>
-                                </li>
-                                <li >
-                                    <div class="pic"><a href="/line/291455.htm" target="_blank" title="昆明-大理-腾冲-瑞丽5日游"><img src="http://xnxw.cncnimg.cn/images/front/nopic_s.jpg" border="0" alt="昆明-大理-腾冲-瑞丽5日游" width="75" height="50"></a></div>
-                                    <div class="type">
-                                        [跟团游]<a href="/line/291455.htm" target="_blank">昆明-大理-腾冲-瑞丽5日游<em>纯玩无购物店</em></a>                <p>
-                                        <span>出发城市：昆明</span>
-                                        <span>行程天数：5天</span>
-                                        <span>交通方式：汽车去火车回</span>
-                                        <span>出发日期：天天发团</span>
-                                    </p>
-                                    </div>
-                                    <div class="price">
-                                        <em><b>￥</b>1050</em>起
-                                    </div>
-                                </li>
-                                <li >
-                                    <div class="pic"><a href="/line/281892.htm" target="_blank" title="西双版纳一地4日游"><img src="http://x1.cncnimg.cn/p10068/389/c61b.jpg!s" border="0" alt="西双版纳一地4日游" width="75" height="50"></a></div>
-                                    <div class="type">
-                                        [跟团游]<a href="/line/281892.htm" target="_blank">西双版纳一地4日游<em>纯玩无购物店</em></a>                <p>
-                                        <span>出发城市：西双版纳</span>
-                                        <span>行程天数：4天</span>
-                                        <span>交通方式：汽车去汽车回</span>
-                                        <span>出发日期：天天发团</span>
-                                    </p>
-                                    </div>
-                                    <div class="price">
-                                        <em><b>￥</b>850</em>起
-                                    </div>
-                                </li>
-                                <li class="noborder">
-                                    <div class="pic"><a href="/line/282023.htm" target="_blank" title="&amp;lt;丽江当地参团&amp;gt;丽江玉龙雪山一日游"><img src="http://x1.cncnimg.cn/p10068/390/e973.jpg!s" border="0" alt="&amp;lt;丽江当地参团&amp;gt;丽江玉龙雪山一日游" width="75" height="50"></a></div>
-                                    <div class="type">
-                                        [跟团游]<a href="/line/282023.htm" target="_blank">&lt;丽江当地参团&gt;丽江玉龙雪山一日游<em>纯玩一日游</em></a>                <p>
-                                        <span>出发城市：丽江</span>
-                                        <span>行程天数：1天</span>
-                                        <span>交通方式：汽车去汽车回</span>
-                                        <span>出发日期：天天发团</span>
-                                    </p>
-                                    </div>
-                                    <div class="price">
-                                        <em><b>￥</b>580</em>起
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-
-
-
-                    </div>
-                    <div class="list">
-
-                    </div>
-                    <div class="list">
-
-                    </div>
-                    <div class="list">
-
-                    </div>
-                    <div class="list">
-
-                    </div>
-                    <div class="list">
-
-                    </div>
-                    <div class="list">
-
-                    </div>
-                    <div class="list">
-
-                    </div>
-                    <div class="list">
-
-                    </div>
-                    <div class="list">
-
-                    </div>
-                    <div class="list">
-
-                    </div>
-                    <div class="list">
-
-                    </div>
-                </div>
-
-            </div>
-            <div class="list790" htmlfor="9985" id="9985">
-                <h3><span class="more"><a href="/line/zhoubianyou">更多>></a></span>昆明出发周边游</h3>
-                <div class="tag_top">
-                    <div class="js_tab_fn" htmlfor="9985">
-                        <span class="on"><a href="###">所有线路</a></span>
-                        <span><a href="###" data-lineid="15591">禄丰恐龙谷</a></span>
-                        <span><a href="###" data-lineid="9986">轿子雪山</a></span>
-                        <span><a href="###" data-lineid="9987">罗平</a></span>
-                        <span><a href="###" data-lineid="9988">普者黑</a></span>
-                        <span><a href="###" data-lineid="9989">坝美世外桃源</a></span>
-                        <span><a href="###" data-lineid="9990">新平哀牢山</a></span>
-                        <span><a href="###" data-lineid="9991">建水 元阳梯田</a></span>
-                    </div>
-                </div>
-                <div class="tag_con js_tab_cont">
-                    <div class="showed list">
-
-                        <div class="tu_wen">
-                            <ul>
-                                <li >
-                                    <div class="pic"><a href="/line/293441.htm" target="_blank" title="普者黑昆明往返2日游"><img src="http://xnxw.cncnimg.cn/images/front/nopic_s.jpg" border="0" alt="普者黑昆明往返2日游" width="75" height="50"></a></div>
-                                    <div class="type">
-                                        [跟团游]<a href="/line/293441.htm" target="_blank">普者黑昆明往返2日游<em>纯玩无购物</em></a>                <p>
-                                        <span>出发城市：昆明</span>
-                                        <span>行程天数：2天</span>
-                                        <span>交通方式：高铁去高铁回</span>
-                                        <span>出发日期：08/10、08/12...&nbsp;<a href="/line/293441.htm">更多</a></span>
-                                    </p>
-                                    </div>
-                                    <div class="price">
-                                        <em><b>￥</b>620</em>起
-                                    </div>
-                                </li>
-                                <li >
-                                    <div class="pic"><a href="/line/199713.htm" target="_blank" title="建水文庙、朱家花园、元阳梯田3日游"><img src="http://x1.cncnimg.cn/p10068/251/ca49.jpg!s" border="0" alt="建水文庙、朱家花园、元阳梯田3日游" width="75" height="50"></a></div>
-                                    <div class="type">
-                                        [独立包团]<a href="/line/199713.htm" target="_blank">建水文庙、朱家花园、元阳梯田3日游</a>                <p>
-                                        <span>出发城市：昆明</span>
-                                        <span>行程天数：3天</span>
-                                        <span>交通方式：汽车去汽车回</span>
-                                        <span>出发日期：天天发团</span>
-                                    </p>
-                                    </div>
-                                    <div class="price">
-                                        <em><b>￥</b>780</em>起
-                                    </div>
-                                </li>
-                                <li >
-                                    <div class="pic"><a href="/line/221034.htm" target="_blank" title="探秘哀牢山，相遇花腰傣  一晚两天行程"><img src="http://x1.cncnimg.cn/p10068/284/0f18.jpg!s" border="0" alt="探秘哀牢山，相遇花腰傣  一晚两天行程" width="75" height="50"></a></div>
-                                    <div class="type">
-                                        [独立包团]<a href="/line/221034.htm" target="_blank">探秘哀牢山，相遇花腰傣  一晚两天行程</a>                <p>
-                                        <span>出发城市：昆明</span>
-                                        <span>行程天数：2天</span>
-                                        <span>交通方式：汽车去汽车回</span>
-                                        <span>出发日期：天天发团</span>
-                                    </p>
-                                    </div>
-                                    <div class="price">
-                                        <em><b>￥</b>480</em>起
-                                    </div>
-                                </li>
-                                <li >
-                                    <div class="pic"><a href="/line/199699.htm" target="_blank" title="罗平多依河、鲁布革小三峡、九龙瀑布二日游"><img src="http://x1.cncnimg.cn/p10068/251/dd3c.jpg!s" border="0" alt="罗平多依河、鲁布革小三峡、九龙瀑布二日游" width="75" height="50"></a></div>
-                                    <div class="type">
-                                        [独立包团]<a href="/line/199699.htm" target="_blank">罗平多依河、鲁布革小三峡、九龙瀑布二日游</a>                <p>
-                                        <span>出发城市：昆明</span>
-                                        <span>行程天数：2天</span>
-                                        <span>交通方式：汽车去汽车回</span>
-                                        <span>出发日期：天天发团</span>
-                                    </p>
-                                    </div>
-                                    <div class="price">
-                                        <em><b>￥</b>360</em>起
-                                    </div>
-                                </li>
-                                <li >
-                                    <div class="pic"><a href="/line/199703.htm" target="_blank" title="建水文庙、燕子洞、石屏、弥勒汽车三日游"><img src="http://x1.cncnimg.cn/p10068/251/da9c.jpg!s" border="0" alt="建水文庙、燕子洞、石屏、弥勒汽车三日游" width="75" height="50"></a></div>
-                                    <div class="type">
-                                        [独立包团]<a href="/line/199703.htm" target="_blank">建水文庙、燕子洞、石屏、弥勒汽车三日游</a>                <p>
-                                        <span>出发城市：昆明</span>
-                                        <span>行程天数：3天</span>
-                                        <span>交通方式：汽车去汽车回</span>
-                                        <span>出发日期：天天发团</span>
-                                    </p>
-                                    </div>
-                                    <div class="price">
-                                        <em><b>￥</b>520</em>起
-                                    </div>
-                                </li>
-                                <li class="noborder">
-                                    <div class="pic"><a href="/line/199692.htm" target="_blank" title="大理地热国、古城洋人街二日游"><img src="http://x1.cncnimg.cn/p10068/251/a5bf.jpg!s" border="0" alt="大理地热国、古城洋人街二日游" width="75" height="50"></a></div>
-                                    <div class="type">
-                                        [独立包团]<a href="/line/199692.htm" target="_blank">大理地热国、古城洋人街二日游</a>                <p>
-                                        <span>出发城市：昆明</span>
-                                        <span>行程天数：2天</span>
-                                        <span>交通方式：汽车去汽车回</span>
-                                        <span>出发日期：天天发团</span>
-                                    </p>
-                                    </div>
-                                    <div class="price">
-                                        <em><b>￥</b>380</em>起
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-
-
-
-                    </div>
-                    <div class="list">
-
-                    </div>
-                    <div class="list">
-
-                    </div>
-                    <div class="list">
-
-                    </div>
-                    <div class="list">
-
-                    </div>
-                    <div class="list">
-
-                    </div>
-                    <div class="list">
-
-                    </div>
-                    <div class="list">
-
-                    </div>
-                </div>
-
-            </div>
-            <div class="list790" htmlfor="9993" id="9993">
-                <h3><span class="more"><a href="/line/guoneiyou">更多>></a></span>昆明出发国内游</h3>
-                <div class="tag_top">
-                    <div class="js_tab_fn" htmlfor="9993">
-                        <span class="on"><a href="###">所有线路</a></span>
-                        <span><a href="###" data-lineid="47069">北京</a></span>
-                        <span><a href="###" data-lineid="15606">华东</a></span>
-                        <span><a href="###" data-lineid="15600">厦门 武夷山</a></span>
-                        <span><a href="###" data-lineid="15596">海南 三亚</a></span>
-                        <span><a href="###" data-lineid="48189">内蒙古</a></span>
-                        <span><a href="###" data-lineid="47068">上海迪士尼自由行</a></span>
-                        <span><a href="###" data-lineid="41980">广东 广州 深圳</a></span>
-                    </div>
-                </div>
-                <div class="tag_con js_tab_cont">
-                    <div class="showed list">
-
-                        <div class="tu_wen">
-                            <ul>
-                                <li >
-                                    <div class="pic"><a href="/line/266214.htm" target="_blank" title="&amp;lt;快乐环岛&amp;gt;昆明到厦门双飞4日"><img src="http://x1.cncnimg.cn/p10068/360/5292.jpg!s" border="0" alt="&amp;lt;快乐环岛&amp;gt;昆明到厦门双飞4日" width="75" height="50"></a></div>
-                                    <div class="type">
-                                        [跟团游]<a href="/line/266214.htm" target="_blank">&lt;快乐环岛&gt;昆明到厦门双飞4日<em>赠送惠和石文化园、海鲜特色餐</em></a>                <p>
-                                        <span>出发城市：昆明</span>
-                                        <span>行程天数：4天</span>
-                                        <span>交通方式：飞机去飞机回</span>
-                                        <span>出发日期：08/11、08/16...&nbsp;<a href="/line/266214.htm">更多</a></span>
-                                    </p>
-                                    </div>
-                                    <div class="price">
-                                        <em><b>￥</b>2450</em>起
-                                    </div>
-                                </li>
-                                <li >
-                                    <div class="pic"><a href="/line/266668.htm" target="_blank" title="&amp;lt;扬帆厦门&amp;gt;昆明到厦门双飞5日"><img src="http://x1.cncnimg.cn/p10068/360/4e41.jpg!s" border="0" alt="&amp;lt;扬帆厦门&amp;gt;昆明到厦门双飞5日" width="75" height="50"></a></div>
-                                    <div class="type">
-                                        [跟团游]<a href="/line/266668.htm" target="_blank">&lt;扬帆厦门&gt;昆明到厦门双飞5日<em>乘帆船出海</em></a>                <p>
-                                        <span>出发城市：昆明</span>
-                                        <span>行程天数：5天</span>
-                                        <span>交通方式：飞机去飞机回</span>
-                                        <span>出发日期：08/10、08/12...&nbsp;<a href="/line/266668.htm">更多</a></span>
-                                    </p>
-                                    </div>
-                                    <div class="price">
-                                        <em><b>￥</b>2950</em>起
-                                    </div>
-                                </li>
-                                <li >
-                                    <div class="pic"><a href="/line/266664.htm" target="_blank" title="&amp;lt;探密客家&amp;gt;昆明到厦门、土楼双飞5日"><img src="http://x1.cncnimg.cn/p10068/361/0628.jpg!s" border="0" alt="&amp;lt;探密客家&amp;gt;昆明到厦门、土楼双飞5日" width="75" height="50"></a></div>
-                                    <div class="type">
-                                        [跟团游]<a href="/line/266664.htm" target="_blank">&lt;探密客家&gt;昆明到厦门、土楼双飞5日<em>世界文化遗产福建土楼</em></a>                <p>
-                                        <span>出发城市：昆明</span>
-                                        <span>行程天数：5天</span>
-                                        <span>交通方式：飞机去飞机回</span>
-                                        <span>出发日期：08/11、08/16...&nbsp;<a href="/line/266664.htm">更多</a></span>
-                                    </p>
-                                    </div>
-                                    <div class="price">
-                                        <em><b>￥</b>2750</em>起
-                                    </div>
-                                </li>
-                                <li >
-                                    <div class="pic"><a href="/line/282274.htm" target="_blank" title="北海涠洲岛双卧六日游"><img src="http://x1.cncnimg.cn/p10068/395/b40b.jpg!s" border="0" alt="北海涠洲岛双卧六日游" width="75" height="50"></a></div>
-                                    <div class="type">
-                                        [跟团游]<a href="/line/282274.htm" target="_blank">北海涠洲岛双卧六日游<em>纯玩无购物店</em></a>                <p>
-                                        <span>出发城市：昆明</span>
-                                        <span>行程天数：6天</span>
-                                        <span>交通方式：火车去火车回</span>
-                                        <span>出发日期：天天发团</span>
-                                    </p>
-                                    </div>
-                                    <div class="price">
-                                        <em><b>￥</b>1800</em>起
-                                    </div>
-                                </li>
-                                <li >
-                                    <div class="pic"><a href="/line/282540.htm" target="_blank" title="《爸妈乐》北京+天津双飞6日游"><img src="http://x1.cncnimg.cn/p10068/395/d587.jpg!s" border="0" alt="《爸妈乐》北京+天津双飞6日游" width="75" height="50"></a></div>
-                                    <div class="type">
-                                        [跟团游]<a href="/line/282540.htm" target="_blank">《爸妈乐》北京+天津双飞6日游<em>纯玩无购物</em></a>                <p>
-                                        <span>出发城市：昆明</span>
-                                        <span>行程天数：6天</span>
-                                        <span>交通方式：飞机去飞机回</span>
-                                        <span>出发日期：08/16、08/18...&nbsp;<a href="/line/282540.htm">更多</a></span>
-                                    </p>
-                                    </div>
-                                    <div class="price">
-                                        <em><b>￥</b>3550</em>起
-                                    </div>
-                                </li>
-                                <li >
-                                    <div class="pic"><a href="/line/291027.htm" target="_blank" title="内蒙古定制游"><img src="http://x1.cncnimg.cn/p10068/406/be5c.jpg!s" border="0" alt="内蒙古定制游" width="75" height="50"></a></div>
-                                    <div class="type">
-                                        [跟团游]<a href="/line/291027.htm" target="_blank">内蒙古定制游<em>定制纯玩</em></a>                <p>
-                                        <span>出发城市：昆明</span>
-                                        <span>行程天数：5天</span>
-                                        <span>交通方式：飞机去飞机回</span>
-                                        <span>出发日期：天天发团</span>
-                                    </p>
-                                    </div>
-                                    <div class="price">
-                                        <em><b>￥</b>1880</em>起
-                                    </div>
-                                </li>
-                                <li >
-                                    <div class="pic"><a href="/line/282537.htm" target="_blank" title="&amp;lt;尊享北京如初见&amp;gt;北京一地双飞4晚5天游"><img src="http://x1.cncnimg.cn/p10068/395/f771.jpg!s" border="0" alt="&amp;lt;尊享北京如初见&amp;gt;北京一地双飞4晚5天游" width="75" height="50"></a></div>
-                                    <div class="type">
-                                        [跟团游]<a href="/line/282537.htm" target="_blank">&lt;尊享北京如初见&gt;北京一地双飞4晚5天游<em>纯玩无购物</em></a>                <p>
-                                        <span>出发城市：昆明</span>
-                                        <span>行程天数：5天</span>
-                                        <span>交通方式：飞机去飞机回</span>
-                                        <span>出发日期：天天发团</span>
-                                    </p>
-                                    </div>
-                                    <div class="price">
-                                        <em><b>￥</b>3590</em>起
-                                    </div>
-                                </li>
-                                <li class="noborder">
-                                    <div class="pic"><a href="/line/270198.htm" target="_blank" title="&amp;lt;玩转江南&amp;gt;昆明到华东双飞6日游（升级版）"><img src="http://x1.cncnimg.cn/p10068/368/a6ba.jpg!s" border="0" alt="&amp;lt;玩转江南&amp;gt;昆明到华东双飞6日游（升级版）" width="75" height="50"></a></div>
-                                    <div class="type">
-                                        [跟团游]<a href="/line/270198.htm" target="_blank">&lt;玩转江南&gt;昆明到华东双飞6日游（升级版）<em>包含三大夜景，1晚杭州四星标准酒店</em></a>                <p>
-                                        <span>出发城市：昆明</span>
-                                        <span>行程天数：6天</span>
-                                        <span>交通方式：飞机去飞机回</span>
-                                        <span>出发日期：天天发团</span>
-                                    </p>
-                                    </div>
-                                    <div class="price">
-                                        <em><b>￥</b>3180</em>起
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-
-
-
-                    </div>
-                    <div class="list">
-
-                    </div>
-                    <div class="list">
-
-                    </div>
-                    <div class="list">
-
-                    </div>
-                    <div class="list">
-
-                    </div>
-                    <div class="list">
-
-                    </div>
-                    <div class="list">
-
-                    </div>
-                    <div class="list">
-
-                    </div>
-                    <div class="list">
-
-                    </div>
-                    <div class="list">
-
-                    </div>
-                    <div class="list">
-
-                    </div>
-                    <div class="list">
-
-                    </div>
-                    <div class="list">
-
-                    </div>
-                    <div class="list">
-
-                    </div>
-                    <div class="list">
-
-                    </div>
-                    <div class="list">
-
-                    </div>
-                    <div class="list">
-
-                    </div>
-                    <div class="list">
-
-                    </div>
-                    <div class="list">
-
-                    </div>
-                    <div class="list">
-
-                    </div>
-                    <div class="list">
-
-                    </div>
-                    <div class="list">
-
-                    </div>
-                </div>
-
-            </div>
-            <div class="list790" htmlfor="9995" id="9995">
-                <h3><span class="more"><a href="/line/chujingyou">更多>></a></span>昆明出发出境游</h3>
-                <div class="tag_top">
-                    <div class="js_tab_fn" htmlfor="9995">
-                        <span class="on"><a href="###">所有线路</a></span>
-                        <span><a href="###" data-lineid="48203">澳门</a></span>
-                        <span><a href="###" data-lineid="48202">德国</a></span>
-                        <span><a href="###" data-lineid="48201">北欧</a></span>
-                        <span><a href="###" data-lineid="48200">俄罗斯</a></span>
-                        <span><a href="###" data-lineid="48192">新加坡，马来西亚</a></span>
-                        <span><a href="###" data-lineid="45761">斯里兰卡</a></span>
-                        <span><a href="###" data-lineid="44808">美国 加拿大</a></span>
-                        <span><a href="###" data-lineid="44807">欧洲</a></span>
-                        <span><a href="###" data-lineid="41815">香港</a></span>
-                    </div>
-                </div>
-                <div class="tag_con js_tab_cont">
-                    <div class="showed list">
-
-                        <div class="tu_wen">
-                            <ul>
-                                <li >
-                                    <div class="pic"><a href="/line/291146.htm" target="_blank" title="台湾8日游"><img src="http://x1.cncnimg.cn/p10068/406/a132.jpg!s" border="0" alt="台湾8日游" width="75" height="50"></a></div>
-                                    <div class="type">
-                                        [跟团游]<a href="/line/291146.htm" target="_blank">台湾8日游<em>品质超值游</em></a>                <p>
-                                        <span>出发城市：昆明</span>
-                                        <span>行程天数：8天</span>
-                                        <span>交通方式：飞机去飞机回</span>
-                                        <span>出发日期：08/25、08/28&nbsp;<a href="/line/291146.htm">更多</a></span>
-                                    </p>
-                                    </div>
-                                    <div class="price">
-                                        <em><b>￥</b>2880</em>起
-                                    </div>
-                                </li>
-                                <li >
-                                    <div class="pic"><a href="/line/291259.htm" target="_blank" title="深圳出发，深圳香港4日游"><img src="http://x1.cncnimg.cn/p10068/406/a0d9.jpg!s" border="0" alt="深圳出发，深圳香港4日游" width="75" height="50"></a></div>
-                                    <div class="type">
-                                        [跟团游]<a href="/line/291259.htm" target="_blank">深圳出发，深圳香港4日游</a>                <p>
-                                        <span>出发城市：昆明</span>
-                                        <span>行程天数：4天</span>
-                                        <span>交通方式：轮船去轮船回</span>
-                                        <span>出发日期：天天发团</span>
-                                    </p>
-                                    </div>
-                                    <div class="price">
-                                        <em><b>￥</b>1780</em>起
-                                    </div>
-                                </li>
-                                <li >
-                                    <div class="pic"><a href="/line/256885.htm" target="_blank" title="法、德、意、瑞4国12日游红色法拉利"><img src="http://x1.cncnimg.cn/p10068/354/ede5.jpg!s" border="0" alt="法、德、意、瑞4国12日游红色法拉利" width="75" height="50"></a></div>
-                                    <div class="type">
-                                        [品质游]<a href="/line/256885.htm" target="_blank">法、德、意、瑞4国12日游红色法拉利</a>                <p>
-                                        <span>出发城市：昆明</span>
-                                        <span>行程天数：12天</span>
-                                        <span>交通方式：飞机去飞机回</span>
-                                        <span>出发日期：天天发团</span>
-                                    </p>
-                                    </div>
-                                    <div class="price">
-                                        <em><b>￥</b>8999</em>起
-                                    </div>
-                                </li>
-                                <li >
-                                    <div class="pic"><a href="/line/284272.htm" target="_blank" title="昆明埃及6晚8天（铂金之旅）"><img src="http://x1.cncnimg.cn/p10068/395/62b6.jpg!s" border="0" alt="昆明埃及6晚8天（铂金之旅）" width="75" height="50"></a></div>
-                                    <div class="type">
-                                        [跟团游]<a href="/line/284272.htm" target="_blank">昆明埃及6晚8天（铂金之旅）<em>全程2个购物点</em></a>                <p>
-                                        <span>出发城市：昆明</span>
-                                        <span>行程天数：8天</span>
-                                        <span>交通方式：飞机去飞机回</span>
-                                        <span>出发日期：天天发团</span>
-                                    </p>
-                                    </div>
-                                    <div class="price">
-                                        <em><b>￥</b>17500</em>起
-                                    </div>
-                                </li>
-                                <li >
-                                    <div class="pic"><a href="/line/195803.htm" target="_blank" title="昆明-河口-越南老街-河内-下龙湾-吉婆岛五晚六天"><img src="http://x1.cncnimg.cn/p10068/247/7351.jpg!s" border="0" alt="昆明-河口-越南老街-河内-下龙湾-吉婆岛五晚六天" width="75" height="50"></a></div>
-                                    <div class="type">
-                                        [跟团游]<a href="/line/195803.htm" target="_blank">昆明-河口-越南老街-河内-下龙湾-吉婆岛五晚六天</a>                <p>
-                                        <span>出发城市：昆明</span>
-                                        <span>行程天数：6天</span>
-                                        <span>交通方式：火车去火车回</span>
-                                        <span>出发日期：天天发团</span>
-                                    </p>
-                                    </div>
-                                    <div class="price">
-                                        <em><b>￥</b>1380</em>起
-                                    </div>
-                                </li>
-                                <li >
-                                    <div class="pic"><a href="/line/291065.htm" target="_blank" title="泰国沙美岛5晚6天"><img src="http://x1.cncnimg.cn/p10068/406/ee9c.jpg!s" border="0" alt="泰国沙美岛5晚6天" width="75" height="50"></a></div>
-                                    <div class="type">
-                                        [跟团游]<a href="/line/291065.htm" target="_blank">泰国沙美岛5晚6天<em>品质游</em></a>                <p>
-                                        <span>出发城市：昆明</span>
-                                        <span>行程天数：6天</span>
-                                        <span>交通方式：飞机去飞机回</span>
-                                        <span>出发日期：天天发团</span>
-                                    </p>
-                                    </div>
-                                    <div class="price">
-                                        <em><b>￥</b>2980</em>起
-                                    </div>
-                                </li>
-                                <li class="noborder">
-                                    <div class="pic"><a href="/line/291067.htm" target="_blank" title="越南芽庄6日游"><img src="http://x1.cncnimg.cn/p10068/406/07ea.jpg!s" border="0" alt="越南芽庄6日游" width="75" height="50"></a></div>
-                                    <div class="type">
-                                        [跟团游]<a href="/line/291067.htm" target="_blank">越南芽庄6日游<em>品质，超值游</em></a>                <p>
-                                        <span>出发城市：昆明</span>
-                                        <span>行程天数：6天</span>
-                                        <span>交通方式：飞机去飞机回</span>
-                                        <span>出发日期：天天发团</span>
-                                    </p>
-                                    </div>
-                                    <div class="price">
-                                        <em><b>￥</b>1799</em>起
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-
-
-
-                    </div>
-                    <div class="list">
-
-                    </div>
-                    <div class="list">
-
-                    </div>
-                    <div class="list">
-
-                    </div>
-                    <div class="list">
-
-                    </div>
-                    <div class="list">
-
-                    </div>
-                    <div class="list">
-
-                    </div>
-                    <div class="list">
-
-                    </div>
-                    <div class="list">
-
-                    </div>
-                    <div class="list">
-
-                    </div>
-                    <div class="list">
-
-                    </div>
-                    <div class="list">
-
-                    </div>
-                    <div class="list">
-
-                    </div>
-                    <div class="list">
-
-                    </div>
-                    <div class="list">
-
-                    </div>
-                    <div class="list">
-
-                    </div>
-                    <div class="list">
-
-                    </div>
-                    <div class="list">
-
-                    </div>
-                    <div class="list">
-
-                    </div>
-                    <div class="list">
-
-                    </div>
-                </div>
-
-            </div>
             <!--<div class="info790">
 <h3>旅游资讯</h3>
 <div class="txt">

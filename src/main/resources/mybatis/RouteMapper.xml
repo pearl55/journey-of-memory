@@ -9,6 +9,7 @@
       </where>
   </select>
 
+<!--查询景点 根据地点模糊查询查询-->
     <select id="getScenery" resultType="com.fourth.bean.Scenery" parameterType="com.fourth.bean.Scenery">
        select * from route,address,scenery,detailed
        <where>
@@ -21,8 +22,16 @@
        </where>
     </select>
 
-    <select id="getAddress" resultType="com.fourth.bean.Address" parameterType="String">
-        select * from address WHERE  address_name=#{addressname};
+    <select id="getSceneryById" resultType="com.fourth.bean.Scenery" parameterType="int">
+        SELECT  * FROM scenery WHERE scenery_id=#{id};
     </select>
 
+    <insert id="getOrderForm" parameterType="com.fourth.bean.OrderForm">
+        INSERT  INTO  orderform(orderform_number,orderform_day,orderform_date,orderform_address,orderform_price,orderform_title,orderform_rode,orderform_type)
+        VALUES (#{orderform_Number},#{orderform_Day},#{orderform_Date},#{orderform_Address},#{orderform_Price},#{orderform_Title},#{orderform_Rode},#{orderform_Type});
+    </insert>
+
+    <select id="getSceneryFindAll" resultType="com.fourth.bean.Scenery">
+        SELECT * FROM scenery;
+    </select>
 </mapper>

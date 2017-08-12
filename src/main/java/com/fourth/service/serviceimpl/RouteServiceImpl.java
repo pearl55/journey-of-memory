@@ -1,6 +1,7 @@
 package com.fourth.service.serviceimpl;
 
 import com.fourth.bean.Address;
+import com.fourth.bean.OrderForm;
 import com.fourth.bean.Route;
 import com.fourth.bean.Scenery;
 import com.fourth.dao.RouteMapper;
@@ -33,6 +34,21 @@ public class RouteServiceImpl implements RouteService {
     @Override
     public Address getAddress(String addressname) {
         return routeMapper.getAddress(addressname);
+    }
+
+    @Override
+    public Scenery getSceneryById(int id) {
+        return routeMapper.getSceneryById(id);
+    }
+
+    @Override
+    public void getOrderForm(OrderForm orderForm) {
+        routeMapper.getOrderForm(orderForm);
+    }
+
+    @Override
+    public List<Scenery> getSceneryFindAll() {
+        return routeMapper.getSceneryFindAll();
     }
 
 

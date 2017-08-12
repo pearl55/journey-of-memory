@@ -37,7 +37,7 @@
                 <p><a href="/"><img src="http://x1.cncnimg.cn/p10068/374/4157.jpg" title="云游旅行网" /></a></p>
             </div>
             <div class="search">
-                <div class="search_con"><form action="/search" target="_self" method="get"><input type="text" name="key" id="seach_input" class="search_txt" value="" /><input type="submit" value="搜索" class="search_sub" /></form></div>
+                <div class="search_con"><form action="/search" target="_self" method="get"><input type="text" name="key"  class="search_txt" value="" /><input type="submit" value="搜索" class="search_sub" /></form></div>
                 <p>
                     <em>热门搜索：</em>
                     <a href="/search/%C0%F6%BD%AD">丽江</a>
@@ -54,16 +54,15 @@
         <div class="nav_layer">
             <div class="nav_layer_con">
                 <ul>
-                    <li ><a href="/"><span>首页<i ></i></span></a></li>
-                    <li ><a href="/hotel"><span>度假酒店<i ></i></span></a></li>
-                    <li ><a href="/qianzheng"><span>签证<i ></i></span></a></li>
-                    <li ><a href="/ticket"><span>门票<i ></i></span></a></li>
-                    <li ><a href="/line/zhoubianyou"><span>昆明出发周边游<i ></i></span></a></li>
-                    <li ><a href="/chujing"><span>出境游<i ></i></span></a></li>
-                    <li ><a href="/guonei"><span>国内游<i ></i></span></a></li>
-                    <li ><a href="/line/yunnantour"><span>云南参团游<i ></i></span></a></li>
-                    <li ><a href="/zt"><span>旅游专题<i ></i></span></a></li>
-                    <li ><a href="/diy"><span>定制您的旅行<i ></i></span></a></li>
+                    <li class="all_pro"><span>全部旅游产品分类</span></li>
+                    <li  class="#"><a href="/HomePage/"><span>首页<i class=""></i></span></a></li>
+                    <li ><a href="#"><span>门票<i ></i></span></a></li>
+                    <li ><a href="/lvyou"><span>旅游<i ></i></span></a></li>
+                    <li ><a href="#"><span>景点<i ></i></span></a></li>
+                    <li ><a href="#"><span>目的地<i ></i></span></a></li>
+                    <li ><a href="#"><span>攻略<i ></i></span></a></li>
+                    <li ><a href="#"><span>旅游专题<i ></i></span></a></li>
+                    <li ><a href="#"><span>个人社区<i class="hot1"></i></span></a></li>
                 </ul>
             </div>
         </div>
@@ -86,8 +85,6 @@
     <body>
     <div class="main line_channel fn-clear">
 
-
-        <div class="now_site">您的位置：<a href="/">首页</a> &gt; <a href="/line" target="_blank">旅游线路</a> > <a href="/line/guoneiyou" target="_blank">昆明出发国内游</a></div>
         <div class="side_l">
 
 
@@ -191,31 +188,42 @@
 
 
         </div>
-        <div class="list_con">
+        <div class="sort mt10">
+            <strong>排序：</strong>
+            <span  class="on"><a href="/lvyou/" hidefocus="true" title="默认排序" rel="nofollow">默认</a></span>
+            <span  class="pr6"><a href="#" hidefocus="true" title="按销量从高到低排序" rel="nofollow">天数<i class="default1"></i></a></span>
+            <span  class="pr6"><a href="#" hidefocus="true" title="按价格从低到高排序" rel="nofollow">价格<i class="default"></i></a>
+        </div>
 
-
-            <div class="list790" th:each="scenery:${scenery}">
+        <div class="list790" >
 
                 <div class="tag_con" id="js_tag_con">
                     <div class="tu_wen">
                         <ul>
-                            <li class="noborder">
+
+                            <!--遍历-->
+                            <li class="noborder" th:each="scenery:${scenery}" >
+
                         <div  class="pic">
-                            <img src="http://x1.cncnimg.cn/p10068/395/b40b.jpg!s" border="0" alt="北京" width="75" height="50">
+                            <img src="" th:attr="src=${scenery.scenery_Img}" border="0" alt="北京" width="75" height="50" >
                         </div>
                                 <div class="type">
-                                    <a href="#" target="_blank" th:text="${scenery.scenery_Title}"></a>
+                                    <em th:text="${scenery.scenery_Type}" style="color: red"></em> <a  target="_blank" th:href="@{/tiaozhuan(id=${scenery.scenery_Id})}" th:text="${scenery.scenery_Title}">123</a>
                                 <p>
                                     <span>出发城市：<span th:text="${scenery.scenery_Address}"></span></span>
-                                    <span>行程天数：<span th:text="${scenery.scenery_Day}"></span></span>
+                                    <span>行程天数：<span th:text="${scenery.scenery_Day}"></span>天</span>
                                     <span>交通方式:<span th:text="${scenery.scenery_Rode}"></span></span>
                                     <span>出发日期:<span th:text="${scenery.scenery_Daytime}"></span></span>
                                 </p>
                                 </div>
                                 <div class="price">
-                                    <em th:text="${scenery.scenery_Price}"><b>￥</b></em>起
+                                    <em ><b>￥</b><span th:text="${scenery.scenery_Price}"></span></em>起
                                 </div>
+
                             </li>
+
+
+
                         </ul>
                     </div>
                 </div>

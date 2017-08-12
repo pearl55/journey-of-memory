@@ -17,7 +17,7 @@ public class Scenery {
     private String scenery_Img;
 
   
-    private String scenery_Price;
+    private int scenery_Price;
 
     private String sceneryPlan;
 
@@ -41,6 +41,9 @@ public class Scenery {
     private int detailed_Did;
 
     private String Aname;
+    private int MenShi;
+    private int ErTong;
+
 
 
 }

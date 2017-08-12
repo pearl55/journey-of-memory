@@ -1,6 +1,7 @@
 package com.fourth.service;
 
 import com.fourth.bean.Address;
+import com.fourth.bean.OrderForm;
 import com.fourth.bean.Route;
 import com.fourth.bean.Scenery;
 
@@ -21,5 +22,11 @@ public interface RouteService {
     */
     List<Scenery> getScenery(Scenery scenery);
     Address getAddress(String addressname);
+    //根据id查询
+    Scenery getSceneryById(int id);
+    //添加订单
+    void getOrderForm(OrderForm orderForm);
+    //查询全部景色
+    List<Scenery> getSceneryFindAll();
 
 }

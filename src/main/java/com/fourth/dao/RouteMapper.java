@@ -1,6 +1,7 @@
 package com.fourth.dao;
 
 import com.fourth.bean.Address;
+import com.fourth.bean.OrderForm;
 import com.fourth.bean.Route;
 import com.fourth.bean.Scenery;
 import org.apache.ibatis.annotations.Mapper;
@@ -25,6 +26,14 @@ public interface RouteMapper {
     List<Scenery> getScenery(Scenery scenery);
 
     Address getAddress(String addressname);
+    //根据id查询
+    Scenery getSceneryById(int id);
+
+    //添加订单
+    void getOrderForm(OrderForm orderForm);
+    //查询全部景色
+    List<Scenery> getSceneryFindAll();
+
 
 
 
