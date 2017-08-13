@@ -31,4 +31,11 @@ public class HomePage {
 
         return "";
     }*/
+    @RequestMapping("/")
+    public String goHomePage(){
+        return "index2";
+    }
+
+
+
 }
