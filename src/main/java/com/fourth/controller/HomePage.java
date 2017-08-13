@@ -9,8 +9,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/HomePage")
 public class HomePage {
-    @RequestMapping("/homepage")
+    @RequestMapping("/")
     public String goHomePage(){
         return "index2";
     }
+
+
 }
