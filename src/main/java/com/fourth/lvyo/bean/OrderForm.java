@@ -1,8 +1,6 @@
-package com.fourth.bean;
+package com.fourth.lvyo.bean;
 
 import lombok.Data;
-
-import java.util.Date;
 
 /**
  * Created by gaoyongpei on 2017/8/10.

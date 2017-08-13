@@ -14,11 +14,5 @@ public class HomePage {
         return "index2";
     }
 
-    /*
-     * 进入旅游页面
-     */
-    @RequestMapping("lvyou")
-    public String getlvyou(){
-        return "lvyou";
-    }
+
 }

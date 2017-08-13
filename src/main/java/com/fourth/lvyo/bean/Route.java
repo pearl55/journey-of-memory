@@ -1,4 +1,4 @@
-package com.fourth.bean;
+package com.fourth.lvyo.bean;
 
 import lombok.Data;
 
