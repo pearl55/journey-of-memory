@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>会员注册</title>
+	<style type="text/css">
+		body{margin:0;background-color:#fff;}
+		.cui_hd_cont{background-color:#fff;clear:both;}
+		#cui_hd{font-family:Arial,tahoma,verdana,"Microsoft YaHei",Simsun,sans-serif;line-height:1.5;font-size:12px;}
+		.cui_hd{min-width:980px;max-width:1180px;height:59px;margin:0 auto;padding:0 10px;background-color:#fff;}
+		.ctriplogo{width:126px;overflow:hidden;padding-top:8px;padding-bottom:8px;}
+		.ctriplogo a{display:block;width:126px;height:43px;overflow:hidden;text-indent:-999px;background:url(images/logo.JPG) 0 0 no-repeat;}
+		:root .ctriplogo a{background-image:url(images/logo.JPG);background-size:100% 100%;}
+		.cui_toolkit{float:right;width:422px;margin-top:-59px;padding-top:20px;text-align:right;color:#bbb;}
+		.cui_toolkit a{text-decoration:none;}
+		.cui_toolkit a:hover{text-decoration:underline;}
+		.cui_kefu{color:#4c4c4c;margin-left:8px;}
+		.cui_username{color:#06c;margin-right:8px;}
+		/* ft */
+		#base_ft{width:950px;clear:both;text-align:center;padding-top:15px;margin:0 auto 20px;font-family:Arial,verdana;color:#4c4c4c;font-size:12px;}
+		#base_ft a{color:#4c4c4c;margin:0 1px;text-decoration:none;}
+		#base_ft a:hover{text-decoration:underline;}
+		#base_ft p .suggestions{color:#06c;}
+	    #backgroundPopup{ display:none; position:fixed; _position:absolute; /* hack for internet explorer 6*/   
+height:100%; width:100%; top:0; left:0; background:#000000; z-index:201}
+	</style>
+<link href="https://accounts.ctrip.com/member/css/reg2.3.css" rel="stylesheet" type="text/css" />
+    
+
+</head>
+<body>
+    <div class="cui_hd_cont">
+		<div id="cui_hd" class="cui_hd">
+			
+			<div class="cui_toolkit">
+				<a href='login.html' class='cui_username'>登录</a>|<a href="http://kefu.ctrip.com" class="cui_kefu">客服中心</a>
+			</div>
+		</div>
+	</div>
+        
+        
+
+  
+    <div class="cui_bd">
+        <div id="backgroundPopup" style="height: 924px; opacity: 0.5; display: none;"></div>
+        <style type="text/css">
+            .suggest-container {
+                border: 1px solid #C1C1C1;
+                visibility: hidden;
+            }
+
+            .suggest-item {
+                padding: 3px 2px;
+            }
+
+            .suggest-active {
+                background: #33CCFF;
+                color: white;
+                padding: 3px 2px;
+            }
+        </style>
+        <form name="aspnetForm" method="post" action="register.action" id="aspnetForm">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwULLTEyMzI5NDI3NzVkZBfNiplwXuO/a8aRhn7bUrBLsohW" />
+</div>
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="FBE090BD" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAAmZy7PZryTbsigM11Ialnck4/QfLsHQGYVYSXJhGOfKYCKgvRijP5cR7wp7WnFU4dtC8mj0x2qcszeBnohw4I4n65iJzCLHkVO2kGDkjn3iKMyQ43FRB5dc45mq3hyL0EOtZ2K+50k8QAti+LvHoyZfkO876gXACs+2TTFGifuAvAs3xkef/s4NIkhXFYD8aPSqTGoIrVVnWoMpG6gxZXCNDgTXLQ==" />
+</div>
+              <input type="hidden" name="ctl00$ContentPlaceHolder1$hideNeedValidateCode" id="hideNeedValidateCode" />
+            <div class="reg_wrap">
+
+                <div class="reg_title">
+                    <h2>会员注册</h2>
+
+                </div>
+                <div class="reg_form reg_form_step1">
+                    <dl id="inputMobile">
+                        <dt class="label">手机号</dt>
+                        <dd>
+                            <input class="r_input input_l" type="text" id="mobilePhone" name="deng" placeholder="可用作登录名" /></dd>
+                    </dl>
+
+
+
+                    <div class="base_error" id="errEmail" style="display: none;"></div>
+                    <dl>
+                        <dt class="label">密码</dt>
+                        <dd>
+                            <input class="r_input input_l" autocomplete="off" type="text" id="userPassword1" placeholder="8-20位字母、数字和符号" /><input class="r_input input_l" type="password" id="userPassword" name="password" style="display: none" maxlength="20" /></dd>
+                        <dd>
+                            <ul class="box_pas_safety">
+                                <li id="strongPwd1">弱</li>
+                                <li id="strongPwd2">中</li>
+                                <li id="strongPwd3">强</li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <div class="base_error" id="errPassword" style="display: none"></div>
+
+                    <dl>
+                        <dt class="label">确认密码</dt>
+                        <dd>
+                            <input class="r_input input_l" type="text" id="rePassword1" placeholder="再次输入密码" /><input class="r_input input_l" type="password" id="rePassword" name="rePassword" placeholder="再次输入密码" style="display: none" maxlength="20" /></dd>
+                    </dl>
+                    <div class="base_error" id="errRepwd" style="display: none"></div>
+
+                 
+
+                    <div class="base_error" id="errVerifyCode" style="display: none"></div>
+                    <dl>
+                        <dt class="label">&nbsp;</dt>
+                        <dd>
+                            <label class="base_label">
+                                <input type="checkbox" value="" id="tosCheckBox"/>我已阅读并同意<span style="color: #666;" id="regprotocolShow">&lt;&lt;<a href="http://pages.ctrip.com/public/serve%20guideline.htm?1"  target="_blank">服务协议</a>&gt;&gt;和&lt;&lt;<a href="http://pages.ctrip.com/public/serve%20guideline.htm?2" target="_blank">隐私政策</a>&gt;&gt;</span></label></dd>
+                    </dl>
+                    <dl class="form_space">
+                        <dt class="label">&nbsp;</dt>
+                        <dd>
+                            <input type="submit" name="ctl00$ContentPlaceHolder1$reg_btnSubmit" value="下一步，验证" onclick="return checkRegist();" id="ctl00_ContentPlaceHolder1_reg_btnSubmit" class="reg_btn_disabled" />
+                            <br />
+                            <a href="http://help.ctrip.com/QuestionList.aspx?parentId=1&directoryId=12" target="_blank">注册遇到问题？</a></dd>
+                    </dl>
+                </div>
+                
+                
+                    <a href="registerCard.aspx" class="to_card"><i></i>合作卡会员注册 &gt;</a>
+                
+            </div>
+            <input type="hidden" id="ab_testing_tracker" value=""/>
+            <input type="hidden" id="page_id" value="100095" />
+            <input type="hidden" name="hidEmail" id="hidEmail" />
+            <input type="hidden" name="hidAction" id="hidAction" value="0" />
+            <input type="hidden" name="hidPhone" id="hidPhone" />
+            <input type="hidden" id="uti" value="MjAxNy04LTggOTo1MDoxMw==" />
+            <input type="hidden" name="ctl00$ContentPlaceHolder1$hidEmailRetcode" id="ctl00_ContentPlaceHolder1_hidEmailRetcode" value="0" />
+            <input type="hidden" name="ctl00$ContentPlaceHolder1$hidEmailValue" id="ctl00_ContentPlaceHolder1_hidEmailValue" value="0" />
+            <input type="hidden" name="hidCode" id="hidCode" />
+            <input type="hidden" name="ctl00$ContentPlaceHolder1$hidCheckMobileRetcode" id="ctl00_ContentPlaceHolder1_hidCheckMobileRetcode" value="0" />
+            <input type="hidden" name="ctl00$ContentPlaceHolder1$hidMobilePhone" id="ctl00_ContentPlaceHolder1_hidMobilePhone" value="0" />
+            <input type="hidden" name="ctl00$ContentPlaceHolder1$hidVerifyCode" id="ctl00_ContentPlaceHolder1_hidVerifyCode" value="0" />
+            <input type="hidden" name="ctl00$ContentPlaceHolder1$hidImgCodeDatahash" id="ctl00_ContentPlaceHolder1_hidImgCodeDatahash" />
+        </form>
+    </div>
+
+    <div class="base_pop" style="width: 680px; display: none; z-index: 999;" id="tos">
+        <div class="pop_hd">
+            <a class="pop_close" href="javascript:void(0)" onclick="closeTos()">&times;</a>
+            <h3 id="regprotocolTitle">记忆之旅网服务协议</h3>
+        </div>
+        <div class="pop_bd" style="overflow: hidden;">
+            <div class="clause_wrap" >
+                <div class="clause_box" id="regprotocolContent">
+                    </div>
+            </div>
+
+            <div class="pop_btn">
+                <a href="javascript:;" class="btn02" id="checkTos">已阅读并同意条款</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="base_pop" id="showMsg" style="width: 400px; display: none; z-index: 999;">
+        <div class="pop_hd">
+            <a class="pop_close" href="javascript:void(0);">&times;</a>
+            <h3>提示</h3>
+        </div>
+        <div class="pop_bd">
+            <p class="emai_text">您输入的注册信息无法通过验证，请稍候再试或致电10106666进行咨询。</p>
+            <div class="pop_btn">
+            </div>
+        </div>
+    </div>
+    <script src="https://accounts.ctrip.com/member/JScript/jquery.min.js" type="text/javascript"></script>
+    <script src="https://accounts.ctrip.com/member/JScript/register.src.js" type="text/javascript"></script>
+    <script src="https://accounts.ctrip.com/member/JScript/Complete.js" type="text/javascript"></script>
+    <script type="text/javascript" src="https://webresource.c-ctrip.com/resh5websdkonline/R3/min/js-apss.js" charset="utf-8"></script>
+    <script type="text/javascript">
+       
+        var mobileRetcode = $("#" + "ctl00_ContentPlaceHolder1_hidCheckMobileRetcode").val();;
+        var hidMobilePhone = $("#" + "ctl00_ContentPlaceHolder1_hidMobilePhone").val();
+        var EmailRetcode = $("#" + "ctl00_ContentPlaceHolder1_hidEmailRetcode").val();
+        var hidEmailvalue = $("#" + "ctl00_ContentPlaceHolder1_hidEmailValue").val();
+        var reg_btnSubmit = $("#" + "ctl00_ContentPlaceHolder1_reg_btnSubmit");
+        var hidImgCodeHash = $("#" + "ctl00_ContentPlaceHolder1_hidImgCodeDatahash"); 
+        var isNeedValidateCode = $("#hideNeedValidateCode").val();
+        var inputMobile = true;
+        var EmailSuggest;
+        var nowid;
+        var totalid;
+        var can1press = false;
+        var emailafter;
+        var emailbefor;
+
+        //异步加载反爬Js
+        (function () {
+            var nts = document.createElement('script');
+            nts.type = 'text/javascript';
+            nts.async = true;
+            nts.src = "https://webresource.c-ctrip.com/resseanjsonline/R1/ctranibottip.js" + "?t=" + new Date().getTime();
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(nts, s);
+        })();
+
+        $(document).ready(function () {
+            var localHost = window.location.host;
+            if (localHost.indexOf("big5") > 0 || localHost.indexOf(".hk") > 0) {
+                $("#inputMobile").css("display", "none");
+                inputMobile = false;
+            }
+            else {
+                $("#inputMobile").css("display", "block");
+                inputMobile = true;
+            }                     
+            var doc = document,
+            inputs = doc.getElementsByTagName('input'),
+            supportPlaceholder = 'placeholder' in doc.createElement('input'), 
+            placeholder = function (input) {
+                var text = input.getAttribute('placeholder'),
+                defaultValue = input.defaultValue;
+
+                if (defaultValue == '') {
+                    input.value = text
+                    input.style.color = "#666";
+                }
+                input.onfocus = function () {
+                    if (input.value === text) { this.value = ''; this.style.color = "#666"; }
+                    else {
+                        input.style.color = "#000";
+                    }
+                };
+                input.onblur = function () {
+                    if (input.value === '') { this.value = text; this.style.color = "#666"; } else {
+                        this.style.color = "#000";
+                    }
+                };
+                input.onkeyup = function () {
+                    if (input.value !== "" && input.value !== text)
+                    { this.style.color = "#000"; }
+                    else {
+                        this.style.color = "#666";
+                    }
+                }
+            };
+            if (!supportPlaceholder) {
+                for (var i = 0, len = inputs.length; i < len; i++) {
+                    var input = inputs[i], text = input.getAttribute('placeholder');
+                    if ((input.type === 'text') && text) { placeholder(input) }
+                }
+            }
+            CheckMobileFromServer();
+            CheckEmailFromServer();
+            if (isNeedValidateCode == "True") {
+                if ($("#ctl00_ContentPlaceHolder1_hidVerifyCode").val() === "1") {
+                    $("#imgCode").click();                    
+                    errShow($("#errVerifyCode"), true, "请输入正确的验证码。");
+                }
+                else if ($("#ctl00_ContentPlaceHolder1_hidVerifyCode").val() === "2") {
+                    popUp("showMsg");
+                }
+                else {
+                    refreshVerifyCode();
+                    errShow($("#errVerifyCode"), false, "");
+                }
+            }
+            if ($("#tosCheckBox").is(':checked')) {
+                $("#reg_btnSubmit").removeClass("reg_btn_disabled");
+                $("#reg_btnSubmit").addClass("reg_btn");
+            }
+
+            //email自动完成
+            EmailSuggest = new InputSuggest({
+                input: document.getElementById('emailAddress'),
+                data: ['sina.com', '163.com', '126.com', 'qq.com', 'sina.cn', 'hotmail.com', 'gmail.com', 'sohu.com', '139.com', '189.cn', 'yeah.net']
+            });
+
+            //document.getElementById("regprotocolShow").innerHTML = "&lt;&lt;" + staticMessage.registprotocolTip + "&gt;&gt;";
+
+        });
+
+        //keyCollector && keyCollector.define("input.mobilePhone", "input.emailAddress", "input.rePassword");
+
+       
+        
+    </script>
+
+<div id="base_ft">
+	<p>
+		<a href="http://pages.ctrip.com/public/sitemap/sitemap.htm" title="网站导航">网站导航</a> |
+		<a href="http://pages.ctrip.com/public/sitemap/cityHotel.htm" title="宾馆索引">宾馆索引</a> |
+		<a href="http://pages.ctrip.com/public/serve%20guideline.htm" title="用户协议">用户协议</a> |
+		<a href="http://pages.ctrip.com/public/ctripab/abctrip.htm" title="关于携程">关于记忆之旅</a> |
+		<a href="http://pages.ctrip.com/commerce/promote/201201/other/qygm/index.html" title="企业公民">企业公民</a> | 
+		<a href="http://job.ctrip.com/" title="诚聘英才">诚聘英才</a> |
+		<a href="http://u.ctrip.com/" title="分销联盟">分销联盟</a> |
+		<a href="http://pages.ctrip.com/commerce/promote/201012/other/yp/index.html" title="企业礼品卡采购">企业礼品卡采购</a> |
+		<a href="http://pages.ctrip.com/public/dlhz.htm" title="代理合作">代理合作</a> |
+		<a href="http://pages.ctrip.com/public/ctripad/adyw.htm" title="广告业务">广告业务</a> |
+		<a href="http://pages.ctrip.com/public/contact.htm" title="联系我们">联系我们</a> |
+		<a href="http://my.ctrip.com/uxp/Community/CommunityAdvice.aspx" title="我要提建议"  rel="nofollow" class="suggestions">我要提建议</a>
+	</p>
+	<p class="copyright"><a href="http://pages.ctrip.com/public/copyright.htm">Copyright&copy;</a> 1999-2017, <a href="http://www.ctrip.com">ctrip.com</a>. all rights reserved.</p>
+</div>
+
+
+        <script type="text/javascript">
+            //加载UBT 数据采集代码
+            (function () {
+                var slist = document.getElementsByTagName('script') || [];
+                var reg = /_bfa\.min\.js/i;
+                for (var i = 0; i < slist.length; i++) {
+                    if (reg.test(slist[i].src)) {
+                        return;
+                    }
+                }
+                if ((window.$_bf && window.$_bf.loaded) || window.$LAB || window.CtripJsLoader) {
+                    return;
+                }
+                var d = new Date();
+                var v = '?v=' + d.getFullYear() + d.getMonth() + '_' + d.getDate() + '.js';
+                var bf = document.createElement('script');
+                bf.type = 'text/javascript';
+                bf.charset = 'utf-8';
+                bf.async = true;
+                try {
+                    var p = 'https:' == document.location.protocol;
+                } catch (e) {
+                    var p = 'https:' == document.URL.match(/[^:]+/) + ":";
+                }
+                bf.src = (p ? "https://s.c-ctrip.com/_bfa.min.js" + v : 'http://webresource.c-ctrip.com/code/ubt/_bfa.min.js' + v);
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(bf, s);
+
+            })();
+        </script>
+</body>
+</html>
