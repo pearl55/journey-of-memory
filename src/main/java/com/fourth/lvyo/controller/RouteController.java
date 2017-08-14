@@ -1,5 +1,6 @@
 package com.fourth.lvyo.controller;
 
+import com.fourth.User.bean.User;
 import com.fourth.lvyo.bean.OrderForm;
 import com.fourth.lvyo.bean.Route;
 import com.fourth.lvyo.bean.Scenery;
@@ -8,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 import java.util.Map;
 
@@ -22,6 +24,9 @@ public class RouteController {
     private RouteService routeService;
 
 
+    /*
+    根据线路查询
+     */
     @RequestMapping(method = RequestMethod.GET, value = "/lvyou/{routeNumber}")
     public String getRoute(@PathVariable("routeNumber") String routeNumber, Map<String, Object> map,Scenery scenery) {
         System.out.println("getroute------------------------" + routeNumber);
@@ -32,9 +37,13 @@ public class RouteController {
         return "lvYouXianLu2";
     }
 
+    /*
+    点击旅游首页
+     */
     @RequestMapping("lvyou")
-    public String getRoute2(Map<String, Object> map) {
+    public String getRoute2(Map<String, Object> map, HttpSession session) {
         System.out.println("getroute+----------");
+        User user = (User) session.getAttribute("useri");
         List<Scenery> scenery = routeService.getSceneryFindAll();
         int tj = 2;
         int tj1= 7;
@@ -44,9 +53,13 @@ public class RouteController {
         map.put("tuijian",sce);
         map.put("tuijian1",sce1);
         map.put("scenery",scenery);
+
         return "lvYouXianLu";
     }
 
+    /*
+    根据地区查询
+     */
     @RequestMapping(method = RequestMethod.GET, value = "/line/{addressname}")
     public String getAddressname(@PathVariable("addressname") String addressname,Scenery scenery, Map<String, Object> map) {
         System.out.println("getAddressname------------------------" + addressname);
@@ -55,6 +68,9 @@ public class RouteController {
         map.put("scenery",list);
         return "lvYouXianLu2";
     }
+    /*
+    根据id查询一个
+     */
     @RequestMapping("/tiaozhuan")
     public String getSceneryById(int id,Map<String, Object> map){
         System.out.println("getSceneryById");
@@ -74,7 +90,10 @@ public class RouteController {
         return "jingse";
     }
 
-    @RequestMapping("GetOrderForm")
+    /*
+       订单
+     */
+    @RequestMapping("/GetOrderForm")
     public String getOrderForm(OrderForm orderForm){
         System.out.println(orderForm.getOrderform_Date());
         System.out.println("GetOrderForm");
@@ -86,6 +105,7 @@ public class RouteController {
         int C = orderForm.getChild_Num()*cm;
         orderForm.setOrderform_Price(A+C);
         orderForm.setOrderform_Number(number);
+        System.out.println(orderForm.getUser_Id()+"11111111");
         routeService.getOrderForm(orderForm);
         return "index2";
     }

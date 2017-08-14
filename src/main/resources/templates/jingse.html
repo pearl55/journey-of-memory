@@ -56,7 +56,7 @@
             <div class="nav_layer_con">
                 <ul>
                     <li class="all_pro"><span>全部旅游产品分类</span></li>
-                    <li  class="#"><a href="/HomePage/"><span>首页<i class=""></i></span></a></li>
+                    <li  class="#"><a href="/"><span>首页<i class=""></i></span></a></li>
                     <li ><a href="#"><span>门票<i ></i></span></a></li>
                     <li ><a href="/lvyou"><span>旅游<i ></i></span></a></li>
                     <li ><a href="#"><span>景点<i ></i></span></a></li>
@@ -89,12 +89,24 @@
         $(document).ready(function() {
             $("#line_order").click(function () {
                 var date = document.getElementById("shijian").value;
-                var date = document.getElementById("shijian").value;
-                if (date =="") {
+                $.ajax({
+                    type: "post",
+                    url: "ceshi",
+                    dataType:"json",
+                    success: function (data) {
+                      if(data!=0){
+                            $("#user_Id").val(data)
+                       }else if(data==0) {
+                          alert("请登入或者注册")
+                          window.location.href = "login.html";
+                          return false;
+                      }
+                    }
+                })
+                if (date == "") {
                     alert("请选择出发时间");
                     return false;
                 }
-
             })
         })
     </script>
@@ -203,7 +215,6 @@
                         <dt>套餐类型：<span th:text="${scenery.scenery_Type}"></span></dt>
                     </dl>
 
-                    <dl id="calendar" style="display:none"><b onClick="line.close_calendar();" id="cal_hide">隐藏</b></dl>
                     <dl>
                         <dd >
                             <form id="line_order"  method="post" action="/GetOrderForm">
@@ -225,6 +236,7 @@
                                 <input  type="hidden" th:value="${scenery.scenery_Day}" name="orderform_Day">
                                 <input  type="hidden" th:value="${scenery.scenery_Rode}" name="orderform_Rode">
                                 <input  type="hidden" th:value="${scenery.scenery_Type}" name="orderform_Type">
+                                <input  type="text" name="user_Id" id="user_Id" >
                                 <span style="width:125px; height:36px;">
                         <input name="imageField" type="image" src="http://xnxw.cncnimg.cn/images/front/home/btn_order.png" alt="立刻预订" onClick="line.order()">
                                 <!--<input type="submit" value="提交">-->
