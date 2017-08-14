@@ -49,6 +49,7 @@ public class UserController {
      */
     @RequestMapping("login.action")
     public String login(String deng, String password, HttpSession session, Model model){
+
         System.out.print(deng+"密码"+password);
         Map<String,Object> params=new HashMap<String,Object>();
        /* System.out.print(Phone+"---"+password);*/
@@ -71,7 +72,7 @@ public class UserController {
               /*   System.out.print("567");*/
                 model.addAttribute("user",user);
              /*  session.setAttribute("user",user);*/
-                return "success";
+                return "index2";
             }
         }
 
@@ -177,4 +178,22 @@ public class UserController {
         session.invalidate();
         return "index2";
     }
+    /*
+     ajax检测登录
+     */
+    @RequestMapping("ceshi")
+    @ResponseBody
+    public int jiance(HttpSession session){
+        int  id= 0;
+        User user = user = (User) session.getAttribute("useri");
+        System.out.println("----------ceshi");
+        if(user!=null){
+           id = user.getId();
+            //System.out.println("id="+id);
+            return id;
+        }else{
+            //System.out.println("空");
+            return id;
+        }
+    };
 }

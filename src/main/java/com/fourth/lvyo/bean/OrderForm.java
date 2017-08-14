@@ -16,7 +16,7 @@ public class OrderForm {
     private String orderform_Title;
     private String orderform_Rode;
     private String orderform_Type;
-
+    private int user_Id;
 
     private int adult_Num;
     private int child_Num;
