@@ -3,9 +3,7 @@ package com.fourth.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-/**
- * Created by a on 2017/8/11.
- */
+
 @Controller
 public class HomePage {
     /**
