@@ -10,7 +10,7 @@
     <link href="http://xnxw.cncnimg.cn/css/front/base.css" rel="stylesheet" type="text/css"/>
     <link href="http://xnxw.cncnimg.cn/css/front/templet2/home1.css?v=0317" rel="stylesheet" type="text/css"/>
     <link href="http://xnxw.cncnimg.cn/css/front/templet2/home1_color1.css?v=0317" rel="stylesheet" type="text/css"/>
-    <script src="../js/userUpdate.js"></script>
+    <script src="js/userUpdate.js"></script>
     <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -67,7 +67,7 @@
         <div class="nav_layer">
             <div class="nav_layer_con">
                 <ul>
-                    <li class="on"><a th:href="@{getHome.action?(deng=${user.deng})}"><span>首页<i class=""></i></span></a></li>
+                    <li class="on"><a  href="/"><span>首页<i class=""></i></span></a></li>
                     <!--<li ><a href="/hotel"><span>度假酒店<i class="hot"></i></span></a></li>
                      <li ><a href="/qianzheng"><span>签证<i ></i></span></a></li>-->
                     <li><a href="/ticket"><span>门票<i></i></span></a></li>
@@ -245,6 +245,9 @@ $(function ($) {
 <link rel="stylesheet" type="text/css"
       href="http://img4.tuniucdn.com/s/20140409/user_center/user_center_travelnote.css"/>
 <link rel="stylesheet" type="text/css" href="http://img4.tuniucdn.com/s/20160615/guide/youji/myyouji.css">
+<script src="js/jquery-2.1.4.js"></script>
+<script src="js/bootstrap.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
 
 <script>
     var page_uid = "49918211";
@@ -255,6 +258,13 @@ $(function ($) {
     var totalSpotAmount = 0;
     var cityCount = 0;
     var footprint_url = "http://www.tuniu.com/person/footprint/D41487D5BC5EBF33F3AD117AE2361877";
+</script>
+<script>
+    $(document).ready(function(){
+        $("#dingdan").click(function(){
+            $("#dingdanlist").attr("class","")
+        });
+    });
 </script>
 <style>
     .offer_service {
@@ -386,12 +396,12 @@ $(function ($) {
             <input type="hidden" class="page_uid" value="49918211"/>
             <input type="hidden" name="csrf_token" id="csrf_token" value="a0bd915b4ef95758391363eb15b4b0b6"/>
             <div class="qa_nav" id="J_qa_nav">
-                <a href="/HomePage/individualCommunity" class="qa_nav_word"
+                <a href="/individual.html" class="qa_nav_word"
                    rel="nofollow" id="J_qa_nav_index">首页</a>
                 <a href="/HomePage/track" class="qa_nav_word"
                    rel="nofollow" id="J_qa_nav_footpoint">足迹</a>
-                <a href="http://www.tuniu.com/person/ask/D41487D5BC5EBF33F3AD117AE2361877" class="qa_nav_word click"
-                   rel="nofollow" id="J_qa_nav_ask">问答</a>
+                <a href="/dingdan" class="qa_nav_word click"
+                   rel="nofollow"  id="dingdan">我的订单</a>
                 <a href="http://www.tuniu.com/person/trips/D41487D5BC5EBF33F3AD117AE2361877" class="qa_nav_word click"
                    rel="nofollow" id="J_qa_nav_trips">游记</a>
             </div>
@@ -399,80 +409,29 @@ $(function ($) {
             <!--面包屑 end-->
 
             <div class="tuc-content-left">
-                <p class="tuc-content-title">
-                    <img class="tuc-footer tuc-icon"
-                         src="http://img2.tuniucdn.com/site/file/deyon/images/transparent.gif"/>
-                    <span>我的足迹</span>
-                    <a id="J_AddTrack" href="javascript:;" class="addtrack tuc-icon">添加足迹</a> <a
-                        href="javascript:void(0);" class="share tuc-icon" share_place="map">分享</a>
-                </p>
-                <div class="tuc-map" style="display:none;">
-                    <!-- 地图展示 S -->
-                    <div id="J_Map" class="map" style="width:740px;height:386px;"></div>
-                    <div id="J_MapSwitch" class="map-switch map-global"></div>
-                    <div class="tuc-ranking tuc-icon">
-                        <p class="tuc-rank-title">足迹排行榜</p>
-                        <p class="tuc-rank-num">4948</p>
-                    </div>
-                    <!-- 地图展示 E -->
-                </div>
-                <div class="tuc-track clearfix">
-                    <div class="tuc-track-left">
-                        <div class="J_tucNav tuc-track-nav">
-                            <a class="track-home track-down tuc-icon">国内</a>
-                            <div id="J_InnerList" style="display:none">
-                            </div>
-                            <a class="track-foreign track-down tuc-icon">境外</a>
-                            <div id="J_OuterList" style="display:none">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tuc-track-right" id="J_TrackWrap">
-                        <div class="tuc-area" id="chinaEare">
-                            <p class="tuc-track-title track-title-bordbot">
-                                <span data-value="1">国内</span>
-                            </p>
-                            <div id="J_China" class="china-all">
-                            </div>
-                        </div>
-
-                        <div class="tuc-area" id="foreignEare">
-                            <p class="tuc-track-title track-title-bordbot">
-                                <span data-value="2">境外</span>
-                            </p>
-                            <div id="J_Foreign" class="foreign-all">
-
-                            </div>
-                            <div class="area-line"><p></p><span class="tuc-icon"></span></div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 我的游记 start -->
-                <style>
-                    .pager_active {
-                        color: #f60;
-                    }
-                </style>
                 <div class="J-TucSTrips tuc-send-trips clearfix" id="part_trip" style="margin-bottom: 10px;">
+                    <div id="dingdanlist" class="hidden">
                     <p class="tuc-content-title">
                         <img class="tuc-tour tuc-icon"
                              src="http://img2.tuniucdn.com/site/file/deyon/images/transparent.gif"/>
-                        <span>我的旅途</span>
-                        <a href="/HomePage/travel" target="_blank" class="sendtrack tuc-icon">发表游记</a>
+                        <span id="orderform">我的订单</span>
                     </p>
-                    <div class="tuc-send-time tuc-icon" id="change_trip_year">
-                        <p class="tuc-all tuc-selected tuc-icon" trip_year="all">全部</p>
-                        <p class="tuc-all tuc-icon" trip_year="2015">2015</p>
-                        <p class="tuc-all tuc-icon" trip_year="2014">2014</p>
-                        <p class="tuc-all tuc-icon" trip_year="2013">2013</p>
-                        <p class="tuc-all tuc-icon" trip_year="2012">2012</p>
-                        <p class="tuc-more tuc-icon" trip_year="more"><span>更早之前</span></p>
-                        <p class="tuc-send-time-border"></p>
-                    </div>
-                    <!-- 游记列表 -->
+                   <table class="table table-striped">
+                       <tr>
+                           <td>景色</td>
+                           <td>出发时间</td>
+                           <td>出发城市</td>
+                           <td>总价钱</td>
+                           <td>人数</td>
+                           <td>出行方式</td>
+                           <td>类型</td>
+
+                       </tr>
+                   </table>
+
                 </div>
-                <!-- 我的游记 end -->
+                </div>
+
             </div>
             <!-- 右侧边栏 start -->
             <div class="tuc-content-right">

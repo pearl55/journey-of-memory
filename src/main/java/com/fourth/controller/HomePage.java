@@ -1,7 +1,11 @@
 package com.fourth.controller;
 
+import com.fourth.User.bean.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import javax.servlet.http.HttpSession;
+import java.util.Map;
 
 
 @Controller
@@ -30,7 +34,9 @@ public class HomePage {
         return "";
     }*/
     @RequestMapping("/")
-    public String goHomePage(){
+    public String goHomePage(HttpSession session, Map<String,Object> map){
+        String deng1 = (String) session.getAttribute("deng1");
+        map.put("deng1",deng1);
         return "index2";
     }
 

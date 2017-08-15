@@ -62,6 +62,7 @@ public class UserController {
         String str=user.getDeng();
         String ss = str.substring(0,str.length()-(str.substring(3)).length())+"****"+str.substring(7);
         model.addAttribute("deng1",ss);
+        session.setAttribute("deng1",ss);
         if(user!=null) {
             if (user.getRole().equals("管理员")) {
                 System.out.print("123");

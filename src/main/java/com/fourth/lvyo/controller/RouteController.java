@@ -7,6 +7,7 @@ import com.fourth.lvyo.bean.Scenery;
 import com.fourth.lvyo.service.RouteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
@@ -28,10 +29,14 @@ public class RouteController {
     根据线路查询
      */
     @RequestMapping(method = RequestMethod.GET, value = "/lvyou/{routeNumber}")
-    public String getRoute(@PathVariable("routeNumber") String routeNumber, Map<String, Object> map,Scenery scenery) {
+    public String getRoute(@PathVariable("routeNumber") String routeNumber, Map<String, Object> map,Scenery scenery,HttpSession session) {
         System.out.println("getroute------------------------" + routeNumber);
         List<Route> route = routeService.getRoute(routeNumber);
         List<Scenery> list = routeService.getScenery(scenery);
+
+        String deng1 = (String) session.getAttribute("deng1");
+        map.put("deng1",deng1);
+
         map.put("scenery",list);
         map.put("list", route);
         return "lvYouXianLu2";
@@ -43,17 +48,18 @@ public class RouteController {
     @RequestMapping("lvyou")
     public String getRoute2(Map<String, Object> map, HttpSession session) {
         System.out.println("getroute+----------");
-        User user = (User) session.getAttribute("useri");
         List<Scenery> scenery = routeService.getSceneryFindAll();
         int tj = 2;
         int tj1= 7;
         Scenery sce = routeService.getSceneryById(tj);
         Scenery sce1 = routeService.getSceneryById(tj1);
-        System.out.println(sce1.getScenery_Title()+"111111111");
+
+        String deng1 = (String) session.getAttribute("deng1");
+        map.put("deng1",deng1);
+
         map.put("tuijian",sce);
         map.put("tuijian1",sce1);
         map.put("scenery",scenery);
-
         return "lvYouXianLu";
     }
 
@@ -61,10 +67,12 @@ public class RouteController {
     根据地区查询
      */
     @RequestMapping(method = RequestMethod.GET, value = "/line/{addressname}")
-    public String getAddressname(@PathVariable("addressname") String addressname,Scenery scenery, Map<String, Object> map) {
+    public String getAddressname(@PathVariable("addressname") String addressname,Scenery scenery, Map<String, Object> map,HttpSession session) {
         System.out.println("getAddressname------------------------" + addressname);
         scenery.setAname(addressname);
         List<Scenery> list = routeService.getScenery(scenery);
+        String deng1 = (String) session.getAttribute("deng1");
+        map.put("deng1",deng1);
         map.put("scenery",list);
         return "lvYouXianLu2";
     }
@@ -72,20 +80,17 @@ public class RouteController {
     根据id查询一个
      */
     @RequestMapping("/tiaozhuan")
-    public String getSceneryById(int id,Map<String, Object> map){
-        System.out.println("getSceneryById");
+    public String getSceneryById(int id,Map<String, Object> map,HttpSession session){
+        System.out.println("tiaozhuan---------------------------");
         Scenery scenery = routeService.getSceneryById(id);
-        boolean bl = false;
-        if(scenery!=null){
-            bl = true;
-        }
-
-        System.out.println(scenery.getScenery_Title());
         int scenery_price = scenery.getScenery_Price();
         int menshi = scenery_price + 350;
         int ertong = scenery_price - 700;
         scenery.setMenShi(menshi);
         scenery.setErTong(ertong);
+
+        String deng1 = (String) session.getAttribute("deng1");
+        map.put("deng1",deng1);
         map.put("scenery",scenery);
         return "jingse";
     }
@@ -95,9 +100,7 @@ public class RouteController {
      */
     @RequestMapping("/GetOrderForm")
     public String getOrderForm(OrderForm orderForm){
-        System.out.println(orderForm.getOrderform_Date());
-        System.out.println("GetOrderForm");
-        System.out.println(orderForm.getAdult_Num()+"111111111111111111");
+        System.out.println("GetOrderForm-------------------------");
         int number = orderForm.getAdult_Num() + orderForm.getChild_Num();
         int money = orderForm.getMoney();
         int cm = money-700;
@@ -107,7 +110,17 @@ public class RouteController {
         orderForm.setOrderform_Number(number);
         System.out.println(orderForm.getUser_Id()+"11111111");
         routeService.getOrderForm(orderForm);
-        return "index2";
+        return "forward:/";
+    }
+    @RequestMapping("/dingdan")
+    public String findDindan(Map<String,Object> map,HttpSession session){
+        System.out.println("--------diandan------------");
+        List<OrderForm> list = routeService.getfindOrderForm();
+        String deng1 = (String) session.getAttribute("deng1");
+        map.put("deng1",deng1);
+        map.put("dingdan",list);
+        return "individual";
+
     }
 
 }

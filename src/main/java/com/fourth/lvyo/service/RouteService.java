@@ -28,5 +28,7 @@ public interface RouteService {
     void getOrderForm(OrderForm orderForm);
     //查询全部景色
     List<Scenery> getSceneryFindAll();
+    //根据用户查订单
+    List<OrderForm> getfindOrderForm();
 
 }

@@ -7,6 +7,9 @@ import com.fourth.lvyo.bean.Scenery;
 import com.fourth.lvyo.dao.RouteMapper;
 import com.fourth.lvyo.service.RouteService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -20,6 +23,7 @@ public class RouteServiceImpl implements RouteService {
     @Autowired
     private RouteMapper routeMapper;
 
+
     public List<Route> getRoute(String routeNumber) {
 
         System.out.println("service");
@@ -31,24 +35,29 @@ public class RouteServiceImpl implements RouteService {
         return routeMapper.getScenery(scenery);
     }
 
-    @Override
+
     public Address getAddress(String addressname) {
         return routeMapper.getAddress(addressname);
     }
 
-    @Override
+
     public Scenery getSceneryById(int id) {
         return routeMapper.getSceneryById(id);
     }
 
-    @Override
+
     public void getOrderForm(OrderForm orderForm) {
         routeMapper.getOrderForm(orderForm);
     }
 
-    @Override
+
     public List<Scenery> getSceneryFindAll() {
         return routeMapper.getSceneryFindAll();
+    }
+
+
+    public List<OrderForm> getfindOrderForm() {
+        return routeMapper.getfindOrderForm();
     }
 
 

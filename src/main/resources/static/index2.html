@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html>
+<html xmlns:th="http://www.w3.org/1999/XSL/Transform">
 <head>
     <meta charset="utf-8">
     <title>云游旅行网_云南旅行社精品网站_云南旅游云南中青国际旅行社网站</title>
@@ -19,7 +19,12 @@
 
     <div id="site_nav">
         <div class="site_nav_bd">
-            <div class="login"><em>欢迎来到记忆之旅 </em><a href="login.html">登录</a>|<a href="register.html" rel="nofollow">免费注册</a></div>
+            <div class="login" th:if="${deng1}!=null"><em>欢迎来到记忆之旅 </em>
+                <em>欢迎来到记忆之旅 </em><a href="getuser.action" ><span th:text="${deng1}" id="name"></span></a>|<a href="logout.action" rel="nofollow">退出</a>
+            </div>
+            <!--<div class="login" th:if="${deng1}==null"><em>欢迎来到记忆之旅 </em>-->
+                <!--<a href="login.html">登录</a>|<a href="register.html" rel="nofollow">免费注册</a>-->
+            <!--</div>-->
             <div class="quick_menu">
                 <div class="top_ewm">
                     <a class="mobile"><img src="http://x1.cncnimg.cn/p10068/10068_code.jpg" /></a>
