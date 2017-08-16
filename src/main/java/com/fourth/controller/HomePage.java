@@ -39,8 +39,10 @@ public class HomePage {
     }*/
     @RequestMapping("/")
     public String goHomePage(HttpSession session, Map<String,Object> map){
-        String deng1 = (String) session.getAttribute("deng1");
+
+
         session.setAttribute("map",map);
+        String deng1 = (String) session.getAttribute("deng1");
         map.put("deng1",deng1);
         return "index2";
     }

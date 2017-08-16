@@ -87,6 +87,8 @@ public class FindScenery {
       ModelAndView mv = new ModelAndView();
       mv.setViewName("sceneryList");
       mv.addObject("scenery",list1);
+      String deng1 = (String) session.getAttribute("deng1");
+      mv.addObject("deng1",deng1);
 
       return mv;
   }
@@ -148,7 +150,8 @@ public class FindScenery {
 
       mv.setViewName("sceneryList");
       mv.addObject("scenery",list1);
-
+      String deng1 = (String) session.getAttribute("deng1");
+      mv.addObject("deng1",deng1);
       return mv;
   }
 
