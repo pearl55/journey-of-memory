@@ -41,7 +41,6 @@ public class RouteController {
         map.put("list", route);
         return "lvYouXianLu2";
     }
-
     /*
     点击旅游首页
      */
@@ -112,6 +111,9 @@ public class RouteController {
         routeService.getOrderForm(orderForm);
         return "forward:/";
     }
+    /*
+    进入订单页面
+     */
     @RequestMapping("/dingdan")
     public String findDindan(Map<String,Object> map,HttpSession session){
         System.out.println("--------diandan------------");
@@ -119,8 +121,16 @@ public class RouteController {
         String deng1 = (String) session.getAttribute("deng1");
         map.put("deng1",deng1);
         map.put("dingdan",list);
-        return "individual";
-
+        return "dingdan";
+    }
+    /*
+    根据id取消订单
+     */
+    @RequestMapping("/deleteOrderForm")
+    public String deleteOrderForm(int id){
+        System.out.println("--------Deletediandan------------");
+       routeService.deleteOrderForm(id);
+        return "forward:dingdan";
     }
 
 }

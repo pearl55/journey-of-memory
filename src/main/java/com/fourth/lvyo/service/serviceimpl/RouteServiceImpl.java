@@ -61,4 +61,9 @@ public class RouteServiceImpl implements RouteService {
     }
 
 
+    public void deleteOrderForm(int id) {
+        routeMapper.deleteOrderForm(id);
+    }
+
+
 }

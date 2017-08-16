@@ -59,6 +59,14 @@
 </head>
 <body class="page1">
 <!--==============================header=================================-->
+<div style="margin-top: 20px;margin-left: 50px;">
+<div class="login" th:if="${deng1}!=null">
+    <em>欢迎来到记忆之旅 </em><a href="getuser.action" ><span th:text="${deng1}" id="name"></span></a>|<a href="logout.action" rel="nofollow">退出</a>
+</div>
+<div class="login" th:if="${deng1}==null">
+    <a href="login.html">登录</a>|<a href="register.html" rel="nofollow">免费注册</a>
+</div>
+</div>
 <header>
     <div class="container_12">
         <div class="grid_12" style="margin-left: 490px;top: 60px">
@@ -69,12 +77,12 @@
         <div class="menu_block">
             <nav class="">
                 <ul class="sf-menu">
-                    <li class="current"><a href="/homepage">首页</a></li>
+                    <li class="current"><a href="/">首页</a></li>
                     <li class="with_ul"><a href="index-1.html">景点</a></li>
-                    <li><a href="index-2.html">旅游</a></li>
-                    <li><a href="index-3.html">目的地</a></li>
+                    <li><a href="/lvyou">旅游</a></li>
+                    <li><a href="#">目的地</a></li>
                     <li><a href="/Thematic_tour_homepage">旅游专题</a></li>
-                    <li><a href="index-5.html">个人社区</a></li>
+                    <li><a href="#">个人社区</a></li>
                 </ul>
             </nav>
             <div class="clear"></div>

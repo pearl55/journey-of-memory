@@ -30,5 +30,7 @@ public interface RouteService {
     List<Scenery> getSceneryFindAll();
     //根据用户查订单
     List<OrderForm> getfindOrderForm();
+    //删除根据id订单
+    void deleteOrderForm(int id);
 
 }

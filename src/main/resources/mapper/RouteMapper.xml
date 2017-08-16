@@ -38,4 +38,8 @@
     <select id="getfindOrderForm" resultType="com.fourth.lvyo.bean.OrderForm">
         SELECT orderform.* FROM orderform,user WHERE orderform.user_id=user.id;
     </select>
+
+    <delete id="deleteOrderForm" parameterType="int">
+        DELETE FROM orderform WHERE orderform_id=#{id}
+    </delete>
 </mapper>

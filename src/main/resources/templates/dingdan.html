@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html xmlns:th="http://www.w3.org/1999/xhtml">
+<html xmlns:th="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="utf-8">
     <title>云游旅行网_云南旅行社精品网站_云南旅游云南中青国际旅行社网站</title>
@@ -271,6 +271,13 @@ $(function ($) {
         height: 55px;
         margin: 5px 0 0 0;
     }
+    td {
+        text-align:center; /*设置水平居中*/
+        vertical-align:middle!important;  /*设置垂直居中*/
+    }
+    #td1{
+        text-align:left;
+    }
 </style>
 <!--main start-->
 <div class="tuc-warp clearfix"
@@ -319,69 +326,6 @@ $(function ($) {
                 </div>
             </div>
         </div>
-
-        <!--编辑个人资料 start-->
-        <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="insertModalLabel">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                                aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="exampleModalLabel">编辑个人资料</h4>
-                    </div>
-                    <div class="modal-body">
-                        <form action="updateUser.action" method="post" enctype="multipart/form-data">
-                            <div class="form-group">
-                                <input type="hidden" name="id" class="form-control" id="id">
-                            </div>
-                            <div class="form-group">
-                                <input type="hidden" name="deng" class="form-control" id="deng">
-                            </div>
-                            <div class="form-group">
-                                <label for="username" class="control-label">昵称：</label>
-                                <input type="text" name="username" class="form-control" id="username">
-                                <span>必须是4-10个字符的英文或是2-5个字符的中文</span>
-                            </div>
-                            <div class="form-group">
-                                <label for="password1" class="control-label">原密码：</label>
-                                <input type="password" name="password1" class="form-control" id="password1"
-                                       onblur="originalPassword()">
-                                <span id="mess"></span>
-                            </div>
-                            <div class="form-group">
-                                <label for="password2" class="control-label">新密码：</label>
-                                <input type="password" name="password2" class="form-control" id="password2">
-                            </div>
-                            <div class="form-group">
-                                <label for="password" class="control-label">确定密码：</label>
-                                <input type="password" name="password" class="form-control" id="password"
-                                       onblur="determinePassword()">
-                                <span id="mess2"></span>
-                            </div>
-                            <div class="form-group">
-                                <label for="head" class="control-label">修改头像：</label>
-                                <input type="file" name="file" class="form-control" id="head">
-                            </div>
-                            <div class="form-group">
-                                <label for="address" class="control-label">常住地：</label>
-                                <input type="text" name="address" class="form-control" id="address">
-                            </div>
-                            <div class="form-group">
-                                <label for="sign" class="control-label">个性签名：</label>
-                                <input type="text" name="sign" class="form-control" id="sign">
-                                <span>不超过20字</span>
-                            </div> <!--onclick="updateUser()"-->
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                                <button type="submit" class="btn btn-primary" id="updateButton">保存</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--编辑个人资料 end-->
-
         <!-- 头部用户信息 end -->
 
         <div class="tuc-content clearfix">
@@ -404,7 +348,51 @@ $(function ($) {
 
             <div class="tuc-content-left">
                 <div class="J-TucSTrips tuc-send-trips clearfix" id="part_trip" style="margin-bottom: 10px;">
+                    <div id="dingdanlist">
+                    <p class="tuc-content-title">
+                        <img class="tuc-tour tuc-icon"
+                             src="http://img2.tuniucdn.com/site/file/deyon/images/transparent.gif"/>
+                        <span id="orderform">我的订单</span>
+                    </p>
+                   <table class="table table-striped">
+                       <thead>
+                           <td>景色</td>
+                           <td>出发时间</td>
+                           <td>出发城市</td>
+                           <td>总价钱</td>
+                           <td>人数</td>
+                           <td>出行方式</td>
+                           <td>类型</td>
+                           <td>操作</td>
+                       </thead>
+                       <tbody th:each="dingdan:${dingdan}">
+                       <td th:text="${dingdan.orderform_Title}" height="60px"></td>
+                       <td th:text="${dingdan.orderform_Date}" height="60px"></td>
+                       <td th:text="${dingdan.orderform_Address}" height="60px"></td>
+                       <td th:text="${dingdan.orderform_Price}" height="60px"></td>
+                       <td th:text="${dingdan.orderform_Number}" height="60px"></td>
+                       <td th:text="${dingdan.orderform_Rode}" height="60px"></td>
+                       <td th:text="${dingdan.orderform_Type}" height="60px"></td>
+                       <td><a th:href="@{/deleteOrderForm(id=${dingdan.orderform_Id})}">取消订单</a></td>
+                       </tbody>
+                       <tfoot>
+                       <td colspan="8" id="td1">
+                           <h5 style="color: yellowgreen">温馨提示:</h5>
+                           <h6>  尊敬的游客：
+                               您好！为了使大家能够安全、开心、顺利的度过在广东
+                               旅
+                               游的这几天美好假期，现将
+                               旅游期间的相关注意事项祥述如下，如有不明之处，请您及时与带队的地陪咨询。谢谢合作！</h6>
+                           <h6> 1、抵达住宿的宾馆、酒店时，请将
+                               旅游车上的所有行李物品带回房间，请记准酒店的确切名称、电话、地址，以便自由活动时能够顺利返回。</h6>
+                           <h6> 2、进入酒店后请按照房间内《服务指南》所提示的内容，对房间内小件配置等情况进行检查。如有缺损，请及时通知客房服务员补充或更换，以免退房时出现不必要的麻烦。</h6>
+                           <h6> 3、请将您的贵重物品随身携带保管好，最好将其寄存到宾馆总台；离开房间或睡觉时一定要锁好门窗。  </h6>
+                           <h6> 4、退房时，请仔细检查是否所有行李物品均已携带。</h6>
+                       </td>
+                       </tfoot>
+                   </table>
 
+                </div>
                 </div>
 
             </div>
