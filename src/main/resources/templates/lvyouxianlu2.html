@@ -1,0 +1,400 @@
+
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <title>昆明出发国内游_旅游线路_云游旅行网</title>
+    <meta name="description" content="云游旅行网旅游线路频道提供昆明出发国内游、北京、华东、厦门 武夷山、海南 三亚、内蒙古、上海迪士尼自由行、广东 广州 深圳、夕阳红专列、成都+九寨沟+峨眉山、哈尔滨、北京+天津、西藏、宜昌三峡、张家界、香港 澳门、黄山、新疆、西安、台湾、桂林 阳朔 北海、青岛 大连线路报价与预订" />
+    <link href="http://xnxw.cncnimg.cn/css/front/base.css" rel="stylesheet" type="text/css" />
+    <link href="http://xnxw.cncnimg.cn/css/front/templet2/home1.css?v=0317" rel="stylesheet" type="text/css" />
+    <link href="http://xnxw.cncnimg.cn/css/front/templet2/home1_color1.css?v=0317" rel="stylesheet" type="text/css" />
+</head>
+<!--[if lt IE 8]>
+<script>var auto;</script>
+<![endif]-->
+
+<body style="background:#D5F2FA url(http://x1.cncnimg.cn/p10068/10/daf8.jpg) no-repeat center top">
+
+<div class="warpper">
+
+    <div id="site_nav">
+        <div class="site_nav_bd">
+            <div class="login" th:if="${deng1}!=null"><em>欢迎来到记忆之旅 </em>
+                <em>欢迎来到记忆之旅 </em><a href="getuser.action" ><span th:text="${deng1}" id="name"></span></a>|<a href="logout.action" rel="nofollow">退出</a>
+            </div>
+            <div class="login" th:if="${deng1}==null"><em>欢迎来到记忆之旅 </em>
+                <a href="login.html">登录</a>|<a href="register.html" rel="nofollow">免费注册</a>
+            </div>              <div class="quick_menu">
+                <div class="top_ewm">
+                    <a class="mobile"><img src="http://x1.cncnimg.cn/p10068/10068_code.jpg" /></a>
+                </div>
+                <em>旅行社业务经营许可证 <a href="/about" target="_blank">L-YN-CJ00009</a></em>
+                <a href="/member/guester" rel="nofollow">订单查询</a>|
+                <a href="/pay_order" rel="nofollow">快捷支付</a>|            <a href="javascript:;" onClick="addBookMark()" rel="nofollow">加入收藏</a>|
+                <a href="/sitemap">网站导航</a>
+            </div>
+        </div>
+    </div>
+    <div class="header fn-clear">
+        <div class="top">
+            <div class="logo">
+                <p><a href="/"><img src="http://x1.cncnimg.cn/p10068/374/4157.jpg" title="云游旅行网" /></a></p>
+            </div>
+            <div class="search">
+                <div class="search_con"><form action="/search" target="_self" method="get"><input type="text" name="key"  class="search_txt" value="" /><input type="submit" value="搜索" class="search_sub" /></form></div>
+                <p>
+                    <em>热门搜索：</em>
+                    <a href="/search/%C0%F6%BD%AD">丽江</a>
+                    <a href="/search/%BD%CE%D7%D3%D1%A9%C9%BD">轿子雪山</a>
+                    <a href="/search/%D4%C3%B4%BB%B6%C8%BC%D9%BE%C6%B5%EA">悦椿度假酒店</a>
+                </p>
+            </div>
+            <div class="phone_top">
+                <p class="space_line"><i></i>预定热线</p>
+                <p><strong style="font-size:20px !important;">0871-63166631</strong></p>
+            </div>
+
+        </div>
+        <div class="nav_layer">
+            <div class="nav_layer_con">
+                <ul>
+                    <li class="all_pro"><span>全部旅游产品分类</span></li>
+                    <li  class="#"><a href="/"><span>首页<i class=""></i></span></a></li>
+                    <li ><a href="#"><span>门票<i ></i></span></a></li>
+                    <li ><a href="/lvyou"><span>旅游<i ></i></span></a></li>
+                    <li ><a href="#"><span>景点<i ></i></span></a></li>
+                    <li ><a href="#"><span>目的地<i ></i></span></a></li>
+                    <li ><a href="#"><span>攻略<i ></i></span></a></li>
+                    <li ><a href="#"><span>旅游专题<i ></i></span></a></li>
+                    <li ><a href="#"><span>个人社区<i class="hot1"></i></span></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="http://xnxw.cncnimg.cn/js/jquery1.10.2.min.js"></script>
+    <script src="http://xnxw.cncnimg.cn/js/front/base.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $('.J_ercode').mouseover(function(){
+                $(this).find('.J_code_img').show();
+            });
+            $('.J_ercode').mouseout(function(){
+                $(this).find('.J_code_img').hide();
+            });
+        });
+    </script>
+
+    <script src="http://xnxw.cncnimg.cn/js/line.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="/static/css/front/templet2/side_left.css?v=20160601">
+    <body>
+    <div class="main line_channel fn-clear">
+
+        <div class="side_l">
+
+
+            <div class="txt_box">
+
+                <div class="module">
+                    <h3>旅游线路分类</h3>
+                    <div class="txt">
+                        <strong><a href="/lvyou/guoneiyou">昆明出发国内游</a></strong>
+                        <span>
+                                                                                <a href="/line/北京">北京</a>                                                                                 <a href="/line/华东">华东</a>                                                                                 <a href="/line/厦门">厦门 武夷山</a>                                                                                 <a href="/line/海南">海南 三亚</a>                                                                                 <a href="/line/内蒙古">内蒙古</a>                                                                                 <a href="/line/上海迪士尼">上海迪士尼自由行</a>                                                                                 <a href="/line/广东">广东 广州 深圳</a>                                                                                 <a href="/line/夕阳红">夕阳红专列</a>                                                                                 <a href="/line/成都">成都+九寨沟+峨眉山</a>                                                                                 <a href="/line/哈尔滨">哈尔滨</a>                                                                                 <a href="/line/北京天津">北京+天津</a>                                                                                 <a href="/line/西藏">西藏</a>                                                                                 <a href="/line/宜昌">宜昌三峡</a>                                                                                 <a href="/line/张家界">张家界</a>                                                                                 <a href="/line/香港">香港 澳门</a>                                                                                 <a href="/line/黄山">黄山</a>                                                                                 <a href="/line/新疆">新疆</a>                                                                                 <a href="/line/西安">西安</a>                                                                                 <a href="/line/台湾">台湾</a>                                                                                 <a href="/line/桂林">桂林 阳朔 北海</a>                                                                                 <a href="/line/青岛">青岛 大连</a>                                                                                 </span>
+                        <strong><a href="#">昆明出发海岛游</a></strong>
+                        <span>
+                                                                                <a href="/line/44810">苏梅岛</a>
+                                                                                <a href="/line/15628">毛里求斯</a>
+                                                                                <a href="/line/15627">马尔代夫</a>
+                                                                                <a href="/line/15626">帕劳</a>
+                                                                                <a href="/line/15625">塞班岛</a>
+                                                                                <a href="/line/15624">巴厘岛</a>
+                                                                                <a href="/line/15595">普吉岛</a>
+                                                                                </span>
+                        <strong><a href="/line/yunnantour">云南参团游</a></strong>
+                        <span>
+                                                                                <a href="/line/kmtour">昆明参团</a>
+                                                                                <a href="/line/ljtour">丽江参团</a>
+                                                                                                                                                                                                                                                <a href="/line/viptour">VIP小包团</a>
+                                                                                                                                                                </span>
+                        <strong><a href="/line/yunnanlvyou">热门目的地</a></strong>
+                        <span>
+                                                                                <a href="/line/kunminglvyou">昆明</a>
+                                                                                <a href="/line/lijianglvyou">丽江</a>
+                                                                                <a href="/line/dalilvyou">大理</a>
+                                                                                <a href="/line/xianggelilalvyou">香格里拉</a>
+                                                                                <a href="/line/xishuangbannalvyou">西双版纳</a>
+                                                                                <a href="/line/tengchonglvyou">腾冲</a>
+                                                                                <a href="/line/shilinlvyou">石林</a>
+                                                                                <a href="/line/luguhulvyou">泸沽湖</a>
+                                                                                <a href="/line/meilixueshan">梅里雪山</a>
+                                                                                <a href="/line/daocheng">稻城亚丁</a>
+                                                                                <a href="/line/yubeng">雨崩</a>
+                                                                                </span>
+                        <strong><a href="/line/yunnanziyouxing">云南自由行</a></strong>
+                        <span>
+                                                                                <a href="/line/6912">丽江自由行</a>
+                                                                                <a href="/line/6911">昆明自由行</a>
+                                                                                <a href="/line/6913">西双版纳自由行</a>
+                                                                                <a href="/line/6914">大理自由行</a>
+                                                                                <a href="/line/yndujia">云南度假</a>
+                                                                                <a href="/line/15592">香格里拉自由行</a>
+                                                                                </span>
+                        <strong><a href="/line/zhoubianyou">昆明出发周边游</a></strong>
+                        <span>
+                                                                                <a href="/line/konglonggu">禄丰恐龙谷</a>
+                                                                                <a href="/line/jiaozixueshan">轿子雪山</a>
+                                                                                <a href="/line/luoping">罗平</a>
+                                                                                <a href="/line/puzhehei">普者黑</a>
+                                                                                <a href="/line/bamei">坝美世外桃源</a>
+                                                                                <a href="/line/ailaoshan">新平哀牢山</a>
+                                                                                <a href="/line/yuanyang">建水 元阳梯田</a>
+                                                                                </span>
+                        <strong><a href="/line/chujingyou">昆明出发出境游</a></strong>
+                        <span>
+                                                                                <a href="/line/48203">澳门</a>
+                                                                                <a href="/line/48202">德国</a>
+                                                                                <a href="/line/48201">北欧</a>
+                                                                                <a href="/line/48200">俄罗斯</a>
+                                                                                <a href="/line/48192">新加坡，马来西亚</a>
+                                                                                <a href="/line/45761">斯里兰卡</a>
+                                                                                <a href="/line/44808">美国 加拿大</a>
+                                                                                <a href="/line/44807">欧洲</a>
+                                                                                <a href="/line/41815">香港</a>
+                                                                                <a href="/line/41814">台湾</a>
+                                                                                <a href="/line/dibai">迪拜</a>
+                                                                                <a href="/line/15623">老挝</a>
+                                                                                <a href="/line/15622">南非</a>
+                                                                                <a href="/line/15621">澳大利亚 新西兰</a>
+                                                                                <a href="/line/15620">日本 韩国</a>
+                                                                                <a href="/line/15618">柬埔寨吴哥</a>
+                                                                                <a href="/line/15617">泰国 曼谷 普吉</a>
+                                                                                <a href="/line/15616">越南</a>
+                                                                                <a href="/line/15615">埃及</a>
+                                                                                </span>
+                        <strong><a href="/line/zhutiyou">主题旅游</a></strong>
+                        <span>
+                                                                                <a href="/line/gongyi">游轮</a>
+                                                                                </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tel200 mt10">
+                <i></i>客服电话
+                <span>0871-63166631</span>
+            </div>
+
+            <div class="gg200">
+                <a href="http://www.yntravel.com/ticket/8795" target="_blank" title="泡温泉"><img src="http://x1.cncnimg.cn/p10068/10/b400.jpg" alt="泡温泉"></a>
+                <a href="http://www.yntravel.com/hotel" target="_blank" title="云南酒店预订"><img src="http://x1.cncnimg.cn/p10068/13/8139.jpg" alt="云南酒店预订"></a>
+            </div>
+
+
+
+        </div>
+        <div class="sort mt10">
+            <strong>排序：</strong>
+            <span  class="on"><a href="/lvyou/" hidefocus="true" title="默认排序" rel="nofollow">默认</a></span>
+            <span  class="pr6"><a href="#" hidefocus="true" title="按销量从高到低排序" rel="nofollow">天数<i class="default1"></i></a></span>
+            <span  class="pr6"><a href="#" hidefocus="true" title="按价格从低到高排序" rel="nofollow">价格<i class="default"></i></a>
+        </div>
+
+        <div class="list790" >
+
+                <div class="tag_con" id="js_tag_con">
+                    <div class="tu_wen">
+                        <ul>
+
+                            <!--遍历-->
+                            <li class="noborder" th:each="scenery:${scenery}" >
+
+                        <div  class="pic">
+                            <img src="" th:attr="src=${scenery.scenery_Img}" border="0" alt="北京" width="75" height="50" >
+                        </div>
+                                <div class="type">
+                                    <em th:text="${scenery.scenery_Type}" style="color: red"></em> <a  target="_blank" th:href="@{/tiaozhuan(id=${scenery.scenery_Id})}" th:text="${scenery.scenery_Title}">123</a>
+                                <p>
+                                    <span>出发城市：<span th:text="${scenery.scenery_Address}"></span></span>
+                                    <span>行程天数：<span th:text="${scenery.scenery_Day}"></span>天</span>
+                                    <span>交通方式:<span th:text="${scenery.scenery_Rode}"></span></span>
+                                    <span>出发日期:<span th:text="${scenery.scenery_Daytime}"></span></span>
+                                </p>
+                                </div>
+                                <div class="price">
+                                    <em ><b>￥</b><span th:text="${scenery.scenery_Price}"></span></em>起
+                                </div>
+
+                            </li>
+
+
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+    </div>
+    <div id="showPrompt">
+        <div class="msg_mask"></div>
+        <div class="msg_cont">
+            <p>消息</p>
+            <input type="button" value="确定">
+        </div>
+    </div>
+
+
+
+    <div class="footer">
+
+        <div class="bottom_ico fn-clear" style="text-align: center;">
+            <ul>
+
+                <li class="xukezheng" style="float: none;"><a href="/about"><i style="-webkit-transform:scale(0.8); font-family: Arial;">L-YN-CJ00009</i></a></li>                <li style="float: none;"><span class="pay"></span></li>
+            </ul>
+        </div>
+        <div class="copyright fn-clear">
+            <div class="nav">
+                <a href="/about/291">关于云游旅行网</a>
+                <a href="/about/292">联系云游旅行网</a>
+                <a href="/sitemap">网站地图</a><a href="/link">友情链接</a>
+                <a href="/help">帮助中心</a>
+                <a href="/cp/login" rel="nofollow">管理</a>
+            </div>
+            <p><span>Copyright &copy; 2017 <a href="/" target="_blank">云游旅行网</a>   <a href="http://www.miitbeian.gov.cn/" target="_blank" rel="nofollow">滇ICP备14006366号-1</a></span>
+                云南中青国际旅行社有限公司旗下网站  公司地址：云南省昆明市拓东路133号（650041）  直线电话：0871-63199931
+            </p>
+
+
+        </div>
+
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        // $("img").error(function(){
+        //     var src=$(this).attr("src");
+        //     if (src.substr(0, 20) == "http://c.cncnimg.cn/") {
+        //         $(this).attr("src", "http://xnxwcdn.cncn.net/images/front/nopic_m.jpg");
+        //     }
+        // });
+        $('.s-weixin').hover(function(){$(this).addClass('hover')},function(){$(this).removeClass('hover')});
+        // $("p.weixin").hover(function(){
+        //  $(this).addClass("hover");
+        // },function(){
+        //  $(this).removeClass("hover");
+        // });
+        $('.f-chat,.f-qq').hover(function(){
+            $('.f-qq').toggle();
+
+        });
+        $('.f-call,.f-telnum').hover(function(){
+            $('.f-telnum').toggle();
+        });
+
+        $(window).scroll(function(){
+            var top=$(window).scrollTop();
+            if(top>0){
+                $('.f-scrolltop').show();
+            }else{
+                $('.f-scrolltop').hide();
+            }
+        });
+        $('.f-scrolltop').click(function(event) {
+            $('body,html').animate({scrollTop:0}, 200);
+
+        });
+
+    });
+
+    $('.tonglan_menu a').hover(function(){
+        var index = $(this).index();
+        $(this).addClass('first').siblings('a').removeClass('first');
+
+        var eleCont = $(this).parents('.hd').siblings('.bd');
+        eleCont.children('.tab_cont').children('.pro_list').eq(index).addClass('showed').siblings('.pro_list').removeClass('showed');
+    })
+
+    $(function(){
+        $('.J_imgbox').css({
+            'width':'100%',
+            'border':0
+        });
+        $('.hideBox').css({width:'0'});
+        $('.J_imgbox').css({width:"200px"});
+        $('.s-weixin').on('mouseover',function(){
+            // var src=$('.J_hidebox').attr('src');
+
+            // $('.J_imgbox').find('img').attr('src',src).end().show();
+            $('.hideBox').show();
+        });
+        $('.s-weixin').on('mouseleave',function(){
+            $('.hideBox').hide();
+        });
+    });
+
+
+    $('.ota_menu a').hover(function(){
+        var _this = $(this);
+        var index = $(this).index();
+        if(index  == 0) {
+            return;
+        }
+        var ele = _this.parents('.hd').siblings('.bd').find('.pro_list').eq(index);
+        var state = $(this).attr('data-state');
+        var id    = $(this).attr('data-id');
+        var item  = $(this).attr('data-item');
+        if (id == '') {
+            alert("非法操作，数据不正确");
+            return;
+        }
+        if (item == '') {
+            alert("非法操作，数据不正确");
+            return;
+        }
+
+
+        if (state != 'ajaxed') {
+            _this.attr('data-state', 'ajaxed');
+            $.ajax({
+                url: '/welcome/get_product_info',
+                type: 'POST',
+                dataType: 'JSON',
+                data: {'id': id,'item': item},
+                success: function(data) {
+                    if(data.status == 1){
+                        alert("非法操作，数据不正确");
+                        console.log("非法操作，数据不正确");
+                        return;
+                    }else{
+                        ele.css('background', 'none').html(data);
+                    }
+                }
+            })
+        }
+
+    })
+</script>
+
+
+<div class="f-fixedbox">
+    <div class="f-hover f-scrolltop">返回顶部</div>
+</div>
+
+
+
+<script src="http://xnxw.cncnimg.cn/js/jquery.lazyload.js?v=20150513"></script>
+
+<div style="margin:0 auto;text-align:center;width:100%;"></div>
+
+<script>
+</script>
+
+
+
+<div style="margin:0 auto;text-align:center;width:100%;"><script src="http://s11.cnzz.com/stat.php?id=5313953&web_id=5313953" language="JavaScript"></script></div>
+</body>
+</html>
+
+</body>
+</html>

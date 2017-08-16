@@ -19,7 +19,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         <result column="scenery_type" property="scenery_Type"/>
         <result column="address_aid" property="address_Aid"/>
         <result column="detailed_did" property="detailed_Did"/>
-    <association property="address" javaType="com.fourth.findscenery.bean.Address">
+    <association property="address" javaType="com.fourth.lvyo.bean.Address">
         <id column="address_id" property="address_Id"/>
         <result column="address_name" property="address_Name"/>
         <result column="address_route_id" property="address_Route_Id"/>
