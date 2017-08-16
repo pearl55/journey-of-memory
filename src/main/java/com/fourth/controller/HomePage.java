@@ -5,6 +5,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpSession;
+
+
+import java.util.HashMap;
+
 import java.util.Map;
 
 
@@ -36,6 +40,7 @@ public class HomePage {
     @RequestMapping("/")
     public String goHomePage(HttpSession session, Map<String,Object> map){
         String deng1 = (String) session.getAttribute("deng1");
+        session.setAttribute("map",map);
         map.put("deng1",deng1);
         return "index2";
     }

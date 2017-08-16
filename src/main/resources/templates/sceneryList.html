@@ -1,0 +1,373 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+
+<head>
+    <meta charset="utf-8">
+    <title>搜索频道_云游旅行网</title>
+    <meta name="description"
+          content="云游旅行网(yntravel.com)为云南中青国际旅行社旗下网站，提供云南旅游报价、云南自由行、昆明周边旅游、昆明出发国内游及出境游等旅游产品，云南旅行社网站首选！旅游咨询电话：400-633-5280"/>
+    <link href="http://xnxw.cncnimg.cn/css/front/base.css" rel="stylesheet" type="text/css"/>
+    <link href="http://xnxw.cncnimg.cn/css/front/templet2/home1.css?v=0317" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" type="text/css" href="http://xnxw.cncnimg.cn/css/front/zt.css?v=20160519"/>
+    <link href="http://xnxw.cncnimg.cn/css/front/templet2/home1_color1.css?v=0317" rel="stylesheet" type="text/css"/>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" href="js\bootstrap.min.css">
+    <script src="js\bootstrap.min.js"></script>
+    <script src="js\jquery-2.1.4.js"></script>
+
+</head>
+<!--[if lt IE 8]>
+<script>var auto;</script>
+<![endif]-->
+
+<body style="background:#D5F2FA url(http://x1.cncnimg.cn/p10068/10/daf8.jpg) no-repeat center top">
+
+<div class="warpper">
+
+    <div id="site_nav">
+        <div class="site_nav_bd">
+            <div class="login"><em>欢迎来到记忆之旅旅行网 </em> <a href="/member/login" rel="nofollow">登录</a>|<a
+                    href="/member/register" rel="nofollow">免费注册</a></div>
+            <div class="quick_menu">
+                <div class="top_ewm">
+                    <a class="mobile"><img src="http://x1.cncnimg.cn/p10068/10068_code.jpg"/></a>
+                </div>
+                <em>旅行社业务经营许可证 <a href="/about" target="_blank">L-YN-CJ00009</a></em>
+                <a href="/member/guester" rel="nofollow">订单查询</a>|
+                <a href="/pay_order" rel="nofollow">快捷支付</a>| <a href="javascript:;" onClick="addBookMark()"
+                                                                 rel="nofollow">加入收藏</a>|
+                <a href="/sitemap">网站导航</a>
+            </div>
+        </div>
+    </div>
+    <div class="header fn-clear">
+        <div class="top">
+            <div class="logo">
+                <p><a href="/HomePage/homepage"><img
+                        src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3556355933,3462953469&fm=26&gp=0.jpg"
+                        title="记忆之旅"/></a></p>
+            </div>
+            <div class="search">
+                <div class="search_con">
+                    <form id="search_form2" action="/findTourist.action" target="_self" method="get"><input
+                            type="text" name="address_Name" placeholder="请输入目的地" class="search_txt" value=""/><input
+                            type="submit" value="搜索" class="search_sub"/></form>
+                </div>
+                <p>
+                    <em>热门搜索：</em>
+                    <a href="/search/%C0%F6%BD%AD">丽江</a>
+                    <a href="/search/%BD%CE%D7%D3%D1%A9%C9%BD">轿子雪山</a>
+                    <a href="/search/%D4%C3%B4%BB%B6%C8%BC%D9%BE%C6%B5%EA">悦椿度假酒店</a>
+                </p>
+            </div>
+            <div class="phone_top">
+                <p class="space_line"><i></i>预定热线</p>
+                <p><strong style="font-size:20px !important;">0871-63166631</strong></p>
+            </div>
+
+        </div>
+        <div class="nav_layer">
+            <div class="nav_layer_con">
+                <ul>
+                    <li><a href="/HomePage/homepage"><span>首页<i></i></span></a></li>
+                    <li><a href="/hotel"><span>度假酒店<i></i></span></a></li>
+                    <li><a href="/qianzheng"><span>签证<i></i></span></a></li>
+                    <li><a href="/ticket"><span>门票<i></i></span></a></li>
+                    <li><a href="/line/zhoubianyou"><span>昆明出发周边游<i></i></span></a></li>
+                    <li><a href="/chujing"><span>出境游<i></i></span></a></li>
+                    <li><a href="/guonei"><span>国内游<i></i></span></a></li>
+                    <li><a href="/line/yunnantour"><span>云南参团游<i></i></span></a></li>
+                    <li><a href="/zt"><span>旅游专题<i></i></span></a></li>
+                    <li><a href="/diy"><span>定制您的旅行<i></i></span></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="http://xnxw.cncnimg.cn/js/jquery1.10.2.min.js"></script>
+    <script src="http://xnxw.cncnimg.cn/js/front/base.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('.J_ercode').mouseover(function () {
+                $(this).find('.J_code_img').show();
+            });
+            $('.J_ercode').mouseout(function () {
+                $(this).find('.J_code_img').hide();
+            });
+        });
+    </script>
+
+    <div class="main mt10 fn-clear">
+
+        <div class="list_con search_main">
+            <div class="search_tip">搜索到<em><strong th:text="${#request.getAttribute('name')}"></strong></em>相关产品共有<em
+                    th:text="${#request.getAttribute('listCount')}"></em>条
+            </div>
+
+            <div class="sort mt10">
+                <strong>排序：</strong>
+                <span class="on"><a href="/HomePage/findTourist" hidefocus="true" title="默认排序"
+                                    rel="nofollow">默认</a></span>
+                <span class="pr6"><a href="/findAsc" hidefocus="true"
+                                     title="按价格从低到高排序" rel="nofollow">价格<i class="default"></i></a></span>
+            </div>
+            <div class="list790">
+                <div class="tag_con" id="js_tag_con">
+                    <div class="tu_wen">
+                        <ul>
+                            <li class="noborder" th:each="scenery:${scenery}">
+
+                                <div class="pic">
+                                    <img src="" th:attr="src=${scenery.scenery_Img}" border="0" alt="北京" width="75"
+                                         height="50">
+                                </div>
+                                <div class="type">
+                                    <em th:text="${scenery.scenery_Type}" style="color: red"></em> <a target="_blank"
+                                                                                                      th:href="@{/tiaozhuan(id=${scenery.scenery_Id})}"
+                                                                                                      th:text="${scenery.scenery_Title}">123</a>
+                                    <p>
+                                        <span>出发城市：<span th:text="${scenery.scenery_Address}"></span></span>
+                                        <span>行程天数：<span th:text="${scenery.scenery_Day}"></span>天</span>
+                                        <span>交通方式:<span th:text="${scenery.scenery_Rode}"></span></span>
+                                        <span>出发日期:<span th:text="${scenery.scenery_Daytime}"></span></span>
+                                    </p>
+                                </div>
+                                <div class="price">
+                                    <em><b>￥</b><span th:text="${scenery.scenery_Price}"></span></em>起
+                                </div>
+
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--分页-->
+            <style>
+                body{ text-align:center}
+                .div{ margin:0 auto; width:300px; height:100px; border:1px }
+                /* css注释：为了观察效果设置宽度 边框 高度等样式 */
+            </style>
+            <div class="div">
+                <a href="#" th:href="@{/findTourist(currentPage=${#request.getAttribute('firstPage')})}">首页</a>
+                <a href="#" th:href="@{/findTourist(currentPage=${#request.getAttribute('precursorPage')})}">上一页</a>
+                <a href="#" th:href="@{/findTourist(currentPage=${#request.getAttribute('nextPage')})}">下一页</a>
+                <a href="#" th:href="@{/findTourist(currentPage=${#request.getAttribute('lastPage')})}">末页</a>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                当前第<em th:text="${#request.getAttribute('currentPage')}"></em>页&nbsp;
+                    /&nbsp;共<em th:text="${#request.getAttribute('pageCount')}"></em>页
+            </div>
+        </div>
+
+
+
+
+
+
+        <div class="side_r side_r1">
+            <div class="recommend">
+                <div class="tit">
+                    <strong>旅游推荐</strong>
+                </div>
+
+                <p class="tu"><a href="http://www.yntravel.com/ticket/3082.htm" target="_blank" title="云南映象门票"><img
+                        src="http://x1.cncnimg.cn/p10068/81/69ff.jpg" alt="云南映象门票"></a></p>
+
+            </div>
+
+            <div class="link_con">
+                <h4>热卖推荐</h4>
+                <div class="ad_con">
+                    <dl class="fn-clear">
+                        <dt><s></s><a href="/ticket/2941.htm" target="_blank"><img
+                                src="http://x1.cncnimg.cn/p10068/6/a69c.jpg!s" alt="轿子雪山套票（门票+摆渡车+索道费）" border="0"/></a>
+                        </dt>
+                        <dd>
+                            <p><a href="/ticket/2941.htm" target="_blank">轿子雪山套票（门票+摆渡车+索道费）</a></p>
+                            <i><em>￥130</em>起</i>
+                        </dd>
+                    </dl>
+                    <div class="hot">
+                        <a href="/hotel/3386.htm" class="hot2" target="_blank">弥勒湖泉酒店</a>
+                        <a href="/ticket/3082.htm" class="hot3" target="_blank">云南映象演出门票</a>
+                        <a href="/line/62196.htm" class="hot4" target="_blank">昆明到石林一日游</a>
+                        <a href="/line/44128.htm" class="hot5" target="_blank">楚雄禄丰恐龙谷一日游</a>
+                        <a href="/ticket/3426.htm" class="hot6" target="_blank">寻甸星河温泉度假酒店温泉票</a>
+                        <a href="/line/61890.htm" class="hot7" target="_blank">昆明西山龙门、民族村一日游</a>
+                        <a href="/line/196537.htm" class="hot8" target="_blank">寻甸石板河、风龙湾、北大营两天游</a>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+    <div id="showPrompt">
+        <div class="msg_mask"></div>
+        <div class="msg_cont">
+            <p>消息</p>
+            <input type="button" value="确定">
+        </div>
+    </div>
+
+
+    <div class="footer">
+
+        <div class="bottom_ico fn-clear" style="text-align: center;">
+            <ul>
+
+                <li class="xukezheng" style="float: none;"><a href="/about"><i
+                        style="-webkit-transform:scale(0.8); font-family: Arial;">L-YN-CJ00009</i></a></li>
+                <li style="float: none;"><span class="pay"></span></li>
+            </ul>
+        </div>
+        <div class="copyright fn-clear">
+            <div class="nav">
+                <a href="/about/291">关于记忆之旅旅行网</a>
+                <a href="/about/292">联系记忆之旅旅行网</a>
+                <a href="/sitemap">网站地图</a><a href="/link">友情链接</a>
+                <a href="/help">帮助中心</a>
+                <a href="/cp/login" rel="nofollow">管理</a>
+            </div>
+            <p><span>Copyright &copy; 2017 <a href="/" target="_blank">记忆之旅网</a>   <a
+                    href="http://www.miitbeian.gov.cn/" target="_blank" rel="nofollow">滇ICP备14006366号-1</a></span>
+                北京市海淀区志广科技有限公司旗下网站 公司地址：北京市海淀区志广科技大厦（650041） 直线电话：0871-63199931
+            </p>
+
+
+        </div>
+
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        // $("img").error(function(){
+        //     var src=$(this).attr("src");
+        //     if (src.substr(0, 20) == "http://c.cncnimg.cn/") {
+        //         $(this).attr("src", "http://xnxwcdn.cncn.net/images/front/nopic_m.jpg");
+        //     }
+        // });
+        $('.s-weixin').hover(function () {
+            $(this).addClass('hover')
+        }, function () {
+            $(this).removeClass('hover')
+        });
+        // $("p.weixin").hover(function(){
+        //  $(this).addClass("hover");
+        // },function(){
+        //  $(this).removeClass("hover");
+        // });
+        $('.f-chat,.f-qq').hover(function () {
+            $('.f-qq').toggle();
+
+        });
+        $('.f-call,.f-telnum').hover(function () {
+            $('.f-telnum').toggle();
+        });
+
+        $(window).scroll(function () {
+            var top = $(window).scrollTop();
+            if (top > 0) {
+                $('.f-scrolltop').show();
+            } else {
+                $('.f-scrolltop').hide();
+            }
+        });
+        $('.f-scrolltop').click(function (event) {
+            $('body,html').animate({scrollTop: 0}, 200);
+
+        });
+
+    });
+
+    $('.tonglan_menu a').hover(function () {
+        var index = $(this).index();
+        $(this).addClass('first').siblings('a').removeClass('first');
+
+        var eleCont = $(this).parents('.hd').siblings('.bd');
+        eleCont.children('.tab_cont').children('.pro_list').eq(index).addClass('showed').siblings('.pro_list').removeClass('showed');
+    })
+
+    $(function () {
+        $('.J_imgbox').css({
+            'width': '100%',
+            'border': 0
+        });
+        $('.hideBox').css({width: '0'});
+        $('.J_imgbox').css({width: "200px"});
+        $('.s-weixin').on('mouseover', function () {
+            // var src=$('.J_hidebox').attr('src');
+
+            // $('.J_imgbox').find('img').attr('src',src).end().show();
+            $('.hideBox').show();
+        });
+        $('.s-weixin').on('mouseleave', function () {
+            $('.hideBox').hide();
+        });
+    });
+
+
+    $('.ota_menu a').hover(function () {
+        var _this = $(this);
+        var index = $(this).index();
+        if (index == 0) {
+            return;
+        }
+        var ele = _this.parents('.hd').siblings('.bd').find('.pro_list').eq(index);
+        var state = $(this).attr('data-state');
+        var id = $(this).attr('data-id');
+        var item = $(this).attr('data-item');
+        if (id == '') {
+            alert("非法操作，数据不正确");
+            return;
+        }
+        if (item == '') {
+            alert("非法操作，数据不正确");
+            return;
+        }
+
+
+        if (state != 'ajaxed') {
+            _this.attr('data-state', 'ajaxed');
+            $.ajax({
+                url: '/welcome/get_product_info',
+                type: 'POST',
+                dataType: 'JSON',
+                data: {'id': id, 'item': item},
+                success: function (data) {
+                    if (data.status == 1) {
+                        alert("非法操作，数据不正确");
+                        console.log("非法操作，数据不正确");
+                        return;
+                    } else {
+                        ele.css('background', 'none').html(data);
+                    }
+                }
+            })
+        }
+
+    })
+</script>
+
+
+<div class="f-fixedbox">
+    <div class="f-hover f-scrolltop">返回顶部</div>
+</div>
+
+
+<script src="http://xnxw.cncnimg.cn/js/jquery.lazyload.js?v=20150513"></script>
+
+<div style="margin:0 auto;text-align:center;width:100%;"></div>
+
+<script>
+</script>
+
+
+<div style="margin:0 auto;text-align:center;width:100%;">
+    <script src="http://s11.cnzz.com/stat.php?id=5313953&web_id=5313953" language="JavaScript"></script>
+</div>
+</body>
+</html>
+

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fourth.findscenery.dao.Tourist_attractionsMapper">
+    <resultMap id="touristMapper" type="com.fourth.findscenery.bean.Tourist_attractions" >
+        <id column="scenery_id" property="scenery_Id"/>
+        <result column="scenery_title" property="scenery_Title"/>
+        <result column="scenery_introduce" property="scenery_Introduce"/>
+        <result column="scenery_img" property="scenery_Img"/>
+        <result column="scenery_price" property="scenery_Price"/>
+        <result column="scenery_plan" property="scenery_Plan"/>
+        <result column="scenery_fees" property="scenery_Fees"/>
+        <result column="scenery_address" property="scenery_Address"/>
+        <result column="scenery_rode" property="scenery_Rode"/>
+        <result column="scenery_day" property="scenery_Day"/>
+        <result column="scenery_daytime" property="scenery_Daytime"/>
+        <result column="scenery_num" property="scenery_Num"/>
+        <result column="scenery_type" property="scenery_Type"/>
+        <result column="address_aid" property="address_Aid"/>
+        <result column="detailed_did" property="detailed_Did"/>
+    <association property="address" javaType="com.fourth.lvyo.bean.Address">
+        <id column="address_id" property="address_Id"/>
+        <result column="address_name" property="address_Name"/>
+        <result column="address_route_id" property="address_Route_Id"/>
+    </association>
+    </resultMap>
+
+
+
+    <select id="findCount" parameterType="java.util.Map" resultType="int">
+        select count(*) from scenery s left join address a on s.scenery_id = a.address_id where
+         s.address_aid = a.address_id  and a.address_name like '%${value}%' or scenery_title like '%${value}%' or scenery_type like '%${value}%'
+
+    </select>
+    <!-- select count(*) from scenery s left join address a on s.scenery_id = a.address_id where
+           s.address_aid = a.address_id  and a.address_name like '%北京%' or scenery_title like '%北京%' or scenery_type like '%北京}%' -->
+    <!-- 根据景点名称,景点类型,地址,查询所需要的景点  findTouristList -->
+    <select id="findTouristList1" parameterType="java.util.Map"  resultMap="touristMapper">
+        select * from scenery s,address a where a.address_id = s.address_aid and a.address_name LIKE
+        '%${address_Name}%' or s.scenery_title like '%${address_Name}%' or s.scenery_type = '%${address_Name}%' GROUP BY s.scenery_id
+        <if test="page != null">
+            limit #{page.CurrentPage},#{page.PageSize}
+        </if>
+
+    </select>
+
+    <select id="findAsc" parameterType="java.util.Map"  resultMap="touristMapper">
+        select * from scenery s,address a where a.address_id = s.address_aid and a.address_name LIKE
+        '%${address_Name}%' or s.scenery_title like '%${address_Name}%' or s.scenery_type = '%${address_Name}%' GROUP BY s.scenery_id
+
+            ORDER BY s.scenery_price
+
+        <if test="page != null">
+            limit #{page.CurrentPage},#{page.PageSize}
+        </if>
+
+    </select>
+
+
+</mapper>
