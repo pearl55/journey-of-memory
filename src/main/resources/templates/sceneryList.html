@@ -50,7 +50,7 @@
             </div>
             <div class="search">
                 <div class="search_con">
-                    <form id="search_form2" action="/HomePage/findTourist.action" target="_self" method="get"><input
+                    <form id="search_form2" action="/findTourist.action" target="_self" method="get"><input
                             type="text" name="address_Name" placeholder="请输入目的地" class="search_txt" value=""/><input
                             type="submit" value="搜索" class="search_sub"/></form>
                 </div>
@@ -108,7 +108,7 @@
                 <strong>排序：</strong>
                 <span class="on"><a href="/HomePage/findTourist" hidefocus="true" title="默认排序"
                                     rel="nofollow">默认</a></span>
-                <span class="pr6"><a href="/HomePage/findAsc" hidefocus="true"
+                <span class="pr6"><a href="/findAsc" hidefocus="true"
                                      title="按价格从低到高排序" rel="nofollow">价格<i class="default"></i></a></span>
             </div>
             <div class="list790">
@@ -149,10 +149,10 @@
                 /* css注释：为了观察效果设置宽度 边框 高度等样式 */
             </style>
             <div class="div">
-                <a href="#" th:href="@{/HomePage/findTourist(currentPage=${#request.getAttribute('firstPage')})}">首页</a>
-                <a href="#" th:href="@{/HomePage/findTourist(currentPage=${#request.getAttribute('precursorPage')})}">上一页</a>
-                <a href="#" th:href="@{/HomePage/findTourist(currentPage=${#request.getAttribute('nextPage')})}">下一页</a>
-                <a href="#" th:href="@{/HomePage/findTourist(currentPage=${#request.getAttribute('lastPage')})}">末页</a>
+                <a href="#" th:href="@{/findTourist(currentPage=${#request.getAttribute('firstPage')})}">首页</a>
+                <a href="#" th:href="@{/findTourist(currentPage=${#request.getAttribute('precursorPage')})}">上一页</a>
+                <a href="#" th:href="@{/findTourist(currentPage=${#request.getAttribute('nextPage')})}">下一页</a>
+                <a href="#" th:href="@{/findTourist(currentPage=${#request.getAttribute('lastPage')})}">末页</a>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 当前第<em th:text="${#request.getAttribute('currentPage')}"></em>页&nbsp;
                     /&nbsp;共<em th:text="${#request.getAttribute('pageCount')}"></em>页

@@ -19,19 +19,12 @@ import java.util.Map;
  * Created by 赵翰 on 2017/8/5.
  */
 @Controller
-@RequestMapping("/HomePage")
-public class HomePage {
+public class FindScenery {
 
     @Autowired
     private Tourist_attractionsService tourist_attractionsService;
 
-    @RequestMapping("/homepage")
-    public String goHomePage(HttpSession session) {
 
-        Map map = new HashMap<String,Object>();
-        session.setAttribute("map",map);
-        return "index2";
-    }
    /*
    分页查询
     */
