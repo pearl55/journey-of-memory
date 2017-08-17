@@ -1,9 +1,8 @@
 package com.fourth.findscenery.controller;
 
-import com.fourth.findscenery.bean.Tourist_attractions;
-
 import com.fourth.findscenery.service.Tourist_attractionsService;
 import com.fourth.findscenery.util.PageCount;
+import com.fourth.lvyou.bean.Scenery;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,7 +10,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -37,7 +35,7 @@ public class FindScenery {
       if(address_Name!=null){
           map.put("address_Name",address_Name);
       }
-      List<Tourist_attractions> list = tourist_attractionsService.findTouristList1(map);
+      List<Scenery> list = tourist_attractionsService.findTouristList1(map);
       Integer listCount = list.size();
       Integer pageSize = 10;
       int pageCount =  listCount / pageSize + (listCount % pageSize != 0 ? 1 : 0);
@@ -48,7 +46,7 @@ public class FindScenery {
       count.setPageSize(pageSize);
       map.put("page",count);
 
-      List<Tourist_attractions> list1 = tourist_attractionsService.findTouristList1(map);
+      List<Scenery> list1 = tourist_attractionsService.findTouristList1(map);
       map.remove("page");
       String [] pageArray = new String[4];
 
@@ -99,7 +97,7 @@ public class FindScenery {
       }
       Map<String,Object> map = (Map)session.getAttribute("map");
 
-      List<Tourist_attractions> asc = tourist_attractionsService.findAsc(map);
+      List<Scenery> asc = tourist_attractionsService.findAsc(map);
       System.out.println(asc);
       Integer listCount = asc.size();
       Integer pageSize = 10;
@@ -111,7 +109,7 @@ public class FindScenery {
       count.setPageSize(pageSize);
       map.put("page",count);
 
-      List<Tourist_attractions> list1 = tourist_attractionsService.findAsc(map);
+      List<Scenery> list1 = tourist_attractionsService.findAsc(map);
       map.remove("page");
       String [] pageArray = new String[4];
 

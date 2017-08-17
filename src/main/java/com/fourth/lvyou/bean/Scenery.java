@@ -1,4 +1,4 @@
-package com.fourth.lvyo.bean;
+package com.fourth.lvyou.bean;
 
 import lombok.Data;
 
@@ -39,6 +39,7 @@ public class Scenery {
     private int address_Aid;
     private String scenery_Num;
     private int detailed_Did;
+    private Address address;//地址
 
     private String Aname;
     private int MenShi;

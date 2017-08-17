@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper SYSTEM "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.fourth.community.mapper.TravelNotesMapper">
+
+    <insert id="addTravelNotes" parameterType="com.fourth.community.bean.TravelNotes" keyProperty="n_id" useGeneratedKeys="true">
+        <selectKey keyProperty="n_id" order="AFTER" resultType="java.lang.Integer">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into travel_notes values(#{n_id},#{n_headline},#{n_destination},#{n_startDate},#{n_endDate},
+            #{n_city},#{n_scenic},#{n_time_limit},#{n_section_titles},#{n_essay},#{n_picture},
+            #{n_agreement},#{n_releaseDate},#{n_updateDate},#{n_page_view},#{n_commentnum},#{user_id})
+   </insert>
+
+    <select id="getTravelNotes" parameterType="int" resultType="com.fourth.community.bean.UnifyUserAndNotesAndComment">
+        select n.*,u.username,u.head from user as u,travel_notes as n where u.id=n.user_id and n_id=#{n_id}
+    </select>
+
+    <select id="findTravelNotesListAndUserByUsername" parameterType="int" resultType="com.fourth.community.bean.UnifyUserAndNotesAndComment">
+        select n.n_id,n.n_releaseDate,n.n_headline,n.n_destination,n.n_page_view,n.n_commentnum,u.username
+        from user as u,travel_notes as n where n.user_id=u.id and n.user_id=#{user_id}
+    </select>
+
+    <select id="findTravelNotesByCity" parameterType="int" resultType="com.fourth.community.bean.TravelNotes">
+        select distinct n.n_city from user as u,travel_notes as n where n.user_id=u.id and n.user_id=#{user_id}
+    </select>
+
+    <select id="getTravelNotesByNid" parameterType="int" resultType="com.fourth.community.bean.UnifyUserAndNotesAndComment">
+        select n.*,u.username,u.head from user as u,travel_notes as n where u.id=n.user_id and n_id=#{n_id}
+    </select>
+
+    <update id="updateTravelNotes" parameterType="com.fourth.community.bean.TravelNotes">
+        update travel_notes set n_headline=#{n_headline},n_destination=#{n_destination},n_startDate=#{n_startDate},n_endDate=#{n_endDate},
+        n_city=#{n_city},n_scenic=#{n_scenic},n_time_limit=#{n_time_limit},n_section_titles=#{n_section_titles},n_essay=#{n_essay},n_picture=#{n_picture},
+        n_agreement=#{n_agreement},n_updateDate=#{n_updateDate} where n_id=#{n_id}
+    </update>
+
+
+</mapper>

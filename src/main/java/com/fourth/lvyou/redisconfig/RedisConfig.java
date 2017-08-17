@@ -1,4 +1,4 @@
-package com.fourth.lvyo.redisconfig;
+package com.fourth.lvyou.redisconfig;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;

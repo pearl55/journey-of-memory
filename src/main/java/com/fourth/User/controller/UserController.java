@@ -4,6 +4,10 @@ import com.fourth.User.bean.User;
 import com.fourth.User.service.UserService;
 import com.fourth.User.util.MD5Util;
 import com.fourth.User.util.RandomS;
+import com.fourth.community.bean.PictureResult;
+import com.fourth.community.bean.TravelNotes;
+import com.fourth.community.service.PictureService;
+import com.fourth.community.service.TravelNotesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,6 +20,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
@@ -26,6 +31,11 @@ import java.util.UUID;
 public class UserController {
     @Autowired
     private UserService service;
+    @Autowired
+    private TravelNotesService travelNotesService;
+    @Autowired
+    private PictureService pictureService;
+
     /**
      * 注册
      *
@@ -83,11 +93,19 @@ public class UserController {
      * 判断是否登录进个人社区
      *
      */
-    @RequestMapping("getShe.action")
-    public String getShe(HttpServletRequest request, Model model){
-        request.getSession().getAttribute("useri");
-        if( request.getSession().getAttribute("useri")!=null){
-            model.addAttribute("user", request.getSession().getAttribute("useri"));
+    @RequestMapping("/individualCommunity")
+    public String getShe( Model model,HttpSession session){
+        User user2 = (User) session.getAttribute("useri");
+        System.out.println(user2.getDeng()+"---------------------");
+        String str=user2.getDeng();
+        String ss = str.substring(0,str.length()-(str.substring(3)).length())+"****"+str.substring(7);
+        model.addAttribute("deng1",ss);
+        if (user2!=null){
+            User user = service.findUserById(user2.getId());
+            model.addAttribute("user",user);
+            List<TravelNotes> cityList = travelNotesService.findTravelNotesByCity(user.getId());
+            model.addAttribute("cityList",cityList);
+            //用户已登录，返回展示个人信息和社区页面
             return "individual";
         }
         return "login";
@@ -98,15 +116,16 @@ public class UserController {
      *
      * 根据登录获取信息
      */
-    @RequestMapping("getuser.action")
+  /*  @RequestMapping("getuser.action")
     public String getUser(String deng, Model model){
+
         User user=  service.getUser(deng);
         String str=user.getDeng();
         String ss = str.substring(0,str.length()-(str.substring(3)).length())+"****"+str.substring(7);
         model.addAttribute("deng1",ss);
         model.addAttribute("user",user);
         return "individual";
-    }
+    }*/
     /**0
      *
      * 根据用户名获取用户全部信息
@@ -137,8 +156,29 @@ public class UserController {
     public @ResponseBody int findUserByPassword(String password){
         return service.findUserByPassword(password);
     }
+    /*
+    修改个人资料
+    */
+    @RequestMapping("/updateUser")
+    public String updateUser(User user1,Model model,HttpServletRequest request,@RequestParam("file") MultipartFile file) throws Exception {
+        PictureResult result = pictureService.uploadFile(file);
+        System.out.println(result.getUrl());
+        user1.setHead(result.getUrl());
 
-    @RequestMapping("updateUser.action")
+        String password=user1.getPassword();
+        String pwd=  MD5Util.MD5(password);
+        //随机生成呢称
+        String username= RandomS.getRandomString(8);
+        user1.setPassword(pwd);
+
+        service.updateUser(user1);
+        User user = service.findUserById(user1.getId());
+        model.addAttribute("user",user);
+        List<TravelNotes> cityList = travelNotesService.findTravelNotesByCity(user.getId());
+        model.addAttribute("cityList",cityList);
+        return "individual";
+    }
+    /*@RequestMapping("updateUser.action")
     public String updateUser(User user1, Model model, HttpServletRequest request, @RequestParam("file") MultipartFile file) throws Exception {
         // 原始名称
         String head = file.getOriginalFilename();
@@ -163,11 +203,11 @@ public class UserController {
         String password=MD5Util.MD5(user1.getPassword());
         user1.setPassword(password);
         service.updateUser(user1);
-        /*User user = userServiceImp.findUserById(user1.getId());
+        *//*User user = userServiceImp.findUserById(user1.getId());
         System.out.println(user1.getHead());
-        model.addAttribute("user",user);*/
+        model.addAttribute("user",user);*//*
         return "individual";
-    }
+    }*/
 
     /**
      *
@@ -177,7 +217,7 @@ public class UserController {
     public String logout(HttpSession session) throws Exception {
         // 清除Session
         session.invalidate();
-        return "index2";
+        return "login";
     }
     /*
      ajax检测登录

@@ -1,8 +1,8 @@
 package com.fourth.findscenery.service;
 
 
-import com.fourth.findscenery.bean.Tourist_attractions;
 import com.fourth.findscenery.dao.Tourist_attractionsMapper;
+import com.fourth.lvyou.bean.Scenery;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,12 +26,12 @@ public class Tourist_attractionsServiceImpl implements Tourist_attractionsServic
     }*/
 
     @Override
-    public List<Tourist_attractions> findAsc(Map<String, Object> map) {
+    public List<Scenery> findAsc(Map<String, Object> map) {
         return tourist_attractionsMapper.findAsc(map);
     }
 
     @Override
-    public List<Tourist_attractions> findTouristList1(Map<String, Object> map) {
+    public List<Scenery> findTouristList1(Map<String, Object> map) {
         return tourist_attractionsMapper.findTouristList1(map);
     }
 }

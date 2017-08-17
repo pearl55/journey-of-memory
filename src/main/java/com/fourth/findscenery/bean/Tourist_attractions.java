@@ -1,6 +1,6 @@
 package com.fourth.findscenery.bean;
 
-import com.fourth.lvyo.bean.Address;
+import com.fourth.lvyou.bean.Address;
 import lombok.Data;
 
 /**

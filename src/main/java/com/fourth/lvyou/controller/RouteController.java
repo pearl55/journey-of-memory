@@ -1,13 +1,12 @@
-package com.fourth.lvyo.controller;
+package com.fourth.lvyou.controller;
 
 import com.fourth.User.bean.User;
-import com.fourth.lvyo.bean.OrderForm;
-import com.fourth.lvyo.bean.Route;
-import com.fourth.lvyo.bean.Scenery;
-import com.fourth.lvyo.service.RouteService;
+import com.fourth.lvyou.bean.OrderForm;
+import com.fourth.lvyou.bean.Route;
+import com.fourth.lvyou.bean.Scenery;
+import com.fourth.lvyou.service.RouteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
@@ -109,7 +108,7 @@ public class RouteController {
         orderForm.setOrderform_Number(number);
         System.out.println(orderForm.getUser_Id()+"11111111");
         routeService.getOrderForm(orderForm);
-        return "forward:/";
+        return "forward:dingdan";
     }
     /*
     进入订单页面

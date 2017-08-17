@@ -25,45 +25,25 @@
 
     <div id="site_nav">
         <div class="site_nav_bd">
-            <div class="login"><em>欢迎来到记忆之旅 </em>
+
+            <div class="login" th:if="${deng1}!=null"><em>欢迎来到记忆之旅 </em>
+                <em>欢迎来到记忆之旅 </em><a href="getuser.action" ><span th:text="${deng1}" id="name"></span></a>|<a href="logout.action" rel="nofollow">退出</a>
+            </div>
+            <div class="login" th:if="${deng1}==null"><em>欢迎来到记忆之旅 </em>
+                <a href="login.html">登录</a>|<a href="register.html" rel="nofollow">免费注册</a>
+            </div>
+
             <div class="quick_menu">
                 <div class="top_ewm">
                     <a class="mobile"><img src="http://x1.cncnimg.cn/p10068/10068_code.jpg"/></a>
                 </div>
                 <em>旅行社业务经营许可证 <a href="/about" target="_blank">L-YN-CJ00009</a></em>
                 <a href="/member/guester" rel="nofollow">订单查询</a>|
-                <a href="/pay_order" rel="nofollow">快捷支付</a>| <a href="javascript:;" onClick="addBookMark()"
-                                                                 rel="nofollow">加入收藏</a>|
+                <a href="/pay_order" rel="nofollow">快捷支付</a>|            <a href="javascript:;" onClick="addBookMark()" rel="nofollow">加入收藏</a>|
                 <a href="/sitemap">网站导航</a>
             </div>
-        </div>
-    </div>
     <div class="header fn-clear">
-        <div class="top">
-            <div class="logo">
-                <p><a href="/"><img
-                        src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3556355933,3462953469&fm=26&gp=0.jpg"
-                        title="记忆之旅"/></a></p>
-            </div>
-            <div class="search">
-                <div class="search_con">
-                    <form action="/search" method="get"><input type="text" class="search_txt"
-                                                               placeholder="请输入目的地"/><input type="submit" value="搜索"
-                                                                                            class="search_sub"/></form>
-                </div>
-                <p>
-                    <em>热门搜索：</em>
-                    <a href="/search/%C0%F6%BD%AD">丽江</a>
-                    <a href="/search/%BD%CE%D7%D3%D1%A9%C9%BD">轿子雪山</a>
-                    <a href="/search/%D4%C3%B4%BB%B6%C8%BC%D9%BE%C6%B5%EA">悦椿度假酒店</a>
-                </p>
-            </div>
-            <div class="phone_top">
-                <p class="space_line"><i></i>预定热线</p>
-                <p><strong style="font-size:20px !important;">010-666666</strong></p>
-            </div>
 
-        </div>
         <div class="nav_layer">
             <div class="nav_layer_con">
                 <ul>
@@ -76,7 +56,7 @@
                     <li><a href="/guonei"><span>目的地<i></i></span></a></li>
                     <li><a href="/line/yunnantour"><span>攻略<i></i></span></a></li>
                     <li><a href="/zt"><span>旅游专题<i></i></span></a></li>
-                    <li><a href="/HomePage/individualCommunity"><span>个人社区<i class="hot1"></i></span></a></li>
+                    <li><a href="/individualCommunity"><span>个人社区<i class="hot1"></i></span></a></li>
                 </ul>
             </div>
         </div>
@@ -334,13 +314,13 @@ $(function ($) {
             <input type="hidden" class="page_uid" value="49918211"/>
             <input type="hidden" name="csrf_token" id="csrf_token" value="a0bd915b4ef95758391363eb15b4b0b6"/>
             <div class="qa_nav" id="J_qa_nav">
-                <a href="/individual.html" class="qa_nav_word"
+                <a href="/individualCommunity" class="qa_nav_word"
                    rel="nofollow" id="J_qa_nav_index">首页</a>
-                <a href="/HomePage/track" class="qa_nav_word"
+                <a href="/maptrack" class="qa_nav_word"
                    rel="nofollow" id="J_qa_nav_footpoint">足迹</a>
                 <a href="/dingdan" class="qa_nav_word click"
-                   rel="nofollow"  id="dingdan">我的订单</a>
-                <a href="http://www.tuniu.com/person/trips/D41487D5BC5EBF33F3AD117AE2361877" class="qa_nav_word click"
+                   rel="nofollow" id="J_qa_nav_tri">我的订单</a>
+                <a href="/TravelNotes/travelNotesList" class="qa_nav_word click"
                    rel="nofollow" id="J_qa_nav_trips">游记</a>
             </div>
 

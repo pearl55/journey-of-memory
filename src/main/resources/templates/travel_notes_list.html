@@ -2,18 +2,13 @@
 <html xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8">
+    <!--   显示游记页面   -->
     <title>云游旅行网_云南旅行社精品网站_云南旅游云南中青国际旅行社网站</title>
 
-    <meta name="description"
-          content="云游旅行网(yntravel.com)为云南中青国际旅行社旗下网站，提供云南旅游报价、云南自由行、昆明周边旅游、昆明出发国内游及出境游等旅游产品，云南旅行社网站首选！旅游咨询电话：400-633-5280"/>
-    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
-    <link href="http://xnxw.cncnimg.cn/css/front/base.css" rel="stylesheet" type="text/css"/>
-    <link href="http://xnxw.cncnimg.cn/css/front/templet2/home1.css?v=0317" rel="stylesheet" type="text/css"/>
-    <link href="http://xnxw.cncnimg.cn/css/front/templet2/home1_color1.css?v=0317" rel="stylesheet" type="text/css"/>
-    <script src="../js/userUpdate.js"></script>
-    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
-    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <meta name="description" content="云游旅行网(yntravel.com)为云南中青国际旅行社旗下网站，提供云南旅游报价、云南自由行、昆明周边旅游、昆明出发国内游及出境游等旅游产品，云南旅行社网站首选！旅游咨询电话：400-633-5280" />
+    <link href="http://xnxw.cncnimg.cn/css/front/base.css" rel="stylesheet" type="text/css" />
+    <link href="http://xnxw.cncnimg.cn/css/front/templet2/home1.css?v=0317" rel="stylesheet" type="text/css" />
+    <link href="http://xnxw.cncnimg.cn/css/front/templet2/home1_color1.css?v=0317" rel="stylesheet" type="text/css" />
 </head>
 <!--[if lt IE 8]>
 <script>var auto;</script>
@@ -25,14 +20,12 @@
 
     <div id="site_nav">
         <div class="site_nav_bd">
-
             <div class="login" th:if="${deng1}!=null"><em>欢迎来到记忆之旅 </em>
                 <em>欢迎来到记忆之旅 </em><a href="getuser.action" ><span th:text="${deng1}" id="name"></span></a>|<a href="logout.action" rel="nofollow">退出</a>
             </div>
             <div class="login" th:if="${deng1}==null"><em>欢迎来到记忆之旅 </em>
                 <a href="login.html">登录</a>|<a href="register.html" rel="nofollow">免费注册</a>
             </div>
-
             <div class="quick_menu">
                 <div class="top_ewm">
                     <a class="mobile"><img src="http://x1.cncnimg.cn/p10068/10068_code.jpg"/></a>
@@ -44,145 +37,153 @@
             </div>
         </div>
     </div>
+<body id="tourDoyenCenter" class="index1200">
+<script type="text/javascript"
+        src="//ssl1.tuniucdn.com/j/201406191714/3rd/jquery-1.7.2.min.js,common/in-min.js"></script>
+<script type="text/javascript" src="//ssl4.tuniucdn.com/j/201704251701/header/header_v2.js"></script>
+<script type="text/javascript"
+        src="//ssl4.tuniucdn.com/j/201704191800/common/jquery.autocomplete_divbycat.js,common/recordCookie.js,common/getDegree.js"></script>
+<script type="text/javascript" src="//img1.tuniucdn.com/j/201507012250/common/screen_size.js"></script>
+<link rel="stylesheet"
+      href="//ssl1.tuniucdn.com/s/201706081936/common/reset.css,common/layout.css,search_v2/search_box.css,search_v2/package.css,common/powerFloat.css,platform/css.css,common/head_divbycat_v6.css,common/site_nav.css,header/header_v2.css,common/top_map.css">
+<link rel="stylesheet" type="text/css" href="//ssl4.tuniucdn.com/s/2014120915/search_v2/TN_date.css"/>
+<script type="text/javascript"
+        src="//ssl4.tuniucdn.com/j/201706081936/search_v2/search_input_v2.js,search_v2/search_ajax.js"></script>
+
+       <!-- <div class="nav_dest"> <i class="header_icon icon_catalog"></i> <span class="dest_title">出游目的地</span> <div id="categorys"></div> </div>--> </div>
+        <link type="text/css" rel="stylesheet" href="//img1.tuniucdn.com/s/201702071836/common/index_nav_menu.css"/>
+        <div class="warpper">
         </div>
-    </div>
-    <div class="header fn-clear">
-        <div class="nav_layer">
-            <div class="nav_layer_con">
-                <ul>
-                    <li class="all_pro"><span>全部旅游产品分类</span></li>
+        <div class="header fn-clear">
+
+            <div class="nav_layer">
+                <div class="nav_layer_con">
+                    <ul>
+                        <li class="all_pro"><span>全部旅游产品分类</span></li>
 
 
-                    <li  class="#"><a href="/"><span>首页<i class=""></i></span></a></li>
-                    <li ><a href="#"><span>门票<i ></i></span></a></li>
-                    <li ><a href="/lvyou"><span>旅游<i ></i></span></a></li>
-                    <li ><a href="/findTourist"><span>景点<i ></i></span></a></li>
-                    <li ><a href="/map"><span>目的地<i ></i></span></a></li>
-                    <li ><a href="#"><span>攻略<i ></i></span></a></li>
-                    <li ><a href="/Thematic_tour_homepage.html"><span>旅游专题<i ></i></span></a></li>
-                    <li ><a href="/individualCommunity"><span>个人社区<i class="hot1"></i></span></a></li>
+                        <li  class="#"><a href="/"><span>首页<i class=""></i></span></a></li>
+                        <li ><a href="#"><span>门票<i ></i></span></a></li>
+                        <li ><a href="/lvyou"><span>旅游<i ></i></span></a></li>
+                        <li ><a href="/findTourist"><span>景点<i ></i></span></a></li>
+                        <li ><a href="/map"><span>目的地<i ></i></span></a></li>
+                        <li ><a href="#"><span>攻略<i ></i></span></a></li>
+                        <li ><a href="/Thematic_tour_homepage.html"><span>旅游专题<i ></i></span></a></li>
+                        <li ><a href="/individualCommunity"><span>个人社区<i class="hot1"></i></span></a></li>
 
-                </ul>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
-    <script src="http://xnxw.cncnimg.cn/js/jquery1.10.2.min.js"></script>
-    <script src="http://xnxw.cncnimg.cn/js/front/base.js"></script>
-    <script type="text/javascript">
-        $(function () {
-            $('.J_ercode').mouseover(function () {
-                $(this).find('.J_code_img').show();
+        <script src="http://xnxw.cncnimg.cn/js/jquery1.10.2.min.js"></script>
+        <script src="http://xnxw.cncnimg.cn/js/front/base.js"></script>
+        <script type="text/javascript">
+            $(function(){
+                $('.J_ercode').mouseover(function(){
+                    $(this).find('.J_code_img').show();
+                });
+                $('.J_ercode').mouseout(function(){
+                    $(this).find('.J_code_img').hide();
+                });
             });
-            $('.J_ercode').mouseout(function () {
-                $(this).find('.J_code_img').hide();
-            });
-        });
-    </script>
+        </script>
 
-    <script type="text/javascript" src="http://xnxw.cncnimg.cn/js/index/index2.js"></script>
-    <style>
-        .nav_layer_con ul li a {
-            float: left;
-            height: 40px;
-            padding: 0 8px;
-            font-size: 14px;
-            color: #fff;
-            font-weight: bold;
-            text-decoration: none;
-        }
-
-        .gg1000 {
-            _width: 100%;
-            background-color: #777;
-            background-repeat: no-repeat;
-            background-position: center top;
-            padding: 0;
-            position: relative;
-        }
-
-        .gg1000 a {
-            display: block;
-            margin: 0 auto;
-            width: 1000px;
-            background-repeat: no-repeat;
-            background-position: center top;
-            min-height: 40px;
-        }
-
-        .gg1000 img {
-            display: block;
-            _margin-left: -9000px;
-            left: -9000px;
-            position: relative;
-        }
-
-        .gg1000 i {
-            position: absolute;
-            background: url(/static/images/front/home30/close.gif) no-repeat;
-            right: 0px;
-            top: 0px;
-            cursor: pointer;
-            height: 40px;
-            width: 40px;
-            z-index: 10;
-            opacity: 0.6;
-            filter: alpha(opacity=60);
-        }
-
-        .gg1000 i:hover {
-            opacity: 1;
-            filter: alpha(opacity=100);
-        }
-
-        .tab_cont .pro_list {
-            display: none;
-        }
-
-        .tab_cont .showed {
-            display: block;
-        }
-
-        .tab_cont .showed {
-            background: url(/static/images/front/zoomloader.gif) no-repeat center center;
-        }
-    </style>
-    <div class="subnav_wrap_bg" id="subnav_wrap_bg"></div>
-    <input type="hidden" value="99" name="tabId"/>
-    <script type="text/javascript"> (function () {
-        var nav_tabs = document.getElementsByName("nav-tab");
-        var tabId = document.getElementsByName("tabId")[0].value;
-        if (nav_tabs.length && tabId.length) {
-            for (var i = 0; i < nav_tabs.length; i++) {
-                if (nav_tabs[i].getAttribute("data-tab") == tabId) {
-                    var class_str = nav_tabs[i].className;
-                    class_str += " selected";
-                    nav_tabs[i].className = class_str;
+        <script type="text/javascript" src="http://xnxw.cncnimg.cn/js/index/index2.js"></script>
+        <style>
+            .nav_layer_con ul li a {
+                float: left;
+                height: 40px;
+                padding: 0 8px;
+                font-size: 14px;
+                color: #fff;
+                font-weight: bold;
+                text-decoration: none;
+            }
+            .gg1000{
+                _width:100%;
+                background-color:#777;
+                background-repeat:no-repeat;
+                background-position:center top;
+                padding:0;
+                position:relative;
+            }
+            .gg1000 a{
+                display:block;
+                margin:0 auto;
+                width:1000px;
+                background-repeat:no-repeat;
+                background-position:center top;
+                min-height:40px;
+            }
+            .gg1000 img{
+                display:block;
+                _margin-left:-9000px;
+                left:-9000px;
+                position:relative;
+            }
+            .gg1000 i{
+                position:absolute;
+                background:url(/static/images/front/home30/close.gif) no-repeat;
+                right: 0px;
+                top: 0px;
+                cursor: pointer;
+                height: 40px;
+                width: 40px;
+                z-index: 10;
+                opacity:0.6;
+                filter:alpha(opacity=60);
+            }
+            .gg1000 i:hover{
+                opacity:1;
+                filter:alpha(opacity=100);
+            }
+            .tab_cont .pro_list {
+                display: none;
+            }
+            .tab_cont .showed {
+                display: block;
+            }
+            .tab_cont .showed {
+                background: url(/static/images/front/zoomloader.gif) no-repeat center center;
+            }
+        </style>
+        <div class="subnav_wrap_bg" id="subnav_wrap_bg"></div>
+        <input type="hidden" value="99" name="tabId"/>
+        <script type="text/javascript"> (function () {
+            var nav_tabs = document.getElementsByName("nav-tab");
+            var tabId = document.getElementsByName("tabId")[0].value;
+            if (nav_tabs.length && tabId.length) {
+                for (var i = 0; i < nav_tabs.length; i++) {
+                    if (nav_tabs[i].getAttribute("data-tab") == tabId) {
+                        var class_str = nav_tabs[i].className;
+                        class_str += " selected";
+                        nav_tabs[i].className = class_str;
+                    }
                 }
             }
-        }
-    })();</script>
-    <script>$(document).ready(function () {
-        var catLoaded = false;
-        $(document).mousemove(function () {
-            if (!catLoaded) {
-                var getCookie = function (objName) {
-                    var arrStr = document.cookie.split("; ");
-                    for (var i = 0; i < arrStr.length; i++) {
-                        var temp = arrStr[i].split("=");
-                        if (temp[0] == objName) return unescape(temp[1]);
-                    }
-                    return false;
-                };
-                catLoaded = true;
-                var cityCode = '';
-                cityCode = getCookie("tuniuuser_citycode");
-                cityCode = base64decode(cityCode.toString());
-                $.getScript("//www.tuniu.com/headermenu/" + cityCode);
-            }
-        });
-    });</script>
-    <script type="text/javascript" src="//ssl3.tuniucdn.com/j/2014101501/common/index_base_v5.js"></script>
-</div> <!-- 横向导航菜单end --></div><!-- 头部end -->
+        })();</script>
+        <script>$(document).ready(function () {
+            var catLoaded = false;
+            $(document).mousemove(function () {
+                if (!catLoaded) {
+                    var getCookie = function (objName) {
+                        var arrStr = document.cookie.split("; ");
+                        for (var i = 0; i < arrStr.length; i++) {
+                            var temp = arrStr[i].split("=");
+                            if (temp[0] == objName) return unescape(temp[1]);
+                        }
+                        return false;
+                    };
+                    catLoaded = true;
+                    var cityCode = '';
+                    cityCode = getCookie("tuniuuser_citycode");
+                    cityCode = base64decode(cityCode.toString());
+                    $.getScript("//www.tuniu.com/headermenu/" + cityCode);
+                }
+            });
+        });</script>
+        <script type="text/javascript" src="//ssl3.tuniucdn.com/j/2014101501/common/index_base_v5.js"></script>
+    </div> <!-- 横向导航菜单end --></div><!-- 头部end -->
 <script type="text/javascript">function selectTag(showContent, selfObj) {
     var tag = document.getElementById("tags").getElementsByTagName("li");
     var taglength = tag.length;
@@ -236,7 +237,7 @@ $(function ($) {
     var page_user_unique_code = "D41487D5BC5EBF33F3AD117AE2361877";
     var unique_code_flag = true;
     var isIndex = true;
-    var self_flag = true;
+    var self_flag = false;
     var totalSpotAmount = 0;
     var cityCount = 0;
     var footprint_url = "http://www.tuniu.com/person/footprint/D41487D5BC5EBF33F3AD117AE2361877";
@@ -258,114 +259,12 @@ $(function ($) {
      style=" background: url(http://m.tuniucdn.com/filebroker/cdn/snc/03/1f/031fc9a344d81095db4d871aedf0fa03_w800_h0_c0_t0_w2048_h0_c0_t0.jpg) center top no-repeat #efefef;">
     <div class="tuc-main clearfix">
 
-        <!-- 头部用户信息 start -->
-        <div class="tuc-user" th:each="user:${user}">
-            <div class="J-UserPic tuc-user-pic">
-                <img th:attr="src=${user.head}" width="160" height="160"
-                     onerror="this.src='http://img2.tuniucdn.com/site/file/deyonUserCenter/images/empty.jpg'"/>
-            </div>
-            <!-- 注释达人 <div class="tuc-user-right tuc-icon">-->
-            <div class="tuc-user-right">
-                <div class="tuc-num">
-                    <div class="tuc-num-top">
-                        <span>去过</span><span><em class="J-SumCountry">0</em>国家</span><span><em
-                            class="J-SumProvince">0</em>省份</span><span><em class="J-SumCity">0</em>城市</span><span><em
-                            class="J-SumSpot">0</em>景点</span>
-                    </div>
-                </div>
-                <div class="doyen-list-user" style="width:auto;">
-                    <p class="doyen-list-u-n">
-                        <span th:text="${user.username}"></span>
-                        <span class="tuc-grade tuc-icon">LV1</span>
-                    </p>
-                    <div class="tuc-deyon">
-                        <p class="tuc-deyon-c tuc-icon" id="cnt_like">0</p>
-                        <p class="tuc-deyon-s tuc-icon">36</p>
-                        <p class="tuc-deyon-d">常住地<span th:text="${user.address}" id="J_City" data-city="1615"
-                                                        data-province="1600"></span></p>
-                    </div>
-                    <p class="doyen-list-u-url" style="width:auto;">
-                    <p class="tuc-deyon-d">个性签名：<span th:text="${user.sign}"></span></p>
-                    <p class="doyen-list-u-url" style="width:auto;">
-                        <button type="button" th:value="${user.id}" onclick="toUpdate(this)"
-                                class="btn btn-default btn-xs" data-toggle="modal"
-                                data-target="#addModal" data-whatever="@mdo">编辑
-                        </button>
-                    </p>
-
-                </div>
-            </div>
-        </div>
-
-        <!--编辑个人资料 start-->
-        <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="insertModalLabel">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                                aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="exampleModalLabel">编辑个人资料</h4>
-                    </div>
-                    <div class="modal-body">
-                        <form action="/updateUser" method="post" enctype="multipart/form-data">
-                            <div class="form-group">
-                                <input type="hidden" name="id" class="form-control" id="id">
-                            </div>
-                            <div class="form-group">
-                                <input type="hidden" name="deng" class="form-control" id="deng">
-                            </div>
-                            <div class="form-group">
-                                <label for="username" class="control-label">昵称：</label>
-                                <input type="text" name="username" class="form-control" id="username">
-                                <span>必须是4-10个字符的英文或是2-5个字符的中文</span>
-                            </div>
-                            <div class="form-group">
-                                <label for="password1" class="control-label">原密码：</label>
-                                <input type="password" name="password1" class="form-control" id="password1"
-                                       onblur="originalPassword()">
-                                <span id="mess"></span>
-                            </div>
-                            <div class="form-group">
-                                <label for="password2" class="control-label">新密码：</label>
-                                <input type="password" name="password2" class="form-control" id="password2">
-                            </div>
-                            <div class="form-group">
-                                <label for="password" class="control-label">确定密码：</label>
-                                <input type="password" name="password" class="form-control" id="password"
-                                       onblur="determinePassword()">
-                                <span id="mess2"></span>
-                            </div>
-                            <div class="form-group">
-                                <label for="head" class="control-label">修改头像：</label>
-                                <input type="file" name="file" class="form-control" id="head">
-                            </div>
-                            <div class="form-group">
-                                <label for="address" class="control-label">常住地：</label>
-                                <input type="text" name="address" class="form-control" id="address">
-                            </div>
-                            <div class="form-group">
-                                <label for="sign" class="control-label">个性签名：</label>
-                                <input type="text" name="sign" class="form-control" id="sign">
-                                <span>不超过20字</span>
-                            </div> <!--onclick="updateUser()"-->
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                                <button type="submit" class="btn btn-primary" id="updateButton">保存</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--编辑个人资料 end-->
-
-        <!-- 头部用户信息 end -->
 
         <div class="tuc-content clearfix">
             <!--面包屑 start-->
             <!--  -->
             <input type="hidden" class="page_uid" value="49918211"/>
-            <input type="hidden" name="csrf_token" id="csrf_token" value="a0bd915b4ef95758391363eb15b4b0b6"/>
+            <input type="hidden" name="csrf_token" id="csrf_token" value="2449d7ae54741463e9c53605b9439e9e"/>
             <div class="qa_nav" id="J_qa_nav">
                 <a href="/individualCommunity" class="qa_nav_word"
                    rel="nofollow" id="J_qa_nav_index">首页</a>
@@ -378,80 +277,82 @@ $(function ($) {
             </div>
 
             <!--面包屑 end-->
-            <div class="tuc-content-left">
-                <p class="tuc-content-title">
-                    <img class="tuc-footer tuc-icon"
-                         src="http://img2.tuniucdn.com/site/file/deyon/images/transparent.gif"/>
-                    <span>我的足迹</span>
-                    <a href="javascript:void(0);" class="share tuc-icon" share_place="map">分享</a>
-                </p>
-                <div class="tuc-map" style="display:none;">
-                    <!-- 地图展示 S -->
-                    <div id="J_Map" class="map" style="width:740px;height:386px;"></div>
-                    <div id="J_MapSwitch" class="map-switch map-global"></div>
-                    <div class="tuc-ranking tuc-icon">
-                        <p class="tuc-rank-title">足迹排行榜</p>
-                        <p class="tuc-rank-num">4948</p>
-                    </div>
-                    <!-- 地图展示 E -->
-                </div>
-                <div class="tuc-track clearfix">
-                    <div class="tuc-track-right" id="J_TrackWrap">
-                        <div class="tuc-area" id="chinaEare">
 
-                            <p class="tuc-track-title track-title-bordbot" th:each="city:${cityList}">
-                                <span data-value="1" th:text="${city.n_city}"></span>
-                            </p>
-
-                            <div id="J_China" class="china-all">
-                            </div>
-                        </div>
+            <div class="tuc-content-left dyj_cont_left">
+                <!-- 我的游记 -->
+                <div class="nav_right dyj_left_block">
+                    <div class="travelnote_tab">
+                        <a href="javascript:void(0)" class="tab mynote cur">TA的游记</a>
+                        <a href="javascript:void(0)" class="tab collectnote">收藏的游记</a>
+                        <a href="/TravelNotes/travelNotes" target="_blank" class="publish">发表游记</a>
                     </div>
+                    <table data-isme="2" class="datatable datatbl_0" cellpadding="0" cellspacing="0" border="0"
+                           style="display:table;">
+                        <thead>
+                        <tr>
+                            <th width="100">发表日期</th>
+                            <th width="290">标题</th>
+                            <th width="170">相关目的地</th>
+                            <th width="70">浏览数</th>
+                            <th width="70">评论数</th>
+                            <th width="90">作者</th>
+                        </tr>
+                        </thead>
+                        <tbody th:each="notesList:${notesList}">
+                            <tr>
+                                <td th:text="${#calendars.format(notesList.n_releaseDate,'yyyy-MM-dd')}"></td>
+                                <td><a href="checkTravel.html" th:href="@{/TravelNotes/getTravelNotesByNid(n_id=${notesList.n_id})}"><span th:text="${notesList.n_headline}"></span></a></td>
+                                <td th:text="${notesList.n_destination}"></td>
+                                <td th:text="${notesList.n_page_view}"></td>
+                                <td th:text="${notesList.n_commentnum}"></td>
+                                <td th:text="${notesList.username}"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="pagination" style="display: none;"></div>
+                    <!--   收藏游记   -->
+                    <table data-isme="2" class="datatable datatbl_1" cellpadding="0" cellspacing="0" border="0">
+                        <thead>
+                        <tr>
+                            <th width="100">发表日期</th>
+                            <th width="290">标题</th>
+                            <th width="170">相关目的地</th>
+                            <th width="70">浏览数</th>
+                            <th width="70">评论数</th>
+                            <th width="90">作者</th>
+                        </tr>
+                        </thead>
+                       <!-- <tbody th:each="notesList:${notesList}">
+                        <tr>
+                            <td th:text="${#calendars.format(notesList.n_releaseDate,'yyyy-MM-dd')}"></td>
+                            <td th:text="${notesList.n_headline}"></td>
+                            <td th:text="${notesList.n_destination}"></td>
+                            <td th:text="${notesList.n_page_view}"></td>
+                            <td th:text="${notesList.n_commentnum}"></td>
+                            <td th:text="${notesList.username}"></td>
+                        </tr>
+                        </tbody>-->
+                    </table>
+                    <!--   收藏游记  end -->
+                    <div class="pagination" style="display: none;"></div>
                 </div>
-
-                <!-- 我的游记 start -->
-                <style>
-                    .pager_active {
-                        color: #f60;
-                    }
-                </style>
-                <div class="J-TucSTrips tuc-send-trips clearfix" id="part_trip" style="margin-bottom: 10px;">
-                    <p class="tuc-content-title">
-                        <img class="tuc-tour tuc-icon"
-                             src="http://img2.tuniucdn.com/site/file/deyon/images/transparent.gif"/>
-                        <span>我的旅途</span>
-                        <a href="/TravelNotes/travelNotes" target="_blank" class="sendtrack tuc-icon">发表游记</a>
-                    </p>
-                    <div class="tuc-send-time tuc-icon" id="change_trip_year">
-                        <p class="tuc-all tuc-selected tuc-icon" trip_year="all">全部</p>
-                        <p class="tuc-all tuc-icon" trip_year="2015">2015</p>
-                        <p class="tuc-all tuc-icon" trip_year="2014">2014</p>
-                        <p class="tuc-all tuc-icon" trip_year="2013">2013</p>
-                        <p class="tuc-more tuc-icon" trip_year="more"><span>更早之前</span></p>
-                        <p class="tuc-send-time-border"></p>
-                    </div>
-                    <!-- 游记列表 -->
-                </div>
-                <!-- 我的游记 end -->
             </div>
+
             <!-- 右侧边栏 start -->
             <div class="tuc-content-right">
-                <!--我的想去模板 end-->
-                <!-- 我想去的景点 end -->
 
                 <!-- 推荐景点 start -->
                 <div class="tuc-list" id="tucRemmmond">
                     <p class="tuc-content-title">
                         <img class="tuc-want1 tuc-icon"
                              src="http://img2.tuniucdn.com/site/file/deyon/images/transparent.gif"/>
-                        <span>我的推荐景点</span>
-                        <a href="javascript:;" class="add tuc-icon">添加</a>
+                        <span>TA的推荐景点</span>
                         <a href="#" class="share tuc-icon" share_place="recommend_spot">分享</a>
                     </p>
                     <div class="tuc-list-want">
                         <img src="http://img3.tuniucdn.com/site/file/deyonUserCenter/images/empty.png?v=20141208"
                              width="104" height="103"/>
-                        <p>你还没有给大家推荐值得旅行的地方，<a href="#" id="tucNowRem">现在去推荐吧~</a></p>
+                        <p>这个家伙太懒了，还未添加值得一游的地方~</p>
                     </div>
                 </div>
                 <!--添加推荐 start-->
@@ -580,21 +481,20 @@ $(function ($) {
                     <p class="tuc-content-title">
                         <img class="tuc-want3 tuc-icon"
                              src="http://img2.tuniucdn.com/site/file/deyon/images/transparent.gif"/>
-                        <span>我推荐的线路</span>
-                        <a href="javascript:;" class="add tuc-icon">添加</a>
+                        <span>TA推荐的线路</span>
                         <a href="javascript:;" class="share tuc-icon" share_place="recommend_my_routes">分享</a>
                     </p>
                     <div class="tuc-list-want">
                         <img src="http://img2.tuniucdn.com/site/file/deyonUserCenter/images/empty.png" width="104"
                              height="103"/>
-                        <p>快快把你认为记忆网值得预订的线路，<a href="javascript:;" id="remToFriend">推荐给好友吧</a></p>
+                        <p>这个家伙太懒，还没把TA的私藏线路推荐给好友~</p>
                     </div>
                 </div>
                 <!--我的推荐线路 end-->
 
                 <!--添加我推荐的线路 start-->
                 <div class="hide" id="tuc8">
-                    <h4>快快把你认为记忆网值得预订的线路推荐给好友吧~</h4>
+                    <h4>快快把你认为途牛网值得预订的线路推荐给好友吧~</h4>
                     <div class="product-error">请选择要推荐的线路</div>
                 </div>
                 <!--添加我推荐的线路 end-->
@@ -683,6 +583,7 @@ $(function ($) {
                 <!--我的推荐线路模板 end-->
 
                 <!-- 人气线路 | 我的推荐线路 end -->
+
             </div>
         </div>
         <!-- 右侧边栏 end -->
@@ -742,13 +643,12 @@ $(function ($) {
                 <img src="http://img2.tuniucdn.com/site/file/deyon/images/transparent.gif" class="area-icon tuc-icon">
                 <div class="area-details">
                     <p class="area-name"><%= name %></p>
-                    <p class="J_AddrDelete area-del tuc-icon"></p></div>
+                </div>
                 <div class="area-details">
                     <p class="J-SumComment area-details-left"><em class="J-CountSpot"><% if(spots){%><%= spots %><%
                         }else{ %>0<% } %></em>个景点,<em class="J-CountComment"><% if(reviews){%><%= reviews %><% }else{
                         %>0<% } %></em>条点评</p>
-                    <a data-value="china101" href="javascript:;"
-                       class="J_AddSpot area-details-right tuc-icon">继续添加景点</a></div>
+                </div>
             </div>
             <div class="J_Spots spot-line">
                 <div class="J_Fold spot-fold" data-code="1">展开<em class="tn_fontface">&#xe61f;</em></div>
@@ -767,22 +667,22 @@ $(function ($) {
             <div class="area-list-text">
                 <p class="area-list-name">
                     <span class="name"><a target="_blank" href="<%= info.url %>"><%= name %></a></span>
-                    <span data-sid="china" data-code="10002" class="J_SpotDelete colse tuc-icon"></span></p>
+                </p>
                 <p class="area-list-star"></p>
                 <p class="J_SpotComment area-list-intro" data-name="
               <% if (info.comment) {%>
                 <%= info.comment %>
                 <% } else { %>
-                写点什么吧~                <% } %>
+                  这个家伙很懒，没有留下点评~                <% } %>
                 " title="
                  <% if (info.comment) {%>
                 <%= info.comment %>
                 <% } else { %>
-                写点什么吧~                <% } %>
+                  这个家伙很懒，没有留下点评~                <% } %>
                 ">
                 </p>
                 <p class="aera-list-adit">
-                    <span data-sid="china" data-code="10002" class="J_EditSpot edit tuc-icon"></span></p>
+                </p>
             </div>
             <div class="area-line"><p></p><span class="tuc-icon"></span></div>
         </div>
@@ -853,8 +753,8 @@ $(function ($) {
                 <img src="http://img2.tuniucdn.com/site/file/deyonUserCenter/images/empty.png" width="104"
                      height="103"/>
                 <div class="tuc-blank-right">
-                    <p>你的旅行从这里起航~</p><a href="javascript:;" class="addtrack tuc-icon fl ml0"
-                                        id="J_AddTrackBlank">添加足迹</a></div>
+                    <p>TA还没有添加足迹~</p>
+                </div>
             </div>
         </div>
     </script>
@@ -1060,9 +960,6 @@ $(function ($) {
     <script type="text/javascript" src="http://img4.tuniucdn.com/j/20170420/youji/mytrips.js"></script>
     <script type="text/javascript" src="http://img4.tuniucdn.com/j/20170420/youji/myPlays.js"></script>
     <script type="text/javascript" src="http://img4.tuniucdn.com/j/201512101657/common_v2/pager.js"></script>
-    <!--<script type="text/javascript" src="http://www.tuniu_test.com/qask/data4.js"></script>
-    <script type="text/javascript" src="http://www.tuniu_test.com/qask/QAXList2.js"></script>
-    <script type="text/javascript" src="http://www.tuniu_test.com/qask/qa_index_x3.js"></script>-->
 
     <script>
         new Qalist;
