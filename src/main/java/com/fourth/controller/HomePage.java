@@ -46,7 +46,21 @@ public class HomePage {
         map.put("deng1",deng1);
         return "index2";
     }
+    /**
+     * 后台管理
+     */
+    @RequestMapping("/admin")
+    public String map(){
+        return "index";
+    }
 
+    /**
+     * 目的地
+     */
+    @RequestMapping("/map")
+    public String map1(){
+        return "map22";
+    }
 
 
 }

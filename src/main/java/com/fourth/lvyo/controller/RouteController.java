@@ -117,7 +117,8 @@ public class RouteController {
     @RequestMapping("/dingdan")
     public String findDindan(Map<String,Object> map,HttpSession session){
         System.out.println("--------diandan------------");
-        List<OrderForm> list = routeService.getfindOrderForm();
+        User useri = (User) session.getAttribute("useri");
+        List<OrderForm> list = routeService.getfindOrderForm(useri.getId());
         String deng1 = (String) session.getAttribute("deng1");
         map.put("deng1",deng1);
         map.put("dingdan",list);

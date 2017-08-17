@@ -43,8 +43,7 @@
                 <p><a href="/"><img src="http://x1.cncnimg.cn/p10068/374/4157.jpg" title="云游旅行网" /></a></p>
             </div>
             <div class="search">
-                <div class="search_con"><form action="/search" target="_self" method="get"><input type="text" name="key"  class="search_txt" value="" /><input type="submit" value="搜索" class="search_sub" /></form></div>
-                <p>
+                <div class="search_con"><form action="/findTourist"method="post"><input type="text" class="search_txt"placeholder="请输入目的地" name="address_Name"/><input type="submit" value="搜索" class="search_sub" /></form></div>                <p>
                     <em>热门搜索：</em>
                     <a href="/search/%C0%F6%BD%AD">丽江</a>
                     <a href="/search/%BD%CE%D7%D3%D1%A9%C9%BD">轿子雪山</a>
@@ -241,8 +240,8 @@
                                 <input  type="hidden" th:value="${scenery.scenery_Day}" name="orderform_Day">
                                 <input  type="hidden" th:value="${scenery.scenery_Rode}" name="orderform_Rode">
                                 <input  type="hidden" th:value="${scenery.scenery_Type}" name="orderform_Type">
-                                <input  type="text" name="user_Id" id="user_Id" >
-                                <span style="width:125px; height:36px;">
+                                <input  type="hidden" name="user_Id" id="user_Id" >
+                                <span style="width:125px; height:36px;,">
                         <input name="imageField" type="image" src="http://xnxw.cncnimg.cn/images/front/home/btn_order.png" alt="立刻预订" onClick="line.order()">
                                 <!--<input type="submit" value="提交">-->
                                 </span>

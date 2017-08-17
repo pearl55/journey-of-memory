@@ -56,8 +56,8 @@ public class RouteServiceImpl implements RouteService {
     }
 
 
-    public List<OrderForm> getfindOrderForm() {
-        return routeMapper.getfindOrderForm();
+    public List<OrderForm> getfindOrderForm(int id) {
+        return routeMapper.getfindOrderForm(id);
     }
 
 

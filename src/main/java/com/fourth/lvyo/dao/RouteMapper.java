@@ -40,7 +40,7 @@ public interface RouteMapper {
     //查询全部景色
     List<Scenery> getSceneryFindAll();
     //根据用户查订单
-    List<OrderForm> getfindOrderForm();
+    List<OrderForm> getfindOrderForm(int id);
     //删除根据id订单
     void deleteOrderForm(int id);
 
