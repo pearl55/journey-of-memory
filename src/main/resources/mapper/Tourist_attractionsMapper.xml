@@ -38,7 +38,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     <!-- 根据景点名称,景点类型,地址,查询所需要的景点  findTouristList -->
     <select id="findTouristList1" parameterType="java.util.Map"  resultMap="touristMapper">
         select * from scenery s,address a where a.address_id = s.address_aid and a.address_name LIKE
-        '%${address_Name}%' or s.scenery_title like '%${address_Name}%' or s.scenery_type = '%${address_Name}%' GROUP BY s.scenery_id
+        '%${address_Name}%' or  s.scenery_type like '%${address_Name}%' or s.scenery_title like '%${address_Name}%' GROUP BY s.scenery_id
         <if test="page != null">
             limit #{page.CurrentPage},#{page.PageSize}
         </if>

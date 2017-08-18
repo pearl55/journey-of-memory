@@ -21,7 +21,7 @@ public interface RouteMapper {
     查询全部线路分类
      */
 
-    List<Route> getRoute(String routeNumber);
+    List<Scenery> getRoute(String routeNumber);
     /*
     查询景色
      */
