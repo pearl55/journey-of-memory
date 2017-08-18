@@ -2,11 +2,9 @@
 <!DOCTYPE mapper SYSTEM "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.fourth.lvyou.dao.RouteMapper">
 
-  <select id="getRoute" resultType="com.fourth.lvyou.bean.Route" parameterType="String">
-      SELECT  * FROM route
-      <where>
-       route_number = #{routeNumber};
-      </where>
+  <select id="getRoute" resultType="com.fourth.lvyou.bean.Scenery" parameterType="String">
+      SELECT  * FROM route,scenery,address WHERE route.route_id=address.address_route_id and address.address_id=scenery.address_aid and route.route_number = #{routeNumber}
+
   </select>
 
 <!--查询景点 根据地点模糊查询查询-->

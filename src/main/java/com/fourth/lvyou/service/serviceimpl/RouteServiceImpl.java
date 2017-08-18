@@ -21,7 +21,7 @@ public class RouteServiceImpl implements RouteService {
     private RouteMapper routeMapper;
 
 
-    public List<Route> getRoute(String routeNumber) {
+    public List<Scenery> getRoute(String routeNumber) {
 
         System.out.println("service");
         return routeMapper.getRoute(routeNumber);

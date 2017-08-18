@@ -30,14 +30,14 @@ public class RouteController {
     @RequestMapping(method = RequestMethod.GET, value = "/lvyou/{routeNumber}")
     public String getRoute(@PathVariable("routeNumber") String routeNumber, Map<String, Object> map,Scenery scenery,HttpSession session) {
         System.out.println("getroute------------------------" + routeNumber);
-        List<Route> route = routeService.getRoute(routeNumber);
-        List<Scenery> list = routeService.getScenery(scenery);
+        List<Scenery> route = routeService.getRoute(routeNumber);
+     //   List<Scenery> list = routeService.getScenery(scenery);
 
         String deng1 = (String) session.getAttribute("deng1");
         map.put("deng1",deng1);
 
-        map.put("scenery",list);
-        map.put("list", route);
+        map.put("scenery",route);
+
         return "lvYouXianLu2";
     }
     /*
@@ -54,7 +54,6 @@ public class RouteController {
 
         String deng1 = (String) session.getAttribute("deng1");
         map.put("deng1",deng1);
-
         map.put("tuijian",sce);
         map.put("tuijian1",sce1);
         map.put("scenery",scenery);

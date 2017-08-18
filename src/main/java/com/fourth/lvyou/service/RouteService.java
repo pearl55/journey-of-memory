@@ -15,7 +15,7 @@ public interface RouteService {
     /*
     查询全部线路分类
      */
-    public List<Route> getRoute(String routeNumber);
+    public List<Scenery> getRoute(String routeNumber);
 
     /*
    查询景色
