@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Created by 赵翰 on 2017/8/5.
+ * Created by shuishuai on 2017/8/5.
  */
 @Controller
 public class FindScenery {
@@ -28,6 +28,7 @@ public class FindScenery {
     */
   @RequestMapping("/findTourist")
   public ModelAndView findTourist(String address_Name,HttpServletRequest request,Integer currentPage,HttpSession session){
+
       if(currentPage==null){
           currentPage = 0;
       }
@@ -38,6 +39,7 @@ public class FindScenery {
       List<Scenery> list = tourist_attractionsService.findTouristList1(map);
       Integer listCount = list.size();
       Integer pageSize = 10;
+
       int pageCount =  listCount / pageSize + (listCount % pageSize != 0 ? 1 : 0);
 
 
