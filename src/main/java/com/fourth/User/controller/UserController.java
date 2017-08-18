@@ -96,11 +96,15 @@ public class UserController {
     @RequestMapping("/individualCommunity")
     public String getShe( Model model,HttpSession session){
         User user2 = (User) session.getAttribute("useri");
-        System.out.println(user2.getDeng()+"---------------------");
-        String str=user2.getDeng();
-        String ss = str.substring(0,str.length()-(str.substring(3)).length())+"****"+str.substring(7);
-        model.addAttribute("deng1",ss);
-        if (user2!=null){
+        //System.out.println(user2.getDeng()+"---------------------");
+
+        if(user2!=null){
+
+
+            String str=user2.getDeng();
+            String ss = str.substring(0,str.length()-(str.substring(3)).length())+"****"+str.substring(7);
+            model.addAttribute("deng1",ss);
+
             User user = service.findUserById(user2.getId());
             model.addAttribute("user",user);
             List<TravelNotes> cityList = travelNotesService.findTravelNotesByCity(user.getId());
