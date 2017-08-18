@@ -31,6 +31,55 @@
         /* css注释：为了观察效果设置宽度 边框 高度等样式 */
     </style>
     <script src="../static/js/jquery-1.11.1.js"></script>
+
+    <script>
+        function addNotes(){
+            var headline=$.trim($("#n_headline").val());
+            var city=$.trim($("#n_city").val());
+            var scenic=$.trim($("#n_scenic").val());
+            var destination=$.trim($("#n_destination").val());
+            var time_limit=$.trim($("#n_time_limit").val());
+            var section_titles=$.trim($("#n_section_titles").val());
+
+            if(headline!=""){
+                $("#addButton").removeAttr("disabled");
+            }else{
+                $("#addButton").attr({"disabled":"disabled"});
+            }
+
+            if(city!=""){
+                $("#addButton").removeAttr("disabled");
+            }else{
+                $("#addButton").attr({"disabled":"disabled"});
+            }
+
+            if(scenic!=""){
+                $("#addButton").removeAttr("disabled");
+            }else{
+                $("#addButton").attr({"disabled":"disabled"});
+            }
+
+            if(destination!=""){
+                $("#addButton").removeAttr("disabled");
+            }else{
+                $("#addButton").attr({"disabled":"disabled"});
+            }
+
+            if(time_limit!=""){
+                $("#addButton").removeAttr("disabled");
+            }else{
+                $("#addButton").attr({"disabled":"disabled"});
+            }
+
+            if(section_titles!=""){
+                $("#addButton").removeAttr("disabled");
+            }else{
+                $("#addButton").attr({"disabled":"disabled"});
+            }
+
+        }
+    </script>
+
 </head>
 <script>var auto;</script>
 <body style="background:#D5F2FA url(http://x1.cncnimg.cn/p10068/10/daf8.jpg) no-repeat center top">
@@ -184,8 +233,8 @@
             </div>
     </div>
     <div class="form-group">
-        <h2 style="color: chartreuse"><label for="_j_title">游记标题</label></h2>
-        <input type="text" class="form-control" id="_j_title" name="n_headline" placeholder="快来给游记起个标题吧" maxlength="48"/>
+        <h2 style="color: chartreuse"><label for="n_headline">游记标题</label></h2>
+        <input type="text" class="form-control" id="n_headline" onblur="addNotes();" name="n_headline" placeholder="快来给游记起个标题吧" maxlength="48"/>
         <div class="clear"></div>
     </div>
 
@@ -202,27 +251,27 @@
             </thead>
             <tbody>
             <tr class="warning">
-                <td><input type="text" class="form-control" id="n_city" name="n_city" placeholder="城市" maxlength="48"/>
+                <td><input type="text" class="form-control" id="n_city" name="n_city" onblur="addNotes();" placeholder="城市" maxlength="48"/>
                 </td>
-                <td><input type="text" class="form-control" id="n_scenic" name="n_scenic" placeholder="景点" maxlength="48"/>
+                <td><input type="text" class="form-control" id="n_scenic" name="n_scenic" onblur="addNotes();" placeholder="景点" maxlength="48"/>
                 </td>
-                <td><input type="text" class="form-control" id="n_destination" name="n_destination" placeholder="目的地"
+                <td><input type="text" class="form-control" id="n_destination" name="n_destination" onblur="addNotes();" placeholder="目的地"
                            maxlength="48"/></td>
                 <td><input type="text" name="n_startDate" class="form-control form-control-Wdate" id="n_startDate"
                            onClick="WdatePicker()"></td>
                 <td><input type="text" name="n_endDate" class="form-control form-control-Wdate" id="n_endDate"
                            onClick="WdatePicker()"></td>
-                <td><input type="text" class="form-control" id="n_time_limit" name="n_time_limit" placeholder="旅游周期"
+                <td><input type="text" class="form-control" id="n_time_limit" name="n_time_limit" onblur="addNotes();" placeholder="旅游周期"
                            maxlength="48"/></td>
             </tr>
             </tbody>
         </table>
 
         <div class="btn-group btn-group-justified" role="group" aria-label="...">
-                <label class="sr-only" for="exampleInputAmount">段落标题</label>
+                <label class="sr-only" for="n_section_titles">段落标题</label>
                 <div class="input-group">
                     <div class="input-group-addon">段落标题</div>
-                    <input type="text" class="form-control" name="n_section_titles" id="exampleInputAmount" placeholder="段落标题">
+                    <input type="text" class="form-control" name="n_section_titles" onblur="addNotes();" id="n_section_titles" placeholder="段落标题">
                 </div>
         </div>
     <br/><br/>
@@ -235,56 +284,13 @@
             window.editor = K.create('#editor_id');
         });
     </script>
-        <!-- 模态框（Modal）-->
-        <!--<div class="modal fade" id="demoModal" tabindex="-1" role="dialog">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                                aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="exampleModalLabel">标题</h4>
-                    </div>
-                    <form class="form-inline">
-                        <div class="modal-body">
-                            <div class="form-group">
-                                <label for="n_section_titles" class="control-label">标题段落 &nbsp;&nbsp;：&nbsp;&nbsp;</label>
-                                <input type="text" name="n_section_titles" class="form-control" id="n_section_titles">
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-primary">保存</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>-->
-
-      <!--  <div class="modal fade" id="demoModal2" tabindex="-1" role="dialog">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                                aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title">文字内容</h4>
-                    </div>
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <textarea class="form-control" rows="3"></textarea>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-primary">保存</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>-->
 
         <br/> <br/>
         <div class="travel_bottom" style="float:right">
             <button type="button" class="btn btn-link">
                 <a class="preview" target="_blank" href="#">保存草稿</a>
             </button>
-            <button type="submit" class="btn btn-info">发表游记</button>
+            <button type="submit" class="btn btn-info" id="addButton">发表游记</button>
         </div>
     </div>
 </form>
