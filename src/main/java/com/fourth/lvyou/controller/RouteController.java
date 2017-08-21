@@ -51,7 +51,6 @@ public class RouteController {
         int tj1= 7;
         Scenery sce = routeService.getSceneryById(tj);
         Scenery sce1 = routeService.getSceneryById(tj1);
-
         String deng1 = (String) session.getAttribute("deng1");
         map.put("deng1",deng1);
         map.put("tuijian",sce);

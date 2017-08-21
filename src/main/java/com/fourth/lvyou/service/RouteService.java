@@ -16,12 +16,10 @@ public interface RouteService {
     查询全部线路分类
      */
     public List<Scenery> getRoute(String routeNumber);
-
     /*
    查询景色
     */
     List<Scenery> getScenery(Scenery scenery);
-    Address getAddress(String addressname);
     //根据id查询
     Scenery getSceneryById(int id);
     //添加订单

@@ -68,12 +68,18 @@ public class UserController {
         params.put("deng",deng);
         params.put("password",pwd);
         User user= service.login(params);
-        session.setAttribute("useri",user);
-        String str=user.getDeng();
-        String ss = str.substring(0,str.length()-(str.substring(3)).length())+"****"+str.substring(7);
-        model.addAttribute("deng1",ss);
-        session.setAttribute("deng1",ss);
+
         if(user!=null) {
+
+            session.setAttribute("useri",user);
+            String str=user.getDeng();
+            String ss = str.substring(0,str.length()-(str.substring(3)).length())+"****"+str.substring(7);
+            model.addAttribute("deng1",ss);
+            session.setAttribute("deng1",ss);
+
+
+
+
             if (user.getRole().equals("管理员")) {
                 System.out.print("123");
                 session.setAttribute("user1",user);

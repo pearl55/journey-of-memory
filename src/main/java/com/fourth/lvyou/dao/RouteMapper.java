@@ -28,7 +28,7 @@ public interface RouteMapper {
 
     List<Scenery> getScenery(Scenery scenery);
 
-    Address getAddress(String addressname);
+
     //根据id查询
 
     Scenery getSceneryById(int id);

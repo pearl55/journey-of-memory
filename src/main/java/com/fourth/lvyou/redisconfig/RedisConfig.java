@@ -1,8 +1,8 @@
 package com.fourth.lvyou.redisconfig;
-
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.CachingConfigurerSupport;
 import org.springframework.cache.annotation.EnableCaching;
@@ -11,21 +11,28 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.cache.RedisCacheManager;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
+import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
+import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 import java.lang.reflect.Method;
 
-@Configuration
-@EnableCaching
-public class RedisConfig extends CachingConfigurerSupport {
+/**
+ * redis 配置
+ * Created by limbo on 2017/4/21.
+ */
 
-    /*定义缓存数据 key 生成策略的bean
-    包名+类名+方法名+所有参数
-    */
+@Configuration
+@EnableCaching(proxyTargetClass = true)
+public class RedisConfig extends CachingConfigurerSupport {
+    /**
+     * 生成key的策略
+     * @return
+     */
     @Bean
-    public KeyGenerator wiselyKeyGenerator(){
+    public KeyGenerator keyGenerator() {
         return new KeyGenerator() {
             @Override
             public Object generate(Object target, Method method, Object... params) {
@@ -38,8 +45,8 @@ public class RedisConfig extends CachingConfigurerSupport {
                 return sb.toString();
             }
         };
-
     }
+
 
     /*要启用spring缓存支持,需创建一个 CacheManager的 bean，CacheManager 接口有很多实现，这里Redis 的集成，用 RedisCacheManager这个实现类
     Redis 不是应用的共享内存，它只是一个内存服务器，就像 MySql 似的，
@@ -67,5 +74,4 @@ public class RedisConfig extends CachingConfigurerSupport {
         template.afterPropertiesSet();
         return template;
     }
-
-}  
+}

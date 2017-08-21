@@ -92,8 +92,7 @@
     <script src="/js/jquery-2.1.4.js"></script>
     <script>
         $(document).ready(function() {
-            $("#line_order").click(function () {
-                var date = document.getElementById("shijian").value;
+
                 $.ajax({
                     type: "post",
                     url: "ceshi",
@@ -108,11 +107,13 @@
                       }
                     }
                 })
+            $("#line_order").click(function () {
+                var date = document.getElementById("shijian").value;
                 if (date == "") {
                     alert("请选择出发时间");
                     return false;
                 }
-            })
+        })
         })
     </script>
     <body>
@@ -241,7 +242,7 @@
                                 <input  type="hidden" th:value="${scenery.scenery_Day}" name="orderform_Day">
                                 <input  type="hidden" th:value="${scenery.scenery_Rode}" name="orderform_Rode">
                                 <input  type="hidden" th:value="${scenery.scenery_Type}" name="orderform_Type">
-                                <input  type="hidden" name="user_Id" id="user_Id" >
+                                <input  type="text" name="user_Id" id="user_Id">
                                 <span style="width:125px; height:36px;,">
                         <input name="imageField" type="image" src="http://xnxw.cncnimg.cn/images/front/home/btn_order.png" alt="立刻预订" onClick="line.order()">
                                 <!--<input type="submit" value="提交">-->
