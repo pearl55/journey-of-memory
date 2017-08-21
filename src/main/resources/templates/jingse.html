@@ -92,7 +92,7 @@
     <script src="/js/jquery-2.1.4.js"></script>
     <script>
         $(document).ready(function() {
-
+            $("#line_order").click(function () {
                 $.ajax({
                     type: "post",
                     url: "ceshi",
@@ -107,7 +107,7 @@
                       }
                     }
                 })
-            $("#line_order").click(function () {
+
                 var date = document.getElementById("shijian").value;
                 if (date == "") {
                     alert("请选择出发时间");
